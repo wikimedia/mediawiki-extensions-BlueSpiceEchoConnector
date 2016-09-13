@@ -26,6 +26,21 @@ class BsNotificationsFormatter extends EchoBasicFormatter {
 		parent::__construct( $params );
 	}
 
+	public function format( $event, $user, $type ) {
+		$this->setDistributionType( $type );
+		$this->applyChangeBeforeFormatting( $event, $user, $type );
+
+		if ( $this->outputFormat !== 'model' ) {
+			return parent::format( $event, $user, $type );
+		}
+
+		return array(
+			'header' => $this->formatNotificationTitle( $event, $user )->parse(),
+			'body' => '', //$this->formatFragment( $this->email['batch-body'], $event, $user )->parse() //only plain text message :(
+			'iconUrl' => $this->getIconUrl( $this->icon, 'ltr' ),
+		);
+	}
+
 	/**
 	 * Create text version and/or html version for email notification
 	 *
