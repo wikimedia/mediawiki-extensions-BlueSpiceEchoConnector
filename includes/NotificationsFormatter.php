@@ -13,6 +13,15 @@
  */
 class BsNotificationsFormatter extends EchoBasicFormatter {
 
+	//This fixes the EchoBasicFormatter 
+	protected $validOutputFormats = array(
+		'text',
+		'email',
+		'htmlemail',
+		'special', //Special:Notifications
+		'model' //Api call
+	);
+
 	public function __construct( $params ) {
 		parent::__construct( $params );
 	}
