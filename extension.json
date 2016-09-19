@@ -1,0 +1,26 @@
+{
+	"name": "BlueSpiceEchoConnector",
+	"author": "Hallo Welt! GmbH",
+	"url": "http://bluespice.com/",
+	"description": "This extension improve echo usage for bluespice",
+	"version": "1.5",
+	"license-name": "GPL-2.0+",
+	"type": "bluespice",
+	"manifest_version": 1,
+	"AutoloadClasses": {
+		"EchoConnectorHooks": "includes/EchoConnectorHooks.php",
+		"BSEchoNotificationHandler": "includes/EchoNotificationHandler.php",
+		"BsNotificationsFormatter": "includes/NotificationsFormatter.php",
+		"BsEchoEmailSingle": "includes/EchoEmailSingle.php",
+		"BsEchoTextEmailFormatter": "includes/EchoTextEmailFormatter.php",
+		"BsEchoTextEmailDecorator": "includes/EchoTextEmailDecorator.php"
+	},
+	"MessageDirs": {
+		"EchoConnector": "i18n",
+		"BSFoundation": "../../BlueSpiceFoundation/i18n"
+	},
+	"Hooks": {
+		"BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",
+		"EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers"
+	}
+}
