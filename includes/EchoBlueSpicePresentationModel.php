@@ -27,11 +27,11 @@ class EchoBlueSpicePresentationModel extends EchoEventPresentationModel {
 
 		$aParams = $GLOBALS['wgEchoNotifications'][$this->type]
 			['email-subject-params'];
-		if( empty($aParams) ) {
+		if( empty( $aParams ) ) {
 			return $oMsg;
 		}
 
-		foreach($aParams as $param ) {
+		foreach( $aParams as $param ) {
 			$oFormatter->processParam(
 				$this->event,
 				$param,
