@@ -126,7 +126,7 @@ class BsNotificationsFormatter extends EchoBasicFormatter {
 	 * @param Message $message
 	 * @param User $user
 	 */
-	public function processParam($event, $param, $message, $user) {
+	public function processParam( $event, $param, $message, $user ) {
 		//check if key is precessed by echo base formatter class EchoBasicFormatter::processParam
 		$arrParamsInBasicFormatter = array(
 				'agent',
