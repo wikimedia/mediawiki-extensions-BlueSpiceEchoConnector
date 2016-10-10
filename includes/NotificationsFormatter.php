@@ -12,9 +12,10 @@
  * @filesource
  */
 class BsNotificationsFormatter extends EchoBasicFormatter {
+	public $icon = 'placeholder';
 
 	//This fixes the EchoBasicFormatter 
-	protected $validOutputFormats = array(
+	public $validOutputFormats = array(
 		'text',
 		'email',
 		'htmlemail',
@@ -49,7 +50,7 @@ class BsNotificationsFormatter extends EchoBasicFormatter {
 	 * @param $type string deprecated
 	 * @return array
 	 */
-	protected function formatEmail( $event, $user, $type ) {
+	public function formatEmail( $event, $user, $type ) {
 		// Email should be always sent in user language
 		$this->language = $user->getOption( 'language' );
 
@@ -125,7 +126,7 @@ class BsNotificationsFormatter extends EchoBasicFormatter {
 	 * @param Message $message
 	 * @param User $user
 	 */
-	protected function processParam($event, $param, $message, $user) {
+	public function processParam( $event, $param, $message, $user ) {
 		//check if key is precessed by echo base formatter class EchoBasicFormatter::processParam
 		$arrParamsInBasicFormatter = array(
 				'agent',
