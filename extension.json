@@ -1,0 +1,31 @@
+{
+	"name": "BlueSpiceEchoConnector",
+	"version": "2.27.0",
+	"url": "https://help.bluespice.com/index.php/BlueSpiceEchoConnector",
+	"author": [
+		"Sebastian Ulbricht",
+		"Robert Vogel"
+	],
+	"descriptionmsg": "bs-echoconnector-extension-description",
+	"type": "bluespice",
+	"callback": "EchoConnectorHooks::onRegistration",
+	"MessagesDirs": {
+		"BlueSpiceEchoConnector": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"EchoConnectorHooks": "includes/EchoConnectorHooks.php",
+		"BSEchoNotificationHandler": "includes/EchoNotificationHandler.php",
+		"BsNotificationsFormatter": "includes/NotificationsFormatter.php",
+		"BsEchoEmailSingle": "includes/EchoEmailSingle.php",
+		"BsEchoTextEmailFormatter": "includes/EchoTextEmailFormatter.php",
+		"BsEchoTextEmailDecorator": "includes/EchoTextEmailDecorator.php",
+		"EchoBlueSpicePresentationModel": "includes/EchoBlueSpicePresentationModel.php"
+	},
+	"Hooks": {
+		"BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",
+		"EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers"
+	},
+	"manifest_version": 1
+}
