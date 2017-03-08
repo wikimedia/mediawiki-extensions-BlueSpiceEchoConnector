@@ -15,17 +15,21 @@
 		]
 	},
 	"AutoloadClasses": {
-		"EchoConnectorHooks": "includes/EchoConnectorHooks.php",
-		"BSEchoNotificationHandler": "includes/EchoNotificationHandler.php",
-		"BsNotificationsFormatter": "includes/NotificationsFormatter.php",
-		"BsEchoEmailSingle": "includes/EchoEmailSingle.php",
-		"BsEchoTextEmailFormatter": "includes/EchoTextEmailFormatter.php",
-		"BsEchoTextEmailDecorator": "includes/EchoTextEmailDecorator.php",
-		"EchoBlueSpicePresentationModel": "includes/EchoBlueSpicePresentationModel.php"
+                "EchoConnectorHooks": "includes/EchoConnectorHooks.php",
+		"BsEchoNotificationHandler": "includes/BsEchoNotificationHandler.php",
+		"BsNotificationsFormatter": "includes/formatters/BsNotificationsFormatter.php",
+		"BsEchoEmailSingle": "includes/formatters/BsEchoEmailSingle.php",
+		"BsEchoTextEmailFormatter": "includes/formatters/BsEchoTextEmailFormatter.php",
+		"BsEchoTextEmailDecorator": "includes/formatters/BsEchoTextEmailDecorator.php",
+                "BsEchoHTMLEmailFormatter": "includes/formatters/BsEchoHTMLEmailFormatter.php",
+		"BsEchoEventPresentationModel": "includes/formatters/BsEchoEventPresentationModel.php",
+                "BsEchoEmailDigest": "includes/formatters/BsEchoEmailDigest.php",
+                "BsEmailBatch": "includes/BsEmailBatch.php"
 	},
 	"Hooks": {
 		"BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",
-		"EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers"
+		"EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers",
+                "EchoGetBundleRules": "EchoConnectorHooks::onEchoGetBundleRules"
 	},
 	"manifest_version": 1
 }

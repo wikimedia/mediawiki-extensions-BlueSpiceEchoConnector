@@ -69,7 +69,7 @@ class EchoConnectorHooks {
 
 	public static function onBeforeNotificationsInit() {
 		BSNotifications::registerNotificationHandler(
-				'BSEchoNotificationHandler'
+				'BsEchoNotificationHandler'
 		);
 
 		return true;
@@ -117,5 +117,13 @@ class EchoConnectorHooks {
 		}
 
 		return true;
+	}
+
+
+	public static function onEchoGetBundleRules( $event, &$bundleString ) {
+	    $bundleString = $event->getType();
+	    if ( $event->getTitle() ) {
+		$bundleString .= '-' . $event->getTitle()->getNamespace() . '-' . $event->getTitle()->getDBkey();
+	    } 
 	}
 }
