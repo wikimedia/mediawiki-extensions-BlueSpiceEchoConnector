@@ -4,7 +4,8 @@
 	"url": "https://help.bluespice.com/index.php/BlueSpiceEchoConnector",
 	"author": [
 		"Sebastian Ulbricht",
-		"Robert Vogel"
+		"Robert Vogel",
+                "Dejan Savuljesku"
 	],
 	"descriptionmsg": "bs-echoconnector-extension-description",
 	"type": "bluespice",
