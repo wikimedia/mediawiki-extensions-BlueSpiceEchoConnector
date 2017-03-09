@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TextEmailFormatter class for notifications
  *
@@ -10,13 +11,14 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU Public License v2 or later
  * @filesource
  */
-
 class BsEchoTextEmailFormatter extends EchoTextEmailFormatter {
-	/**
-	 * @param $emailMode EchoEmailMode
-	 */
-	public function __construct( EchoEmailMode $emailMode ) {
-		parent::__construct( $emailMode );
-		$this->emailMode->attachDecorator( new BsEchoTextEmailDecorator() );
-	}
+
+    /**
+     * @param $emailMode EchoEmailMode
+     */
+    public function __construct ( EchoEmailMode $emailMode ) {
+	parent::__construct ( $emailMode );
+	$this->emailMode->attachDecorator ( new BsEchoTextEmailDecorator () );
+    }
+
 }

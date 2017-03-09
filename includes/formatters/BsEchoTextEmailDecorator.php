@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Text Email Decorator class for notifications
  *
@@ -15,23 +16,25 @@
  * Text email decorator
  */
 class BsEchoTextEmailDecorator extends EchoTextEmailDecorator {
-	/**
-	 * Adds the BS default footer to the text mail
-	 * @global String $wgSitename
-	 *
-	 * @param String  $address
-	 * @param User    $user
-	 *
-	 * @return String
-	 */
-	public function decorateFooter( $address, User $user ) {
-		global $wgSitename;
 
-		$sFooter = parent::decorateFooter( $address, $user );
+    /**
+     * Adds the BS default footer to the text mail
+     * @global String $wgSitename
+     *
+     * @param String  $address
+     * @param User    $user
+     *
+     * @return String
+     */
+    public function decorateFooter ( $address, User $user ) {
+	global $wgSitename;
 
-		return $sFooter .
+	$sFooter = parent::decorateFooter ( $address, $user );
+
+	return $sFooter .
 		"\n---------------------\n\n"
-		. wfMessage( 'bs-email-footer', $wgSitename )->text()
+		. wfMessage ( 'bs-email-footer', $wgSitename )->text ()
 		. "\n\n---------------------";
-	}
+    }
+
 }

@@ -13,17 +13,17 @@
  */
 class BsEchoEmailSingle extends EchoEmailSingle {
 
-	public function getTextTemplate() {
-		return <<< EOF
+    public function getTextTemplate () {
+	return <<< EOF
 %%intro%% %%summary%%
 %%action%% %%footer%%
 EOF;
-	}
+    }
 
-	public function getHTMLTemplate() {
-		$alignStart = $this->lang->alignStart();
+    public function getHTMLTemplate () {
+	$alignStart = $this->lang->alignStart ();
 
-		return <<< EOF
+	return <<< EOF
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,7 +33,7 @@ EOF;
 		}
 	</style>
 </head><body>
-<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center" lang="{$this->lang->getCode()}" dir="{$this->lang->getDir()}">
+<table cellspacing="0" cellpadding="0" border="0" width="100%" align="center" lang="{$this->lang->getCode ()}" dir="{$this->lang->getDir ()}">
 <tr>
 	<td bgcolor="#E6E7E8"><center>
 		<br /><br />
@@ -88,6 +88,6 @@ EOF;
 </table>
 </body></html>
 EOF;
-	}
+    }
 
 }
