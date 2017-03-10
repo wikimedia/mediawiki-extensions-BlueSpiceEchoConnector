@@ -1,2 +1,3 @@
 <?php
-wfLoadExtension( 'BlueSpiceEchoConnector' );
+
+wfLoadExtension ( 'BlueSpiceEchoConnector' );
