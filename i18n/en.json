@@ -4,6 +4,7 @@
             "Ljonka"
         ]
     },
+    "bs-echoconnector-extension-description": "Connects BlueSpice with Echo",
     "echo-category-title-bs-admin-cat": "Administration task performed",
     "echo-category-title-bs-page-actions-cat": "Action on subscribed page"
 }

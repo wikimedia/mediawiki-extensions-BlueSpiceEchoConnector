@@ -198,6 +198,9 @@ class BSEchoNotificationHandler extends BSNotificationHandler {
 		if ( !isset( $aExtraParams[ 'formatter-class' ] ) ) {
 			$aExtraParams[ 'formatter-class' ] = 'BsNotificationsFormatter';
 		}
+		if ( !isset( $aExtraParams[ 'presentation-model' ] ) ) {
+			$aExtraParams[ 'presentation-model' ] = 'EchoBlueSpicePresentationModel';
+		}
 
 		$wgEchoNotifications[ $sKey ] = $aExtraParams + array(
 				'category' => $sCategory,
