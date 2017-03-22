@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-require_once ( "/../../../maintenance/Maintenance.php" );
+require_once( dirname(dirname(dirname(dirname(__FILE__)))) . '/maintenance/Maintenance.php' );
 
 /**
  * A maintenance script that processes email digest
