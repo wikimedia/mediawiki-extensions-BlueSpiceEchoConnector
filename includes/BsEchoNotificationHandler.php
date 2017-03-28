@@ -262,9 +262,9 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 	    }
 	}
 
-	$aExtraParams = $aValues[ 'extra-params' ];
-	if ( !is_array ( $aExtraParams ) ) {
-	    $aExtraParams = array ();
+	$aExtraParams = [];
+	if ( !empty( $aValues[ 'extra-params' ] ) ) {
+		$aExtraParams = $aValues[ 'extra-params' ];
 	}
 
 	if ( !isset ( $aExtraParams[ 'formatter-class' ] ) ) {
