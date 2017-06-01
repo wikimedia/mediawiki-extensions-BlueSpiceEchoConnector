@@ -289,7 +289,7 @@ class BSEchoNotificationHandler extends BSNotificationHandler {
 				array(
 					'summary' => $sSummary,
 					'titlelink' => true,
-					'realname' => BsCore::getUserDisplayName( $oUser ),
+					'realname' => BsUserHelper::getUserDisplayName( $oUser ),
 					'difflink' => '',
 				)
 			);
@@ -313,7 +313,7 @@ class BSEchoNotificationHandler extends BSNotificationHandler {
 				'titlelink' => true,
 				'difflink' => $aDiffParams,
 				'agentlink' => true,
-				'realname' => BsCore::getUserDisplayName( $oUser ),
+				'realname' => BsUserHelper::getUserDisplayName( $oUser ),
 			)
 		);
 
@@ -339,7 +339,7 @@ class BSEchoNotificationHandler extends BSNotificationHandler {
 			array(
 				'deletereason' => $sReason,
 				'title' => $oArticle->getTitle()->getText(),
-				'realname' => BsCore::getUserDisplayName( $oUser ),
+				'realname' => BsUserHelper::getUserDisplayName( $oUser ),
 			)
 		);
 
@@ -366,7 +366,7 @@ class BSEchoNotificationHandler extends BSNotificationHandler {
 			$oTitle,
 			array(
 				'newtitle' => $oNewTitle,
-				'realname' => BsCore::getUserDisplayName( $oUser ),
+				'realname' => BsUserHelper::getUserDisplayName( $oUser ),
 			)
 		);
 

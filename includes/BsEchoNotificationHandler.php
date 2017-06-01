@@ -359,16 +359,16 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 	    return true;
 
 	if ( $iFlags & EDIT_NEW ) {
-	    BSNotifications::notify (
-		    'bs-create', $oUser, $oArticle->getTitle (), array (
-		'summary' => $sSummary,
-		'titlelink' => true,
-		'realname' => BsCore::getUserDisplayName ( $oUser ),
-		'difflink' => '',
-		    )
-	    );
+		BSNotifications::notify (
+			'bs-create', $oUser, $oArticle->getTitle (), array (
+				'summary' => $sSummary,
+				'titlelink' => true,
+				'realname' => BsUserHelper::getUserDisplayName( $oUser ),
+				'difflink' => '',
+			)
+		);
 
-	    return true;
+		return true;
 	}
 
 	$aDiffParams = array ( 'diffparams' => array () );
@@ -380,11 +380,11 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 	}
 	BSNotifications::notify (
 		'bs-edit', $oUser, $oArticle->getTitle (), array (
-	    'summary' => $sSummary,
-	    'titlelink' => true,
-	    'difflink' => $aDiffParams,
-	    'agentlink' => true,
-	    'realname' => BsCore::getUserDisplayName ( $oUser ),
+			'summary' => $sSummary,
+			'titlelink' => true,
+			'difflink' => $aDiffParams,
+			'agentlink' => true,
+			'realname' => BsUserHelper::getUserDisplayName( $oUser ),
 		)
 	);
 
@@ -406,9 +406,9 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 	    return true;
 	BSNotifications::notify (
 		'bs-delete', $oUser, $oArticle->getTitle (), array (
-	    'deletereason' => $sReason,
-	    'title' => $oArticle->getTitle ()->getText (),
-	    'realname' => BsCore::getUserDisplayName ( $oUser ),
+			'deletereason' => $sReason,
+			'title' => $oArticle->getTitle ()->getText (),
+			'realname' => BsUserHelper::getUserDisplayName( $oUser ),
 		)
 	);
 
@@ -432,8 +432,8 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 
 	BSNotifications::notify (
 		'bs-move', $oUser, $oTitle, array (
-	    'newtitle' => $oNewTitle,
-	    'realname' => BsCore::getUserDisplayName ( $oUser ),
+			'newtitle' => $oNewTitle,
+			'realname' => BsUserHelper::getUserDisplayName( $oUser ),
 		)
 	);
 
