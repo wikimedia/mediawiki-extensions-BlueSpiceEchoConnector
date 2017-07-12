@@ -31,7 +31,21 @@
     "Hooks": {
         "BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",
         "EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers",
-        "EchoGetBundleRules": "EchoConnectorHooks::onEchoGetBundleRules"
+        "EchoGetBundleRules": "EchoConnectorHooks::onEchoGetBundleRules",
+		"BeforePageDisplay": "EchoConnectorHooks::onBeforePageDisplay"
     },
+	"ResourceModules": {
+		"ext.echo.fixer": {
+			"scripts": "echo.loader.fixer.js",
+			"dependencies": [
+				"ext.echo.ui",
+				"ext.echo.ui.desktop"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "BlueSpiceEchoConnector/resources"
+	},
     "manifest_version": 1
 }
