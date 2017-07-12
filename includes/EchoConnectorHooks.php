@@ -190,4 +190,16 @@ class EchoConnectorHooks {
 			$bundleString .= '-' . $event->getTitle ()->getNamespace () . '-' . $event->getTitle ()->getDBkey ();
 		}
     }
+
+    /**
+	 * @param OutputPage $out
+	 * @param Skin $skin
+	 * @return boolean
+	 */
+	public static function onBeforePageDisplay( &$out, &$skin ) {
+		if( $out->getTitle() == SpecialPage::getTitleFor( "Notifications" ) ) {
+			$out->addModules( array( 'ext.echo.fixer' ) );
+		}
+		return true;
+	}
 }
