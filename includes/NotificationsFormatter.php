@@ -2,7 +2,7 @@
 /**
  * Formatter class for notifications
  *
- * Part of BlueSpice for MediaWiki
+ * Part of BlueSpice MediaWiki
  *
  * @author     Stefan Widmann <widmann@hallowelt.com>
  * @author     Patric Wirth <wirth@hallowelt.com>
