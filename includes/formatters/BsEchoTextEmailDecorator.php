@@ -37,4 +37,26 @@ class BsEchoTextEmailDecorator extends EchoTextEmailDecorator {
 		. "\n\n---------------------";
     }
 
-}
+	public function decorateDigestList( $digestList, User $user ) {
+		$result = array();
+
+		// build the text section for each category
+		foreach ( $digestList as $category => $notifs ) {
+			$output =
+				"\n\n=========================================================\n"
+				. EchoEmailMode::message( 'echo-category-title-' . $category, $user )->numParams( count( $notifs ) )->text(). EchoEmailMode::message( 'colon-separator', $user )->text()
+				. "\n=========================================================\n";
+
+			foreach ( $notifs as $notif ) {
+				$output .= "\n\n---------------------------------------------------------\n"
+					. $notif['batch-body'];
+			}
+			$result[] = $output;
+		}
+
+		return trim(
+			implode( "\n\n", $result )
+		);
+	}
+
+	}
