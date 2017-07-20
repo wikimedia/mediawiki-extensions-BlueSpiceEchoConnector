@@ -54,7 +54,9 @@ class BsEchoTextEmailDecorator extends EchoTextEmailDecorator {
 			$result[] = $output;
 		}
 
-		return trim( $result );
+		return trim(
+			implode( "\n\n", $result )
+		);
 	}
 
 	}
