@@ -35,8 +35,10 @@
 	"BeforePageDisplay": "EchoConnectorHooks::onBeforePageDisplay"
     },
 	"ResourceModules": {
-		"ext.echo.fixer": {
-			"scripts": "echo.loader.fixer.js",
+		"ext.bluespice.echoconnector.fixer": {
+			"scripts": [
+				"echo.loader.fixer.js"
+			],
 			"dependencies": [
 				"ext.echo.ui",
 				"ext.echo.ui.desktop"

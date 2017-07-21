@@ -197,8 +197,8 @@ class EchoConnectorHooks {
 	 * @return boolean
 	 */
 	public static function onBeforePageDisplay( &$out, &$skin ) {
-		if( $out->getTitle() == SpecialPage::getTitleFor( "Notifications" ) ) {
-			$out->addModules( array( 'ext.echo.fixer' ) );
+		if( $out->getTitle()->isSpecial( "Notifications" ) ) {
+			$out->addModules( array( 'ext.bluespice.echoconnector.fixer' ) );
 		}
 		return true;
 	}
