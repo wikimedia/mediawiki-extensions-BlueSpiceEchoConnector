@@ -1,0 +1,13 @@
+{
+  "name": "mediawiki/blue-spice-echo-connector",
+  "type": "mediawiki-extension",
+  "description": "Connects BlueSpice with Echo",
+  "require": {
+    "composer/installers": "~1.0"
+  },
+  "autoload": {
+    "files": [
+      "BlueSpiceEchoConnector.php"
+    ]
+  }
+}
