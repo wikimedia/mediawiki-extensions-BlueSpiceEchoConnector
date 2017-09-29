@@ -199,6 +199,7 @@ class EchoConnectorHooks {
 	public static function onBeforePageDisplay( &$out, &$skin ) {
 		if( $out->getTitle() == SpecialPage::getTitleFor( "Notifications" ) ) {
 			$out->addModules( array( 'ext.echo.fixer' ) );
+			$out->addModuleStyles( 'ext.echo.fixer.styles' );
 		}
 		return true;
 	}
