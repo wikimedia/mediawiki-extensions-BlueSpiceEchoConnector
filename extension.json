@@ -41,6 +41,10 @@
 				"ext.echo.ui",
 				"ext.echo.ui.desktop"
 			]
+		},
+		"ext.echo.fixer.styles": {
+			"styles": "echo.special.fixes.css",
+			"position": "top"
 		}
 	},
 	"ResourceFileModulePaths": {
