@@ -35,11 +35,4 @@ class BsEchoEmailSingle extends EchoEmailSingle {
 
 		return $this->decorator->userBasedDecorateIntro( $message, $this->user );
 	}
-
-	public function getTextTemplate() {
-		return <<< EOF
-%%intro%% %%summary%%
-%%action%% %%footer%%
-EOF;
-	}
 }
