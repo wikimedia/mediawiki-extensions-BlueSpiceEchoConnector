@@ -337,18 +337,18 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 	/**
 	 * Sends a notification on article creation and edit.
 	 *
-	 * @param Article  $oArticle	   The article that is created.
-	 * @param User	 $oUser		  User that saved the article.
-	 * @param String   $sText		  New text.
-	 * @param String   $sSummary	   Edit summary.
-	 * @param Boolean  $bMinorEdit	 Marked as minor.
-	 * @param Boolean  $bWatchThis	 Put on watchlist.
+	 * @param Article  $oArticle The article that is created.
+	 * @param User	 $oUser User that saved the article.
+	 * @param String   $sText New text.
+	 * @param String   $sSummary Edit summary.
+	 * @param Boolean  $bMinorEdit Marked as minor.
+	 * @param Boolean  $bWatchThis Put on watchlist.
 	 * @param Integer  $iSectionAnchor Not in use any more.
-	 * @param Integer  $iFlags		 Bitfield.
-	 * @param Revision $oRevision	  New revision object.
-	 * @param Status   $oStatus		Status object (since MW1.14)
-	 * @param Integer  $iBaseRevId	 Revision ID this edit is based on (since MW1.15)
-	 * @param Boolean  $bRedirect	  Redirect user back to page after edit (since MW1.17)
+	 * @param Integer  $iFlags Bitfield.
+	 * @param Revision $oRevision New revision object.
+	 * @param Status   $oStatus Status object (since MW1.14)
+	 * @param Integer  $iBaseRevId Revision ID this edit is based on (since MW1.15)
+	 * @param Boolean  $bRedirect Redirect user back to page after edit (since MW1.17)
 	 *
 	 * @return bool allow other hooked methods to be executed. Always true
 	 */
@@ -395,9 +395,9 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 	 * Sends a notification on article deletion
 	 *
 	 * @param Article $oArticle The article that is being deleted.
-	 * @param User	$oUser	The user that deletes.
-	 * @param string  $sReason  A reason for article deletion
-	 * @param int	 $iId	  Id of article that was deleted.
+	 * @param User$oUser The user that deletes.
+	 * @param string $sReason A reason for article deletion
+	 * @param int $iId Id of article that was deleted.
 	 *
 	 * @return bool allow other hooked methods to be executed. Always true.
 	 */
@@ -418,11 +418,11 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 	/**
 	 * Sends a notification when an article is moved.
 	 *
-	 * @param Title $oTitle	Old title of the moved article.
+	 * @param Title $oTitle Old title of the moved article.
 	 * @param Title $oNewTitle New tite of the moved article.
-	 * @param User  $oUser	 User that moved the article.
-	 * @param int   $iOldId	ID of the page that has been moved.
-	 * @param int   $iNewId	ID of the newly created redirect.
+	 * @param User  $oUser User that moved the article.
+	 * @param int   $iOldId ID of the page that has been moved.
+	 * @param int   $iNewId ID of the newly created redirect.
 	 *
 	 * @return bool allow other hooked methods to be executed. Always true.
 	 */
@@ -476,22 +476,23 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 			case 'bs-edit':
 			case 'bs-move':
 			case 'bs-delete':
-			//We need to pre-filter for the subscription user setting here.
-			//Otherwise a large user base (2000+) will result in bad performance
-			$resUser = $dbr->select (
-				'user_properties',
-				'up_user',
-				[
-					'up_property' => [
-						'wpecho-subscriptions-web-bs-page-actions-cat',
-						'wpecho-subscription-email-bs-page-actions-cat'
+				//We need to pre-filter for the subscription user setting here.
+				//Otherwise a large user base (2000+) will result in bad performance
+				$resUser = $dbr->select(
+					"user_properties",
+					"DISTINCT up_user",
+					[
+						"up_property" => [
+							"echo-subscriptions-web-bs-page-actions-cat",
+							"echo-subscriptions-email-bs-page-actions-cat"
+						],
+						"up_value" => 1
 					]
-				]
-			);
-			foreach ( $resUser as $row ) {
-				$user = User::newFromId ( $row->up_user );
-				$users[ $user->getId () ] = $user;
-			}
+				);
+				foreach ( $resUser as $row ) {
+					$user = User::newFromId ( $row->up_user );
+					$users[ $user->getId () ] = $user;
+				}
 			break;
 		}
 
