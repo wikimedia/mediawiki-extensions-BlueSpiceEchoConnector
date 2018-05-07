@@ -45,7 +45,7 @@
 				"ext.echo.ui.desktop"
 			]
 		},
-		"ext.echo.fixer.styles": {
+		"ext.bluespice.echoconnector.fixer.styles": {
 			"styles": "echo.special.fixes.css",
 			"position": "top"
 		}

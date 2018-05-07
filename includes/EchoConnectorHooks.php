@@ -198,8 +198,8 @@ class EchoConnectorHooks {
 	 */
 	public static function onBeforePageDisplay( &$out, &$skin ) {
 		if( $out->getTitle()->isSpecial( 'Notifications' ) ) {
-			$out->addModules( 'ext.echoconnector.fixer' );
-			$out->addModuleStyles( 'ext.echoconnector.fixer.styles' );
+			$out->addModules( 'ext.bluespice.echoconnector.fixer' );
+			$out->addModuleStyles( 'ext.bluespice.echoconnector.fixer.styles' );
 		}
 		return true;
 	}
