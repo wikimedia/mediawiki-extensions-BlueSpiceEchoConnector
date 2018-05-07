@@ -33,7 +33,7 @@
 		"BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",
 		"EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers",
 		"EchoGetBundleRules": "EchoConnectorHooks::onEchoGetBundleRules",
-	"BeforePageDisplay": "EchoConnectorHooks::onBeforePageDisplay"
+		"BeforePageDisplay": "EchoConnectorHooks::onBeforePageDisplay"
 	},
 	"ResourceModules": {
 		"ext.bluespice.echoconnector.fixer": {
