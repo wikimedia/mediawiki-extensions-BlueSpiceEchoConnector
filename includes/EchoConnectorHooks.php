@@ -2,11 +2,11 @@
 
 class EchoConnectorHooks {
 
-    /**
-     * extension.json callback
-     * @global array $wgEchoNotificationIcons
-     */
-    public static function onRegistration () {
+	/**
+	 * extension.json callback
+	 * @global array $wgEchoNotificationIcons
+	 */
+	public static function onRegistration () {
 		$echoIconPath = "Echo/modules/icons";
 
 		$GLOBALS[ 'wgEchoNotificationIcons' ] = array (
@@ -121,27 +121,27 @@ class EchoConnectorHooks {
 				$aConfig[EchoAttributeManager::ATTR_LOCATORS] = $aNewLocators;
 			}
 		}
-    }
+	}
 
-    public static function onBeforeNotificationsInit () {
+	public static function onBeforeNotificationsInit () {
 		BSNotifications::registerNotificationHandler (
 			'BsEchoNotificationHandler'
 		);
 
 		return true;
-    }
+	}
 
-    /**
-     * Processes "extra data":
-     * - 'affected-users': array of User objects, user ids, user names
-     * - 'affected-groups': array of strings
+	/**
+	 * Processes "extra data":
+	 * - 'affected-users': array of User objects, user ids, user names
+	 * - 'affected-groups': array of strings
 	 * Removes ids of users that have been deleted (MediaWiki does not allow
 	 * user deletion, BlueSpice does; Echo will throw exception)
-     * @param EchoEvent $event
-     * @param array $users in form of [ <user_id> => <User object>, ...]
-     * @return boolean
-     */
-    public static function onEchoGetDefaultNotifiedUsers ( $event, &$users ) {
+	 * @param EchoEvent $event
+	 * @param array $users in form of [ <user_id> => <User object>, ...]
+	 * @return boolean
+	 */
+	public static function onEchoGetDefaultNotifiedUsers ( $event, &$users ) {
 		$aAffectedUsers = $event->getExtraParam( 'affected-users', array () );
 		$aAffectedGroups = $event->getExtraParam( 'affected-groups', array () );
 
@@ -182,23 +182,24 @@ class EchoConnectorHooks {
 		}
 
 		return true;
-    }
+	}
 
-    public static function onEchoGetBundleRules ( $event, &$bundleString ) {
+	public static function onEchoGetBundleRules ( $event, &$bundleString ) {
 		$bundleString = $event->getType ();
 		if ( $event->getTitle () ) {
 			$bundleString .= '-' . $event->getTitle ()->getNamespace () . '-' . $event->getTitle ()->getDBkey ();
 		}
-    }
+	}
 
-    /**
+	/**
 	 * @param OutputPage $out
 	 * @param Skin $skin
 	 * @return boolean
 	 */
 	public static function onBeforePageDisplay( &$out, &$skin ) {
-		if( $out->getTitle()->isSpecial( "Notifications" ) ) {
-			$out->addModules( array( 'ext.bluespice.echoconnector.fixer' ) );
+		if( $out->getTitle()->isSpecial( 'Notifications' ) ) {
+			$out->addModules( 'ext.bluespice.echoconnector.fixer' );
+			$out->addModuleStyles( 'ext.bluespice.echoconnector.fixer.styles' );
 		}
 		return true;
 	}
