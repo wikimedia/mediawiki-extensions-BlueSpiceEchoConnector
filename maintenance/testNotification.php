@@ -105,7 +105,7 @@ class TestNotification extends Maintenance {
 		});
 
 		//Do a test
-		UserMailer::send( 
+		UserMailer::send(
 			[ new MailAddress( 'support@hallowelt.com') ],
 			new MailAddress( 'info@hallowelt.com' ),
 			'Hello World',

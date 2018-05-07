@@ -1,40 +1,40 @@
 {
-    "name": "BlueSpiceEchoConnector",
-    "license-name": "GPL-3.0",
-    "version": "3.0.0-alpha",
-    "url": "https://help.bluespice.com/index.php/BlueSpiceEchoConnector",
-    "author": [
-        "Sebastian Ulbricht",
-        "Robert Vogel",
-        "Dejan Savuljesku"
-    ],
-    "descriptionmsg": "bs-echoconnector-extension-description",
-    "type": "bluespice",
-    "callback": "EchoConnectorHooks::onRegistration",
-    "MessagesDirs": {
-        "BlueSpiceEchoConnector": [
-            "i18n"
-        ]
-    },
-    "AutoloadClasses": {
-        "EchoConnectorHooks": "includes/EchoConnectorHooks.php",
-        "BsEchoNotificationHandler": "includes/BsEchoNotificationHandler.php",
-        "BsNotificationsFormatter": "includes/formatters/BsNotificationsFormatter.php",
-        "BsEchoEmailSingle": "includes/formatters/BsEchoEmailSingle.php",
-        "BsEchoTextEmailFormatter": "includes/formatters/BsEchoTextEmailFormatter.php",
-        "BsEchoTextEmailDecorator": "includes/formatters/BsEchoTextEmailDecorator.php",
-        "BsEchoHTMLEmailFormatter": "includes/formatters/BsEchoHTMLEmailFormatter.php",
-        "BsEchoEventPresentationModel": "includes/formatters/BsEchoEventPresentationModel.php",
-        "BsEchoEmailDigest": "includes/formatters/BsEchoEmailDigest.php",
-        "BsEmailBatch": "includes/BsEmailBatch.php",
-        "BsEchoUserLocator": "includes/UserLocator.php"
-    },
-    "Hooks": {
-        "BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",
-        "EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers",
-        "EchoGetBundleRules": "EchoConnectorHooks::onEchoGetBundleRules",
+	"name": "BlueSpiceEchoConnector",
+	"license-name": "GPL-3.0",
+	"version": "3.0.0-alpha",
+	"url": "https://help.bluespice.com/index.php/BlueSpiceEchoConnector",
+	"author": [
+		"Sebastian Ulbricht",
+		"Robert Vogel",
+		"Dejan Savuljesku"
+	],
+	"descriptionmsg": "bs-echoconnector-extension-description",
+	"type": "bluespice",
+	"callback": "EchoConnectorHooks::onRegistration",
+	"MessagesDirs": {
+		"BlueSpiceEchoConnector": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"EchoConnectorHooks": "includes/EchoConnectorHooks.php",
+		"BsEchoNotificationHandler": "includes/BsEchoNotificationHandler.php",
+		"BsNotificationsFormatter": "includes/formatters/BsNotificationsFormatter.php",
+		"BsEchoEmailSingle": "includes/formatters/BsEchoEmailSingle.php",
+		"BsEchoTextEmailFormatter": "includes/formatters/BsEchoTextEmailFormatter.php",
+		"BsEchoTextEmailDecorator": "includes/formatters/BsEchoTextEmailDecorator.php",
+		"BsEchoHTMLEmailFormatter": "includes/formatters/BsEchoHTMLEmailFormatter.php",
+		"BsEchoEventPresentationModel": "includes/formatters/BsEchoEventPresentationModel.php",
+		"BsEchoEmailDigest": "includes/formatters/BsEchoEmailDigest.php",
+		"BsEmailBatch": "includes/BsEmailBatch.php",
+		"BsEchoUserLocator": "includes/UserLocator.php"
+	},
+	"Hooks": {
+		"BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",
+		"EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers",
+		"EchoGetBundleRules": "EchoConnectorHooks::onEchoGetBundleRules",
 	"BeforePageDisplay": "EchoConnectorHooks::onBeforePageDisplay"
-    },
+	},
 	"ResourceModules": {
 		"ext.bluespice.echoconnector.fixer": {
 			"scripts": [
@@ -44,11 +44,15 @@
 				"ext.echo.ui",
 				"ext.echo.ui.desktop"
 			]
+		},
+		"ext.echo.fixer.styles": {
+			"styles": "echo.special.fixes.css",
+			"position": "top"
 		}
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "resources",
 		"remoteExtPath": "BlueSpiceEchoConnector/resources"
 	},
-    "manifest_version": 1
+	"manifest_version": 1
 }
