@@ -11,6 +11,11 @@
 		"mediawiki/mediawiki-codesniffer": "0.12",
 		"phpunit/phpunit": "4.8.*"
 	},
+	"autoload": {
+		"psr-4": {
+			"BlueSpice\\EchoConnector\\": "src"
+		}
+	},
 	"scripts": {
 		"test": [
 			"parallel-lint . --exclude vendor",

@@ -1,9 +1,0 @@
-
-ul#mw-echo-special-container {
-	max-width: 100% !important;
-}
-#mw-echo-special-container .mw-echo-state .mw-echo-content .mw-echo-payload {
-	overflow: visible;
-	text-overflow: clip;
-	white-space: normal;
-}

@@ -10,49 +10,66 @@
 	],
 	"descriptionmsg": "bs-echoconnector-extension-description",
 	"type": "bluespice",
-	"callback": "EchoConnectorHooks::onRegistration",
-	"MessagesDirs": {
-		"BlueSpiceEchoConnector": [
-			"i18n"
-		]
-	},
-	"AutoloadClasses": {
-		"EchoConnectorHooks": "includes/EchoConnectorHooks.php",
-		"BsEchoNotificationHandler": "includes/BsEchoNotificationHandler.php",
-		"BsNotificationsFormatter": "includes/formatters/BsNotificationsFormatter.php",
-		"BsEchoEmailSingle": "includes/formatters/BsEchoEmailSingle.php",
-		"BsEchoTextEmailFormatter": "includes/formatters/BsEchoTextEmailFormatter.php",
-		"BsEchoTextEmailDecorator": "includes/formatters/BsEchoTextEmailDecorator.php",
-		"BsEchoHTMLEmailFormatter": "includes/formatters/BsEchoHTMLEmailFormatter.php",
-		"BsEchoEventPresentationModel": "includes/formatters/BsEchoEventPresentationModel.php",
-		"BsEchoEmailDigest": "includes/formatters/BsEchoEmailDigest.php",
-		"BsEmailBatch": "includes/BsEmailBatch.php",
-		"BsEchoUserLocator": "includes/UserLocator.php"
-	},
-	"Hooks": {
-		"BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",
-		"EchoGetDefaultNotifiedUsers": "EchoConnectorHooks::onEchoGetDefaultNotifiedUsers",
-		"EchoGetBundleRules": "EchoConnectorHooks::onEchoGetBundleRules",
-		"BeforePageDisplay": "EchoConnectorHooks::onBeforePageDisplay"
-	},
-	"ResourceModules": {
-		"ext.bluespice.echoconnector.fixer": {
-			"scripts": [
-				"echo.loader.fixer.js"
-			],
-			"dependencies": [
-				"ext.echo.ui",
-				"ext.echo.ui.desktop"
+	"attributes": {
+		"BlueSpiceFoundation": {
+			"Notifiers": {
+				"bsecho": "\\BlueSpice\\EchoConnector\\Notifier\\NotificationsEchoNotifier"
+			},
+			"NotificationRegistrationFunctions": [
+				"\\BlueSpice\\EchoConnector\\Extension::registerNotifications"
 			]
 		},
-		"ext.bluespice.echoconnector.fixer.styles": {
-			"styles": "echo.special.fixes.css",
-			"position": "top"
+		"BlueSpiceEchoConnector": {
+			"ParamParsers": {},
+			"NotificationIcons": {
+				"delete": {
+					"path": "BlueSpiceEchoConnector/resources/images/delete.png"
+				}
+			}
 		}
 	},
-	"ResourceFileModulePaths": {
-		"localBasePath": "resources",
-		"remoteExtPath": "BlueSpiceEchoConnector/resources"
+	"MessagesDirs": {
+		"BlueSpiceEchoConnector": [
+			"i18n",
+			"i18n/notifications"
+		]
 	},
-	"manifest_version": 1
+	"Hooks": {
+		"ArticleDeleteComplete": [
+			"\\BlueSpice\\EchoConnector\\Hook\\ArticleDeleteComplete\\NotifyUsers::callback"
+		],
+		"TitleMoveComplete": [
+			"\\BlueSpice\\EchoConnector\\Hook\\TitleMoveComplete\\NotifyUsers::callback"
+		],
+		"PageContentSaveComplete": [
+			"\\BlueSpice\\EchoConnector\\Hook\\PageContentSaveComplete\\NotifyUsers::callback"
+		],
+		"BSUserManagerAfterAddUser": [
+			"\\BlueSpice\\EchoConnector\\Hook\\BSUserManagerAfterAddUser\\NotifyUsers::callback"
+		],
+		"EchoGetNotificationTypes": [
+			"\\BlueSpice\\EchoConnector\\Hook\\EchoGetNotificationTypes\\GetNotificationTypesForEvent::callback"
+		],
+		"EchoGetBundleRules": [
+			"\\BlueSpice\\EchoConnector\\Hook\\EchoGetBundleRules\\GetBundleRules::callback"
+		]
+	},
+	"config_prefix": "bsg",
+	"config": {
+		"EchoHtmlMailTemplatePath": {
+			"value": "/templates",
+			"path": true
+		},
+		"EchoHtmlMailTemlateNames": {
+			"value": {
+				"single": "SingleMail",
+				"digest": "Digest",
+				"primary_link": "PrimaryLink",
+				"secondary_link": "SecondaryLink",
+				"digest_list": "DigestList"
+			}
+		}
+	},
+	"load_composer_autoloader": true,
+	"manifest_version": 2
 }
