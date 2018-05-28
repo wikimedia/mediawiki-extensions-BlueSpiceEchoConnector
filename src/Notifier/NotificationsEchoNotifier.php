@@ -12,10 +12,35 @@ use \BlueSpice\EchoConnector\NotificationFormatter;
  * not override of Echo default notifier
  */
 class NotificationsEchoNotifier implements \BlueSpice\INotifier {
+
+	/**
+	 *
+	 * @var array
+	 */
 	protected $echoNotifications;
+
+	/**
+	 *
+	 * @var array
+	 */
 	protected $echoNotificationCategories;
+
+	/**
+	 *
+	 * @var array
+	 */
 	protected $echoIcons;
-	
+
+	/**
+	 *
+	 * @var \Config
+	 */
+	protected $config;
+
+	public function __construct( \Config $config ) {
+		$this->config = $config;
+	}
+
 	public function getNotificationObject( $key, $params ) {
 		return new EchoNotification( $key, $params );
 	}
@@ -47,6 +72,11 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			return;
 		}
 
+		if( isset( $this->echoNotifications[$notification->getKey()] ) == false ) {
+			//Notification not registered
+			return;
+		}
+
 		$echoNotif = [
 			'type' => $notification->getKey(),
 			'agent' => $notification->getUser(),
@@ -58,7 +88,15 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			$echoNotif['extra']['affected-users'] = $notification->getAudience();
 		}
 
-		\EchoEvent::create ( $echoNotif );
+		if( $this->checkUseJobQueue( $notification ) ) {
+			$job = new \BlueSpice\EchoConnector\Job\SendNotification(
+				$notification->getTitle(),
+				$echoNotif
+			);
+			\JobQueueGroup::singleton()->push( $job );
+		} else {
+			\EchoEvent::create ( $echoNotif );
+		}
 
 		return \Status::newGood();
 	}
@@ -143,6 +181,35 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	}
 
 	public static function filterUsersToNotify( $event ) {
+	}
+
+	protected function checkUseJobQueue( $notification ) {
+		$echoNotificationConfig = $this->echoNotifications[$notification->getKey()];
+
+		if( $notification->getTitle() instanceof \Title == false ) {
+			//If notification has no Title object set, we cannot use JQ
+			return false;
+		}
+
+		if( isset( $echoNotificationConfig['use-job-queue'] ) && $echoNotificationConfig['use-job-queue'] == true ) {
+			return true;
+		}
+
+		if( $this->config->get( 'UseJobQueueForNotifications' ) == true ) {
+			return true;
+		}
+
+		$params = $notification->getParams();
+		if( isset( $params['use-job-queue'] ) && $params['use-job-queue'] == true ) {
+			return true;
+		}
+
+		if( count( $notification->getAudience() ) > $this->config->get( 'ForceJobQueueForLargeAudienceThreshold' ) ) {
+			//Force JQ if there are too many users to send notif to
+			return true;
+		}
+
+		return false;
 	}
 
 }
