@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Guycn2"
+		]
+	},
+	"bs-notifications-email-addaccount-subject": "{{GENDER:$1|המשתמש|המשתמשת}} \"$2\" {{GENDER:$1|נוצר|נוצרה}}",
+	"bs-notifications-web-move-body": "הדף \"$1\" {{GENDER:$2|הועבר}} לשם \"$3\" על־ידי $4",
+	"bs-notifications-param-realname-with-username": "$1 ($2)"
+}

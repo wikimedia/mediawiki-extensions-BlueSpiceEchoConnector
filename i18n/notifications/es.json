@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Larjona",
+			"Macofe"
+		]
+	},
+	"bs-notifications-email-addaccount-subject": "Se {{GENDER:$1|creó}} el usuario $2",
+	"bs-notifications-email-addaccount-body": "Se creó {{GENDER:$2|el usuario|la usuaria}} $3.\n\nPuedes visitar {{GENDER:$2|su|su|la}} página de usuario siguiendo este enlace:\n$1",
+	"bs-notifications-edit": "Se modificó la página [[:$1]]",
+	"bs-notifications-email-edit-subject": "$3 {{GENDER:$2|editó}} la página $1",
+	"bs-notifications-email-edit-body": "$6 {{GENDER:$2|editó}} la página \"$1\".\n\nComentario:\n $3 \nPuedes visitar la página siguiendo este enlace:\n$4.\n\nSi sólo quieres ver los cambios, sigue este enlaceː\n$5",
+	"bs-notifications-create": "Se creó la página [[:$1]]",
+	"bs-notifications-email-create-subject": "$3 {{GENDER:$2|creó}} la página $1",
+	"bs-notifications-email-create-body": "$6 {{GENDER:$2|creó}} la página \"$1\".\n\nComentario:\n $3 \nPuedes visitar la página siguiendo este enlace:\n$4",
+	"bs-notifications-delete": "Se borró la página [[:$1]]",
+	"bs-notifications-email-delete-subject": "$3 {{GENDER:$2|borró}} la página $1",
+	"bs-notifications-email-delete-body": "$5 {{GENDER:$2|borró}} la página «$4».\n\nMotivo:\n$3",
+	"bs-notifications-move": "Se trasladó la página [[:$1]]",
+	"bs-notifications-email-move-subject": "$4 {{GENDER:$2|trasladó}} la página $1",
+	"bs-notifications-email-move-body": "$5 {{GENDER:$2|trasladó}} la página \"$1\" hacia $3. Puedes visitar la página siguiendo este enlace:\n$4"
+}

@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Urhixidur"
+		]
+	},
+	"bs-notifications-email-addaccount-subject": "{{GENDER:$1|Utilisateur|Utilisatrice}} $2 {{GENDER:$1|créé|créée}}",
+	"bs-notifications-email-addaccount-body": "L’utilisat{{GENDER:$2|eur|rice}} $3 a été créé{{GENDER:$2||e}}.\n\nVous pouvez visiter {{GENDER:$2|sa|sa|la}} page utilisateur en suivant ce lien : $1",
+	"bs-notifications-edit": "La page [[:$1]] a été modifiée",
+	"bs-notifications-email-edit-subject": "Page $1 modifiée par $3",
+	"bs-notifications-email-edit-body": "La page « $1 » a été {{GENDER:$2|modifiée}} par $6.\n\nCommentaire :\n$3 \nVous pouvez consulter cette page en suivant ce lien :\n$4.\n\nSi vous voulez ne voir que les modifications, suivez ce lien :\n$5",
+	"bs-notifications-create": "La page [[:$1]] a été créée",
+	"bs-notifications-email-create-subject": "Page $1 créée par $3",
+	"bs-notifications-email-create-body": "La page « $1 » a été {{GENDER:$2|créée}} par $6.\n\nCommentaire :\n$3 \nVous pouvez consulter cette page en suivant ce lien :\n$4",
+	"bs-notifications-delete": "La page [[:$1]] a été supprimée",
+	"bs-notifications-email-delete-subject": "Page $1 supprimée par $3",
+	"bs-notifications-email-delete-body": "La page « $4 » a été {{GENDER:$2|supprimée}} par $5.\n\nEn voici le motif :\n$3",
+	"bs-notifications-move": "La page [[:$1]] a été déplacée",
+	"bs-notifications-email-move-subject": "Page $1 déplacée par $4",
+	"bs-notifications-email-move-body": "La page « $1 » a été {{GENDER:$2|déplacée}} en $3 par $5. Vous pouvez consulter cette page en suivant ce lien :\n$4"
+}

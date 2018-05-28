@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"bs-notifications-email-addaccount-subject": "Användaren $2 har {{GENDER:$1|skapats}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$2|Användaren}} $3 har skapats.\n\nDu kan besöka {{GENDER:$2|hans|hennes|dennes}} användarsida via denna länk:\n$1",
+	"bs-notifications-edit": "Sidan [[:$1]] har ändrats",
+	"bs-notifications-email-edit-subject": "Sidan $1 {{GENDER:$2|redigerades}} av $3",
+	"bs-notifications-email-edit-body": "Sidan \"$1\" har {{GENDER:$2|redigerades}} av $6.\n\nKommentar:\n $3 \nDu kan besöka sidan med följande länk:\n$4\n\nOm du bara vill se ändringarna kan du följa denna länk:\n$5",
+	"bs-notifications-create": "Sidan [[:$1]] har skapats",
+	"bs-notifications-email-create-subject": "Sidan $1 {{GENDER:$2|skapades}} av $3",
+	"bs-notifications-email-create-body": "Sidan \"$1\" har {{GENDER:$2|skapats}} av $6.\n\nKommentar:\n $3 \nDu kan besöka sidan med följande länk:\n$4",
+	"bs-notifications-delete": "Sidan [[:$1]] har raderats",
+	"bs-notifications-email-delete-subject": "Sidan $1 {{GENDER:$2|raderades}} av $3",
+	"bs-notifications-email-delete-body": "Sidan \"$4\" har {{GENDER:$2|raderats}} av $5.\n\nDetta var anledningen:\n$3",
+	"bs-notifications-move": "Sidan [[:$1]] har flyttats",
+	"bs-notifications-email-move-subject": "Sidan $1 {{GENDER:$2|flyttades}} av $4",
+	"bs-notifications-email-move-body": "Sidan \"$1\" har {{GENDER:$2|flyttats}} till $3 av $5. Du kan besöka sidan med följande länk:\n$4"
+}
