@@ -68,7 +68,16 @@
 				"secondary_link": "SecondaryLink",
 				"digest_list": "DigestList"
 			}
+		},
+		"UseJobQueueForNotifications": {
+			"value": false
+		},
+		"ForceJobQueueForLargeAudienceThreshold": {
+			"value": 499
 		}
+	},
+	"JobClasses": {
+		"sendNotification": "BlueSpice\\EchoConnector\\Job\\SendNotification"
 	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2

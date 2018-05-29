@@ -19,6 +19,10 @@ class NotifyUsers extends PageContentSaveComplete {
 
 		$notifier = $notificationsManager->getNotifier( 'bsecho' );
 
+		if( !$notifier ) {
+			return true;
+		}
+
 		$realname = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
 			->getUserHelper( $this->user )->getDisplayName();
 
