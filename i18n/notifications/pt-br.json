@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"bs-notifications-addaccount": "O usuário \"$1\" foi criado.",
+	"bs-notifications-edit": "A página \"$1\" foi alterada",
+	"bs-notifications-create": "A página \"$1\" foi criada",
+	"bs-notifications-delete": "A página \"$1\" foi eliminada",
+	"bs-notifications-move": "A página \"$1\" foi movida",
+	"bs-notifications-edit-difflink-label": "Veja a diferença",
+	"bs-notifications-htmlmail-sender-info": "$1 notificação de sistema",
+	"bs-notifications-mail-additional-links-label": "Links adicionais"
+}

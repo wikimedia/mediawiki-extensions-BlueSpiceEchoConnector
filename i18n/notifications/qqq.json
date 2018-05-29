@@ -3,7 +3,8 @@
 		"authors": [
 			"Markus Glaser <glaser@hallowelt.com>",
 			"Dejan Savuljesku<savuljesku@hallowelt.com>",
-			"Raymond"
+			"Raymond",
+			"Guycn2"
 		]
 	},
 	"bs-notifications-addaccount": "Short message that a user was created. Parameters:\n* $1 username of the created user",
@@ -30,7 +31,7 @@
 	"bs-notifications-web-move-body": "A page was moved to another target by a user. Parameters:\n* $1 page that was moved\n* $2 username\n* $3 new pagename\n* $4 realname of user who made the move\n*",
 	"bs-notifications-edit-difflink-label": "Label for button leading to page showing difference between two revisions",
 	"bs-notifications-htmlmail-greeting": "Greeting message for HTML mails. Parameters:\n*$1 - realname (if available) or username of user receiving the mail",
-	"bs-notifications-htmlmail-sender-info": "Message showing who is sending the mail. Only visible in HTML mails.Parameters:\n*$1 - Name of the wiki - $wgSitename",
+	"bs-notifications-htmlmail-sender-info": "Message showing who is sending the mail. Only visible in HTML mails. Parameters:\n*$1 - Name of the wiki - $wgSitename",
 	"bs-notifications-mail-additional-links-label": "Label for section showing secondary links for notification",
 	"bs-notifications-param-realname-with-username": "Convinience message showing realname and username of a user. Parameters:\n*$1 - realname \n*$2 - username"
 }
