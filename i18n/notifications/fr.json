@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Urhixidur"
+			"Urhixidur",
+			"Wladek92"
 		]
 	},
 	"bs-notifications-email-addaccount-subject": "{{GENDER:$1|Utilisateur|Utilisatrice}} $2 {{GENDER:$1|créé|créée}}",
@@ -15,6 +16,7 @@
 	"bs-notifications-delete": "La page [[:$1]] a été supprimée",
 	"bs-notifications-email-delete-subject": "Page $1 supprimée par $3",
 	"bs-notifications-email-delete-body": "La page « $4 » a été {{GENDER:$2|supprimée}} par $5.\n\nEn voici le motif :\n$3",
+	"bs-notifications-web-delete-body": "La page « $1 » a été supprimé{{GENDER:$2|e|e}} par $3 .",
 	"bs-notifications-move": "La page [[:$1]] a été déplacée",
 	"bs-notifications-email-move-subject": "Page $1 déplacée par $4",
 	"bs-notifications-email-move-body": "La page « $1 » a été {{GENDER:$2|déplacée}} en $3 par $5. Vous pouvez consulter cette page en suivant ce lien :\n$4"
