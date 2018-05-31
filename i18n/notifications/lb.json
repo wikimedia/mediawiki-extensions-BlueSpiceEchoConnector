@@ -13,10 +13,11 @@
 	"bs-notifications-email-edit-body": "D'Säit \"$1\" gouf vum $4 {{GENDER:$2|geännert}}.\n\nBemierkung:\n$3",
 	"bs-notifications-web-edit-body": "D'Säit \"$1\" gouf vum $3 {{GENDER:$2|geännert}}.",
 	"bs-notifications-create": "D'Säit \"$1\" gouf ugeluecht",
-	"bs-notifications-email-create-subject": "Säit $1 {{GENDER:$2|ugeluecht}} vum $3",
+	"bs-notifications-email-create-subject": "Säit \"$1\" {{GENDER:$2|ugeluecht}} vum $3",
 	"bs-notifications-email-create-body": "D'Säit \"$1\" gouf {{GENDER:$2|vum}} $3 ugeluecht.\n\nBemierkung:\n$4\nDir kënnt d'Säit op dem Link hei drënner fannen",
+	"bs-notifications-web-create-body": "D'Säit $1 gouf vum $3 {{GENDER:$2|u}geluecht}.",
 	"bs-notifications-delete": "D'Säit \"$1\" ouf geläscht",
-	"bs-notifications-email-delete-subject": "Säit $1 {{GENDER:$2|geläscht}} vum $3",
+	"bs-notifications-email-delete-subject": "Säit \"$1\" {{GENDER:$2|geläscht}} vum $3",
 	"bs-notifications-email-delete-body": "D'Säit \"$1\" gouf vum $3 {{GENDER:$2|geläscht}}.\n\nDe Grond war:\n$4",
 	"bs-notifications-web-delete-body": "D'Säit \"$1\" gouf vum $3 {{GENDER:$2|geläscht}}.",
 	"bs-notifications-move": "D'Säit \"$1\" gouf geréckelt",
@@ -24,5 +25,6 @@
 	"bs-notifications-email-move-body": "D'Säit \"$1\" gouf vum $5 op $3 {{GENDER:$2|geréckelt}}. Dir kënnt d'Säit op dësem Link fannen: $4",
 	"bs-notifications-edit-difflink-label": "Kuckt den Ënnerscheed",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Salut}} $1",
+	"bs-notifications-htmlmail-sender-info": "$1-Notifikatiounssystem",
 	"bs-notifications-mail-additional-links-label": "Zousätzlech Linken"
 }
