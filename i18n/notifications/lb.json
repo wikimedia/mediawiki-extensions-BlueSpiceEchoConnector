@@ -5,7 +5,7 @@
 		]
 	},
 	"bs-notifications-addaccount": "De Benotzer \"$1\" gouf ugeluecht.",
-	"bs-notifications-email-addaccount-subject": "Benotzer $2 gouf {{GENDER:$1|ugeluecht}}",
+	"bs-notifications-email-addaccount-subject": "Benotzer \"$2\" gouf {{GENDER:$1|ugeluecht}}",
 	"bs-notifications-email-addaccount-body": "{{GENDER:$2|De Benotzer}} $2 gouf ugeluecht.\n\nDir kënnt {{GENDER:$1|seng|hir|d'}} Benotzersäit besiche wann Dir de Link hei drënner benotzt",
 	"bs-notifications-edit": "D'Säit \"$1\" gouf geännert",
 	"bs-notifications-edit-bundle": "D'Säit *$2\" gouf {{PLURAL:$1|ee|$1}} Mol geännert",
@@ -22,7 +22,8 @@
 	"bs-notifications-web-delete-body": "D'Säit \"$1\" gouf vum $3 {{GENDER:$2|geläscht}}.",
 	"bs-notifications-move": "D'Säit \"$1\" gouf geréckelt",
 	"bs-notifications-email-move-subject": "Säit \"$1\" {{GENDER:$2|geréckelt}} op \"$3\" vum $4",
-	"bs-notifications-email-move-body": "D'Säit \"$1\" gouf vum $5 op $3 {{GENDER:$2|geréckelt}}. Dir kënnt d'Säit op dësem Link fannen: $4",
+	"bs-notifications-email-move-body": "D'Säit \"$1\" gouf vum $5 op \"$3\" {{GENDER:$2|geréckelt}}.\n\nDe Grond war:\n$5\n\nDir kënnt d'Säit iwwer de Link hei drënner opmaachen$4",
+	"bs-notifications-web-move-body": "D'Säit \"$1\" gouf vu(n) $4 op \"$3\" {{GENDER:$2|geréckelt}}",
 	"bs-notifications-edit-difflink-label": "Kuckt den Ënnerscheed",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Salut}} $1",
 	"bs-notifications-htmlmail-sender-info": "$1-Notifikatiounssystem",
