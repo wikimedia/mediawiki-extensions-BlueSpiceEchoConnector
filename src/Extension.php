@@ -192,8 +192,8 @@ class Extension {
 	//This seems like a shootgun approach, not everyone should
 	//be notified of every change on every page
 	public static function getUsersToNotify( $event ) {
-		// Everyone deserves to know when something happens
-		// on their user talk page
+		$users = [];
+
 		$dbr = wfGetDB ( DB_SLAVE );
 		switch ( $event->getType () ) {
 			case 'bs-adduser':
