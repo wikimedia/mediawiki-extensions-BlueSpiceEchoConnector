@@ -191,16 +191,23 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			return false;
 		}
 
+		$params = $notification->getParams();
+		if( isset( $params['use-job-queue'] ) && $params['use-job-queue'] == true ) {
+			return true;
+		}
+
+		//Setting immediate-email will override default settings for using job queue.
+		//If job queue is really necessary in conjuction with this param it must be set
+		//explicitly when calling notify
+		if( isset( $params['immediate-email'] ) && $params['immediate-email'] == true ) {
+			return false;
+		}
+
 		if( isset( $echoNotificationConfig['use-job-queue'] ) && $echoNotificationConfig['use-job-queue'] == true ) {
 			return true;
 		}
 
 		if( $this->config->get( 'UseJobQueueForNotifications' ) == true ) {
-			return true;
-		}
-
-		$params = $notification->getParams();
-		if( isset( $params['use-job-queue'] ) && $params['use-job-queue'] == true ) {
 			return true;
 		}
 

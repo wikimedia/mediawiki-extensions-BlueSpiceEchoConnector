@@ -47,8 +47,11 @@ class EchoNotifier extends \EchoNotifier {
 
 			\MWEchoEventLogging::logSchemaEcho( $user, $event, 'email' );
 
+			$extra = $event->getExtra();
+			$sendImmediately = isset( $extra['immediate-email'] ) && $extra['immediate-email'] == true;
+
 			// email digest notification ( weekly or daily )
-			if ( $wgEchoEnableEmailBatch && $user->getOption( 'echo-email-frequency' ) > 0 ) {
+			if ( $wgEchoEnableEmailBatch && $user->getOption( 'echo-email-frequency' ) > 0 && !$sendImmediately ) {
 				// always create a unique event hash for those events don't support bundling
 				// this is mainly for group by
 				if ( !$bundleHash ) {
