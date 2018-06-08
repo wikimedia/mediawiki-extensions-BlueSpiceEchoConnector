@@ -26,7 +26,8 @@
 		"BsEchoEventPresentationModel": "includes/formatters/BsEchoEventPresentationModel.php",
 		"BsEchoEmailDigest": "includes/formatters/BsEchoEmailDigest.php",
 		"BsEmailBatch": "includes/BsEmailBatch.php",
-		"BsEchoUserLocator": "includes/UserLocator.php"
+		"BsEchoUserLocator": "includes/UserLocator.php",
+		"BsEchoNotifier": "includes/BsEchoNotifier.php"
 	},
 	"Hooks": {
 		"BeforeNotificationsInit": "EchoConnectorHooks::onBeforeNotificationsInit",

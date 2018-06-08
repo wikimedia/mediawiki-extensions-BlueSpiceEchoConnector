@@ -28,6 +28,11 @@
 class BsEchoNotificationHandler extends BSNotificationHandler {
 
 	public static function init () {
+		$GLOBALS['wgEchoNotifiers'] = array(
+			'web' => array( 'BsEchoNotifier', 'notifyWithNotification' ),
+			'email' => array( 'BsEchoNotifier', 'notifyWithEmail' ),
+		);
+
 		self::registerNotificationCategory ( 'bs-admin-cat', 3, null, null, array ( 'sysop' ) );
 		self::registerNotificationCategory ( 'bs-page-actions-cat', 3 );
 
@@ -384,7 +389,7 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 				'titlelink' => true,
 				'difflink' => $aDiffParams,
 				'agentlink' => true,
-				'realname' => BsUserHelper::getUserDisplayName( $oUser ),
+				'realname' => BsUserHelper::getUserDisplayName( $oUser )
 			)
 		);
 
