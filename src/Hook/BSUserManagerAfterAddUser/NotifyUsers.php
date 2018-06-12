@@ -3,13 +3,14 @@
 namespace BlueSpice\EchoConnector\Hook\BSUserManagerAfterAddUser;
 
 use BlueSpice\UserManager\Hook\BSUserManagerAfterAddUser;
+use BlueSpice\EchoConnector\Notification\AddUserNotification;
 
 class NotifyUsers extends BSUserManagerAfterAddUser {
-	
+
 	protected function doProcess() {
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
-		$notifier = $notificationsManager->getNotifier( 'bsecho' );
+		$notifier = $notificationsManager->getNotifier();
 
 		$realname = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
 			->getUserHelper( $this->user )->getDisplayName();
@@ -20,23 +21,20 @@ class NotifyUsers extends BSUserManagerAfterAddUser {
 		$performerRealName = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
 			->getUserHelper()->getDisplayName( $this->performer );
 
-		$notification = $notifier->getNotificationObject(
-			'bs-adduser',
-			[
-				'title' => $this->user->getUserPage(),
-				'agent' => $this->performer,
-				'extra-params' => [
-					'realname' => $realname,
-					'user' => $this->user,
-					'secondary-links' => [
-						'performer' => [
-							'url' => $this->performer->getUserPage()->getFullURL(),
-							'label-params' => [$performerRealName]
-						]
-					]
-				]
-			]
+		$extraParams = [
+			'realname' => $realname,
+			'user' => $this->user
+		];
+
+		$notification = new AddUserNotification(
+			$this->performer,
+			$this->user->getUserPage(),
+			$extraParams
 		);
+		$notification->addSecondaryLink( 'performer', [
+			'url' => $this->performer->getUserPage()->getFullURL(),
+			'label-params' => [$performerRealName]
+		] );
 
 		$notifier->notify( $notification );
 

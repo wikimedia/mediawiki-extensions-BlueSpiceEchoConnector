@@ -41,8 +41,16 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		$this->config = $config;
 	}
 
-	public function getNotificationObject( $key, $params ) {
-		return new EchoNotification( $key, $params );
+	/**
+	 *
+	 * @param string $key
+	 * @param \User $agent
+	 * @param \Title|null $title
+	 * @param array|null $params
+	 * @return EchoNotification
+	 */
+	public function getNotificationObject( $key, $agent, $title = null, $params = [] ) {
+		return new EchoNotification( $key, $agent, $title, $params );
 	}
 
 	public function init() {
@@ -86,6 +94,14 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 
 		if( !empty( $notification->getAudience() ) ) {
 			$echoNotif['extra']['affected-users'] = $notification->getAudience();
+		}
+
+		if( $notification->getImmediateEmail() == true ) {
+			$echoNotif['extra']['immediate-email'] = true;
+		}
+
+		if( !empty( $notification->getSecondaryLinks() ) ) {
+			$echoNotif['extra']['secondary-links'] = $notification->getSecondaryLinks();
 		}
 
 		if( $this->checkUseJobQueue( $notification ) ) {
@@ -155,6 +171,12 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		];
 	}
 
+	/**
+	 * Registeres Echo notification category
+	 *
+	 * @param string $key
+	 * @param array $params
+	*/
 	public function registerNotificationCategory( $key, $params ) {
 		$this->echoNotificationCategories[$key] = $params;
 	}
@@ -165,6 +187,12 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		}
 	}
 
+	/**
+	 * Converts user list from extra params to users to be notified
+	 *
+	 * @param \EchoEvent $event
+	 * @return array
+	 */
 	public static function setUsersToNotify( $event ) {
 		$users = $event->getExtraParam( 'affected-users', [] );
 
@@ -180,6 +208,11 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		return $res;
 	}
 
+	/**
+	 * No-op for now
+	 *
+	 * @param \EchoEvent $event
+	 */
 	public static function filterUsersToNotify( $event ) {
 	}
 
@@ -191,15 +224,14 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			return false;
 		}
 
-		$params = $notification->getParams();
-		if( isset( $params['use-job-queue'] ) && $params['use-job-queue'] == true ) {
+		if( $notification->useJobQueue() == true ) {
 			return true;
 		}
 
 		//Setting immediate-email will override default settings for using job queue.
 		//If job queue is really necessary in conjuction with this param it must be set
 		//explicitly when calling notify
-		if( isset( $params['immediate-email'] ) && $params['immediate-email'] == true ) {
+		if( $notification->getImmediateEmail() == true ) {
 			return false;
 		}
 

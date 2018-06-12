@@ -12,9 +12,6 @@
 	"type": "bluespice",
 	"attributes": {
 		"BlueSpiceFoundation": {
-			"Notifiers": {
-				"bsecho": "\\BlueSpice\\EchoConnector\\Notifier\\NotificationsEchoNotifier"
-			},
 			"NotificationRegistrationFunctions": [
 				"\\BlueSpice\\EchoConnector\\Extension::registerNotifications"
 			]
@@ -34,6 +31,7 @@
 			"i18n/notifications"
 		]
 	},
+	"callback": "\\BlueSpice\\EchoConnector\\Extension::onRegistration",
 	"Hooks": {
 		"ArticleDeleteComplete": [
 			"\\BlueSpice\\EchoConnector\\Hook\\ArticleDeleteComplete\\NotifyUsers::callback"

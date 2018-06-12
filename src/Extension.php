@@ -2,9 +2,20 @@
 
 namespace BlueSpice\EchoConnector;
 
+use BlueSpice\EchoConnector\Notifier\NotificationsEchoNotifier;
+
 class Extension {
+	/**
+	 *
+	 * @global type $bsgNotifierClass
+	 */
+	public static function onRegistration() {
+		global $bsgNotifierClass;
+		$bsgNotifierClass = NotificationsEchoNotifier::class;
+	}
+
 	public static function registerNotifications( \BlueSpice\NotificationManager $notificationsManager ) {
-		$echoNotifier = $notificationsManager->getNotifier( 'bsecho' );
+		$echoNotifier = $notificationsManager->getNotifier();
 
 		$echoNotifier->registerNotificationCategory(
 			'bs-admin-cat',
@@ -17,7 +28,6 @@ class Extension {
 
 		$notificationsManager->registerNotification(
 			'bs-adduser',
-			$echoNotifier,
 			[
 				'category' => 'bs-admin-cat',
 				'summary-message' => 'bs-notifications-addaccount',
@@ -52,7 +62,6 @@ class Extension {
 
 		$notificationsManager->registerNotification(
 			'bs-edit',
-			$echoNotifier,
 			[
 				'category' => 'bs-page-actions-cat',
 				'summary-message' => 'bs-notifications-edit',
@@ -94,7 +103,6 @@ class Extension {
 
 		$notificationsManager->registerNotification(
 			'bs-create',
-			$echoNotifier,
 			[
 				'category' => 'bs-page-actions-cat',
 				'summary-message' => 'bs-notifications-create',
@@ -125,7 +133,6 @@ class Extension {
 
 		$notificationsManager->registerNotification(
 			'bs-delete',
-			$echoNotifier,
 			[
 				'category' => 'bs-page-actions-cat',
 				'summary-message' => 'bs-notifications-delete',
@@ -159,7 +166,6 @@ class Extension {
 
 		$notificationsManager->registerNotification(
 			'bs-move',
-			$echoNotifier,
 			[
 				'category' => 'bs-page-actions-cat',
 				'category' => 'bs-page-actions-cat',

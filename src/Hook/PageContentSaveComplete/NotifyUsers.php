@@ -3,21 +3,23 @@
 namespace BlueSpice\EchoConnector\Hook\PageContentSaveComplete;
 
 use BlueSpice\Hook\PageContentSaveComplete;
+use BlueSpice\EchoConnector\Notification\CreateNotification;
+use BlueSpice\EchoConnector\Notification\EditNotification;
 
 class NotifyUsers extends PageContentSaveComplete {
-	
+
 	protected function doProcess() {
 		if ( $this->user->isAllowed( 'bot' ) ) {
 			return true;
 		}
-			
+
 		if ( $this->wikipage->getTitle()->getNamespace() === NS_USER_TALK ) {
 			return true;
 		}
 
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
-		$notifier = $notificationsManager->getNotifier( 'bsecho' );
+		$notifier = $notificationsManager->getNotifier();
 
 		if( !$notifier ) {
 			return true;
@@ -29,19 +31,14 @@ class NotifyUsers extends PageContentSaveComplete {
 		$title = $this->wikipage->getTitle();
 
 		if ( $this->flags & EDIT_NEW ) {
-			$notification = $notifier->getNotificationObject(
-				'bs-create',
-				[
-					'agent' => $this->user,
-					'title' => $title,
-					'extra-params' => [
-						'summary' => $this->summary,
-						'realname' => $realname
-					]
-				]
-			);
+			$extraParams = [
+				'summary' => $this->summary,
+				'realname' => $realname
+			];
 
+			$notification = new CreateNotification( $this->user, $title, $extraParams );
 			$notifier->notify( $notification );
+
 			return true;
 		}
 
@@ -59,21 +56,14 @@ class NotifyUsers extends PageContentSaveComplete {
 			'oldid' => $diffParams['oldid']
 		] );
 
-		$notification = $notifier->getNotificationObject(
-			'bs-edit',
-			[
-				'agent' => $this->user,
-				'title' => $title,
-				'extra-params' => [
-					'summary' => $this->summary,
-					'titlelink' => true,
-					'realname' => $realname,
-					'secondary-links' => [
-						'difflink' => $diffUrl
-					]
-				]
-			]
-		);
+		$extraParams = [
+			'summary' => $this->summary,
+			'titlelink' => true,
+			'realname' => $realname
+		];
+
+		$notification = new EditNotification( $this->user, $title, $extraParams );
+		$notification->addSecondaryLink( 'difflink', $diffUrl );
 
 		$notifier->notify( $notification );
 
