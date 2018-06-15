@@ -3,6 +3,7 @@
 namespace BlueSpice\EchoConnector;
 
 use BlueSpice\EchoConnector\Notifier\NotificationsEchoNotifier;
+use BlueSpice\EchoConnector\PresentationModel;
 
 class Extension {
 	/**
@@ -64,39 +65,12 @@ class Extension {
 			'bs-edit',
 			[
 				'category' => 'bs-page-actions-cat',
-				'summary-message' => 'bs-notifications-edit',
-				'summary-params' => [
-					'title'
+				'presentation-model' => PresentationModel\EditPresentationModel::class,
+				'bundle' => [
+					'web' => true,
+					'email' => true,
+					'expandable' => true
 				],
-				'email-subject-message' => 'bs-notifications-email-edit-subject',
-				'email-subject-params' => array (
-					'title', 'agent', 'realname'
-				),
-				'email-body-message' => 'bs-notifications-email-edit-body',
-				'email-body-params' => array (
-					'title', 'agent', 'summary', 'realname'
-				),
-				'web-body-message' => 'bs-notifications-web-edit-body',
-				'web-body-params' => array (
-					'title', 'agent', 'realname'
-				),
-				'extra-params' => array (
-					'bundle' => [
-						'web' => true,
-						'email' => true,
-						'expandable' => true,
-						'bundle-message' => 'bs-notifications-edit-bundle',
-						'bundle-params' => ['title']
-					],
-					'secondary-links' => [
-						'agentlink' => [],
-						'difflink' => [
-							'prioritized' => true,
-							'label' => 'bs-notifications-edit-difflink-label'
-						]
-					],
-					'icon' => 'edit'
-				),
 				'user-locators' => [self::class . '::getUsersToNotify']
 			]
 		);
