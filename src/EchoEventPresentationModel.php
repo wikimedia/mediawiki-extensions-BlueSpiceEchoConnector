@@ -51,7 +51,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 
 	public function getHeaderMessage() {
 		$content = $this->getHeaderMessageContent();
-		$msg = $this->msg($content['key']);
+		$msg = $this->msg( $content['key'] );
 
 		if ($this->isBundled()) {
 			if ( $content['bundle-key'] ) {
@@ -97,7 +97,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 	}
 
 	public function getSubjectMessage() {
-		return $this->getCompactHeaderMessage();
+		return $this->getHeaderMessage();
 	}
 
 	/**

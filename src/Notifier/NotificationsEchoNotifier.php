@@ -137,14 +137,6 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			$extraParams = $params[ 'extra-params' ];
 		}
 
-		if ( !isset ( $extraParams[ 'presentation-model' ] ) ) {
-			$extraParams[ 'presentation-model' ] = EchoEventPresentationModel::class;
-		}
-
-		if ( isset ( $params[ 'icon' ] ) ) {
-			$extraParams[ 'icon' ] = $params[ 'icon' ];
-		}
-
 		if( !isset( $params['user-locators'] ) || !is_array( $params['user-locators'] ) ) {
 			$params['user-locators'] = [self::class . '::setUsersToNotify'];
 		} else {
@@ -156,19 +148,29 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			$section = \EchoAttributeManager::MESSAGE;
 		}
 
-		$this->echoNotifications[$key] = $extraParams + [
+		$notificationConfig = $extraParams + [
 			'category' => $params[ 'category' ],
 			'section' => $section,
-			'title-message' => $params[ 'summary-message' ],
-			'title-params' => $params[ 'summary-params' ],
-			'web-body-message' => $params[ 'web-body-message' ],
-			'web-body-params' => $params[ 'web-body-params' ],
-			'email-subject-message' => $params[ 'email-subject-message' ],
-			'email-subject-params' => $params[ 'email-subject-params' ],
-			'email-body-message' => $params[ 'email-body-message' ],
-			'email-body-params' => $params[ 'email-body-params' ],
 			'user-locators' => $params['user-locators']
 		];
+
+		if ( !isset ( $params[ 'presentation-model' ] ) ) {
+			$notificationConfig += [
+				'presentation-model' => EchoEventPresentationModel::class,
+				'title-message' => $params[ 'summary-message' ],
+				'title-params' => $params[ 'summary-params' ],
+				'web-body-message' => $params[ 'web-body-message' ],
+				'web-body-params' => $params[ 'web-body-params' ],
+				'email-subject-message' => $params[ 'email-subject-message' ],
+				'email-subject-params' => $params[ 'email-subject-params' ],
+				'email-body-message' => $params[ 'email-body-message' ],
+				'email-body-params' => $params[ 'email-body-params' ],
+			];
+		} else {
+			$notificationConfig['presentation-model'] = $params['presentation-model'];
+		}
+
+		$this->echoNotifications[$key] = $notificationConfig;
 	}
 
 	/**
