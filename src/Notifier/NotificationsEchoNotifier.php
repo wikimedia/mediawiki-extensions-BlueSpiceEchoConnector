@@ -179,7 +179,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	 * @param string $key
 	 * @param array $params
 	*/
-	public function registerNotificationCategory( $key, $params ) {
+	public function registerNotificationCategory( $key, $params = [] ) {
 		$this->echoNotificationCategories[$key] = $params;
 	}
 
