@@ -1,5 +1,5 @@
 {
-	"name": "mediawiki/blue-spice-echo-connector",
+	"name": "bluespice/echoconnector",
 	"type": "mediawiki-extension",
 	"description": "Connects BlueSpice with Echo",
 	"license": "GPL-3.0-only",
@@ -24,5 +24,8 @@
 		"fix": [
 			"minus-x fix ."
 		]
+	},
+	"extra": {
+		"installer-name": "BlueSpiceEchoConnector"
 	}
 }
