@@ -17,7 +17,7 @@ class ParamParser implements IParamParser{
 	protected $paramParserRegistry;
 	protected $foreignParsers = [];
 
-	public function __construct( $event, $distributionType = 'web' ) {
+	public function __construct( \EchoEvent $event, $distributionType = 'web' ) {
 		$this->event = $event;
 
 		//Probably unnecessary, but maybe some parsers would use it
@@ -43,7 +43,7 @@ class ParamParser implements IParamParser{
 	 * @param \Message $message
 	 * @param string $param
 	 */
-	public function parseParam( $message, $param ) {
+	public function parseParam( \Message $message, $param ) {
 		$this->message = $message;
 
 		if( $this->parseWithForeignParser( $param ) ) {
