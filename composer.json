@@ -1,5 +1,5 @@
 {
-	"name": "mediawiki/blue-spice-echo-connector",
+	"name": "bluespice/echoconnector",
 	"type": "mediawiki-extension",
 	"description": "Connects BlueSpice with Echo",
 	"require": {
@@ -16,5 +16,8 @@
 			"phpunit",
 			"phpcs -p -s"
 		]
+	},
+	"extra": {
+		"installer-name": "BlueSpiceEchoConnector"
 	}
 }
