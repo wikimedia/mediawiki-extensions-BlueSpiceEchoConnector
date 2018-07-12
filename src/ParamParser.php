@@ -139,7 +139,8 @@ class ParamParser implements IParamParser {
 			return false;
 		}
 
-		$parser->parseParam( $this->message, $param );
+		$parser = $this;
+		$parser->parseParam( $this->message, $param, $parser );
 		return true;
 	}
 

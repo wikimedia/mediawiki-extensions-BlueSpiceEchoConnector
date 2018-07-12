@@ -25,46 +25,16 @@ class NotifyUsers extends PageContentSaveComplete {
 			return true;
 		}
 
-		$realname = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
-			->getUserHelper( $this->user )->getDisplayName();
-
 		$title = $this->wikipage->getTitle();
 
 		if ( $this->flags & EDIT_NEW ) {
-			$extraParams = [
-				'summary' => $this->summary,
-				'realname' => $realname
-			];
-
-			$notification = new CreateNotification( $this->user, $title, $extraParams );
+			$notification = new CreateNotification( $this->user, $title, $this->summary );
 			$notifier->notify( $notification );
 
 			return true;
 		}
 
-		$diffParams = [];
-		if ( is_object( $this->revision ) ) {
-			$diffParams[ 'diff' ] = $this->revision->getId();
-			if ( is_object( $this->revision->getPrevious() ) ) {
-				$diffParams[ 'oldid' ] = $this->revision->getPrevious()->getId();
-			}
-		}
-
-		$diffUrl = $title->getFullURL( [
-			'type' => 'revision',
-			'diff' => $diffParams['diff'],
-			'oldid' => $diffParams['oldid']
-		] );
-
-		$extraParams = [
-			'summary' => $this->summary,
-			'titlelink' => true,
-			'realname' => $realname
-		];
-
-		$notification = new EditNotification( $this->user, $title, $extraParams );
-		$notification->addSecondaryLink( 'difflink', $diffUrl );
-
+		$notification = new EditNotification( $this->user, $title, $this->revision, $this->summary );
 		$notifier->notify( $notification );
 
 		return true;

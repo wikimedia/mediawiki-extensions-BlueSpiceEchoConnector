@@ -2,8 +2,23 @@
 
 namespace BlueSpice\EchoConnector\Notification;
 
-class CreateNotification extends EchoNotification {
-	public function __construct( $agent, $title = null, $params = [] ) {
-		parent::__construct( 'bs-create', $agent, $title, $params );
+use BlueSpice\BaseNotification;
+
+class CreateNotification extends BaseNotification {
+	/**
+	 * @var string
+	 */
+	protected $summary;
+
+	public function __construct( $agent, $title = null, $summary ) {
+		parent::__construct( 'bs-create', $agent, $title );
+		$this->summary = $summary;
+	}
+
+	public function getParams() {
+		return [
+			'summary' => $this->summary,
+			'realname' => $this->getUserRealName()
+		];
 	}
 }

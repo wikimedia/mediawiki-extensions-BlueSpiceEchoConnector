@@ -12,6 +12,7 @@
 	"bs-notifications-email-addaccount-body": "A user was created with note with a hint that following the link in the notification will open new user's userpage. Parameters:\n* $1 user name\n* $2 user real name",
 	"bs-notifications-web-addaccount-body": "A user was created. Parameters:\n* $1 user real name\n* $2 user name",
 	"bs-notifications-addaccout-performer": "A user was created. Parameters:\n* $1 performer user name",
+	"bs-notifications-addaccount-performer": "A user was created. Parameters:\n* $1 performer user name",
 	"bs-notifications-edit": "Short message that a page was edited. Parameters:\n* $1 pagename of the edited page",
 	"bs-notifications-edit-bundle": "Message that page was editied multiple times. Paramteres:\n*$1 number of pages moved\n* $2 pagename of edited page",
 	"bs-notifications-email-edit-subject": "A page was edited by a user. Parameters:\n* $1 page that was edited\n* $2 username of the user edited the page\n* $3 real name of the user who edited the page",

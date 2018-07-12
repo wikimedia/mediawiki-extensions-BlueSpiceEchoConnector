@@ -2,8 +2,12 @@
 
 namespace BlueSpice\EchoConnector\Notifier;
 
+use BlueSpice\BaseNotification;
 use \BlueSpice\EchoConnector\Notification\EchoNotification;
 use \BlueSpice\EchoConnector\EchoEventPresentationModel;
+
+use \BlueSpice\EchoConnector\NotificationFormatter;
+use BlueSpice\INotification;
 
 /**
  * This class has unfortunate naming, since Echo uses similar naming
@@ -49,7 +53,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	 * @return EchoNotification
 	 */
 	public function getNotificationObject( $key, $agent, $title = null, $params = [] ) {
-		return new EchoNotification( $key, $agent, $title, $params );
+		return new BaseNotification( $key, $agent, $title, $params );
 	}
 
 	public function init() {
@@ -75,7 +79,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	}
 
 	public function notify( $notification ) {
-		if ( $notification instanceof EchoNotification == false ) {
+		if( $notification instanceof INotification == false ) {
 			return;
 		}
 
