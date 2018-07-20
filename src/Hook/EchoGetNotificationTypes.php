@@ -42,7 +42,7 @@ abstract class EchoGetNotificationTypes extends \BlueSpice\Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \IContext $config
+	 * @param \Config $config
 	 * @param \User $user
 	 * @param \EchoEvent $event
 	 * @param array $userNotifyTypes

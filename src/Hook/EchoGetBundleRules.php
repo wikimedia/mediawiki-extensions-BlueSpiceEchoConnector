@@ -35,7 +35,7 @@ abstract class EchoGetBundleRules extends \BlueSpice\Hook {
 	/**
 	 *
 	 * @param \IContextSource $context
-	 * @param \IContext $config
+	 * @param \Config $config
 	 * @param \EchoEvent $event
 	 * @param string $userNotifyTypes
 	 */
