@@ -34,7 +34,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		if( isset( $this->notificationConfig['forceRender'] ) ) {
 			return true;
 		}
-		return (bool) $this->event->getTitle();
+		return (bool)$this->event->getTitle();
 	}
 
 	public function getIconType() {
