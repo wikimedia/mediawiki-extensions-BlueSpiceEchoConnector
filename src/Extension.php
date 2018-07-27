@@ -173,7 +173,7 @@ class Extension {
 	public static function getUsersToNotify( $event ) {
 		$users = [];
 
-		$dbr = wfGetDB ( DB_SLAVE );
+		$dbr = wfGetDB ( DB_REPLICA );
 		switch ( $event->getType () ) {
 			case 'bs-adduser':
 			//Get admin users
