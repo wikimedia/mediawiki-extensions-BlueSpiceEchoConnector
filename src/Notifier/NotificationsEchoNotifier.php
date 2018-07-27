@@ -4,7 +4,6 @@ namespace BlueSpice\EchoConnector\Notifier;
 
 use \BlueSpice\EchoConnector\Notification\EchoNotification;
 use \BlueSpice\EchoConnector\EchoEventPresentationModel;
-use \BlueSpice\EchoConnector\NotificationFormatter;
 
 /**
  * This class has unfortunate naming, since Echo uses similar naming

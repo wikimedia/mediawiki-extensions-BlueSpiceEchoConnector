@@ -2,7 +2,6 @@
 
 namespace BlueSpice\EchoConnector;
 
-use BlueSpice\EchoConnector\ParamParserRegistry;
 
 /**
  * This class deals with how params are displayed in the

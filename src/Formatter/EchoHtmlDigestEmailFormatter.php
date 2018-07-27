@@ -2,7 +2,6 @@
 
 namespace BlueSpice\EchoConnector\Formatter;
 
-use BlueSpice\EchoConnector\Formatter\EchoHTMLEmailFormatter;
 use MediaWiki\MediaWikiServices;
 
 class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {

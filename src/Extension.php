@@ -3,7 +3,6 @@
 namespace BlueSpice\EchoConnector;
 
 use BlueSpice\EchoConnector\Notifier\NotificationsEchoNotifier;
-use BlueSpice\EchoConnector\PresentationModel;
 
 class Extension {
 	/**

@@ -2,7 +2,6 @@
 
 namespace BlueSpice\EchoConnector;
 
-use BlueSpice\EchoConnector\Formatter\NotificationFormatter;
 
 class EchoEventPresentationModel extends \EchoEventPresentationModel {
 	protected $paramParser;
