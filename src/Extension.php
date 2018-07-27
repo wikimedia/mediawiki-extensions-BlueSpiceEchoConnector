@@ -47,7 +47,7 @@ class Extension {
 				'web-body-params' => [
 					'username', 'realname'
 				],
-				'extra-params' => array (
+				'extra-params' => [
 					'secondary-links' => [
 						'performer' => [
 							'label' => 'bs-notifications-addaccout-performer',
@@ -56,7 +56,7 @@ class Extension {
 						]
 					],
 					'icon' => 'edit-user-talk'
-				),
+				],
 				'user-locators' => [self::class . '::getUsersToNotify']
 			]
 		);
@@ -80,27 +80,27 @@ class Extension {
 			[
 				'category' => 'bs-page-actions-cat',
 				'summary-message' => 'bs-notifications-create',
-				'summary-params' => array (
+				'summary-params' => [
 					'title'
-				),
+				],
 				'email-subject-message' => 'bs-notifications-email-create-subject',
-				'email-subject-params' => array (
+				'email-subject-params' => [
 					'title', 'agent', 'realname'
-				),
+				],
 				'email-body-message' => 'bs-notifications-email-create-body',
-				'email-body-params' => array (
+				'email-body-params' => [
 					'title', 'agent', 'realname', 'summary'
-				),
+				],
 				'web-body-message' => 'bs-notifications-web-create-body',
-				'web-body-params' => array (
+				'web-body-params' => [
 					'title', 'agent', 'realname'
-				),
-				'extra-params' => array (
+				],
+				'extra-params' => [
 					'icon' => 'edit',
 					'secondary-links' => [
 						'agentlink' => []
 					]
-				),
+				],
 				'user-locators' => [self::class . '::getUsersToNotify']
 			]
 		);
@@ -110,22 +110,22 @@ class Extension {
 			[
 				'category' => 'bs-page-actions-cat',
 				'summary-message' => 'bs-notifications-delete',
-				'summary-params' => array (
+				'summary-params' => [
 					'title'
-				),
+				],
 				'email-subject-message' => 'bs-notifications-email-delete-subject',
-				'email-subject-params' => array (
+				'email-subject-params' => [
 					'title', 'agent', 'realname'
-				),
+				],
 				'email-body-message' => 'bs-notifications-email-delete-body',
-				'email-body-params' => array (
+				'email-body-params' => [
 					'title', 'agent', 'realname', 'deletereason'
-				),
+				],
 				'web-body-message' => 'bs-notifications-web-delete-body',
-				'web-body-params' => array (
+				'web-body-params' => [
 					'title', 'agent', 'realname'
-				),
-				'extra-params' => array (
+				],
+				'extra-params' => [
 					//usually only existing titles can produce notifications
 					//we do not have a title after its deleted
 					'forceRender' => true,
@@ -133,7 +133,7 @@ class Extension {
 						'agentlink' => []
 					],
 					'icon' => 'delete'
-				),
+				],
 				'user-locators' => [self::class . '::getUsersToNotify']
 			]
 		);
@@ -144,26 +144,26 @@ class Extension {
 				'category' => 'bs-page-actions-cat',
 				'category' => 'bs-page-actions-cat',
 				'summary-message' => 'bs-notifications-move',
-				'summary-params' => array (
+				'summary-params' => [
 					'oldtitle'
-				),
+				],
 				'email-subject-message' => 'bs-notifications-email-move-subject',
-				'email-subject-params' => array (
+				'email-subject-params' => [
 					'oldtitle', 'agent', 'title', 'realname'
-				),
+				],
 				'email-body-message' => 'bs-notifications-email-move-body',
-				'email-body-params' => array (
+				'email-body-params' => [
 					'oldtitle', 'agent', 'title', 'realname', 'movereason'
-				),
+				],
 				'web-body-message' => 'bs-notifications-web-move-body',
-				'web-body-params' => array (
+				'web-body-params' => [
 					'oldtitle', 'agent', 'title', 'realname'
-				),
-				'extra-params' => array(
+				],
+				'extra-params' => [
 					'secondary-links' => [
 						'agentlink' => []
 					]
-				),
+				],
 				'user-locators' => [self::class . '::getUsersToNotify']
 			]
 		);
