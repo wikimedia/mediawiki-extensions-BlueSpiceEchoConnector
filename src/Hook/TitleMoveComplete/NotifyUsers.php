@@ -6,7 +6,7 @@ use BlueSpice\EchoConnector\Notification\TitleMoveNotification;
 
 class NotifyUsers extends TitleMoveComplete {
 	protected function doProcess() {
-		if( $this->user->isAllowed( 'bot' ) ) {
+		if ( $this->user->isAllowed( 'bot' ) ) {
 			return true;
 		}
 

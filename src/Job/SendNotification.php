@@ -9,6 +9,6 @@ class SendNotification extends \Job {
 	}
 
 	public function run() {
-		\EchoEvent::create ( $this->params );
+		\EchoEvent::create( $this->params );
 	}
 }

@@ -10,7 +10,7 @@ class GetBundleRules extends EchoGetBundleRules {
 		$this->bundleString = $this->event->getType();
 		$title = $this->event->getTitle();
 		if ( $title instanceof \Title ) {
-			$this->bundleString .= '-' . $title->getNamespace () . '-' . $title->getDBkey ();
+			$this->bundleString .= '-' . $title->getNamespace() . '-' . $title->getDBkey();
 		}
 
 		return true;

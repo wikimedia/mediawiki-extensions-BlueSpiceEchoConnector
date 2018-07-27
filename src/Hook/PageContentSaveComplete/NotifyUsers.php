@@ -21,7 +21,7 @@ class NotifyUsers extends PageContentSaveComplete {
 
 		$notifier = $notificationsManager->getNotifier();
 
-		if( !$notifier ) {
+		if ( !$notifier ) {
 			return true;
 		}
 
@@ -43,10 +43,10 @@ class NotifyUsers extends PageContentSaveComplete {
 		}
 
 		$diffParams = [];
-		if ( is_object ( $this->revision ) ) {
-			$diffParams[ 'diff' ] = $this->revision->getId ();
-			if ( is_object ( $this->revision->getPrevious () ) ) {
-				$diffParams[ 'oldid' ] = $this->revision->getPrevious()->getId ();
+		if ( is_object( $this->revision ) ) {
+			$diffParams[ 'diff' ] = $this->revision->getId();
+			if ( is_object( $this->revision->getPrevious() ) ) {
+				$diffParams[ 'oldid' ] = $this->revision->getPrevious()->getId();
 			}
 		}
 

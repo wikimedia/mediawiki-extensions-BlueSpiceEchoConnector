@@ -21,10 +21,10 @@ class Extension {
 			'bs-admin-cat',
 			[
 				'priority' => 3,
-				'usergroups' => ['sysop']
+				'usergroups' => [ 'sysop' ]
 			]
 		);
-		$echoNotifier->registerNotificationCategory( 'bs-page-actions-cat', ['priority' => 3] );
+		$echoNotifier->registerNotificationCategory( 'bs-page-actions-cat', [ 'priority' => 3 ] );
 
 		$notificationsManager->registerNotification(
 			'bs-adduser',
@@ -56,7 +56,7 @@ class Extension {
 					],
 					'icon' => 'edit-user-talk'
 				],
-				'user-locators' => [self::class . '::getUsersToNotify']
+				'user-locators' => [ self::class . '::getUsersToNotify' ]
 			]
 		);
 
@@ -70,7 +70,7 @@ class Extension {
 					'email' => true,
 					'expandable' => true
 				],
-				'user-locators' => [self::class . '::getUsersToNotify']
+				'user-locators' => [ self::class . '::getUsersToNotify' ]
 			]
 		);
 
@@ -100,7 +100,7 @@ class Extension {
 						'agentlink' => []
 					]
 				],
-				'user-locators' => [self::class . '::getUsersToNotify']
+				'user-locators' => [ self::class . '::getUsersToNotify' ]
 			]
 		);
 
@@ -125,15 +125,15 @@ class Extension {
 					'title', 'agent', 'realname'
 				],
 				'extra-params' => [
-					//usually only existing titles can produce notifications
-					//we do not have a title after its deleted
+					// usually only existing titles can produce notifications
+					// we do not have a title after its deleted
 					'forceRender' => true,
 					'secondary-links' => [
 						'agentlink' => []
 					],
 					'icon' => 'delete'
 				],
-				'user-locators' => [self::class . '::getUsersToNotify']
+				'user-locators' => [ self::class . '::getUsersToNotify' ]
 			]
 		);
 
@@ -163,32 +163,32 @@ class Extension {
 						'agentlink' => []
 					]
 				],
-				'user-locators' => [self::class . '::getUsersToNotify']
+				'user-locators' => [ self::class . '::getUsersToNotify' ]
 			]
 		);
 	}
 
-	//This seems like a shootgun approach, not everyone should
-	//be notified of every change on every page
+	// This seems like a shootgun approach, not everyone should
+	// be notified of every change on every page
 	public static function getUsersToNotify( $event ) {
 		$users = [];
 
-		$dbr = wfGetDB ( DB_REPLICA );
-		switch ( $event->getType () ) {
+		$dbr = wfGetDB( DB_REPLICA );
+		switch ( $event->getType() ) {
 			case 'bs-adduser':
-			//Get admin users
-			$resSysops = $dbr->select ( "user_groups", "ug_user", 'ug_group = "sysop"' );
+			// Get admin users
+			$resSysops = $dbr->select( "user_groups", "ug_user", 'ug_group = "sysop"' );
 			foreach ( $resSysops as $row ) {
-				$user = \User::newFromId ( $row->ug_user );
-				$users[ $user->getId () ] = $user;
+				$user = \User::newFromId( $row->ug_user );
+				$users[ $user->getId() ] = $user;
 			}
 			break;
 			case 'bs-create':
 			case 'bs-edit':
 			case 'bs-move':
 			case 'bs-delete':
-				//We need to pre-filter for the subscription user setting here.
-				//Otherwise a large user base (2000+) will result in bad performance
+				// We need to pre-filter for the subscription user setting here.
+				// Otherwise a large user base (2000+) will result in bad performance
 				$resUser = $dbr->select(
 					"user_properties",
 					"DISTINCT up_user",
@@ -202,8 +202,8 @@ class Extension {
 				);
 
 				foreach ( $resUser as $row ) {
-					$user = \User::newFromId ( $row->up_user );
-					$users[ $user->getId () ] = $user;
+					$user = \User::newFromId( $row->up_user );
+					$users[ $user->getId() ] = $user;
 				}
 			break;
 		}

@@ -2,12 +2,11 @@
 
 namespace BlueSpice\EchoConnector;
 
-
 /**
  * This class deals with how params are displayed in the
  * final notification/email displayed to the user
  */
-class ParamParser implements IParamParser{
+class ParamParser implements IParamParser {
 
 	protected $event;
 	protected $message;
@@ -19,7 +18,7 @@ class ParamParser implements IParamParser{
 	public function __construct( \EchoEvent $event, $distributionType = 'web' ) {
 		$this->event = $event;
 
-		//Probably unnecessary, but maybe some parsers would use it
+		// Probably unnecessary, but maybe some parsers would use it
 		$this->distributionType = $distributionType;
 
 		$this->getParamParserRegistry();
@@ -45,11 +44,11 @@ class ParamParser implements IParamParser{
 	public function parseParam( \Message $message, $param ) {
 		$this->message = $message;
 
-		if( $this->parseWithForeignParser( $param ) ) {
+		if ( $this->parseWithForeignParser( $param ) ) {
 			return;
 		}
 
-		switch( $param ) {
+		switch ( $param ) {
 			case 'title':
 				$this->parseTitle();
 				break;
@@ -64,9 +63,9 @@ class ParamParser implements IParamParser{
 				$this->parseUserName();
 				break;
 			default:
-				//Just display the param value as-is
+				// Just display the param value as-is
 				$extra = $this->event->getExtra();
-				if( isset( $extra[$param] ) ) {
+				if ( isset( $extra[$param] ) ) {
 					$value = $extra[$param];
 				} else {
 					$value = '';
@@ -78,15 +77,15 @@ class ParamParser implements IParamParser{
 
 	protected function parseTitle() {
 		$title = $this->event->getTitle();
-		if( $title instanceof \Title ) {
+		if ( $title instanceof \Title ) {
 			return $this->message->params( $title->getPrefixedText() );
 		}
 
-		//Check if there is title in extra params
+		// Check if there is title in extra params
 		$extra = $this->event->getExtra();
-		if( isset( $extra['title'] ) ) {
+		if ( isset( $extra['title'] ) ) {
 			$title = $extra['title'];
-			if( $title instanceof \Title ) {
+			if ( $title instanceof \Title ) {
 				$this->message->params( $title->getPrefixedText() );
 			}
 		}
@@ -94,24 +93,24 @@ class ParamParser implements IParamParser{
 
 	protected function parseAgent() {
 		$agent = $this->event->getAgent();
-		if( $agent instanceof \User ) {
+		if ( $agent instanceof \User ) {
 			$this->message->params( $agent->getName() );
 		}
 	}
 
 	protected function parseOldTitle() {
-		if( isset( $this->event->getExtra()['oldtitle'] ) ) {
+		if ( isset( $this->event->getExtra()['oldtitle'] ) ) {
 			$oldTitle = $this->event->getExtra()['oldtitle'];
-			if( $oldTitle instanceof \Title ) {
+			if ( $oldTitle instanceof \Title ) {
 				$this->message->params( $oldTitle->getPrefixedText() );
 			}
 		}
 	}
 
 	protected function parseUserName() {
-		if( isset( $this->event->getExtra()['user'] ) ) {
+		if ( isset( $this->event->getExtra()['user'] ) ) {
 			$user = $this->event->getExtra()['user'];
-			if( $user instanceof \User ) {
+			if ( $user instanceof \User ) {
 				$this->message->params( $user->getName() );
 			}
 		}
@@ -132,11 +131,11 @@ class ParamParser implements IParamParser{
 	 * @param string $param
 	 * @return true|false if param cannot be parsed
 	 */
-	protected function parseWithForeignParser($param) {
-		//If param is registered with another extension
-		//let it do the parsing
+	protected function parseWithForeignParser( $param ) {
+		// If param is registered with another extension
+		// let it do the parsing
 		$parser = $this->getForeignParserForParam( $param );
-		if( $parser == null ) {
+		if ( $parser == null ) {
 			return false;
 		}
 
@@ -152,13 +151,13 @@ class ParamParser implements IParamParser{
 	 * @return null|\IParamParser
 	 */
 	protected function getForeignParserForParam( $param ) {
-		if( !isset( $this->foreignParsers[$param] ) ) {
+		if ( !isset( $this->foreignParsers[$param] ) ) {
 			$parserClass = $this->paramParserRegistry->getValue( $param );
-			if( !$parserClass || !class_exists( $parserClass ) ) {
+			if ( !$parserClass || !class_exists( $parserClass ) ) {
 				return null;
 			}
 
-			if( in_array( IParamParser::class, class_implements( $parserClass ) ) ) {
+			if ( in_array( IParamParser::class, class_implements( $parserClass ) ) ) {
 				$this->foreignParsers[$param] = new $parserClass( $this->event, $this->distributionType );
 			} else {
 				return null;

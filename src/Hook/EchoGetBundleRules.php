@@ -15,7 +15,6 @@ abstract class EchoGetBundleRules extends \BlueSpice\Hook {
 	 */
 	protected $bundleString;
 
-
 	/**
 	 *
 	 * @param \EchoEvent $event

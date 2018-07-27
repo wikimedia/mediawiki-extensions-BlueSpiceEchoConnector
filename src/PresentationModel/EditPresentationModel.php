@@ -14,19 +14,18 @@ class EditPresentationModel extends EchoEventPresentationModel {
 	public function getHeaderMessageContent() {
 		$bundleKey = '';
 		$bundleParams = [];
-		if( isset( $this->notificationConfig['bundle'] ) ) {
+		if ( isset( $this->notificationConfig['bundle'] ) ) {
 			$bundleKey = 'bs-notifications-edit-bundle';
-			$bundleParams = ['title'];
+			$bundleParams = [ 'title' ];
 		}
 
 		$headerKey = 'bs-notifications-edit';
-		$headerParams = ['title'];
+		$headerParams = [ 'title' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-notifications-email-edit-subject';
 			$headerParams = [ 'title', 'agent', 'realname' ];
 		}
-
 
 		return [
 			'key' => $headerKey,
@@ -44,11 +43,11 @@ class EditPresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-notifications-web-edit-body';
-		$bodyParams = ['title', 'agent', 'realname'];
+		$bodyParams = [ 'title', 'agent', 'realname' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-edit-body';
-			$bodyParams = ['title', 'agent', 'summary', 'realname'];
+			$bodyParams = [ 'title', 'agent', 'summary', 'realname' ];
 		}
 
 		return [
@@ -63,14 +62,14 @@ class EditPresentationModel extends EchoEventPresentationModel {
 			return [];
 		}
 
-		$secondaryLinks = [$this->getAgentLink()];
+		$secondaryLinks = [ $this->getAgentLink() ];
 
 		$extra = $this->event->getExtra();
-		if( !isset( $extra['secondary-links'] ) ) {
+		if ( !isset( $extra['secondary-links'] ) ) {
 			$extra['secondary-links'] = [];
 		}
 
-		if( !isset( $extra['secondary-links']['difflink'] ) ) {
+		if ( !isset( $extra['secondary-links']['difflink'] ) ) {
 			return $secondaryLinks;
 		}
 

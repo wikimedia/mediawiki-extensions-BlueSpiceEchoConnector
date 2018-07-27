@@ -33,8 +33,8 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 	 */
 	protected $templateNames;
 
-	public function __construct(\User $user, \Language $language) {
-		parent::__construct($user, $language);
+	public function __construct( \User $user, \Language $language ) {
+		parent::__construct( $user, $language );
 		global $wgSitename;
 
 		$this->sitename = $wgSitename;
@@ -47,7 +47,7 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 	}
 
 	protected function formatModel( \EchoEventPresentationModel $model ) {
-		if( $model instanceof BSEchoPresentationModel ) {
+		if ( $model instanceof BSEchoPresentationModel ) {
 			$model->setDistributionType( 'email' );
 		}
 

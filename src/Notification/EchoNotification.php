@@ -45,11 +45,11 @@ class EchoNotification implements \BlueSpice\INotification {
 	public function __construct( $key, \User $agent, $title = null, $extraParams = [] ) {
 		$this->key = $key;
 		$this->setAgent( $agent );
-		if( $title instanceof \Title ) {
+		if ( $title instanceof \Title ) {
 			$this->setTitle( $title );
 		}
 
-		if( !empty( $extraParams ) ) {
+		if ( !empty( $extraParams ) ) {
 			$this->extra = $extraParams;
 		}
 	}
@@ -133,8 +133,8 @@ class EchoNotification implements \BlueSpice\INotification {
 	 * @return array
 	 */
 	public function getAudience() {
-		//If audience is empty, notification will be sent
-		//to everyone who are subscibed
+		// If audience is empty, notification will be sent
+		// to everyone who are subscibed
 		return $this->audience;
 	}
 
@@ -177,13 +177,13 @@ class EchoNotification implements \BlueSpice\INotification {
 	 * @param array $users
 	 */
 	public function addAffectedUsers( $users ) {
-		foreach( $users as $user ) {
-			if( $user instanceof \User ) {
+		foreach ( $users as $user ) {
+			if ( $user instanceof \User ) {
 				$this->audience[] = $user->getId();
 				continue;
 			}
 
-			if( is_int( $user ) ) {
+			if ( is_int( $user ) ) {
 				$this->audience[] = $user;
 			}
 		}

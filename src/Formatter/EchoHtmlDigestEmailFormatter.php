@@ -23,7 +23,7 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		$this->templateNames = $this->config->get( 'EchoHtmlMailTemlateNames' );
 	}
 
-	protected function formatModels(array $models) {
+	protected function formatModels( array $models ) {
 		$greeting = $this->msg( 'echo-email-batch-body-intro-' . $this->digestMode )
 				->params( $this->user->getName() )
 				->parse();
@@ -35,12 +35,12 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		ksort( $eventsByCategory );
 		$digestList = $this->renderDigestList( $eventsByCategory );
 
-		$htmlFormatter = new EchoHTMLEmailFormatter($this->user, $this->language);
+		$htmlFormatter = new EchoHTMLEmailFormatter( $this->user, $this->language );
 
 		$action = $htmlFormatter->renderLink(
 			[
-				'label' => $this->msg('echo-email-batch-link-text-view-all-notifications')->text(),
-				'url' => \SpecialPage::getTitleFor('Notifications')->getFullURL( '', false, PROTO_CANONICAL ),
+				'label' => $this->msg( 'echo-email-batch-link-text-view-all-notifications' )->text(),
+				'url' => \SpecialPage::getTitleFor( 'Notifications' )->getFullURL( '', false, PROTO_CANONICAL ),
 			],
 			$htmlFormatter::PRIMARY_LINK
 		);
@@ -49,8 +49,8 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 				$this->language, $greeting, $senderMessage, $digestList, $action, $htmlFormatter->getFooter()
 		);
 
-		$subject = $this->msg('echo-email-batch-subject-' . $this->digestMode)
-				->numParams(count($models), count($models))
+		$subject = $this->msg( 'echo-email-batch-subject-' . $this->digestMode )
+				->numParams( count( $models ), count( $models ) )
 				->text();
 
 		return [
@@ -59,7 +59,7 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		];
 	}
 
-	protected function renderBody(\Language $language, $greeting, $senderMessage, $digestList, $action, $footer) {
+	protected function renderBody( \Language $language, $greeting, $senderMessage, $digestList, $action, $footer ) {
 		$html = $this->templateParser->processTemplate(
 			$this->templateNames['digest'], [
 				'greeting' => $greeting,
@@ -77,9 +77,9 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 	 * @param EchoEventPresentationModel[] $models
 	 * @return array [ 'category name' => EchoEventPresentationModel[] ]
 	 */
-	protected function groupByCategory($models) {
+	protected function groupByCategory( $models ) {
 		$eventsByCategory = [];
-		foreach ($models as $model) {
+		foreach ( $models as $model ) {
 			$eventsByCategory[$model->getCategory()][] = $model;
 		}
 		return $eventsByCategory;
@@ -90,7 +90,7 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		// build the html section for each category
 		foreach ( $eventsByCategory as $category => $models ) {
 			$events = [];
-			foreach( $models as $model ) {
+			foreach ( $models as $model ) {
 				$events[] = $this->getEventParams( $model );
 			}
 			
@@ -112,9 +112,9 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 	 * @param int $count Number of notifications in this type's section
 	 * @return string Formatted category section title
 	 */
-	protected function getCategoryTitle($type, $count) {
-		return $this->msg("echo-category-title-$type")
-			->numParams($count)
+	protected function getCategoryTitle( $type, $count ) {
+		return $this->msg( "echo-category-title-$type" )
+			->numParams( $count )
 			->parse();
 	}
 

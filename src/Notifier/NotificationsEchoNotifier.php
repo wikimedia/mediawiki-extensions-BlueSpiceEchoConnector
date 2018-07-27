@@ -75,12 +75,12 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	}
 
 	public function notify( $notification ) {
-		if( $notification instanceof EchoNotification == false ) {
+		if ( $notification instanceof EchoNotification == false ) {
 			return;
 		}
 
-		if( isset( $this->echoNotifications[$notification->getKey()] ) == false ) {
-			//Notification not registered
+		if ( isset( $this->echoNotifications[$notification->getKey()] ) == false ) {
+			// Notification not registered
 			return;
 		}
 
@@ -91,26 +91,26 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			'extra' => $notification->getParams()
 		];
 
-		if( !empty( $notification->getAudience() ) ) {
+		if ( !empty( $notification->getAudience() ) ) {
 			$echoNotif['extra']['affected-users'] = $notification->getAudience();
 		}
 
-		if( $notification->getImmediateEmail() == true ) {
+		if ( $notification->getImmediateEmail() == true ) {
 			$echoNotif['extra']['immediate-email'] = true;
 		}
 
-		if( !empty( $notification->getSecondaryLinks() ) ) {
+		if ( !empty( $notification->getSecondaryLinks() ) ) {
 			$echoNotif['extra']['secondary-links'] = $notification->getSecondaryLinks();
 		}
 
-		if( $this->checkUseJobQueue( $notification ) ) {
+		if ( $this->checkUseJobQueue( $notification ) ) {
 			$job = new \BlueSpice\EchoConnector\Job\SendNotification(
 				$notification->getTitle(),
 				$echoNotif
 			);
 			\JobQueueGroup::singleton()->push( $job );
 		} else {
-			\EchoEvent::create ( $echoNotif );
+			\EchoEvent::create( $echoNotif );
 		}
 
 		return \Status::newGood();
@@ -121,7 +121,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			'BlueSpiceEchoConnectorNotificationIcons'
 		);
 
-		foreach( $icons as $key => $params ) {
+		foreach ( $icons as $key => $params ) {
 			$this->registerIcon( $key, $params );
 		}
 	}
@@ -136,14 +136,14 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			$extraParams = $params[ 'extra-params' ];
 		}
 
-		if( !isset( $params['user-locators'] ) || !is_array( $params['user-locators'] ) ) {
-			$params['user-locators'] = [self::class . '::setUsersToNotify'];
+		if ( !isset( $params['user-locators'] ) || !is_array( $params['user-locators'] ) ) {
+			$params['user-locators'] = [ self::class . '::setUsersToNotify' ];
 		} else {
 			$params['user-locators'][] = self::class . '::setUsersToNotify';
 		}
 
 		$section = \EchoAttributeManager::ALERT;
-		if( isset( $params['section'] ) && $params['section'] == 'message' ) {
+		if ( isset( $params['section'] ) && $params['section'] == 'message' ) {
 			$section = \EchoAttributeManager::MESSAGE;
 		}
 
@@ -153,7 +153,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			'user-locators' => $params['user-locators']
 		];
 
-		if ( !isset ( $params[ 'presentation-model' ] ) ) {
+		if ( !isset( $params[ 'presentation-model' ] ) ) {
 			$notificationConfig += [
 				'presentation-model' => EchoEventPresentationModel::class,
 				'title-message' => $params[ 'summary-message' ],
@@ -183,7 +183,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	}
 
 	public function unRegisterNotification( $key ) {
-		if( isset( $this->echoNotifications[$key] ) ) {
+		if ( isset( $this->echoNotifications[$key] ) ) {
 			unset( $this->echoNotifications[$key] );
 		}
 	}
@@ -198,8 +198,8 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		$users = $event->getExtraParam( 'affected-users', [] );
 
 		$res = [];
-		foreach( $users as $user ) {
-			if( $user instanceof \User ) {
+		foreach ( $users as $user ) {
+			if ( $user instanceof \User ) {
 				$res[$user->getId()] = $user;
 				continue;
 			}
@@ -220,32 +220,32 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	protected function checkUseJobQueue( $notification ) {
 		$echoNotificationConfig = $this->echoNotifications[$notification->getKey()];
 
-		if( $notification->getTitle() instanceof \Title == false ) {
-			//If notification has no Title object set, we cannot use JQ
+		if ( $notification->getTitle() instanceof \Title == false ) {
+			// If notification has no Title object set, we cannot use JQ
 			return false;
 		}
 
-		if( $notification->useJobQueue() == true ) {
+		if ( $notification->useJobQueue() == true ) {
 			return true;
 		}
 
-		//Setting immediate-email will override default settings for using job queue.
-		//If job queue is really necessary in conjuction with this param it must be set
-		//explicitly when calling notify
-		if( $notification->getImmediateEmail() == true ) {
+		// Setting immediate-email will override default settings for using job queue.
+		// If job queue is really necessary in conjuction with this param it must be set
+		// explicitly when calling notify
+		if ( $notification->getImmediateEmail() == true ) {
 			return false;
 		}
 
-		if( isset( $echoNotificationConfig['use-job-queue'] ) && $echoNotificationConfig['use-job-queue'] == true ) {
+		if ( isset( $echoNotificationConfig['use-job-queue'] ) && $echoNotificationConfig['use-job-queue'] == true ) {
 			return true;
 		}
 
-		if( $this->config->get( 'UseJobQueueForNotifications' ) == true ) {
+		if ( $this->config->get( 'UseJobQueueForNotifications' ) == true ) {
 			return true;
 		}
 
-		if( count( $notification->getAudience() ) > $this->config->get( 'ForceJobQueueForLargeAudienceThreshold' ) ) {
-			//Force JQ if there are too many users to send notif to
+		if ( count( $notification->getAudience() ) > $this->config->get( 'ForceJobQueueForLargeAudienceThreshold' ) ) {
+			// Force JQ if there are too many users to send notif to
 			return true;
 		}
 

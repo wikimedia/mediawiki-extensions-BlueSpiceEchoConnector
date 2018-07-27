@@ -15,13 +15,13 @@ class ParamParserRegistry implements \BlueSpice\IRegistry {
 	}
 
 	public function getValue( $key, $default = '' ) {
-		if( $this->hasKey( $key ) ) {
+		if ( $this->hasKey( $key ) ) {
 			return $this->paramParsers[$key];
 		}
 	}
 
 	public function hasKey( $key ) {
-		if( isset( $this->paramParsers[$key] ) ) {
+		if ( isset( $this->paramParsers[$key] ) ) {
 			return true;
 		}
 

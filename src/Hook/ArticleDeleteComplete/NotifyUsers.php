@@ -7,7 +7,7 @@ use BlueSpice\EchoConnector\Notification\DeleteNotification;
 
 class NotifyUsers extends ArticleDeleteComplete {
 	protected function doProcess() {
-		if( $this->user->isAllowed( 'bot' ) ) {
+		if ( $this->user->isAllowed( 'bot' ) ) {
 			return true;
 		}
 
@@ -18,8 +18,8 @@ class NotifyUsers extends ArticleDeleteComplete {
 		$realname = \BlueSpice\Services::getInstance()->getBSUtilityFactory()
 			->getUserHelper( $this->user )->getDisplayName();
 
-		//Since at this point Title object for this page no longer ::exists(),
-		//we need to pass it inside extra-params to avoid automatic deletion
+		// Since at this point Title object for this page no longer ::exists(),
+		// we need to pass it inside extra-params to avoid automatic deletion
 		$extraParams = [
 			'deletereason' => $this->reason,
 			'realname' => $realname,

@@ -2,7 +2,6 @@
 
 namespace BlueSpice\EchoConnector;
 
-
 class EchoEventPresentationModel extends \EchoEventPresentationModel {
 	protected $paramParser;
 	protected $notificationConfig;
@@ -17,20 +16,20 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		$this->distributionType = $distributionType;
 
 		$this->paramParser = new \BlueSpice\EchoConnector\ParamParser( $event );
-		//TODO: Get rid of global
+		// TODO: Get rid of global
 		$this->notificationConfig = $wgEchoNotifications[$this->type];
 	}
 
-	//There is not way to change distribution type after object
-	//has been contstructed, and its always constructed with 'web' type
+	// There is not way to change distribution type after object
+	// has been contstructed, and its always constructed with 'web' type
 	public function setDistributionType( $type ) {
 		$this->distributionType = $type;
 		$this->paramParser->setDistributionType( $type );
 	}
 
 	public function canRender() {
-		//Force rendering if explicitly specified
-		if( isset( $this->notificationConfig['forceRender'] ) ) {
+		// Force rendering if explicitly specified
+		if ( isset( $this->notificationConfig['forceRender'] ) ) {
 			return true;
 		}
 		return (bool)$this->event->getTitle();
@@ -52,7 +51,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		$content = $this->getHeaderMessageContent();
 		$msg = $this->msg( $content['key'] );
 
-		if ($this->isBundled()) {
+		if ( $this->isBundled() ) {
 			if ( $content['bundle-key'] ) {
 				$msg = $this->msg( $content['bundle-key'] );
 				$msg->params( $this->getBundleCount() );
@@ -60,15 +59,15 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		}
 
 		$params = $content['params'];
-		if( $this->isBundled() ) {
+		if ( $this->isBundled() ) {
 			$params = $content['bundle-params'];
 		}
 
-		if( empty( $params ) ) {
+		if ( empty( $params ) ) {
 			return $msg;
 		}
 
-		foreach( $params as $param ) {
+		foreach ( $params as $param ) {
 			$this->paramParser->parseParam( $msg, $param );
 		}
 
@@ -78,11 +77,11 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 	public function getBodyMessage() {
 		$content = $this->getBodyMessageContent();
 		$msg = $this->msg( $content['key'] );
-		if( empty( $content['params'] ) ) {
+		if ( empty( $content['params'] ) ) {
 			return $msg;
 		}
 
-		foreach( $content['params'] as $param ) {
+		foreach ( $content['params'] as $param ) {
 			$this->paramParser->parseParam( $msg, $param );
 		}
 
@@ -106,12 +105,12 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 	 */
 	public function getPrimaryLink() {
 		$title = $this->event->getTitle();
-		if( $title instanceof \Title == false ) {
+		if ( $title instanceof \Title == false ) {
 			return false;
 		}
 
 		$label = $title->getPrefixedText();
-		if( $this->event->getExtraParam( 'primary-link-label', false ) ) {
+		if ( $this->event->getExtraParam( 'primary-link-label', false ) ) {
 			$label = $this->event->getExtraParam( 'primary-link-label' );
 		}
 
@@ -130,7 +129,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 	public function getHeaderMessageContent() {
 		$bundleKey = '';
 		$bundleParams = [];
-		if( isset( $this->notificationConfig['bundle'] ) ) {
+		if ( isset( $this->notificationConfig['bundle'] ) ) {
 			$bundleKey = $this->notificationConfig['bundle']['bundle-message'];
 			$bundleParams = $this->notificationConfig['bundle']['bundle-params'];
 		}
@@ -140,7 +139,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 			'params' => 'title-params'
 		];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$messageConfig['key'] = 'email-subject-message';
 			$messageConfig['params'] = 'email-subject-params';
 		}
@@ -168,7 +167,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 			'params' => 'web-body-params'
 		];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$messageConfig['key'] = 'email-body-message';
 			$messageConfig['params'] = 'email-body-params';
 		}
@@ -185,31 +184,31 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 			return [];
 		}
 
-		if( !isset( $this->notificationConfig['secondary-links'] ) ) {
+		if ( !isset( $this->notificationConfig['secondary-links'] ) ) {
 			return [];
 		}
 
 		$extra = $this->event->getExtra();
-		if( !isset( $extra['secondary-links'] ) ) {
+		if ( !isset( $extra['secondary-links'] ) ) {
 			$extra['secondary-links'] = [];
 		}
 
 		$secondaryLinksCfg = $this->notificationConfig['secondary-links'];
 		$secondaryLinks = [];
-		foreach( $secondaryLinksCfg as $key => $cfg ) {
-			if( $key == 'agentlink' ) {
+		foreach ( $secondaryLinksCfg as $key => $cfg ) {
+			if ( $key == 'agentlink' ) {
 				$secondaryLinks[] = $this->getAgentLink();
 				continue;
 			}
-			if( isset( $extra['secondary-links'][$key] ) ) {
+			if ( isset( $extra['secondary-links'][$key] ) ) {
 				$slValue = $extra['secondary-links'][$key];
 				$cfg['label'] = wfMessage( $cfg['label'] );
 
-				if( !is_array( $slValue ) ) {
+				if ( !is_array( $slValue ) ) {
 					$cfg['url'] = $slValue;
 				} else {
 					$cfg['url'] = $slValue['url'];
-					if( isset( $slValue['label-params'] ) ) {
+					if ( isset( $slValue['label-params'] ) ) {
 						$cfg['label']->params( $slValue['label-params'] );
 					}
 				}
