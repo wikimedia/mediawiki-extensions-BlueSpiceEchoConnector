@@ -13,8 +13,6 @@
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 		<exclude name="MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix" />
 		<exclude name="MediaWiki.PHP70Features.ScalarTypeHintUsage.Found" />
-		<exclude name="Squiz.WhiteSpace.ScopeKeywordSpacing.Incorrect" />
-		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine" />
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php,php5,inc"/>

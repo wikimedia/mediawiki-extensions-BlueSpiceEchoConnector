@@ -121,7 +121,7 @@ class ParamParser implements IParamParser {
 	 * their params, and ways to parse them without implementing
 	 * full-blown PresentationModel
 	 */
-	protected  function getParamParserRegistry() {
+	protected function getParamParserRegistry() {
 		$this->paramParserRegistry = new ParamParserRegistry();
 	}
 

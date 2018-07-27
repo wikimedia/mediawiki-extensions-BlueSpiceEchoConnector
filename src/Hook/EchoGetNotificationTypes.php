@@ -22,7 +22,7 @@ abstract class EchoGetNotificationTypes extends \BlueSpice\Hook {
 	protected $userNotifyTypes;
 
 	/**
-	 * 
+	 *
 	 * @param \User $user
 	 * @param \EchoEvent $event
 	 * @param array $userNotifyTypes

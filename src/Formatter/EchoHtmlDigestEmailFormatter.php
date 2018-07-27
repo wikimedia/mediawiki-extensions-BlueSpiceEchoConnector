@@ -93,7 +93,7 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 			foreach ( $models as $model ) {
 				$events[] = $this->getEventParams( $model );
 			}
-			
+
 			$output = $this->templateParser->processTemplate(
 				$this->templateNames['digest_list'],
 				[
