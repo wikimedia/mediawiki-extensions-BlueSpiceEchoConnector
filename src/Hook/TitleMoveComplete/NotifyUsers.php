@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\EchoConnector\Hook\TitleMoveComplete;
+
 use BlueSpice\Hook\TitleMoveComplete;
 use BlueSpice\EchoConnector\Notification\TitleMoveNotification;
 

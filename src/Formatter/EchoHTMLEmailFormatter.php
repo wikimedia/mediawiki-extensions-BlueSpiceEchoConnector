@@ -1,6 +1,7 @@
 <?php
 
 namespace BlueSpice\EchoConnector\Formatter;
+
 use MediaWiki\MediaWikiServices;
 
 use \BlueSpice\EchoConnector\EchoEventPresentationModel as BSEchoPresentationModel;

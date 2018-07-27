@@ -13,7 +13,6 @@
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
 		<exclude name="MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix" />
 		<exclude name="MediaWiki.PHP70Features.ScalarTypeHintUsage.Found" />
-		<exclude name="PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter" />
 		<exclude name="Squiz.WhiteSpace.ScopeKeywordSpacing.Incorrect" />
 		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine" />
 	</rule>
