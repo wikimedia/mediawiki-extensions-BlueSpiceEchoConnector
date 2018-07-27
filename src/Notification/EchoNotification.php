@@ -102,7 +102,7 @@ class EchoNotification implements \BlueSpice\INotification {
 	 * Whether mail for this notification should
 	 * be sent immediately regardless of user settings
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function getImmediateEmail() {
 		return $this->immediateEmail;
@@ -120,7 +120,7 @@ class EchoNotification implements \BlueSpice\INotification {
 	 * Whether job queue should be used
 	 * to send this notification
 	 *
-	 * @return boolean
+	 * @return bool
 	 */
 	public function useJobQueue() {
 		return $this->useJobQueue;
@@ -174,7 +174,7 @@ class EchoNotification implements \BlueSpice\INotification {
 	 * Adds array of \User object of user IDs
 	 * to list of users to receive this notification
 	 *
-	 * @param array $users;
+	 * @param array $users
 	 */
 	public function addAffectedUsers( $users ) {
 		foreach( $users as $user ) {
