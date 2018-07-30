@@ -10,6 +10,7 @@
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Der Benutzer|Die Benutzerin}} „$2“ wurde erstellt.\n\nDu kannst {{GENDER:$1|seine|ihre}} Benutzerseite über den folgenden Link aufrufen.",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Der Benutzer|Die Benutzerin}} $2 wurde erstellt",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Ersteller|Erstellerin}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Ersteller|Erstellerin}}: $1",
 	"bs-notifications-edit": "Die Seite „$1“ wurde bearbeitet",
 	"bs-notifications-edit-bundle": "Die Seite „$2“ wurde {{PLURAL:$1|ein|$1}} Mal geändert",
 	"bs-notifications-email-edit-subject": "Die Seite „$1“ wurde von $3 {{GENDER:$2|bearbeitet}}",

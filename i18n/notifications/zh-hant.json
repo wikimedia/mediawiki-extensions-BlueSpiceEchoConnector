@@ -9,6 +9,7 @@
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|使用者}} $2 已建立。\n\n您可以從下列連結來瀏覽{{GENDER:$1|他的|她的|該}}使用者頁面",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|使用者}} $2 已建立。",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|建立者}}：$1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|創建者}}：$1",
 	"bs-notifications-edit": "頁面「$1」已被修改",
 	"bs-notifications-edit-bundle": "頁面「$2」已被更改 {{PLURAL:$1|$1 次|$1 次}}",
 	"bs-notifications-email-edit-subject": "頁面「$1」已由 $3 {{GENDER:$2|編輯}}",
