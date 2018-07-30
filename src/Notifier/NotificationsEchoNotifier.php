@@ -99,7 +99,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			$echoNotif['extra']['affected-users'] = $notification->getAudience();
 		}
 
-		if ( $notification->getImmediateEmail() == true ) {
+		if ( $notification->sendImmediateEmail() == true ) {
 			$echoNotif['extra']['immediate-email'] = true;
 		}
 
@@ -236,7 +236,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		// Setting immediate-email will override default settings for using job queue.
 		// If job queue is really necessary in conjuction with this param it must be set
 		// explicitly when calling notify
-		if ( $notification->getImmediateEmail() == true ) {
+		if ( $notification->sendImmediateEmail() == true ) {
 			return false;
 		}
 
