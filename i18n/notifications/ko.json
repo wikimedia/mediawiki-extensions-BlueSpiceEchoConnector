@@ -10,6 +10,7 @@
 	"bs-notifications-email-addaccount-body": "$2 {{GENDER:$1|사용자}}가 만들어졌습니다.\n\n아래의 링크를 통해 {{GENDER:$1|해당}} 문서를 방문할 수 있습니다",
 	"bs-notifications-web-addaccount-body": "$2 {{GENDER:$1|사용자}}를 만들었습니다.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|생성자}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|만든이}}: $1",
 	"bs-notifications-edit": "\"$1\" 문서가 바뀌었습니다",
 	"bs-notifications-edit-bundle": "\"$2\" 문서가 {{PLURAL:$1|$1번}} 변경되었습니다",
 	"bs-notifications-email-edit-subject": "$3님이 \"$1\" 문서를 {{GENDER:$2|편집함}}",

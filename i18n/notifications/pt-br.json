@@ -9,6 +9,7 @@
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|O usuário $2 foi criado|A usuária $2 foi criada}}.\n\nPode visitar a página{{GENDER:$1|do usuário|da usuária}} seguindo a hiperligação abaixo",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|O usuário $2 foi criado|A usuária $2 foi criada}}.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Criador|Criadora}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Criador|Criadora}}: $1",
 	"bs-notifications-edit": "A página \"$1\" foi alterada",
 	"bs-notifications-edit-bundle": "A página \"$2\" foi alterada $1 {{PLURAL:$1|vez|vezes}}",
 	"bs-notifications-email-edit-subject": "Página \"$1\" {{GENDER:$2|editada}} por $3",
