@@ -9,6 +9,7 @@
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|用户}}$2被创建。\n\n您可以通过下方的链接访问{{GENDER:$1|他的|她的|其}}用户页",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|用户}}$2已创建。",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|创建者}}：$1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|创建者}}：$1",
 	"bs-notifications-edit": "页面“$1”已更改",
 	"bs-notifications-edit-bundle": "页面“$2”已更改{{PLURAL:$1|$1次}}",
 	"bs-notifications-email-edit-subject": "页面“$1”已由$3{{GENDER:$2|编辑}}",
