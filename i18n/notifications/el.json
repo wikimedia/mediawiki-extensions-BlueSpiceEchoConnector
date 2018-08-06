@@ -9,6 +9,7 @@
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Ο χρήστης}} $2 δημιουργήθηκε.\n\nΜπορείτε να επισκεφθείτε τη σελίδα χρήστη {{GENDER:$1|του|της|του}} ακολουθώντας των παρακάτω σύνδεσμο",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Ο χρήστης}} $2 δημιουργήθηκε.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Δημιουργός}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Δημιουργός}}: $1",
 	"bs-notifications-edit": "Η σελίδα \"$1\" τροποποιήθηκε",
 	"bs-notifications-edit-bundle": "Η σελίδα \"$2\" έχει αλλαχθεί {{PLURAL:$1|$1 φορά|$1 φορές}}",
 	"bs-notifications-email-edit-subject": "Η σελίδα \"$1\" {{GENDER:$2|τροποποιήθηκε}} από τον $3",

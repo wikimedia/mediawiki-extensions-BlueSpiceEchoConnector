@@ -9,6 +9,7 @@
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Användaren}} $2 har skapats.\n\nDu kan besöka {{GENDER:$2|hans|hennes|dennes}} användarsida via länken nedan",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Användaren}} $2 har skapats.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Skapare}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Skapare}}: $1",
 	"bs-notifications-edit": "Sidan \"$1\" har ändrats",
 	"bs-notifications-edit-bundle": "Sidan \"$2\" har ändrats {{PLURAL:$1|$1 gång|$1 gånger}}",
 	"bs-notifications-email-edit-subject": "Sidan \"$1\" {{GENDER:$2|redigerades}} av $3",
