@@ -5,6 +5,7 @@
 			"Matma Rex"
 		]
 	},
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Twórca}}: $1",
 	"bs-notifications-edit": "Strona „$1” została zmieniona",
 	"bs-notifications-edit-bundle": "Strona „$2” została zmieniona {{PLURAL:$1|$1 raz|$1 razy}}",
 	"bs-notifications-email-edit-subject": "Strona „$1” {{GENDER:$2|edytowana}} przez $3",
