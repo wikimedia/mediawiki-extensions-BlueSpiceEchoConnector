@@ -26,7 +26,7 @@ class AddUserNotification extends BaseNotification {
 		return [
 			'performer' => [
 				'url' => $this->agent->getUserPage()->getFullURL(),
-				'label-params' => [$this->getUserRealName()]
+				'label-params' => [ $this->getUserRealName() ]
 			]
 		];
 	}
@@ -34,7 +34,7 @@ class AddUserNotification extends BaseNotification {
 	protected function getRealNameText() {
 		$realname = $this->getUserRealName( $this->createdUser );
 
-		if( $realname !== $this->createdUser->getName() ) {
+		if ( $realname !== $this->createdUser->getName() ) {
 			$realname = wfMessage(
 				'bs-notifications-param-realname-with-username',
 				$realname,

@@ -13,13 +13,12 @@ class CreatePresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getHeaderMessageContent() {
 		$headerKey = 'bs-notifications-create';
-		$headerParams = ['title'];
+		$headerParams = [ 'title' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-notifications-email-create-subject';
 			$headerParams = [ 'title', 'agent', 'realname' ];
 		}
-
 
 		return [
 			'key' => $headerKey,
@@ -37,11 +36,11 @@ class CreatePresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-notifications-web-create-body';
-		$bodyParams = ['title', 'agent', 'realname'];
+		$bodyParams = [ 'title', 'agent', 'realname' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-create-body';
-			$bodyParams = ['title', 'agent', 'realname', 'summary'];
+			$bodyParams = [ 'title', 'agent', 'realname', 'summary' ];
 		}
 
 		return [
@@ -56,7 +55,7 @@ class CreatePresentationModel extends EchoEventPresentationModel {
 			return [];
 		}
 
-		return [$this->getAgentLink()];
+		return [ $this->getAgentLink() ];
 	}
 
 	public function getIcon() {

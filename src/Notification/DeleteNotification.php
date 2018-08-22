@@ -18,8 +18,8 @@ class DeleteNotification extends BaseNotification {
 	public function __construct( $agent, $title, $reason ) {
 		parent::__construct( 'bs-delete', $agent );
 
-		//This title does not longer exists, so it cannot
-		//be set as regular title
+		// This title does not longer exists, so it cannot
+		// be set as regular title
 		$this->deletedTitle = $title;
 		$this->reason = $reason;
 	}

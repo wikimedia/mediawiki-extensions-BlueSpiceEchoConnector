@@ -16,13 +16,12 @@ class DeletePresentationModel extends EchoEventPresentationModel {
 		$bundleParams = [];
 
 		$headerKey = 'bs-notifications-delete';
-		$headerParams = ['title'];
+		$headerParams = [ 'title' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-notifications-email-delete-subject';
 			$headerParams = [ 'title', 'agent', 'realname' ];
 		}
-
 
 		return [
 			'key' => $headerKey,
@@ -44,11 +43,11 @@ class DeletePresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-notifications-web-delete-body';
-		$bodyParams = ['title', 'agent', 'realname'];
+		$bodyParams = [ 'title', 'agent', 'realname' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-delete-body';
-			$bodyParams = ['title', 'agent', 'realname', 'deletereason'];
+			$bodyParams = [ 'title', 'agent', 'realname', 'deletereason' ];
 		}
 
 		return [
@@ -63,7 +62,7 @@ class DeletePresentationModel extends EchoEventPresentationModel {
 			return [];
 		}
 
-		return [$this->getAgentLink()];
+		return [ $this->getAgentLink() ];
 	}
 
 	public function getIcon() {

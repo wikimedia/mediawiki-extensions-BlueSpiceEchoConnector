@@ -16,13 +16,12 @@ class MovePresentationModel extends EchoEventPresentationModel {
 		$bundleParams = [];
 
 		$headerKey = 'bs-notifications-move';
-		$headerParams = ['oldtitle'];
+		$headerParams = [ 'oldtitle' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-notifications-email-move-subject';
 			$headerParams = [ 'oldtitle', 'agent', 'title', 'realname' ];
 		}
-
 
 		return [
 			'key' => $headerKey,
@@ -40,11 +39,11 @@ class MovePresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-notifications-web-move-body';
-		$bodyParams = ['oldtitle', 'agent', 'title', 'realname'];
+		$bodyParams = [ 'oldtitle', 'agent', 'title', 'realname' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-move-body';
-			$bodyParams = ['oldtitle', 'agent', 'title', 'realname', 'movereason'];
+			$bodyParams = [ 'oldtitle', 'agent', 'title', 'realname', 'movereason' ];
 		}
 
 		return [
@@ -59,7 +58,7 @@ class MovePresentationModel extends EchoEventPresentationModel {
 			return [];
 		}
 
-		return [$this->getAgentLink()];
+		return [ $this->getAgentLink() ];
 	}
 
 	public function getIcon() {

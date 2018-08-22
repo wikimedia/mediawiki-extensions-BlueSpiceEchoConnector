@@ -3,10 +3,8 @@
 namespace BlueSpice\EchoConnector\Notifier;
 
 use BlueSpice\BaseNotification;
-use \BlueSpice\EchoConnector\Notification\EchoNotification;
-use \BlueSpice\EchoConnector\EchoEventPresentationModel;
-
-use \BlueSpice\EchoConnector\NotificationFormatter;
+use BlueSpice\EchoConnector\Notification\EchoNotification;
+use BlueSpice\EchoConnector\EchoEventPresentationModel;
 use BlueSpice\INotification;
 
 /**
@@ -79,7 +77,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	}
 
 	public function notify( $notification ) {
-		if( $notification instanceof INotification == false ) {
+		if ( $notification instanceof INotification == false ) {
 			return;
 		}
 

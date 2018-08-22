@@ -16,13 +16,12 @@ class AddUserPresentationModel extends EchoEventPresentationModel {
 		$bundleParams = [];
 
 		$headerKey = 'bs-notifications-addaccount';
-		$headerParams = ['username'];
+		$headerParams = [ 'username' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-notifications-email-addaccount-subject';
 			$headerParams = [ 'username', 'realname' ];
 		}
-
 
 		return [
 			'key' => $headerKey,
@@ -40,11 +39,11 @@ class AddUserPresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-notifications-web-addaccount-body';
-		$bodyParams = ['username', 'realname'];
+		$bodyParams = [ 'username', 'realname' ];
 
-		if( $this->distributionType == 'email' ) {
+		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-addaccount-body';
-			$bodyParams = ['username', 'realname'];
+			$bodyParams = [ 'username', 'realname' ];
 		}
 
 		return [
@@ -62,11 +61,11 @@ class AddUserPresentationModel extends EchoEventPresentationModel {
 		$secondaryLinks = [];
 
 		$extra = $this->event->getExtra();
-		if( !isset( $extra['secondary-links'] ) ) {
+		if ( !isset( $extra['secondary-links'] ) ) {
 			$extra['secondary-links'] = [];
 		}
 
-		if( !isset( $extra['secondary-links']['performer'] ) ) {
+		if ( !isset( $extra['secondary-links']['performer'] ) ) {
 			return $secondaryLinks;
 		}
 
