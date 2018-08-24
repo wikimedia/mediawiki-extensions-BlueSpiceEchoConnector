@@ -20,7 +20,7 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		$path = $this->config->get( 'EchoHtmlMailTemplatePath' );
 		$this->templateParser = new \TemplateParser( $path );
 
-		$this->templateNames = $this->config->get( 'EchoHtmlMailTemlateNames' );
+		$this->templateNames = $this->config->get( 'EchoHtmlMailTemplateNames' );
 	}
 
 	protected function formatModels( array $models ) {

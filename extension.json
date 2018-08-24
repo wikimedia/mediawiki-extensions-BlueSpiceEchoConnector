@@ -58,7 +58,7 @@
 			"value": "/templates",
 			"path": true
 		},
-		"EchoHtmlMailTemlateNames": {
+		"EchoHtmlMailTemplateNames": {
 			"value": {
 				"single": "SingleMail",
 				"digest": "Digest",
