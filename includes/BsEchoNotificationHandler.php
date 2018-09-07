@@ -142,15 +142,15 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 				),
 				'email-subject' => 'bs-notifications-email-move-subject',
 				'email-subject-params' => array (
-					'title', 'agent', 'realname'
+					'title', 'agent', 'newtitle', 'realname'
 				),
 				'email-body' => 'bs-notifications-email-move-body',
 				'email-body-params' => array (
-					'title', 'agent', 'newtitle', 'difflink', 'realname'
+					'title', 'agent', 'newtitle', 'titlelink', 'realname'
 				),
 				'web-body-message' => 'bs-notifications-email-move-body',
 				'web-body-params' => array (
-					'title', 'agent', 'newtitle', 'difflink', 'realname'
+					'title', 'agent', 'newtitle', 'titlelink', 'realname'
 				),
 				'extra-params' => array ()
 			) )
