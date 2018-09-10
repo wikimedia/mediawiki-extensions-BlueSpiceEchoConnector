@@ -1,4 +1,8 @@
 {
-	"@metadata": [],
-	"bs-notifications-create": "Страница [[:$1]] је направљена"
+	"@metadata": {
+		"authors": [
+			"Zoranzoki21"
+		]
+	},
+	"bs-notifications-create": "Страница [[$1]] је направљена"
 }
