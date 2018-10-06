@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"BadDog"
 		]
 	},
-	"bs-notifications-create": "Страница [[$1]] је направљена"
+	"bs-notifications-create": "Страница „$1” је направљена"
 }
