@@ -137,7 +137,8 @@ class Extension {
 			$userId = $record->get( Record::USER_ID, false );
 			if ( $userId ) {
 				$user = \User::newFromId( $userId );
-				if ( $user instanceof \User == false ) {
+				$user->load();
+				if ( $user->isAnon() ) {
 					continue;
 				}
 				$watchers[$user->getId()] = $user;
@@ -164,6 +165,10 @@ class Extension {
 
 		foreach ( $resSysops as $row ) {
 			$user = \User::newFromId( $row->ug_user );
+			$user->load();
+			if ( $user->isAnon() ) {
+				continue;
+			}
 			$users[ $user->getId() ] = $user;
 		}
 		return $users;
@@ -186,6 +191,10 @@ class Extension {
 
 		foreach ( $resUser as $row ) {
 			$user = \User::newFromId( $row->up_user );
+			$user->load();
+			if ( $user->isAnon() ) {
+				continue;
+			}
 			$subscribers[ $user->getId() ] = $user;
 		}
 
