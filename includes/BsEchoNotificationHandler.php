@@ -368,7 +368,7 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 				'bs-create', $oUser, $oArticle->getTitle (), array (
 					'summary' => $sSummary,
 					'titlelink' => true,
-					'realname' => BsUserHelper::getUserDisplayName( $oUser ),
+					'realname' => !empty( $oUser->getRealName() ) ? $oUser->getRealName() : $oUser->getName(),
 					'difflink' => '',
 				)
 			);
@@ -389,7 +389,7 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 				'titlelink' => true,
 				'difflink' => $aDiffParams,
 				'agentlink' => true,
-				'realname' => BsUserHelper::getUserDisplayName( $oUser )
+				'realname' => !empty( $oUser->getRealName() ) ? $oUser->getRealName() : $oUser->getName(),
 			)
 		);
 
@@ -413,7 +413,7 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 			'bs-delete', $oUser, $oArticle->getTitle (), array (
 				'deletereason' => $sReason,
 				'title' => $oArticle->getTitle ()->getText (),
-				'realname' => BsUserHelper::getUserDisplayName( $oUser ),
+				'realname' => !empty( $oUser->getRealName() ) ? $oUser->getRealName() : $oUser->getName(),
 			)
 		);
 
@@ -439,7 +439,7 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 		BSNotifications::notify (
 			'bs-move', $oUser, $oTitle, array (
 				'newtitle' => $oNewTitle,
-				'realname' => BsUserHelper::getUserDisplayName( $oUser ),
+				'realname' => !empty( $oUser->getRealName() ) ? $oUser->getRealName() : $oUser->getName(),
 			)
 		);
 

@@ -95,12 +95,9 @@ class TestNotification extends Maintenance {
 	}
 
 	protected function setupAlternateUserMailer() {
-		if( !$this->getOption( 'outputMail' , false ) ) {
+		if( !$this->getOption(  'outputMail' , false ) ) {
 			return;
 		}
-
-		$GLOBALS['wgEmailAuthentication'] = false;
-		$GLOBALS['wgEchoEnableEmailBatch'] = false;
 
 		Hooks::register( 'AlternateUserMailer', function( $headers, $to, $from, $subject, $body ) {
 			$this->outputMail( $headers, $to, $from, $subject, $body );
@@ -142,8 +139,7 @@ class TestNotification extends Maintenance {
 		$out[] = 'SUBJECT: '.$subject;
 		$out[] = 'BODY:';
 		$out[] = $body;
-		$out[] = '###############';
-		$out[] = "\n";
+		$out[] = '';
 
 		$this->output( implode( "\n", $out) );
 	}
