@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"bs-echoconnector-extension-description": "З'єднує BlueSpice із Echo",
+	"echo-category-title-bs-admin-cat": "Адміністративне завдання виконано",
+	"echo-category-title-bs-page-actions-cat": "Дія на підписаній сторінці"
+}
