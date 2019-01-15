@@ -1,0 +1,107 @@
+{
+	"bs-review-assign": {
+		"class": "\\BlueSpice\\Review\\Notifications\\ReviewAssign",
+		"requires": "BlueSpiceReview",
+		"params": {
+			"agent": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"title": {
+				"callback": "$val = \\Title::newMainPage();"
+			},
+			"nextUsers": {
+				"callback": "$val = [ 0 => \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser()->getId() ];"
+			}
+		}
+	},
+	"bs-review-accept": {
+		"class": "\\BlueSpice\\Review\\Notifications\\ReviewAccept",
+		"requires": "BlueSpiceReview",
+		"params": {
+			"agent": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"title": {
+				"callback": "$val = \\Title::newMainPage();"
+			},
+			"owner": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"comment": {
+				"value": "testMail comment"
+			}
+		}
+	},
+	"bs-review-deny": {
+		"class": "\\BlueSpice\\Review\\Notifications\\ReviewDeny",
+		"requires": "BlueSpiceReview",
+		"params": {
+			"agent": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"title": {
+				"callback": "$val = \\Title::newMainPage();"
+			},
+			"owner": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"comment": {
+				"value": "testMail comment"
+			}
+		}
+	},
+	"bs-review-deny-and-restart": {
+		"class": "\\BlueSpice\\Review\\Notifications\\ReviewDenyAndRestart",
+		"requires": "BlueSpiceReview",
+		"params": {
+			"agent": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"title": {
+				"callback": "$val = \\Title::newMainPage();"
+			},
+			"owner": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"comment": {
+				"value": "testMail comment"
+			}
+		}
+	},
+	"bs-review-finish": {
+		"class": "\\BlueSpice\\Review\\Notifications\\ReviewFinish",
+		"requires": "BlueSpiceReview",
+		"params": {
+			"agent": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"title": {
+				"callback": "$val = \\Title::newMainPage();"
+			},
+			"owner": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"comment": {
+				"value": "testMail comment"
+			}
+		}
+	},
+	"bs-review-finish-and-autoflag": {
+		"class": "\\BlueSpice\\Review\\Notifications\\ReviewFinishAndAutoflag",
+		"requires": "BlueSpiceReview",
+		"params": {
+			"agent": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"title": {
+				"callback": "$val = \\Title::newMainPage();"
+			},
+			"owner": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"comment": {
+				"value": "testMail comment"
+			}
+		}
+	}
+}
