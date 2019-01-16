@@ -39,6 +39,17 @@ class TestNotification extends Maintenance {
 	 */
 	protected $notificationConfigs = [];
 
+	/**
+	 *
+	 * @var int
+	 */
+	protected $batchSize = 300;
+
+	/**
+	 * Usage example: php testNotification.php --affectedusers="WikiSysop"
+	 * TODO: make option to overwrite/extend testNotification.json file
+	 * TODO: make option to create log file of the mails, the user would get
+	 */
 	public function __construct() {
 		parent::__construct();
 
@@ -51,8 +62,12 @@ class TestNotification extends Maintenance {
 		$this->addOption( "agent", "The user that triggers the notification" );
 		$this->addOption( "title", "The title to associate the notification with" );
 		$this->addOption( "affectedusers", "Comma seperated list of usernames", true );
-		$this->addOption( "affectedgroups", "Comma seperated list of groups", false );
-		$this->addOption( "outputMail", "Whether the mails should be put out to the console", false, true );
+		$this->addOption(
+			"outputMail",
+			"Whether the mails should be put out to the console or sent to the affectedusers",
+			false,
+			true
+		);
 
 		$this->addOption( 'maxjobs', 'Maximum number of jobs to run', false, true );
 		$this->addOption( 'maxtime', 'Maximum amount of wall-clock time', false, true );
@@ -64,12 +79,13 @@ class TestNotification extends Maintenance {
 	}
 
 	public function execute() {
+		$this->setupOverwrites();
 		$this->setupAlternateUserMailer();
 		$this->makeAgentUser();
 		$this->makeTitle();
 		$this->makeNotifier();
 		$this->makeNotficationConfigs();
-		// error_log(var_export($this->notificationConfigs,1));
+
 		$keys = empty( $this->getOption( 'keys', '' ) )
 			? array_keys( $this->notificationConfigs )
 			: explode( ',', $this->getOption( 'keys' ) );
@@ -87,7 +103,184 @@ class TestNotification extends Maintenance {
 		}
 
 		$this->output( "Created: '" . count( $notifications ) . "' Notifications\n" );
+		$this->runJobs();
 
+		$this->proccessBatch();
+
+		$this->output( "Completed \n" );
+	}
+
+	public function memoryLimit() {
+		if ( $this->hasOption( 'memory-limit' ) ) {
+			return parent::memoryLimit();
+		}
+
+		// Don't eat all memory on the machine if we get a bad job.
+		return "150M";
+	}
+
+	/**
+	 * @param string $s
+	 */
+	public function debugInternal( $s ) {
+		$this->output( $s );
+	}
+
+	protected function createNotification( $key ) {
+		if ( !isset( $this->notificationConfigs[$key] ) ) {
+			$this->output( "Not available notification: '$key'\n" );
+			return false;
+		}
+		if ( empty( $this->notificationConfigs[$key]->class ) ) {
+			$this->output( "Invalid definition for: '$key'\n" );
+			return false;
+		}
+		if ( empty( $this->notificationConfigs[$key]->requires ) ) {
+			$this->output( "No requirement for: '$key'\n" );
+			return false;
+		}
+		$extensionLoaded = \ExtensionRegistry::getInstance()->isLoaded(
+			$this->notificationConfigs[$key]->requires
+		);
+		if ( !$extensionLoaded ) {
+			$this->output(
+				"Extension '{$this->notificationConfigs[$key]->requires}' not loaded for: '$key'\n"
+			);
+			return false;
+		}
+		$this->output( "Adding notification '$key'\n" );
+		$params = [];
+
+		foreach ( (array)$this->notificationConfigs[$key]->params as $name => $param ) {
+			$params[$name] = isset( $param->value )
+				? $param->value
+				: call_user_func( function () use( $param ) {
+					eval( $param->callback );
+					return $val;
+				} );
+		}
+		if ( isset( $params['agent'] ) && $this->getOption( 'agent', false ) ) {
+			$params['agent'] = $this->agentUser;
+		}
+		if ( isset( $params['title'] ) && $this->getOption( 'title', false ) ) {
+			$params['title'] = $this->title;
+		}
+		$notification = new $this->notificationConfigs[$key]->class(
+			...array_values( $params )
+		);
+
+		$this->output( "Done.\n" );
+		return $notification;
+	}
+
+	protected function makeAgentUser() {
+		$agent = $this->getOption( 'agent', '' );
+		if ( !empty( $agent ) ) {
+			$this->agentUser = User::newFromName( $agent );
+			if ( !$this->agentUser || $this->agentUser->isAnon() ) {
+				throw  new Exception( "Invalid or not existing user: $agent" );
+			}
+			return;
+		}
+		$this->agentUser = $this->getServices()->getBSUtilityFactory()
+			->getMaintenanceUser()->getUser();
+	}
+
+	protected function makeTitle() {
+		$title = $this->getOption( 'title', '' );
+		if ( !empty( $title ) ) {
+			$this->title = Title::newFromText( $title );
+		} else {
+			$this->title = Title::newMainPage();
+		}
+	}
+
+	protected function setupOverwrites() {
+		$GLOBALS['wgEmailAuthentication'] = false;
+		$GLOBALS['wgEchoEnableEmailBatch'] = true;
+		$GLOBALS['wgEchoUseJobQueue'] = true;
+
+		$that = $this;
+		Hooks::register( 'EchoGetDefaultNotifiedUsers', function ( $event, &$users ) use ( $that )  {
+			$users = $that->getAffectedUsers();
+			return false;
+		} );
+	}
+
+	protected function setupAlternateUserMailer() {
+		if ( !$this->getOption( 'outputMail', true ) ) {
+			return;
+		}
+		Hooks::register( 'AlternateUserMailer', function ( $headers, $to, $from, $subject, $body ) {
+			$this->outputMail( $headers, $to, $from, $subject, $body );
+			return false;
+		} );
+	}
+
+	/**
+	 *
+	 * @param array $headers
+	 * @param MailAddress[] $to
+	 * @param MailAddress $from
+	 * @param string $subject
+	 * @param string $body
+	 */
+	protected function outputMail( $headers, $to, $from, $subject, $body ) {
+		$out = [];
+		$out[] = '###############';
+		foreach ( $headers as $headerName => $headerValue ) {
+			$out[] = "$headerName: $headerValue";
+		}
+
+		$out[] = '---------------------------------------------';
+		$out[] = 'FROM: ' . $from->toString();
+
+		$tos = [];
+		foreach ( $to as $mailAdress ) {
+			$tos[] = $mailAdress->toString();
+		}
+		$out[] = 'TO: ' . implode( '; ', $tos );
+		$out[] = 'SUBJECT: ' . $subject;
+		$out[] = 'BODY:';
+		$out[] = $body;
+		$out[] = '###############';
+		$out[] = "\n";
+
+		$this->output( implode( "\n", $out ) );
+	}
+
+	public function getAffectedUsers() {
+		$sAffectedUsers = $this->getOption( 'affectedusers', '' );
+		$userNames = explode( ',', $sAffectedUsers );
+		$users = [];
+		foreach ( $userNames as $userName ) {
+			$users[] = User::newFromName( $userName );
+		}
+		return $users;
+	}
+
+	/**
+	 * @return Services
+	 */
+	protected function getServices() {
+		return Services::getInstance();
+	}
+
+	/**
+	 * @return INotifier|null
+	 */
+	protected function makeNotifier() {
+		$this->notifier = $this->getServices()->getBSNotificationManager()->getNotifier();
+	}
+
+	protected function makeNotficationConfigs() {
+		$cfg = \FormatJson::decode( file_get_contents(
+			__DIR__ . '/testNotification.json'
+		) );
+		$this->notificationConfigs = (array)$cfg;
+	}
+
+	protected function runJobs() {
 		if ( $this->hasOption( 'procs' ) ) {
 			$procs = intval( $this->getOption( 'procs' ) );
 			if ( $procs < 1 || $procs > 1000 ) {
@@ -142,203 +335,47 @@ class TestNotification extends Maintenance {
 		}
 	}
 
-	public function memoryLimit() {
-		if ( $this->hasOption( 'memory-limit' ) ) {
-			return parent::memoryLimit();
-		}
+	protected function proccessBatch() {
+		global $wgEchoCluster;
 
-		// Don't eat all memory on the machine if we get a bad job.
-		return "150M";
-	}
+		$ignoreConfiguredSchedule = true;
 
-	/**
-	 * @param string $s
-	 */
-	public function debugInternal( $s ) {
-		$this->output( $s );
-	}
+		$this->output( "Started processing... \n" );
 
-	protected function createNotification( $key ) {
-		if ( !isset( $this->notificationConfigs[$key] ) ) {
-			$this->output( "Not available notification: '$key'\n" );
-			return false;
-		}
-		if ( empty( $this->notificationConfigs[$key]->class ) ) {
-			$this->output( "Invalid definition for: '$key'\n" );
-			return false;
-		}
-		if ( empty( $this->notificationConfigs[$key]->requires ) ) {
-			$this->output( "No requirement for: '$key'\n" );
-			return false;
-		}
-		$extensionLoaded = \ExtensionRegistry::getInstance()->isLoaded(
-			$this->notificationConfigs[$key]->requires
-		);
-		if ( !$extensionLoaded ) {
-			$this->output(
-				"Extension '{$this->notificationConfigs[$key]->requires}' not loaded for: '$key'\n"
-			);
-			return false;
-		}
-		$this->output( "Adding notification '$key'\n" );
-		$params = [];
+		$startUserId = 0;
+		$count = $this->batchSize;
 
-		foreach ( (array)$this->notificationConfigs[$key]->params as $name => $param ) {
-			$params[$name] = isset( $param->value )
-				? $param->value
-				: call_user_func( function () use( $param ) {
-					eval( $param->callback );
-					return $val;
-				} );
-		}
-		if ( $this->getOption( 'agent', false ) ) {
-			$params['agent'] = $this->agentUser;
-		}
-		if ( $this->getOption( 'title', false ) ) {
-			$params['title'] = $this->title;
-		}
-		$notification = new $this->notificationConfigs[$key]->class(
-			...array_values( $params )
-		);
+		while ( $count === $this->batchSize ) {
+			$count = 0;
 
-		$this->output( "Done.\n" );
-		return $notification;
-	}
+			$res = \BlueSpice\EchoConnector\EchoEmailBatch::getUsersToNotify( $startUserId, $this->batchSize );
 
-	protected function makeAgentUser() {
-		$agent = $this->getOption( 'agent', '' );
-		if ( !empty( $agent ) ) {
-			$this->agentUser = User::newFromName( $agent );
-			if ( !$this->agentUser || $this->agentUser->isAnon() ) {
-				throw  new Exception( "Invalid or not existing user: $agent" );
+			$updated = false;
+			foreach ( $res as $row ) {
+				$userId = intval( $row->eeb_user_id );
+				if ( $userId && $userId > $startUserId ) {
+					$emailBatch = \BlueSpice\EchoConnector\EchoEmailBatch::newFromUserId(
+						$userId,
+						!$ignoreConfiguredSchedule
+					);
+					if ( $emailBatch ) {
+						$this->output( "processing user_Id " . $userId . " \n" );
+						$emailBatch->process();
+					}
+					$startUserId = $userId;
+					$updated = true;
+				}
+				$count++;
 			}
-			return;
+			wfWaitForSlaves( false, false, $wgEchoCluster );
+			// This is required since we are updating user properties in main wikidb
+			wfWaitForSlaves();
+
+			// double check to make sure that the id is updated
+			if ( !$updated ) {
+				break;
+			}
 		}
-		$this->agentUser = $this->getServices()->getBSUtilityFactory()
-			->getMaintenanceUser()->getUser();
-	}
-
-	protected function makeTitle() {
-		$title = $this->getOption( 'title', '' );
-		if ( !empty( $title ) ) {
-			$this->title = Title::newFromText( $title );
-		} else {
-			$this->title = Title::newMainPage();
-		}
-	}
-
-	protected function makeExtraParams() {
-		$extra = [];
-		$affectedUsers = $this->getAffectedUsers();
-		if ( !empty( $affectedUsers ) ) {
-			$extra['affected-users'] = $affectedUsers;
-		}
-		$affectedGroups = $this->getAffectedGroups();
-		if ( !empty( $affectedGroups ) ) {
-			$extra['affected-groups'] = $affectedGroups;
-		}
-
-		return $extra;
-	}
-
-	protected function setupAlternateUserMailer() {
-		if ( !$this->getOption( 'outputMail', true ) ) {
-			return;
-		}
-
-		$GLOBALS['wgEmailAuthentication'] = false;
-		$GLOBALS['wgEchoEnableEmailBatch'] = false;
-		$GLOBALS['wgEchoUseJobQueue'] = true;
-
-		$that = $this;
-		Hooks::register( 'EchoGetDefaultNotifiedUsers', function ( $event, &$users ) use ( $that )  {
-			$users = $that->getAffectedUsers();
-			return false;
-		} );
-		Hooks::register( 'AlternateUserMailer', function ( $headers, $to, $from, $subject, $body ) {
-			error_log( var_export( $to, 1 ) );
-			error_log( var_export( $subject, 1 ) );
-			$this->outputMail( $headers, $to, $from, $subject, $body );
-			return false;
-		} );
-
-		// Do a test
-		/*UserMailer::send(
-			[ new MailAddress( 'support@hallowelt.com' ) ],
-			new MailAddress( 'info@hallowelt.com' ),
-			'Hello World',
-			'Lorem ipsum dolor sit amet'
-		);*/
-	}
-
-	/**
-	 *
-	 * @param array $headers
-	 * @param MailAddress[] $to
-	 * @param MailAddress $from
-	 * @param string $subject
-	 * @param string $body
-	 */
-	protected function outputMail( $headers, $to, $from, $subject, $body ) {
-		$out = [];
-		$out[] = '###############';
-		foreach ( $headers as $headerName => $headerValue ) {
-			$out[] = "$headerName: $headerValue";
-		}
-
-		$out[] = '---------------------------------------------';
-		$out[] = 'FROM: ' . $from->toString();
-
-		$tos = [];
-		foreach ( $to as $mailAdress ) {
-			$tos[] = $mailAdress->toString();
-		}
-		$out[] = 'TO: ' . implode( '; ', $tos );
-		$out[] = 'SUBJECT: ' . $subject;
-		$out[] = 'BODY:';
-		$out[] = $body;
-		$out[] = '###############';
-		$out[] = "\n";
-
-		$this->output( implode( "\n", $out ) );
-	}
-
-	public function getAffectedUsers() {
-		$sAffectedUsers = $this->getOption( 'affectedusers', '' );
-		$userNames = explode( ',', $sAffectedUsers );
-		$users = [];
-		foreach ( $userNames as $userName ) {
-			$users[] = User::newFromName( $userName );
-		}
-		return $users;
-	}
-
-	protected function getAffectedGroups() {
-		$affectedGroups = $this->getOption( 'affectedgroups', '' );
-		$groups = explode( ',', $affectedGroups );
-		$groups = array_map( 'trim', $groups );
-		return $groups;
-	}
-
-	/**
-	 * @return Services
-	 */
-	protected function getServices() {
-		return Services::getInstance();
-	}
-
-	/**
-	 * @return INotifier|null
-	 */
-	protected function makeNotifier() {
-		$this->notifier = $this->getServices()->getBSNotificationManager()->getNotifier();
-	}
-
-	public function makeNotficationConfigs() {
-		$cfg = \FormatJson::decode( file_get_contents(
-			__DIR__ . '/testNotification.json'
-		) );
-		$this->notificationConfigs = (array)$cfg;
 	}
 
 }
