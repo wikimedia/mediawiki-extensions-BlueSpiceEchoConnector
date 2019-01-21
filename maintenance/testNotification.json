@@ -11,6 +11,18 @@
 			}
 		}
 	},
+	"bs-registeruser": {
+		"class": "\\BlueSpice\\EchoConnector\\Notification\\RegisterUserNotification",
+		"requires": "BlueSpiceEchoConnector",
+		"params": {
+			"agent": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			},
+			"createdUser": {
+				"callback": "$val = \\BlueSpice\\Services::getInstance()->getBSUtilityFactory()->getMaintenanceUser()->getUser();"
+			}
+		}
+	},
 	"bs-create": {
 		"class": "\\BlueSpice\\EchoConnector\\Notification\\CreateNotification",
 		"requires": "BlueSpiceEchoConnector",
