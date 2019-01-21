@@ -82,6 +82,15 @@ class Extension {
 				'user-locators' => [ self::class . '::getUsersToNotify' ]
 			]
 		);
+
+		$notificationsManager->registerNotification(
+			'bs-registeruser',
+			[
+				'category' => 'bs-admin-cat',
+				'presentation-model' => PresentationModel\RegisterUserPresentationModel::class,
+				'user-locators' => [ self::class . '::getUsersToNotify' ]
+			]
+		);
 	}
 
 	/**
@@ -94,6 +103,7 @@ class Extension {
 		$users = [];
 
 		switch ( $event->getType() ) {
+			case 'bs-registeruser':
 			case 'bs-adduser':
 				// Get admin users
 				$users = self::getUsersFromGroups( 'sysop' );
