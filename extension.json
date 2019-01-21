@@ -53,6 +53,9 @@
 		],
 		"EchoGetBundleRules": [
 			"\\BlueSpice\\EchoConnector\\Hook\\EchoGetBundleRules\\GetBundleRules::callback"
+		],
+		"LocalUserCreated": [
+			"\\BlueSpice\\EchoConnector\\Hook\\LocalUserCreated\\NotifyUsers::callback"
 		]
 	},
 	"config_prefix": "bsg",
