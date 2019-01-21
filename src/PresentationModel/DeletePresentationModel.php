@@ -31,8 +31,12 @@ class DeletePresentationModel extends EchoEventPresentationModel {
 		];
 	}
 
+	/**
+	 *
+	 * @return array|false
+	 */
 	public function getPrimaryLink() {
-		return '';
+		return false;
 	}
 
 	/**

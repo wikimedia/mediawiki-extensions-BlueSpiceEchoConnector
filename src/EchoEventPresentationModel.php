@@ -101,7 +101,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 	/**
 	 * Gets the URL to the title that notification is about
 	 *
-	 * @return string|false if no \Title is supplied
+	 * @return array|false if no \Title is supplied
 	 */
 	public function getPrimaryLink() {
 		$title = $this->event->getTitle();
