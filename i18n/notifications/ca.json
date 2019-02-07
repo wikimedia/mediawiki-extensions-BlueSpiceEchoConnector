@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"bs-notifications-registeruser": "«$1» s’ha creat un compte.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|L’usuari|La usuària}} «$2» s’ha {{GENDER:$1|creat}} un compte",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|L’usuari|La usuària}} $2 s’ha {{GENDER:$1|creat}} un compte."
+}
