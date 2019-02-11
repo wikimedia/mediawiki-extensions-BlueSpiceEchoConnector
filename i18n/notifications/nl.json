@@ -3,13 +3,14 @@
 		"authors": [
 			"Romaine",
 			"Sjoerddebruin",
-			"Mainframe98"
+			"Mainframe98",
+			"Xbaked potatox"
 		]
 	},
 	"bs-notifications-addaccount": "De gebruiker \"$1\" is aangemaakt.",
 	"bs-notifications-email-addaccount-subject": "Gebruiker \"$2\" is {{GENDER:$1|aangemaakt}}",
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|De gebruiker}} $2 is aangemaakt.\n\nU kunt een bezoek brengen aan {{GENDER:$2|zijn|haar|de}} gebruikerspagina via de koppeling beneden",
-	"bs-notifications-web-addaccount-body": "{{GENDER:$1|De gebruiker}} $1 is aangemaakt.",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|De gebruiker}} $2 is gemaakt.",
 	"bs-notifications-edit": "De pagina \"$1\" is gewijzigd",
 	"bs-notifications-edit-bundle": "De pagina \"$2\" is {{PLURAL:$1|$1 keer|$1 keren}} gewijzigd",
 	"bs-notifications-email-edit-subject": "Pagina \"$1\" is {{GENDER:$2|bewerkt}} door $3",
