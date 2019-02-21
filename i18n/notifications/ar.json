@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
 	"bs-notifications-addaccount": "تم إنشاء المستخدم \"$1\".",
@@ -34,5 +35,5 @@
 	"bs-notifications-edit-difflink-label": "انظر الفرق",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|مرحبا بك}} $1",
 	"bs-notifications-htmlmail-sender-info": "نظام الإخطار $1",
-	"bs-notifications-mail-additional-links-label": "روابط إضافية"
+	"bs-notifications-mail-additional-links-label": "وصلات إضافية"
 }
