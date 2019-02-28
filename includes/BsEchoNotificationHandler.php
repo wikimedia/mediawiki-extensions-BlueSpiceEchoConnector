@@ -474,6 +474,9 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 			$resSysops = $dbr->select ( "user_groups", "ug_user", 'ug_group = "sysop"' );
 			foreach ( $resSysops as $row ) {
 				$user = User::newFromId ( $row->ug_user );
+				if( !$user || $user->isAnon() ) {
+					continue;
+				}
 				$users[ $user->getId () ] = $user;
 			}
 			break;
@@ -496,6 +499,9 @@ class BsEchoNotificationHandler extends BSNotificationHandler {
 				);
 				foreach ( $resUser as $row ) {
 					$user = User::newFromId ( $row->up_user );
+					if( !$user || $user->isAnon() ) {
+						continue;
+					}
 					$users[ $user->getId () ] = $user;
 				}
 			break;
