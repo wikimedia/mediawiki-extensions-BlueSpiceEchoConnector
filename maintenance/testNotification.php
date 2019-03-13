@@ -55,13 +55,13 @@ class TestNotification extends Maintenance {
 
 		$this->addOption(
 			"keys",
-			"Comma seperated list of notification to trigger. If not set, all notifications will be triggerd",
+			"Comma separated list of notification to trigger. If not set, all notifications will be triggerd",
 			false,
 			true
 		);
 		$this->addOption( "agent", "The user that triggers the notification" );
 		$this->addOption( "title", "The title to associate the notification with" );
-		$this->addOption( "affectedusers", "Comma seperated list of usernames", true );
+		$this->addOption( "affectedusers", "Comma separated list of usernames", true );
 		$this->addOption(
 			"outputMail",
 			"Whether the mails should be put out to the console or sent to the affectedusers",
