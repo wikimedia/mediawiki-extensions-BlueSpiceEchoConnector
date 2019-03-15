@@ -6,6 +6,7 @@
 	},
 	"bs-notifications-registeruser": "«$1» s’ha creat un compte.",
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|L’usuari|La usuària}} «$2» s’ha {{GENDER:$1|creat}} un compte",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|L’usuari|La usuària}} $2 s’ha {{GENDER:$1|creat}} un compte.\n\nPodeu visitar la seva pàgina d’{{GENDER:$1|usuari|usuària}} mitjançant l’enllaç següent",
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|L’usuari|La usuària}} $2 s’ha {{GENDER:$1|creat}} un compte.",
 	"bs-notifications-email-create-body": "$3 {{GENDER:$2|ha}} creada la pàgina «$1».\n\nComentari:\n $4 \nPodeu visitar la pàgina mitjançant l’enllaç següent"
 }
