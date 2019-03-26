@@ -14,6 +14,8 @@
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Творець}}: $1",
 	"bs-notifications-registeruser": "Користувач «$1» створив обліковий запис.",
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Користувач|Користувачка}} «$2» {{GENDER:$1|створив|створила}} обліковий запис",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|Користувач|Користувачка}} $2 {{GENDER:$1|створив|створила}} обліковий запис.\n\nВи можете відвідати {{GENDER:$1|його|її}} сторінку користувача за наступним посиланням нижче",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|Користувач|Користувачка}} $2 {{GENDER:$1|створив|створила}} обліковий запис.",
 	"bs-notifications-edit": "Сторінку «$1» було змінено",
 	"bs-notifications-edit-bundle": "Сторінку «$2» змінювали {{PLURAL:$1|$1 раз|$1 рази|$1 разів}}",
 	"bs-notifications-email-edit-subject": "Сторінку «$1» {{GENDER:$2|редагував|редагувала}} $3",
