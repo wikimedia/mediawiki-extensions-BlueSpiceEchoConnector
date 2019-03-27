@@ -31,6 +31,7 @@
 	"bs-notifications-move": "Se trasladó la página «$1»",
 	"bs-notifications-email-move-subject": "$4 {{GENDER:$2|trasladó}} la página «$1» a «$3»",
 	"bs-notifications-email-move-body": "$4 {{GENDER:$2|trasladó}} la página «$1» hacia «$3».\n\nMotivo:\n$5\n\nPuedes visitar la página mediante el enlace siguiente",
+	"bs-notifications-web-move-body": "$4 {{GENDER:$2|trasladó}} la página «$1» a «$3»",
 	"bs-notifications-edit-difflink-label": "Ver diferencia",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hola}}, $1",
 	"bs-notifications-htmlmail-sender-info": "Sistema de notificaciones de $1",
