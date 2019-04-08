@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sarrus"
+			"Sarrus",
+			"Saederup92"
 		]
 	},
-	"bs-notifications-email-create-subject": "Siden \"$1\" {{GENDER:$2|blev oprettet}} af $3"
+	"bs-notifications-addaccount": "Brugeren \"$1\" blev oprettet.",
+	"bs-notifications-email-create-subject": "Siden \"$1\" {{GENDER:$2|blev oprettet}} af $3",
+	"bs-notifications-delete": "Siden \"$1\" er blevet slettet"
 }
