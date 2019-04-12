@@ -12,6 +12,7 @@
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Creatore}}: $1",
 	"bs-notifications-registeruser": "L'utente \"$1\" ha creato un account.",
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|L'utente}} \"$2\" ha {{GENDER:$1|creato}} un account",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|L'utente}} $2 ha {{GENDER:$1|creato}} un'utenza.\n\nPuoi visitare la {{GENDER:$1|sua}} pagina utente seguendo il collegamento sotto",
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|L'utente}} $2 ha {{GENDER:$1|creato}} un account.",
 	"bs-notifications-edit": "La pagina \"$1\" è stata modificata",
 	"bs-notifications-edit-bundle": "La pagina \"$2\" è stata modificata {{PLURAL:$1|$1 volta|$1 volte}}",
