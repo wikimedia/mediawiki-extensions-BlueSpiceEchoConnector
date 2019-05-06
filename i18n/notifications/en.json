@@ -31,7 +31,7 @@
 	"bs-notifications-move": "The page \"$1\" has been moved",
 	"bs-notifications-email-move-subject": "Page \"$1\" {{GENDER:$2|moved}} to \"$3\" by $4",
 	"bs-notifications-email-move-body": "The page \"$1\" was {{GENDER:$2|moved}} to \"$3\" by $4.\n\nReason was:\n$5\n\nYou can visit the page following the link below",
-	"bs-notifications-web-move-body": "The page\"$1\" was {{GENDER:$2|moved}} to \"$3\" by $4",
+	"bs-notifications-web-move-body": "The page \"$1\" was {{GENDER:$2|moved}} to \"$3\" by $4",
 	"bs-notifications-edit-difflink-label": "See difference",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hello}} $1",
 	"bs-notifications-htmlmail-sender-info": "$1 notification system",
