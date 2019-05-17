@@ -90,6 +90,9 @@
 	"JobClasses": {
 		"sendNotification": "BlueSpice\\EchoConnector\\Job\\SendNotification"
 	},
+	"AutoloadNamespaces": {
+		"BlueSpice\\EchoConnector\\": "src/"
+	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
 }
