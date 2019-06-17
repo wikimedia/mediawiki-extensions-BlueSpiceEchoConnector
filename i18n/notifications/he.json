@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Guycn2"
+			"Guycn2",
+			"Steeve815"
 		]
 	},
 	"bs-notifications-addaccount": "{{GENDER:$1|המשתמש|המשתמשת}} \"$1\" {{GENDER:$1|נוצר|נוצרה}}.",
@@ -9,6 +10,8 @@
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|המשתמש|המשתמשת}} \"$2\" {{GENDER:$1|נוצר|נוצרה}}.\n\nבאפשרותך לבקר בדף המשתמש {{GENDER:$1|שלו|שלה}} באמצעות הקישור שלהלן",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|המשתמש|המשתמשת}} \"$2\" {{GENDER:$1|נוצר|נוצרה}}.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|היוצר|היוצרת}}: $1",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|משתמש|משתמשת}} \"$2\" {{GENDER:$1|יצר|יצרה}} חשבון",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|המשתמש|המשתמשת}} $2 {{GENDER:$1|יצר|יצרה}} חשבון.",
 	"bs-notifications-edit": "הדף \"$1\" שוּנה",
 	"bs-notifications-edit-bundle": "הדף \"$2\" שוּנה {{PLURAL:$1|פעם אחת|פעמיים|$1 פעמים}}",
 	"bs-notifications-email-edit-subject": "הדף \"$1\" {{GENDER:$2|נערך}} על־ידי $3",
