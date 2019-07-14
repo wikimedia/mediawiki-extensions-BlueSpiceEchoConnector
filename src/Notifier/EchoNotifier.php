@@ -84,6 +84,7 @@ class EchoNotifier extends \EchoNotifier {
 
 		return true;
 	}
+
 	/**
 	 * @param EchoEvent $event
 	 * @param User $user
