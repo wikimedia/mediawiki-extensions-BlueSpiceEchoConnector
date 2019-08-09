@@ -33,5 +33,6 @@
 	"bs-notifications-edit-difflink-label": "Vedi le differenze",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Ciao}} $1",
 	"bs-notifications-htmlmail-sender-info": "Sistema di notifica $1",
-	"bs-notifications-mail-additional-links-label": "Collegamenti aggiuntivi"
+	"bs-notifications-mail-additional-links-label": "Collegamenti aggiuntivi",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|L'utente}} $2 ha {{GENDER:$1|creato}} un'utenza.\n\nPuoi visitare la {{GENDER:$1|sua}} pagina utente seguendo il collegamento sotto"
 }

@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mirin"
+		]
+	},
+	"bs-notifications-addaccout-performer": "{{GENDER:$1|Kreinto}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Kreinto}}: $1",
+	"bs-notifications-mail-additional-links-label": "Pliaj ligiloj"
+}

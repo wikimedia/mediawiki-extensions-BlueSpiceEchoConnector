@@ -29,5 +29,9 @@
 	"bs-notifications-email-move-body": "De pagina \"$1\" is {{GENDER:$2|hernoemd}} naar \"$3\" door $4. \n\nDe volgende reden is opgegeven:\n$5\n\nU kunt de pagina bezoeken via de koppeling hier beneden",
 	"bs-notifications-web-move-body": "De pagina \"$1\" is {{GENDER:$2|hernoemd}} naar \"$3\" door $4",
 	"bs-notifications-edit-difflink-label": "Verschillen weergeven",
-	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hallo}} $1"
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hallo}} $1",
+	"bs-notifications-registeruser": "De gebruiker \"$1\" heeft een account aangemaakt.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Gebruiker}} \"$2\" heeft een account {{GENDER:$1|aangemaakt}}",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|De gebruiker}} \"$2\" heeft een account {{GENDER:$1|aangemaakt}}.\n\nU kun {{GENDER:$1|zijn|haar|de}} gebruikerspagina bezoeken via de koppeling hier beneden",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|De gebruiker}} $2 heeft een account {{GENDER:$1|aangemaakt}}."
 }

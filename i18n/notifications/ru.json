@@ -4,7 +4,8 @@
 			"Okras",
 			"Movses",
 			"Vlad5250",
-			"Romanko Mikhail"
+			"Romanko Mikhail",
+			"DmitTrix"
 		]
 	},
 	"bs-notifications-addaccount": "Участник \"$1\" был создан.",
@@ -24,5 +25,10 @@
 	"bs-notifications-move": "Страница «$1» была перемещена",
 	"bs-notifications-email-move-subject": "Страница «$1» была перемещена в «$3» {{GENDER:$2|участником|участницей}} $4",
 	"bs-notifications-email-move-body": "Страница «$1» была перемещена в «$3» {{GENDER:$2|участником|участницей}} $4. \n\nПричиной указано:\n$5\n\nВы можете посетить страницу по ссылке ниже",
-	"bs-notifications-edit-difflink-label": "Показать отличия"
+	"bs-notifications-edit-difflink-label": "Показать отличия",
+	"bs-notifications-addaccout-performer": "{{GENDER:$1|Создатель|Создательница}}: $1",
+	"bs-notifications-web-edit-body": "Страница «$1» была {{GENDER:$2|отредактирована}} $3.",
+	"bs-notifications-web-create-body": "Страница «$1» была {{GENDER:$2|создана}} $3.",
+	"bs-notifications-web-delete-body": "Страница «$1» была {{GENDER:$2|удалена}} $3.",
+	"bs-notifications-mail-additional-links-label": "Дополнительные ссылки"
 }
