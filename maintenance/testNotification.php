@@ -76,6 +76,7 @@ class TestNotification extends Maintenance {
 		$this->addOption( 'nothrottle', 'Ignore job throttling configuration', false, false );
 		$this->addOption( 'result', 'Set to "json" to print only a JSON response', false, true );
 		$this->addOption( 'wait', 'Wait for new jobs instead of exiting', false, false );
+		$this->requireExtension( 'BlueSpiceEchoConnector' );
 	}
 
 	public function execute() {
