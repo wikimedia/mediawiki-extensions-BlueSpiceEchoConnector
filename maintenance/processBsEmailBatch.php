@@ -21,7 +21,7 @@ class ProcessBsEchoEmailBatch extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = "Process email digest";
+		$this->addDescription( "Process email digest" );
 
 		$this->addOption( "ignoreConfiguredSchedule", "Send all pending notifications immediately even if configured to be weekly or daily.", false, false, "i" );
 
