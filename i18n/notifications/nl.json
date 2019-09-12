@@ -4,7 +4,8 @@
 			"Romaine",
 			"Sjoerddebruin",
 			"Mainframe98",
-			"Xbaked potatox"
+			"Xbaked potatox",
+			"Rots61"
 		]
 	},
 	"bs-notifications-addaccount": "De gebruiker \"$1\" is aangemaakt.",
@@ -33,5 +34,7 @@
 	"bs-notifications-registeruser": "De gebruiker \"$1\" heeft een account aangemaakt.",
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Gebruiker}} \"$2\" heeft een account {{GENDER:$1|aangemaakt}}",
 	"bs-notifications-email-registeruser-body": "{{GENDER:$1|De gebruiker}} \"$2\" heeft een account {{GENDER:$1|aangemaakt}}.\n\nU kun {{GENDER:$1|zijn|haar|de}} gebruikerspagina bezoeken via de koppeling hier beneden",
-	"bs-notifications-web-registeruser-body": "{{GENDER:$1|De gebruiker}} $2 heeft een account {{GENDER:$1|aangemaakt}}."
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|De gebruiker}} $2 heeft een account {{GENDER:$1|aangemaakt}}.",
+	"bs-notifications-addaccout-performer": "{{GENDER:$1|Maker}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Maker}}: $1"
 }
