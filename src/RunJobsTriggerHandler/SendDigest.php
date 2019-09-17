@@ -3,7 +3,7 @@
 namespace BlueSpice\EchoConnector\RunJobsTriggerHandler;
 
 use BlueSpice\RunJobsTriggerHandler;
-use MediaWiki\MediaWikiServices;
+use BlueSpice\Services;
 
 class SendDigest extends RunJobsTriggerHandler {
 	protected $batchSize = 300;
@@ -36,12 +36,12 @@ class SendDigest extends RunJobsTriggerHandler {
 				$count++;
 			}
 
-			$echoCluster = MediaWikiServices::getInstance()->getMainConfig()->get( 'EchoCluster' );
-			MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->waitForReplication( [
+			$echoCluster = Services::getInstance()->getMainConfig()->get( 'EchoCluster' );
+			Services::getInstance()->getDBLoadBalancerFactory()->waitForReplication( [
 				'cluster' => $echoCluster
 			] );
 			// This is required since we are updating user properties in main wikidb
-			MediaWikiServices::getInstance()->getDBLoadBalancerFactory()->waitForReplication();
+			Services::getInstance()->getDBLoadBalancerFactory()->waitForReplication();
 
 			// double check to make sure that the id is updated
 			if ( !$updated ) {
