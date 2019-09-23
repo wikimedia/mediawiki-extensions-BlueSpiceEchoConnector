@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wolf Rex"
+			"Wolf Rex",
+			"Csega"
 		]
 	},
 	"bs-notifications-email-addaccount-subject": "$2 szerkesztő {{GENDER:$1|létrehozva}}",
@@ -9,8 +10,8 @@
 	"bs-notifications-edit": "A(z) [[:$1]] lap megváltozott",
 	"bs-notifications-email-edit-subject": "$3 {{GENDER:$2|szerkesztette}} a(z) $1 lapot",
 	"bs-notifications-email-edit-body": "$6 {{GENDER:$2|szerkesztette}} a(z) \"$1\" lapot.\n\nÖsszefoglaló:\n$3\nA lapot a következő linken találhatod meg:\n$4\n\nA változtatások megtekintéséhez kövesd az alábbi linket:\n$5",
-	"bs-notifications-create": "[[:$1]] lap létrehozva",
-	"bs-notifications-email-create-subject": "$1 lap {{GENDER:$2|létrehozva}} $3 által",
+	"bs-notifications-create": "\"$1\" lap létrehozva",
+	"bs-notifications-email-create-subject": "\"$1\" lap {{GENDER:$2|létrehozva}} $3 által",
 	"bs-notifications-email-create-body": "\"$1\" lap $6 által {{GENDER:$2|létrehozva}}.\n\nÖsszefoglaló:\n$3\nA lapot a következő linken találhatod meg:\n$4",
 	"bs-notifications-delete": "A(z) [[:$1]] lap törölve lett",
 	"bs-notifications-email-delete-subject": "$3 {{GENDER:$2|törölte}} a(z) $1 lapot",
