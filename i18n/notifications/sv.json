@@ -30,5 +30,8 @@
 	"bs-notifications-edit-difflink-label": "Se skillnaden",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hej}} $1",
 	"bs-notifications-htmlmail-sender-info": "$1 aviseringssystem",
-	"bs-notifications-mail-additional-links-label": "Ytterligare länkar"
+	"bs-notifications-mail-additional-links-label": "Ytterligare länkar",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Användaren}} \"$2\" {{GENDER:$1|skapade}} ett konto",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|Användaren}} $2 {{GENDER:$1|skapade}} ett konto.\n\nDu kan besöka {{GENDER:$1|hans|hennes|personens}} användarsida genom att följa länken nedan",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|Användaren}} $2 {{GENDER:$1|skapade}} ett konto."
 }

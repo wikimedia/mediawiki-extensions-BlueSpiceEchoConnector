@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Guycn2"
+			"Guycn2",
+			"Steeve815"
 		]
 	},
 	"bs-notifications-addaccount": "{{GENDER:$1|המשתמש|המשתמשת}} \"$1\" {{GENDER:$1|נוצר|נוצרה}}.",
@@ -30,5 +31,10 @@
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|שלום}} $1",
 	"bs-notifications-htmlmail-sender-info": "מערכת ההודעות של $1",
 	"bs-notifications-mail-additional-links-label": "קישורים נוספים",
-	"bs-notifications-param-realname-with-username": "$1 ($2)"
+	"bs-notifications-param-realname-with-username": "$1 ($2)",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|יוצר|יוצרת}}: $1",
+	"bs-notifications-registeruser": "{{GENDER:$1|המשתמש|המשתמשת}} \"$1\" {{GENDER:$1|יצר|יצרה}} חשבון.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|משתמש|משתמשת}} \"$2\" {{GENDER:$1|יצר|יצרה}} חשבון",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|המשתמש|המשתמשת}} \"$2\" {{GENDER:$1|יצר|יצרה}} חשבון.\n\nניתן לבקר בדף {{GENDER:$1|המשתמש שלו|המשתמשת שלה}} באמצעות הקישור להלן",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|המשתמש|המשתמשת}} $2 {{GENDER:$1|יצר|יצרה}} חשבון."
 }

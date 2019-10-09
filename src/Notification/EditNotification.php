@@ -22,7 +22,10 @@ class EditNotification extends BaseNotification {
 	}
 
 	public function getSecondaryLinks() {
-		$diffParams = [];
+		$diffParams = [
+			'diff' => 0,
+			'oldid' => 0,
+		];
 		if ( is_object( $this->revision ) ) {
 			$diffParams[ 'diff' ] = $this->revision->getId();
 			if ( is_object( $this->revision->getPrevious() ) ) {

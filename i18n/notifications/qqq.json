@@ -4,7 +4,8 @@
 			"Markus Glaser <glaser@hallowelt.com>",
 			"Dejan Savuljesku<savuljesku@hallowelt.com>",
 			"Raymond",
-			"Guycn2"
+			"Guycn2",
+			"Pyscowicz"
 		]
 	},
 	"bs-notifications-addaccount": "Short message that a user was created. Parameters:\n* $1 username of the created user",
@@ -13,7 +14,7 @@
 	"bs-notifications-web-addaccount-body": "A user was created. Parameters:\n* $1 user real name\n* $2 user name",
 	"bs-notifications-addaccout-performer": "A user was created. Parameters:\n* $1 performer user name",
 	"bs-notifications-addaccount-performer": "A user was created. Parameters:\n* $1 performer user name",
-	"bs-notifications-registeruser": "Short message, that a user has created an account. Parameters:\n* $1 user name\n* $2 user real name",
+	"bs-notifications-registeruser": "Short message, that a user has created an account. Parameters:\n* $1 user name",
 	"bs-notifications-email-registeruser-subject": "Notification subject, that a user has created an account. Parameters:\n* $1 user name\n* $2 user real name",
 	"bs-notifications-email-registeruser-body": "Notifiaction body, that a user has created an account and the related user page can be displayed by using the following link. Parameters:\n* $1 user name\n* $2 user real name",
 	"bs-notifications-web-registeruser-body": "Notification body, that a user has created an account.",

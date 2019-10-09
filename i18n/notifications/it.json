@@ -10,6 +10,9 @@
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|L'utente}} $2 è stato creato.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Creatore|Creatrice|Creatore/trice}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Creatore}}: $1",
+	"bs-notifications-registeruser": "L'utente \"$1\" ha creato un account.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|L'utente}} \"$2\" ha {{GENDER:$1|creato}} un account",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|L'utente}} $2 ha {{GENDER:$1|creato}} un account.",
 	"bs-notifications-edit": "La pagina \"$1\" è stata modificata",
 	"bs-notifications-edit-bundle": "La pagina \"$2\" è stata modificata {{PLURAL:$1|$1 volta|$1 volte}}",
 	"bs-notifications-email-edit-subject": "Pagina \"$1\" {{GENDER:$2|modificata}} da $3",
@@ -30,5 +33,6 @@
 	"bs-notifications-edit-difflink-label": "Vedi le differenze",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Ciao}} $1",
 	"bs-notifications-htmlmail-sender-info": "Sistema di notifica $1",
-	"bs-notifications-mail-additional-links-label": "Collegamenti aggiuntivi"
+	"bs-notifications-mail-additional-links-label": "Collegamenti aggiuntivi",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|L'utente}} $2 ha {{GENDER:$1|creato}} un'utenza.\n\nPuoi visitare la {{GENDER:$1|sua}} pagina utente seguendo il collegamento sotto"
 }

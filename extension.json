@@ -1,7 +1,7 @@
 {
 	"name": "BlueSpiceEchoConnector",
 	"license-name": "GPL-3.0-only",
-	"version": "3.0.1",
+	"version": "3.1.0",
 	"url": "https://en.wiki.bluespice.com/wiki/Reference:BlueSpiceEchoConnector",
 	"author": [
 		"Sebastian Ulbricht",
@@ -11,13 +11,20 @@
 	"descriptionmsg": "bs-echoconnector-extension-description",
 	"type": "bluespice",
 	"requires": {
-		"MediaWiki": ">= 1.29.0"
+		"MediaWiki": "~1.31",
+		"extensions": {
+			"BlueSpiceFoundation": "~3.1",
+			"Echo": "*"
+		}
 	},
 	"attributes": {
 		"BlueSpiceFoundation": {
 			"NotificationRegistrationFunctions": [
 				"\\BlueSpice\\EchoConnector\\Extension::registerNotifications"
-			]
+			],
+			"RunJobsTriggerHandlerRegistry": {
+				"bs-echoconnector-send-digest": "BlueSpice\\EchoConnector\\RunJobsTriggerHandler\\SendDigest::factory"
+			}
 		},
 		"BlueSpiceEchoConnector": {
 			"ParamParsers": {},

@@ -7,6 +7,7 @@
 	"bs-notifications-addaccount": "De Benotzer \"$1\" gouf ugeluecht.",
 	"bs-notifications-email-addaccount-subject": "Benotzer \"$2\" gouf {{GENDER:$1|ugeluecht}}",
 	"bs-notifications-email-addaccount-body": "{{GENDER:$2|De Benotzer}} $2 gouf ugeluecht.\n\nDir kënnt {{GENDER:$1|seng|hir|d'}} Benotzersäit besiche wann Dir de Link hei drënner benotzt",
+	"bs-notifications-registeruser": "De Benotzer \"$1\" huet e Benotzerkont ugeluecht.",
 	"bs-notifications-edit": "D'Säit \"$1\" gouf geännert",
 	"bs-notifications-edit-bundle": "D'Säit *$2\" gouf {{PLURAL:$1|ee|$1}} Mol geännert",
 	"bs-notifications-email-edit-subject": "Säit \"$1\" {{GENDER:$2|geännert}} vum $3",

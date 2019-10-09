@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
 	"bs-notifications-addaccount": "تم إنشاء المستخدم \"$1\".",
@@ -10,6 +11,10 @@
 	"bs-notifications-web-addaccount-body": "تم إنشاء {{GENDER:$1|المستخدم|المستخدمة}} \"$2\"",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|منشئ|منشئة}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|منشئ|منشئة}}: $1",
+	"bs-notifications-registeruser": "أنشأ المستخدم \"$1\" حسابا.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|المستخدم|المستخدمة}} \"$2\" قد {{GENDER:$1|أنشأ|أنشأ}} حسابا",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|المستخدم|المستخدمة}} \"$2\" قد {{GENDER:$1|أنشأ|أنشأ}} حسابا\n\nيمكنك زيارة صفحة المستخدم الخاصة {{GENDER:$1|به|بها}} من خلال اتباع الرابط أدناه",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|المستخدم|المستخدمة}} \"$2\" قد {{GENDER:$1|أنشأ|أنشأ}} حسابا",
 	"bs-notifications-edit": "تم تعديل الصفحة \"$1\"",
 	"bs-notifications-edit-bundle": "تم تعديل الصفحة \"$2\" {{PLURAL:$1|$1 مرة|$1 مرات}}",
 	"bs-notifications-email-edit-subject": "تم تعديل الصفحة $1 بواسطة {{GENDER:$2|المستخدم|المستخدمة}} \"$3\"",
@@ -30,5 +35,5 @@
 	"bs-notifications-edit-difflink-label": "انظر الفرق",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|مرحبا بك}} $1",
 	"bs-notifications-htmlmail-sender-info": "نظام الإخطار $1",
-	"bs-notifications-mail-additional-links-label": "روابط إضافية"
+	"bs-notifications-mail-additional-links-label": "وصلات إضافية"
 }
