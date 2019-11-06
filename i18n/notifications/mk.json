@@ -28,5 +28,6 @@
 	"bs-notifications-web-delete-body": "Страницата „$1“ е {{GENDER:$2|избришана}} од $3.",
 	"bs-notifications-web-move-body": "Страницата „$1“ е {{GENDER:$2|преместена}} на „$3“ од $4",
 	"bs-notifications-edit-difflink-label": "Види разлика",
-	"bs-notifications-mail-additional-links-label": "Дополнителни врски"
+	"bs-notifications-mail-additional-links-label": "Дополнителни врски",
+	"bs-notifications-registeruser": "Корисникот „$1“ има создадено сметка."
 }
