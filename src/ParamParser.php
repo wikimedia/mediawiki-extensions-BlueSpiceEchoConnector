@@ -129,7 +129,7 @@ class ParamParser implements IParamParser {
 	 * Tries to parse given param with another parser
 	 *
 	 * @param string $param
-	 * @return true|false if param cannot be parsed
+	 * @return bool if param cannot be parsed
 	 */
 	protected function parseWithForeignParser( $param ) {
 		// If param is registered with another extension
