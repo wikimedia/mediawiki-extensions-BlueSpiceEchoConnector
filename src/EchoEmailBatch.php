@@ -7,6 +7,12 @@ use BlueSpice\EchoConnector\Formatter\EchoHtmlDigestEmailFormatter;
 
 class EchoEmailBatch extends \MWEchoEmailBatch {
 
+	/**
+	 *
+	 * @param int $userId
+	 * @param bool|true $enforceFrequency
+	 * @return bool|EchoEmailBatch
+	 */
 	public static function newFromUserId( $userId, $enforceFrequency = true ) {
 		$user = \User::newFromId( intval( $userId ) );
 
@@ -59,7 +65,11 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 			$emailDeliveryMode = 'daily_digest';
 		}
 
-		$textEmailDigestFormatter = new EchoPlainTextDigestEmailFormatter( $this->mUser, $this->language, $frequency );
+		$textEmailDigestFormatter = new EchoPlainTextDigestEmailFormatter(
+			$this->mUser,
+			$this->language,
+			$frequency
+		);
 		$content = $textEmailDigestFormatter->format( $this->events, 'email' );
 
 		if ( !$content ) {
@@ -69,7 +79,11 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 
 		$format = \MWEchoNotifUser::newFromUser( $this->mUser )->getEmailFormat();
 		if ( $format == \EchoEmailFormat::HTML ) {
-			$htmlEmailDigestFormatter = new EchoHtmlDigestEmailFormatter( $this->mUser, $this->language, $frequency );
+			$htmlEmailDigestFormatter = new EchoHtmlDigestEmailFormatter(
+				$this->mUser,
+				$this->language,
+				$frequency
+			);
 			$htmlContent = $htmlEmailDigestFormatter->format( $this->events, 'email' );
 
 			$content = [
@@ -86,7 +100,13 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 		$replyTo = new \MailAddress( $wgNotificationSender, $wgNotificationReplyName );
 
 		// @Todo Push the email to job queue or just send it out directly?
-		\UserMailer::send( $toAddress, $fromAddress, $content['subject'], $content['body'], [ 'replyTo' => $replyTo ] );
+		\UserMailer::send(
+			$toAddress,
+			$fromAddress,
+			$content['subject'],
+			$content['body'],
+			[ 'replyTo' => $replyTo ]
+		);
 		\MWEchoEventLogging::logSchemaEchoMail( $this->mUser, $emailDeliveryMode );
 	}
 }

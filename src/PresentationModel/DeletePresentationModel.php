@@ -60,6 +60,10 @@ class DeletePresentationModel extends EchoEventPresentationModel {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getSecondaryLinks() {
 		if ( $this->isBundled() ) {
 			// For the bundle, we don't need secondary actions
@@ -69,6 +73,10 @@ class DeletePresentationModel extends EchoEventPresentationModel {
 		return [ $this->getAgentLink() ];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getIcon() {
 		return 'delete';
 	}

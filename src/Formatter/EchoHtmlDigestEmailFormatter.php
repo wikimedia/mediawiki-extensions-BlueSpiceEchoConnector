@@ -11,6 +11,12 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 	protected $templateParser;
 	protected $templateNames;
 
+	/**
+	 *
+	 * @param \User $user
+	 * @param \Language $language
+	 * @param string $digestMode
+	 */
 	public function __construct( \User $user, \Language $language, $digestMode ) {
 		parent::__construct( $user, $language, $digestMode );
 		global $wgSitename;
@@ -23,6 +29,11 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		$this->templateNames = $this->config->get( 'EchoHtmlMailTemplateNames' );
 	}
 
+	/**
+	 *
+	 * @param array $models
+	 * @return array
+	 */
 	protected function formatModels( array $models ) {
 		$greeting = $this->msg( 'echo-email-batch-body-intro-' . $this->digestMode )
 				->params( $this->user->getName() )
@@ -59,7 +70,18 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		];
 	}
 
-	protected function renderBody( \Language $language, $greeting, $senderMessage, $digestList, $action, $footer ) {
+	/**
+	 *
+	 * @param \Language $language
+	 * @param string $greeting
+	 * @param string $senderMessage
+	 * @param string $digestList
+	 * @param string $action
+	 * @param string $footer
+	 * @return string
+	 */
+	protected function renderBody( \Language $language, $greeting, $senderMessage, $digestList,
+		$action, $footer ) {
 		$html = $this->templateParser->processTemplate(
 			$this->templateNames['digest'], [
 				'greeting' => $greeting,
@@ -85,6 +107,11 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		return $eventsByCategory;
 	}
 
+	/**
+	 *
+	 * @param array $eventsByCategory
+	 * @return string
+	 */
 	protected function renderDigestList( $eventsByCategory ) {
 		$result = [];
 		// build the html section for each category
@@ -118,6 +145,11 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 			->parse();
 	}
 
+	/**
+	 *
+	 * @param \EchoEventPresentationModel $model
+	 * @return array
+	 */
 	protected function getEventParams( $model ) {
 		$iconUrl = wfExpandUrl(
 			\EchoIcon::getUrl( $model->getIconType(), $this->language->getCode() ),

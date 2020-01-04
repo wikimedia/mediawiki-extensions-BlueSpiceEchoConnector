@@ -55,7 +55,8 @@ class TestNotification extends Maintenance {
 
 		$this->addOption(
 			"keys",
-			"Comma separated list of notification to trigger. If not set, all notifications will be triggerd",
+			"Comma separated list of notification to trigger. If not set, all notifications "
+				. "will be triggerd",
 			false,
 			true
 		);
@@ -127,6 +128,11 @@ class TestNotification extends Maintenance {
 		$this->output( $s );
 	}
 
+	/**
+	 *
+	 * @param string $key
+	 * @return bool|\BlueSpice\INotification
+	 */
 	protected function createNotification( $key ) {
 		if ( !isset( $this->notificationConfigs[$key] ) ) {
 			$this->output( "Not available notification: '$key'\n" );
@@ -250,6 +256,10 @@ class TestNotification extends Maintenance {
 		$this->output( implode( "\n", $out ) );
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getAffectedUsers() {
 		$sAffectedUsers = $this->getOption( 'affectedusers', '' );
 		$userNames = explode( ',', $sAffectedUsers );
@@ -349,7 +359,10 @@ class TestNotification extends Maintenance {
 		while ( $count === $this->batchSize ) {
 			$count = 0;
 
-			$res = \BlueSpice\EchoConnector\EchoEmailBatch::getUsersToNotify( $startUserId, $this->batchSize );
+			$res = \BlueSpice\EchoConnector\EchoEmailBatch::getUsersToNotify(
+				$startUserId,
+				$this->batchSize
+			);
 
 			$updated = false;
 			foreach ( $res as $row ) {

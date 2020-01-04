@@ -2,10 +2,14 @@
 
 namespace BlueSpice\EchoConnector\Hook;
 
+use IContextSource;
+use Config;
+use EchoEvent;
+
 abstract class EchoGetBundleRules extends \BlueSpice\Hook {
 	/**
 	 *
-	 * @var \EchoEvent
+	 * @var EchoEvent
 	 */
 	protected $event;
 
@@ -17,8 +21,9 @@ abstract class EchoGetBundleRules extends \BlueSpice\Hook {
 
 	/**
 	 *
-	 * @param \EchoEvent $event
-	 * @param string $bundleString
+	 * @param EchoEvent $event
+	 * @param string &$bundleString
+	 * @return bool|null
 	 */
 	public static function callback( $event, &$bundleString ) {
 		$className = static::class;
@@ -33,10 +38,10 @@ abstract class EchoGetBundleRules extends \BlueSpice\Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
-	 * @param \Config $config
-	 * @param \EchoEvent $event
-	 * @param string $userNotifyTypes
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param EchoEvent $event
+	 * @param string &$bundleString
 	 */
 	public function __construct( $context, $config, $event, &$bundleString ) {
 		parent::__construct( $context, $config );
