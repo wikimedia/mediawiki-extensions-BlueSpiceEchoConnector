@@ -9,16 +9,17 @@ use BlueSpice\Data\Watchlist\Record;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 class Extension {
-	/**
-	 *
-	 * @global type $bsgNotifierClass
-	 */
+
 	public static function onRegistration() {
-		global $bsgNotifierClass;
-		$bsgNotifierClass = NotificationsEchoNotifier::class;
+		$GLOBALS['bsgNotifierClass'] = NotificationsEchoNotifier::class;
 	}
 
-	public static function registerNotifications( \BlueSpice\NotificationManager $notificationsManager ) {
+	/**
+	 *
+	 * @param \BlueSpice\NotificationManager $notificationsManager
+	 */
+	public static function registerNotifications(
+		\BlueSpice\NotificationManager $notificationsManager ) {
 		$notificationsManager->registerNotificationCategory(
 			'bs-admin-cat',
 			[
@@ -96,7 +97,7 @@ class Extension {
 	/**
 	 * Get users to notify if none are set explicitly
 	 *
-	 * @param $event
+	 * @param \EchoEvent $event
 	 * @return array
 	 */
 	public static function getUsersToNotify( $event ) {
@@ -130,6 +131,11 @@ class Extension {
 		return $users;
 	}
 
+	/**
+	 *
+	 * @param string $prefixedTitle
+	 * @return array
+	 */
 	protected static function getWatchers( $prefixedTitle ) {
 		$watchers = [];
 		$wlStore = new Store( \RequestContext::getMain() );
@@ -158,6 +164,11 @@ class Extension {
 		return $watchers;
 	}
 
+	/**
+	 *
+	 * @param array $groups
+	 * @return array
+	 */
 	protected static function getUsersFromGroups( $groups ) {
 		if ( !is_array( $groups ) ) {
 			$conds = 'ug_group = "' . $groups . '"';
@@ -184,6 +195,10 @@ class Extension {
 		return $users;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	protected static function getAllSubscribed() {
 		$subscribers = [];
 		$dbr = wfGetDB( ILoadBalancer::DB_REPLICA );

@@ -15,6 +15,11 @@ class ParamParser implements IParamParser {
 	protected $paramParserRegistry;
 	protected $foreignParsers = [];
 
+	/**
+	 *
+	 * @param \EchoEvent $event
+	 * @param string $distributionType
+	 */
 	public function __construct( \EchoEvent $event, $distributionType = 'web' ) {
 		$this->event = $event;
 

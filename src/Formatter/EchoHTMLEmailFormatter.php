@@ -34,6 +34,11 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 	 */
 	protected $templateNames;
 
+	/**
+	 *
+	 * @param \User $user
+	 * @param \Language $language
+	 */
 	public function __construct( \User $user, \Language $language ) {
 		parent::__construct( $user, $language );
 		global $wgSitename;
@@ -47,6 +52,11 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		$this->templateNames = $this->config->get( 'EchoHtmlMailTemplateNames' );
 	}
 
+	/**
+	 *
+	 * @param \EchoEventPresentationModel $model
+	 * @return array
+	 */
 	protected function formatModel( \EchoEventPresentationModel $model ) {
 		if ( $model instanceof BSEchoPresentationModel ) {
 			$model->setDistributionType( 'email' );
@@ -104,7 +114,20 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		];
 	}
 
-	protected function renderBody( \Language $lang, $emailIcon, $summary, $actions, $greeting, $senderMessage, $messageHeader, $footer ) {
+	/**
+	 *
+	 * @param \Language $lang
+	 * @param string $emailIcon
+	 * @param string $summary
+	 * @param array $actions
+	 * @param string $greeting
+	 * @param string $senderMessage
+	 * @param string $messageHeader
+	 * @param string $footer
+	 * @return string
+	 */
+	protected function renderBody( \Language $lang, $emailIcon, $summary, $actions, $greeting,
+		$senderMessage, $messageHeader, $footer ) {
 		$html = $this->templateParser->processTemplate(
 			$this->templateNames['single'],
 			[
@@ -121,6 +144,12 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		return $html;
 	}
 
+	/**
+	 *
+	 * @param array $link
+	 * @param string $type
+	 * @return string
+	 */
 	public function renderLink( $link, $type ) {
 		$html = $this->templateParser->processTemplate(
 			$this->templateNames[$type],
@@ -133,11 +162,20 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		return $html;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getFooter() {
+		$special = \SpecialPage::getTitleFor(
+			'Preferences',
+			false,
+			'mw-prefsection-echo'
+		);
 		$preferenceLink = $this->renderLink(
 			[
 				'label' => $this->msg( 'echo-email-html-footer-preference-link-text', $this->user )->text(),
-				'url' => \SpecialPage::getTitleFor( 'Preferences', false, 'mw-prefsection-echo' )->getFullURL( '', false, PROTO_CANONICAL ),
+				'url' => $special->getFullURL( '', false, PROTO_CANONICAL ),
 			],
 			self::SECONDARY_LINK
 		);

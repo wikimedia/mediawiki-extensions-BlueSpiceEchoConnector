@@ -15,6 +15,13 @@ class TitleMoveNotification extends BaseNotification {
 	 */
 	protected $reason;
 
+	/**
+	 *
+	 * @param \User $agent
+	 * @param \Title $title
+	 * @param \Title $oldTitle
+	 * @param string $reason
+	 */
 	public function __construct( $agent, $title, $oldTitle, $reason ) {
 		parent::__construct( 'bs-move', $agent, $title );
 
@@ -22,6 +29,10 @@ class TitleMoveNotification extends BaseNotification {
 		$this->reason = $reason;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getParams() {
 		return [
 			'oldtitle' => $this->oldTitle,

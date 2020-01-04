@@ -14,7 +14,12 @@ class NotifyUsers extends TitleMoveComplete {
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
 		$notifier = $notificationsManager->getNotifier();
-		$notification = new TitleMoveNotification( $this->user, $this->newTitle, $this->title, $this->reason );
+		$notification = new TitleMoveNotification(
+			$this->user,
+			$this->newTitle,
+			$this->title,
+			$this->reason
+		);
 		$notifier->notify( $notification );
 
 		return true;

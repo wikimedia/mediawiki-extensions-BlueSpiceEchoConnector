@@ -10,6 +10,12 @@ use BlueSpice\EchoConnector\Formatter\EchoHTMLEmailFormatter as BsHtmlEmailForma
  * All this because Echo uses hard-coded formatters for mails
  */
 class EchoNotifier extends \EchoNotifier {
+	/**
+	 *
+	 * @param \User $user
+	 * @param \EchoEvent $event
+	 * @return bool
+	 */
 	public static function notifyWithEmail( $user, $event ) {
 		global $wgEnableEmail;
 
@@ -28,17 +34,21 @@ class EchoNotifier extends \EchoNotifier {
 
 		$attributeManager = \EchoAttributeManager::newFromGlobalVars();
 		$userEmailNotifications = $attributeManager->getUserEnabledEvents( $user, 'email' );
-		// See if the user wants to receive emails for this category or the user is eligible to receive this email
+		// See if the user wants to receive emails for this category or the user is
+		// eligible to receive this email
 		if ( in_array( $event->getType(), $userEmailNotifications ) ) {
-			global $wgEchoEnableEmailBatch, $wgEchoNotifications, $wgNotificationSender, $wgNotificationReplyName;
+			global $wgEchoEnableEmailBatch, $wgEchoNotifications, $wgNotificationSender,
+					$wgNotificationReplyName;
 
 			$priority = $attributeManager->getNotificationPriority( $event->getType() );
 
 			$bundleString = $bundleHash = '';
 
-			// We should have bundling for email digest as long as either web or email bundling is on, for example, talk page
-			// email bundling is off, but if a user decides to receive email digest, we should bundle those messages
-			if ( !empty( $wgEchoNotifications[$event->getType()]['bundle']['web'] ) || !empty( $wgEchoNotifications[$event->getType()]['bundle']['email'] ) ) {
+			// We should have bundling for email digest as long as either web or email
+			// bundling is on, for example, talk page email bundling is off, but if a
+			// user decides to receive email digest, we should bundle those messages
+			if ( !empty( $wgEchoNotifications[$event->getType()]['bundle']['web'] )
+				|| !empty( $wgEchoNotifications[$event->getType()]['bundle']['email'] ) ) {
 				\Hooks::run( 'EchoGetBundleRules', [ $event, &$bundleString ] );
 			}
 			if ( $bundleString ) {
@@ -48,10 +58,12 @@ class EchoNotifier extends \EchoNotifier {
 			\MWEchoEventLogging::logSchemaEcho( $user, $event, 'email' );
 
 			$extra = $event->getExtra();
-			$sendImmediately = isset( $extra['immediate-email'] ) && $extra['immediate-email'] == true;
+			$sendImmediately = isset( $extra['immediate-email'] )
+				&& $extra['immediate-email'] == true;
 
 			// email digest notification ( weekly or daily )
-			if ( $wgEchoEnableEmailBatch && $user->getOption( 'echo-email-frequency' ) > 0 && !$sendImmediately ) {
+			if ( $wgEchoEnableEmailBatch && $user->getOption( 'echo-email-frequency' ) > 0
+				&& !$sendImmediately ) {
 				// always create a unique event hash for those events don't support bundling
 				// this is mainly for group by
 				if ( !$bundleHash ) {
@@ -64,7 +76,10 @@ class EchoNotifier extends \EchoNotifier {
 
 			// instant email notification
 			$toAddress = \MailAddress::newFromUser( $user );
-			$fromAddress = new \MailAddress( $wgNotificationSender, \EchoHooks::getNotificationSenderName() );
+			$fromAddress = new \MailAddress(
+				$wgNotificationSender,
+				\EchoHooks::getNotificationSenderName()
+			);
 			$replyAddress = new \MailAddress( $wgNotificationSender, $wgNotificationReplyName );
 			// Since we are sending a single email, should set the bundle hash to null
 			// if it is set with a value from somewhere else
@@ -86,7 +101,7 @@ class EchoNotifier extends \EchoNotifier {
 	}
 
 	/**
-	 * @param EchoEvent $event
+	 * @param \EchoEvent $event
 	 * @param User $user
 	 * @return bool|array An array of 'subject' and 'body', or false if things went wrong
 	 */

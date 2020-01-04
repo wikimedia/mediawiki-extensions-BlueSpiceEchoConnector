@@ -10,11 +10,20 @@ class RegisterUserNotification extends BaseNotification {
 	 */
 	protected $createdUser;
 
+	/**
+	 *
+	 * @param \User $agent
+	 * @param \User $createdUser
+	 */
 	public function __construct( $agent, $createdUser ) {
 		parent::__construct( 'bs-registeruser', $agent, $createdUser->getUserPage() );
 		$this->createdUser = $createdUser;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getParams() {
 		return [
 			'realname' => $this->getRealNameText(),
@@ -22,6 +31,10 @@ class RegisterUserNotification extends BaseNotification {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getSecondaryLinks() {
 		return [
 			'performer' => [
@@ -31,6 +44,10 @@ class RegisterUserNotification extends BaseNotification {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	protected function getRealNameText() {
 		$realname = $this->getUserRealName( $this->createdUser );
 
