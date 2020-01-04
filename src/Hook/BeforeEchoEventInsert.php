@@ -2,13 +2,22 @@
 
 namespace BlueSpice\EchoConnector\Hook;
 
+use IContextSource;
+use Config;
+use EchoEvent;
+
 abstract class BeforeEchoEventInsert extends \BlueSpice\Hook {
 	/**
 	 *
-	 * @var \EchoEvent
+	 * @var EchoEvent
 	 */
 	protected $event;
 
+	/**
+	 *
+	 * @param EchoEvent $event
+	 * @return bool|null
+	 */
 	public static function callback( $event ) {
 		$className = static::class;
 		$hookHandler = new $className(
@@ -19,6 +28,12 @@ abstract class BeforeEchoEventInsert extends \BlueSpice\Hook {
 		return $hookHandler->process();
 	}
 
+	/**
+	 *
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param EchoEvent $event
+	 */
 	public function __construct( $context, $config, $event ) {
 		parent::__construct( $context, $config );
 

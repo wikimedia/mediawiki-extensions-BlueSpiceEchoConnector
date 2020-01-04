@@ -52,14 +52,26 @@ class RegisterUserPresentationModel extends EchoEventPresentationModel {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getSecondaryLinks() {
 		return [];
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function getPrimaryLink() {
 		return false;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getIcon() {
 		return 'edit-user-talk';
 	}

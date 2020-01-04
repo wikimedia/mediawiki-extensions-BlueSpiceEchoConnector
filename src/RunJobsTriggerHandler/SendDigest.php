@@ -18,7 +18,10 @@ class SendDigest extends RunJobsTriggerHandler {
 		while ( $count === $this->batchSize ) {
 			$count = 0;
 
-			$res = \BlueSpice\EchoConnector\EchoEmailBatch::getUsersToNotify( $startUserId, $this->batchSize );
+			$res = \BlueSpice\EchoConnector\EchoEmailBatch::getUsersToNotify(
+				$startUserId,
+				$this->batchSize
+			);
 
 			$updated = false;
 			foreach ( $res as $row ) {
@@ -26,7 +29,10 @@ class SendDigest extends RunJobsTriggerHandler {
 				wfDebugLog( 'BlueSpiceEchoConnector', "Processing user_id $userId" );
 
 				if ( $userId && $userId > $startUserId ) {
-					$emailBatch = \BlueSpice\EchoConnector\EchoEmailBatch::newFromUserId( $userId, false );
+					$emailBatch = \BlueSpice\EchoConnector\EchoEmailBatch::newFromUserId(
+						$userId,
+						false
+					);
 					if ( $emailBatch ) {
 						$emailBatch->process();
 					}

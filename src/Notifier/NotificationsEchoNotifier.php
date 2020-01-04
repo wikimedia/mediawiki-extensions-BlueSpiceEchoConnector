@@ -38,6 +38,10 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	 */
 	protected $config;
 
+	/**
+	 *
+	 * @param \Config $config
+	 */
 	public function __construct( \Config $config ) {
 		$this->config = $config;
 	}
@@ -76,6 +80,11 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		$this->registerIconsFromAttribute();
 	}
 
+	/**
+	 *
+	 * @param INotification $notification
+	 * @return null|\Status
+	 */
 	public function notify( $notification ) {
 		if ( $notification instanceof INotification == false ) {
 			return;
@@ -128,10 +137,20 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		}
 	}
 
+	/**
+	 *
+	 * @param string $key
+	 * @param array $params
+	 */
 	public function registerIcon( $key, $params ) {
 		$this->echoIcons[$key] = $params;
 	}
 
+	/**
+	 *
+	 * @param string $key
+	 * @param array $params
+	 */
 	public function registerNotification( $key, $params ) {
 		$extraParams = [];
 		if ( !empty( $params[ 'extra-params' ] ) ) {
@@ -184,6 +203,10 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		$this->echoNotificationCategories[$key] = $params;
 	}
 
+	/**
+	 *
+	 * @param string $key
+	 */
 	public function unRegisterNotification( $key ) {
 		if ( isset( $this->echoNotifications[$key] ) ) {
 			unset( $this->echoNotifications[$key] );
@@ -219,6 +242,11 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	public static function filterUsersToNotify( $event ) {
 	}
 
+	/**
+	 *
+	 * @param INotification $notification
+	 * @return bool
+	 */
 	protected function checkUseJobQueue( $notification ) {
 		$echoNotificationConfig = $this->echoNotifications[$notification->getKey()];
 
@@ -238,7 +266,8 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			return false;
 		}
 
-		if ( isset( $echoNotificationConfig['use-job-queue'] ) && $echoNotificationConfig['use-job-queue'] == true ) {
+		if ( isset( $echoNotificationConfig['use-job-queue'] )
+			&& $echoNotificationConfig['use-job-queue'] == true ) {
 			return true;
 		}
 
@@ -246,7 +275,8 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 			return true;
 		}
 
-		if ( count( $notification->getAudience() ) > $this->config->get( 'ForceJobQueueForLargeAudienceThreshold' ) ) {
+		$audienceCount = count( $notification->getAudience() );
+		if ( $audienceCount > $this->config->get( 'ForceJobQueueForLargeAudienceThreshold' ) ) {
 			// Force JQ if there are too many users to send notif to
 			return true;
 		}

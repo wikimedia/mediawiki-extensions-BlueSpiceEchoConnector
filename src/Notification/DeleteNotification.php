@@ -15,6 +15,12 @@ class DeleteNotification extends BaseNotification {
 	 */
 	protected $reason;
 
+	/**
+	 *
+	 * @param \User $agent
+	 * @param \Title $title
+	 * @param string $reason
+	 */
 	public function __construct( $agent, $title, $reason ) {
 		parent::__construct( 'bs-delete', $agent );
 
@@ -24,6 +30,10 @@ class DeleteNotification extends BaseNotification {
 		$this->reason = $reason;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getParams() {
 		return [
 			'deletereason' => $this->reason,

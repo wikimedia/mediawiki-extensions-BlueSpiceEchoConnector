@@ -52,6 +52,10 @@ class AddUserPresentationModel extends EchoEventPresentationModel {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getSecondaryLinks() {
 		if ( $this->isBundled() ) {
 			// For the bundle, we don't need secondary actions
@@ -70,7 +74,10 @@ class AddUserPresentationModel extends EchoEventPresentationModel {
 		}
 
 		$performerParams = $extra['secondary-links']['performer'];
-		$label = wfMessage( 'bs-notifications-addaccount-performer', $performerParams['label-params'] )->parse();
+		$label = wfMessage(
+			'bs-notifications-addaccount-performer',
+			$performerParams['label-params']
+		)->parse();
 
 		$secondaryLinks[] = [
 			'url' => $performerParams['url'],
@@ -83,6 +90,10 @@ class AddUserPresentationModel extends EchoEventPresentationModel {
 		return $secondaryLinks;
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getIcon() {
 		return 'edit-user-talk';
 	}

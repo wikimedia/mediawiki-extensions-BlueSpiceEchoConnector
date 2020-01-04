@@ -15,12 +15,23 @@ class EditNotification extends BaseNotification {
 	 */
 	protected $summary;
 
+	/**
+	 *
+	 * @param \User $agent
+	 * @param \Titöe $title
+	 * @param \Revision $revision
+	 * @param string $summary
+	 */
 	public function __construct( $agent, $title, $revision, $summary ) {
 		parent::__construct( 'bs-edit', $agent, $title );
 		$this->revision = $revision;
 		$this->summary = $summary;
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getSecondaryLinks() {
 		$diffParams = [
 			'diff' => 0,
@@ -44,6 +55,10 @@ class EditNotification extends BaseNotification {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getParams() {
 		return [
 			'summary' => $this->summary,

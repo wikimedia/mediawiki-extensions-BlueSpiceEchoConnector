@@ -2,16 +2,21 @@
 
 namespace BlueSpice\EchoConnector\Hook;
 
+use IContextSource;
+use Config;
+use User;
+use EchoEvent;
+
 abstract class EchoGetNotificationTypes extends \BlueSpice\Hook {
 	/**
 	 *
-	 * @var \User
+	 * @var User
 	 */
 	protected $user;
 
 	/**
 	 *
-	 * @var \EchoEvent
+	 * @var EchoEvent
 	 */
 	protected $event;
 
@@ -23,9 +28,10 @@ abstract class EchoGetNotificationTypes extends \BlueSpice\Hook {
 
 	/**
 	 *
-	 * @param \User $user
-	 * @param \EchoEvent $event
-	 * @param array $userNotifyTypes
+	 * @param User $user
+	 * @param EchoEvent $event
+	 * @param array &$userNotifyTypes
+	 * @return bool|null
 	 */
 	public static function callback( $user, $event, &$userNotifyTypes ) {
 		$className = static::class;
@@ -41,11 +47,11 @@ abstract class EchoGetNotificationTypes extends \BlueSpice\Hook {
 
 	/**
 	 *
-	 * @param \IContextSource $context
-	 * @param \Config $config
-	 * @param \User $user
-	 * @param \EchoEvent $event
-	 * @param array $userNotifyTypes
+	 * @param IContextSource $context
+	 * @param Config $config
+	 * @param User $user
+	 * @param EchoEvent $event
+	 * @param array &$userNotifyTypes
 	 */
 	public function __construct( $context, $config, $user, $event, &$userNotifyTypes ) {
 		parent::__construct( $context, $config );

@@ -8,6 +8,13 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 
 	protected $distributionType;
 
+	/**
+	 *
+	 * @param \EchoEvent $event
+	 * @param \Language $language
+	 * @param \User $user
+	 * @param string $distributionType
+	 */
 	public function __construct( \EchoEvent $event, $language, \User $user, $distributionType ) {
 		global $wgEchoNotifications;
 
@@ -20,13 +27,20 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		$this->notificationConfig = $wgEchoNotifications[$this->type];
 	}
 
-	// There is not way to change distribution type after object
-	// has been contstructed, and its always constructed with 'web' type
+	/**
+	 * There is not way to change distribution type after object
+	 * has been contstructed, and its always constructed with 'web' type
+	 * @param string $type
+	 */
 	public function setDistributionType( $type ) {
 		$this->distributionType = $type;
 		$this->paramParser->setDistributionType( $type );
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function canRender() {
 		// Force rendering if explicitly specified
 		if ( isset( $this->notificationConfig['forceRender'] ) ) {
@@ -35,10 +49,18 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		return (bool)$this->event->getTitle();
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getIconType() {
 		return $this->getIcon();
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getIcon() {
 		if ( isset( $this->notificationConfig['icon'] ) ) {
 			return $this->notificationConfig['icon'];
@@ -47,6 +69,10 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		return 'placeholder';
 	}
 
+	/**
+	 *
+	 * @return \Message
+	 */
 	public function getHeaderMessage() {
 		$content = $this->getHeaderMessageContent();
 		$msg = $this->msg( $content['key'] );
@@ -74,6 +100,10 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		return $msg;
 	}
 
+	/**
+	 *
+	 * @return \Message
+	 */
 	public function getBodyMessage() {
 		$content = $this->getBodyMessageContent();
 		$msg = $this->msg( $content['key'] );
@@ -88,12 +118,20 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		return $msg;
 	}
 
+	/**
+	 *
+	 * @return \Message
+	 */
 	public function getCompactHeaderMessage() {
 		// This is the header message for individual notifications
 		// *inside* the bundle
 		return $this->getHeaderMessage();
 	}
 
+	/**
+	 *
+	 * @return \Message
+	 */
 	public function getSubjectMessage() {
 		return $this->getHeaderMessage();
 	}
@@ -178,6 +216,10 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 		];
 	}
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getSecondaryLinks() {
 		if ( $this->isBundled() ) {
 			// For the bundle, we don't need secondary actions

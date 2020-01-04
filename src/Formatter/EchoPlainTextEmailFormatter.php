@@ -3,6 +3,11 @@
 namespace BlueSpice\EchoConnector\Formatter;
 
 class EchoPlainTextEmailFormatter extends \EchoPlainTextEmailFormatter {
+	/**
+	 *
+	 * @param \EchoEventPresentationModel $model
+	 * @return array
+	 */
 	protected function formatModel( \EchoEventPresentationModel $model ) {
 		// PresentationModel is always created with distro type 'web'
 		// so let parent handle all notifs that are not presented by our PresentationModel
