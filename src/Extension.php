@@ -24,10 +24,14 @@ class Extension {
 			'bs-admin-cat',
 			[
 				'priority' => 3,
-				'usergroups' => [ 'sysop' ]
+				'usergroups' => [ 'sysop' ],
+				'tooltip' => "echo-pref-tooltip-bs-admin-cat"
 			]
 		);
-		$notificationsManager->registerNotificationCategory( 'bs-page-actions-cat', [ 'priority' => 3 ] );
+		$notificationsManager->registerNotificationCategory( 'bs-page-actions-cat', [
+			'priority' => 3,
+			'tooltip' => "echo-pref-tooltip-bs-page-actions-cat"
+		] );
 
 		$notificationsManager->registerNotification(
 			'bs-adduser',
