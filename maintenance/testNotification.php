@@ -2,10 +2,9 @@
 
 require_once dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenance.php';
 
-use MediaWiki\Logger\LoggerFactory;
-
-use BlueSpice\Services;
 use BlueSpice\INotifier;
+use BlueSpice\Services;
+use MediaWiki\Logger\LoggerFactory;
 
 class TestNotification extends Maintenance {
 

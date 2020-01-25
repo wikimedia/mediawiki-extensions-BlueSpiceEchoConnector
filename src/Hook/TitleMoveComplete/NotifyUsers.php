@@ -2,8 +2,8 @@
 
 namespace BlueSpice\EchoConnector\Hook\TitleMoveComplete;
 
-use BlueSpice\Hook\TitleMoveComplete;
 use BlueSpice\EchoConnector\Notification\TitleMoveNotification;
+use BlueSpice\Hook\TitleMoveComplete;
 
 class NotifyUsers extends TitleMoveComplete {
 	protected function doProcess() {

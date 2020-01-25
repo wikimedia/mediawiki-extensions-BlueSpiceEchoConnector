@@ -2,9 +2,9 @@
 
 namespace BlueSpice\EchoConnector\Hook\PageContentSaveComplete;
 
-use BlueSpice\Hook\PageContentSaveComplete;
 use BlueSpice\EchoConnector\Notification\CreateNotification;
 use BlueSpice\EchoConnector\Notification\EditNotification;
+use BlueSpice\Hook\PageContentSaveComplete;
 
 class NotifyUsers extends PageContentSaveComplete {
 

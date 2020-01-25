@@ -2,7 +2,7 @@
 
 namespace BlueSpice\EchoConnector\Hook\EchoGetNotificationTypes;
 
-use \BlueSpice\EchoConnector\Hook\EchoGetNotificationTypes;
+use BlueSpice\EchoConnector\Hook\EchoGetNotificationTypes;
 
 class GetNotificationTypesForEvent extends EchoGetNotificationTypes {
 

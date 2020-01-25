@@ -2,9 +2,9 @@
 
 namespace BlueSpice\EchoConnector\Hook;
 
-use IContextSource;
 use Config;
 use EchoEvent;
+use IContextSource;
 
 abstract class BeforeEchoEventInsert extends \BlueSpice\Hook {
 	/**

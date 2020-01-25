@@ -2,8 +2,8 @@
 
 namespace BlueSpice\EchoConnector;
 
-use BlueSpice\EchoConnector\Formatter\EchoPlainTextDigestEmailFormatter;
 use BlueSpice\EchoConnector\Formatter\EchoHtmlDigestEmailFormatter;
+use BlueSpice\EchoConnector\Formatter\EchoPlainTextDigestEmailFormatter;
 
 class EchoEmailBatch extends \MWEchoEmailBatch {
 

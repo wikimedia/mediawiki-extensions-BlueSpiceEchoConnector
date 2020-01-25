@@ -2,8 +2,8 @@
 
 namespace BlueSpice\EchoConnector\Notifier;
 
-use BlueSpice\EchoConnector\Formatter\EchoPlainTextEmailFormatter as BsPlainTextEmailFormatter;
 use BlueSpice\EchoConnector\Formatter\EchoHTMLEmailFormatter as BsHtmlEmailFormatter;
+use BlueSpice\EchoConnector\Formatter\EchoPlainTextEmailFormatter as BsPlainTextEmailFormatter;
 
 /**
  * Override of default EchoNotifier - copy-paste from there

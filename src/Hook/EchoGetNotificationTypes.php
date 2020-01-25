@@ -2,10 +2,10 @@
 
 namespace BlueSpice\EchoConnector\Hook;
 
-use IContextSource;
 use Config;
-use User;
 use EchoEvent;
+use IContextSource;
+use User;
 
 abstract class EchoGetNotificationTypes extends \BlueSpice\Hook {
 	/**

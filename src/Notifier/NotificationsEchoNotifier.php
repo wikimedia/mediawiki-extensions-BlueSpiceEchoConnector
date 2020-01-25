@@ -3,8 +3,8 @@
 namespace BlueSpice\EchoConnector\Notifier;
 
 use BlueSpice\BaseNotification;
-use BlueSpice\EchoConnector\Notification\EchoNotification;
 use BlueSpice\EchoConnector\EchoEventPresentationModel;
+use BlueSpice\EchoConnector\Notification\EchoNotification;
 use BlueSpice\INotification;
 
 /**

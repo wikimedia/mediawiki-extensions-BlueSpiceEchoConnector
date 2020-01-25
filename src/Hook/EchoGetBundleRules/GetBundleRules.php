@@ -2,7 +2,7 @@
 
 namespace BlueSpice\EchoConnector\Hook\EchoGetBundleRules;
 
-use \BlueSpice\EchoConnector\Hook\EchoGetBundleRules;
+use BlueSpice\EchoConnector\Hook\EchoGetBundleRules;
 
 class GetBundleRules extends EchoGetBundleRules {
 

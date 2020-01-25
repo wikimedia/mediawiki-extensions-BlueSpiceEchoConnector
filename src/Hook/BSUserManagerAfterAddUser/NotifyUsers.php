@@ -2,8 +2,8 @@
 
 namespace BlueSpice\EchoConnector\Hook\BSUserManagerAfterAddUser;
 
-use BlueSpice\UserManager\Hook\BSUserManagerAfterAddUser;
 use BlueSpice\EchoConnector\Notification\AddUserNotification;
+use BlueSpice\UserManager\Hook\BSUserManagerAfterAddUser;
 
 class NotifyUsers extends BSUserManagerAfterAddUser {
 

@@ -2,10 +2,10 @@
 
 namespace BlueSpice\EchoConnector;
 
-use BlueSpice\EchoConnector\Notifier\NotificationsEchoNotifier;
-use BlueSpice\Data\Watchlist\Store;
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Watchlist\Record;
+use BlueSpice\Data\Watchlist\Store;
+use BlueSpice\EchoConnector\Notifier\NotificationsEchoNotifier;
 use Wikimedia\Rdbms\ILoadBalancer;
 
 class Extension {

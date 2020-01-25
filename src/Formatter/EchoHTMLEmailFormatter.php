@@ -2,9 +2,8 @@
 
 namespace BlueSpice\EchoConnector\Formatter;
 
+use BlueSpice\EchoConnector\EchoEventPresentationModel as BSEchoPresentationModel;
 use BlueSpice\Services;
-
-use \BlueSpice\EchoConnector\EchoEventPresentationModel as BSEchoPresentationModel;
 
 class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 	const PRIMARY_LINK = 'primary_link';

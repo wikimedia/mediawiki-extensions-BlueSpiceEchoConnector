@@ -2,8 +2,8 @@
 
 namespace BlueSpice\EchoConnector\Hook\ArticleDeleteComplete;
 
-use BlueSpice\Hook\ArticleDeleteComplete;
 use BlueSpice\EchoConnector\Notification\DeleteNotification;
+use BlueSpice\Hook\ArticleDeleteComplete;
 
 class NotifyUsers extends ArticleDeleteComplete {
 	protected function doProcess() {
