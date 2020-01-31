@@ -5,6 +5,6 @@
 		]
 	},
 	"bs-echoconnector-extension-description": "Connette BlueSpice con Echo",
-	"echo-category-title-bs-admin-cat": "Attività di amministrazione eseguita",
-	"echo-category-title-bs-page-actions-cat": "Azione sulla pagina sottoscritta"
+	"echo-category-title-bs-admin-cat": "Attività di amministrazione",
+	"echo-category-title-bs-page-actions-cat": "Azione sulle pagine tra gli osservati speciali"
 }
