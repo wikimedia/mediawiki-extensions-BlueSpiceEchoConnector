@@ -5,6 +5,8 @@
 		]
 	},
 	"bs-echoconnector-extension-description": "BlueSpice'i Yankı ile bağlar",
-	"echo-category-title-bs-admin-cat": "Yönetim görevi gerçekleştirildi",
-	"echo-category-title-bs-page-actions-cat": "Abone olunan sayfada işlem"
+	"echo-category-title-bs-admin-cat": "İdari görevler",
+	"echo-category-title-bs-page-actions-cat": "İzleme listesindeki sayfalardaki işlemler",
+	"echo-pref-tooltip-bs-admin-cat": "Yeni bir kullanıcı hesabı oluşturulduğunda bana bildir",
+	"echo-pref-tooltip-bs-page-actions-cat": "Birisi izlediğim bir sayfayı düzenlediğinde, taşıdığında veya sildiğinde veya yeni bir sayfa oluşturulduğunda bana bildir"
 }

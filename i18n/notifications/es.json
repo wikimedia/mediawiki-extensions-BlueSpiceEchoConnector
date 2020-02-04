@@ -3,12 +3,13 @@
 		"authors": [
 			"Larjona",
 			"Macofe",
-			"Fitoschido"
+			"Fitoschido",
+			"DannyS712"
 		]
 	},
 	"bs-notifications-addaccount": "Se creó la cuenta «$1».",
 	"bs-notifications-email-addaccount-subject": "Se creó {{GENDER:$1|el usuario|la usuaria}} «$2»",
-	"bs-notifications-email-addaccount-body": "Se creó {{GENDER:$2|el usuario|la usuaria}} $3.\n\nPuedes visitar {{GENDER:$2|su|su|la}} página de usuario siguiendo este enlace:\n$1",
+	"bs-notifications-email-addaccount-body": "Se creó {{GENDER:$1|el usuario|la usuaria}} $2.\n\nPuedes visitar {{GENDER:$1|su|su|la}} página de usuario siguiendo el enlace abajo:",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Creador|Creadora}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Creador|Creadora}}: $1",
 	"bs-notifications-registeruser": "«$1» se ha creado una cuenta.",

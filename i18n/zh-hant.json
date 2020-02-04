@@ -5,6 +5,8 @@
 		]
 	},
 	"bs-echoconnector-extension-description": "以 Echo 來連接 BlueSpice",
-	"echo-category-title-bs-admin-cat": "管理任務已執行",
-	"echo-category-title-bs-page-actions-cat": "在訂閱頁面上操作"
+	"echo-category-title-bs-admin-cat": "管理任務",
+	"echo-category-title-bs-page-actions-cat": "在監視清單裡的頁面上操作",
+	"echo-pref-tooltip-bs-admin-cat": "當有新的使用者帳號建立時通知我",
+	"echo-pref-tooltip-bs-page-actions-cat": "當有人對我所監視的頁面作出編輯、移動、刪除，或是當有新頁面建立時通知我"
 }
