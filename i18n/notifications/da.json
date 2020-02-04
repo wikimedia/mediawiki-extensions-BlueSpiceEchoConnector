@@ -10,5 +10,6 @@
 	"bs-notifications-delete": "Siden \"$1\" er blevet slettet",
 	"bs-notifications-email-addaccount-subject": "Brugeren \"$2\" {{GENDER:$1|blev oprettet}}",
 	"bs-notifications-registeruser": "Brugeren \"$1\" har oprettet en konto.",
-	"bs-notifications-edit": "Siden \"$1\" er blevet ændret"
+	"bs-notifications-edit": "Siden \"$1\" er blevet ændret",
+	"bs-notifications-create": "Siden \"$1\" blev oprettet"
 }

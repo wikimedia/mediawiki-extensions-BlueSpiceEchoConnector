@@ -6,6 +6,6 @@
 		]
 	},
 	"bs-echoconnector-extension-description": "Повезује BlueSpice са додатком Echo",
-	"echo-category-title-bs-admin-cat": "Извршен је задатак администрације",
-	"echo-category-title-bs-page-actions-cat": "Радња на претплаћеној страници"
+	"echo-category-title-bs-admin-cat": "Административни послови",
+	"echo-category-title-bs-page-actions-cat": "Радња на надгледаној страници"
 }

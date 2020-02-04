@@ -36,5 +36,6 @@
 	"bs-notifications-email-registeruser-body": "{{GENDER:$1|De gebruiker}} \"$2\" heeft een account {{GENDER:$1|aangemaakt}}.\n\nU kun {{GENDER:$1|zijn|haar|de}} gebruikerspagina bezoeken via de koppeling hier beneden",
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|De gebruiker}} $2 heeft een account {{GENDER:$1|aangemaakt}}.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Maker}}: $1",
-	"bs-notifications-addaccount-performer": "{{GENDER:$1|Maker}}: $1"
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Maker}}: $1",
+	"bs-notifications-mail-additional-links-label": "Extra koppelingen"
 }
