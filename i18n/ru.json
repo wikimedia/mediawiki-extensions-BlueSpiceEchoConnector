@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Pacha Tchernof"
+		]
+	},
+	"echo-category-title-bs-admin-cat": "Административные задания",
+	"echo-category-title-bs-page-actions-cat": "Действия со страницами в списке наблюдения"
+}

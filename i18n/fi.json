@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"FinlandMan"
+			"FinlandMan",
+			"Pxos"
 		]
 	},
-	"echo-category-title-bs-admin-cat": "Ylläpitotehtät",
+	"echo-category-title-bs-admin-cat": "Ylläpidolliset tehtävät",
 	"echo-pref-tooltip-bs-admin-cat": "Ilmoita minulle, kun uusi tili luodaan"
 }
