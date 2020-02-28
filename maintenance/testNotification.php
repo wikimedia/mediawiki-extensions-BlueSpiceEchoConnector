@@ -4,7 +4,6 @@ require_once dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenanc
 
 use BlueSpice\INotifier;
 use BlueSpice\Services;
-use MediaWiki\Logger\LoggerFactory;
 
 class TestNotification extends Maintenance {
 
@@ -306,7 +305,7 @@ class TestNotification extends Maintenance {
 		$outputJSON = ( $this->getOption( 'result' ) === 'json' );
 		$wait = $this->hasOption( 'wait' );
 
-		$runner = new JobRunner( LoggerFactory::getInstance( 'runJobs' ) );
+		$runner = $this->getServices()->getService( 'JobRunner' );
 		if ( !$outputJSON ) {
 			$runner->setDebugHandler( [ $this, 'debugInternal' ] );
 		}
