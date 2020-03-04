@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"铁桶"
 		]
 	},
 	"bs-echoconnector-extension-description": "连接BlueSpice和Echo",
-	"echo-category-title-bs-admin-cat": "执行的管理任务",
-	"echo-category-title-bs-page-actions-cat": "订阅页面上的操作"
+	"echo-category-title-bs-admin-cat": "管理任务",
+	"echo-category-title-bs-page-actions-cat": "监视列表中页面上的操作"
 }
