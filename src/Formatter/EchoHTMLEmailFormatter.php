@@ -64,7 +64,7 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 
 		$subject = $model->getSubjectMessage()->parse();
 
-		$realname = Services::getInstance()->getBSUtilityFactory()
+		$realname = Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $model->getUser() )->getDisplayName();
 
 		$greeting = wfMessage( 'bs-notifications-htmlmail-greeting', $realname )->parse();

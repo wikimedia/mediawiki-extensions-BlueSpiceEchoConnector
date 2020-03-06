@@ -11,7 +11,7 @@ class NotifyUsers extends ArticleDeleteComplete {
 			return true;
 		}
 
-		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$notifier = $notificationsManager->getNotifier();
 		$notification = new DeleteNotification( $this->user, $this->wikipage->getTitle(), $this->reason );

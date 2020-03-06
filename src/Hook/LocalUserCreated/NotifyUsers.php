@@ -15,7 +15,7 @@ class NotifyUsers extends \BlueSpice\Hook\LocalUserCreated {
 	}
 
 	protected function doProcess() {
-		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$notifier = $notificationsManager->getNotifier();
 

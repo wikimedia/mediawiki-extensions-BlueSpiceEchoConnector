@@ -8,7 +8,7 @@ use BlueSpice\EchoConnector\Notification\AddUserNotification;
 class NotifyUsers extends BSUserManagerAfterAddUser {
 
 	protected function doProcess() {
-		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$notifier = $notificationsManager->getNotifier();
 
