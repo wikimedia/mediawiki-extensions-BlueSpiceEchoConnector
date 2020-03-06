@@ -8,7 +8,7 @@ use BlueSpice\UserManager\Hook\BSUserManagerAfterAddUser;
 class NotifyUsers extends BSUserManagerAfterAddUser {
 
 	protected function doProcess() {
-		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
+		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$notifier = $notificationsManager->getNotifier();
 
