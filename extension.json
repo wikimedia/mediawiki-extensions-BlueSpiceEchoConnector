@@ -43,27 +43,13 @@
 	},
 	"callback": "\\BlueSpice\\EchoConnector\\Extension::onRegistration",
 	"Hooks": {
-		"ArticleDeleteComplete": [
-			"\\BlueSpice\\EchoConnector\\Hook\\ArticleDeleteComplete\\NotifyUsers::callback"
-		],
-		"TitleMoveComplete": [
-			"\\BlueSpice\\EchoConnector\\Hook\\TitleMoveComplete\\NotifyUsers::callback"
-		],
-		"PageContentSaveComplete": [
-			"\\BlueSpice\\EchoConnector\\Hook\\PageContentSaveComplete\\NotifyUsers::callback"
-		],
-		"BSUserManagerAfterAddUser": [
-			"\\BlueSpice\\EchoConnector\\Hook\\BSUserManagerAfterAddUser\\NotifyUsers::callback"
-		],
-		"EchoGetNotificationTypes": [
-			"\\BlueSpice\\EchoConnector\\Hook\\EchoGetNotificationTypes\\GetNotificationTypesForEvent::callback"
-		],
-		"EchoGetBundleRules": [
-			"\\BlueSpice\\EchoConnector\\Hook\\EchoGetBundleRules\\GetBundleRules::callback"
-		],
-		"LocalUserCreated": [
-			"\\BlueSpice\\EchoConnector\\Hook\\LocalUserCreated\\NotifyUsers::callback"
-		]
+		"ArticleDeleteComplete": "\\BlueSpice\\EchoConnector\\Hook\\ArticleDeleteComplete\\NotifyUsers::callback",
+		"TitleMoveComplete": "\\BlueSpice\\EchoConnector\\Hook\\TitleMoveComplete\\NotifyUsers::callback",
+		"PageContentSaveComplete": "\\BlueSpice\\EchoConnector\\Hook\\PageContentSaveComplete\\NotifyUsers::callback",
+		"BSUserManagerAfterAddUser": "\\BlueSpice\\EchoConnector\\Hook\\BSUserManagerAfterAddUser\\NotifyUsers::callback",
+		"EchoGetNotificationTypes": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetNotificationTypes\\GetNotificationTypesForEvent::callback",
+		"EchoGetBundleRules": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetBundleRules\\GetBundleRules::callback",
+		"LocalUserCreated": "\\BlueSpice\\EchoConnector\\Hook\\LocalUserCreated\\NotifyUsers::callback"
 	},
 	"config_prefix": "bsg",
 	"config": {
