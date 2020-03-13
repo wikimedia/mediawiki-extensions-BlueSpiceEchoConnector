@@ -187,7 +187,7 @@ class TestNotification extends Maintenance {
 			}
 			return;
 		}
-		$this->agentUser = $this->getServices()->getBSUtilityFactory()
+		$this->agentUser = $this->getServices()->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 	}
 
@@ -279,7 +279,7 @@ class TestNotification extends Maintenance {
 	 * @return INotifier|null
 	 */
 	protected function makeNotifier() {
-		$this->notifier = $this->getServices()->getBSNotificationManager()->getNotifier();
+		$this->notifier = $this->getServices()->getService( 'BSNotificationManager' )->getNotifier();
 	}
 
 	protected function makeNotficationConfigs() {
