@@ -7,6 +7,8 @@
 	"bs-echoconnector-extension-description": "Verbindet BlueSpice mit Echo",
 	"echo-category-title-bs-admin-cat": "Administrative Aufgaben",
 	"echo-pref-tooltip-bs-admin-cat": "Benachrichtigung wenn ein neues Benutzerkonto erstellt wird",
-	"echo-pref-tooltip-bs-page-actions-cat": "Benachrichtigung  wenn jemand eine Seite, die ich beobachte, bearbeitet, verschiebt oder löscht oder wenn eine neue Seite erstellt wird",
-	"echo-category-title-bs-page-actions-cat": "Aktionen an beobachteten Seiten"
+	"echo-pref-tooltip-bs-page-actions-cat": "Benachrichtigung wenn jemand eine Seite, die ich beobachte, bearbeitet, verschiebt oder löscht",
+	"echo-pref-tooltip-bs-page-create-cat": "Benachrichtigung wenn eine neue Seite erstellt wird",
+	"echo-category-title-bs-page-actions-cat": "Aktionen an beobachteten Seiten",
+	"echo-category-title-bs-page-create-cat": "Seitenerstellung"
 }
