@@ -28,6 +28,11 @@ class Extension {
 				'tooltip' => "echo-pref-tooltip-bs-admin-cat"
 			]
 		);
+		$notificationsManager->registerNotificationCategory( 'bs-page-create-cat', [
+			'priority' => 3,
+			'tooltip' => "echo-pref-tooltip-bs-page-create-cat"
+		] );
+
 		$notificationsManager->registerNotificationCategory( 'bs-page-actions-cat', [
 			'priority' => 3,
 			'tooltip' => "echo-pref-tooltip-bs-page-actions-cat"
@@ -59,7 +64,7 @@ class Extension {
 		$notificationsManager->registerNotification(
 			'bs-create',
 			[
-				'category' => 'bs-page-actions-cat',
+				'category' => 'bs-page-create-cat',
 				'presentation-model' => PresentationModel\CreatePresentationModel::class,
 				'user-locators' => [ self::class . '::getUsersToNotify' ]
 			]
