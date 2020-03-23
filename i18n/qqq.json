@@ -11,7 +11,7 @@
 	"echo-category-title-bs-admin-cat": "Checkbox label for mail and wiki notification subscription on admin tasks",
 	"echo-pref-tooltip-bs-admin-cat": "Tooltip for echo notification category bs-admin-cat",
 	"echo-pref-tooltip-bs-page-actions-cat": "Tooltip for echo notification category bs-page-actions-cat",
-	"echo-category-title-bs-page-actions-cat": "Checkbox label for mail and wiki notification subscription on page actions",
 	"echo-pref-tooltip-bs-page-create-cat": "Tooltip for echo notification category bs-page-creation-cat",
+	"echo-category-title-bs-page-actions-cat": "Checkbox label for mail and wiki notification subscription on page actions",
 	"echo-category-title-bs-page-create-cat": "Checkbox label for mail and wiki notifications for page creation"
 }

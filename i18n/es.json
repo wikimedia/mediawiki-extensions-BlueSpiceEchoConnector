@@ -5,5 +5,6 @@
 		]
 	},
 	"bs-echoconnector-extension-description": "Conecta BlueSpice con Echo",
-	"echo-category-title-bs-admin-cat": "Tareas administrativas"
+	"echo-category-title-bs-admin-cat": "Tareas administrativas",
+	"echo-category-title-bs-page-create-cat": "Creación de páginas"
 }

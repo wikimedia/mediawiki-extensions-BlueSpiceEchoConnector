@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"ديفيد"
+			"ديفيد",
+			"محمد أحمد عبد الفتاح"
 		]
 	},
 	"bs-echoconnector-extension-description": "يربط BlueSpice بإشعار",
 	"echo-category-title-bs-admin-cat": "تنفيذ مهمة الإدارة",
-	"echo-category-title-bs-page-actions-cat": "إجراء على صفحة مشتركة"
+	"echo-category-title-bs-page-actions-cat": "إجراء على صفحة مشتركة",
+	"echo-category-title-bs-page-create-cat": "إنشاء الصفحة"
 }
