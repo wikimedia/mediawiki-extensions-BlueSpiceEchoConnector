@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Mjälten"
+			"Mjälten",
+			"Technic2"
 		]
 	},
 	"bs-echoconnector-extension-description": "Ansluter BlueSpice med Echo",
 	"echo-category-title-bs-admin-cat": "Administrativa uppgifter",
 	"echo-pref-tooltip-bs-admin-cat": "Avisera mig när ett nytt användarkonto skapas",
-	"echo-pref-tooltip-bs-page-actions-cat": "Avisera mig när någon redigerar, flyttar eller radera en sida som jag bevakar eller när en ny sida skapas",
+	"echo-pref-tooltip-bs-page-actions-cat": "Avisera mig när någon redigerar, flyttar eller raderar en sida som jag bevakar",
 	"echo-category-title-bs-page-actions-cat": "Handlingar på sidor i bevakningslistan"
 }
