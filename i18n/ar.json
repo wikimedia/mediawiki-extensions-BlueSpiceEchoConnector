@@ -7,6 +7,7 @@
 	},
 	"bs-echoconnector-extension-description": "يربط BlueSpice بإشعار",
 	"echo-category-title-bs-admin-cat": "تنفيذ مهمة الإدارة",
+	"echo-pref-tooltip-bs-page-create-cat": "أرسل إشعارًا لي عند إنشاء صفحة جديدة",
 	"echo-category-title-bs-page-actions-cat": "إجراء على صفحة مشتركة",
 	"echo-category-title-bs-page-create-cat": "إنشاء الصفحة"
 }
