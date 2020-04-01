@@ -8,5 +8,7 @@
 	"echo-category-title-bs-admin-cat": "İdari görevler",
 	"echo-category-title-bs-page-actions-cat": "İzleme listesindeki sayfalardaki işlemler",
 	"echo-pref-tooltip-bs-admin-cat": "Yeni bir kullanıcı hesabı oluşturulduğunda bana bildir",
-	"echo-pref-tooltip-bs-page-actions-cat": "Birisi izlediğim bir sayfayı düzenlediğinde, taşıdığında veya sildiğinde veya yeni bir sayfa oluşturulduğunda bana bildir"
+	"echo-pref-tooltip-bs-page-actions-cat": "Birisi izlediğim bir sayfayı düzenlediğinde, taşıdığında veya sildiğinde bana bildir",
+	"echo-pref-tooltip-bs-page-create-cat": "Yeni bir sayfa oluşturulduğunda bana bildir",
+	"echo-category-title-bs-page-create-cat": "Sayfa oluşturması"
 }
