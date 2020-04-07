@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Urhixidur",
-			"Wladek92",
 			"Gomoko",
-			"Thibaut120094"
+			"Thibaut120094",
+			"Urhixidur",
+			"Wladek92"
 		]
 	},
 	"bs-notifications-addaccount": "L’utilisateur « $1 » a été créé.",

@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Larjona",
-			"Macofe",
+			"DannyS712",
 			"Fitoschido",
-			"DannyS712"
+			"Larjona",
+			"Macofe"
 		]
 	},
 	"bs-notifications-addaccount": "Se creó la cuenta «$1».",
