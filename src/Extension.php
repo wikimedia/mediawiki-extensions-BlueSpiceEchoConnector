@@ -205,7 +205,6 @@ class Extension {
 	}
 
 	/**
-	 *
 	 * @return array
 	 */
 	protected static function getAllSubscribed() {
@@ -216,8 +215,8 @@ class Extension {
 			"DISTINCT up_user",
 			[
 				"up_property" => [
-					"echo-subscriptions-web-bs-page-actions-cat",
-					"echo-subscriptions-email-bs-page-actions-cat"
+					"echo-subscriptions-web-bs-page-create-cat",
+					"echo-subscriptions-email-bs-page-create-cat"
 				],
 				"up_value" => 1
 			]
