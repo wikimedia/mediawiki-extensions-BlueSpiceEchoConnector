@@ -5,6 +5,10 @@
 		]
 	},
 	"bs-echoconnector-extension-description": "Collegate a BlueSpice cu Echo",
-	"echo-category-title-bs-admin-cat": "Combite amministrative fatte",
-	"echo-category-title-bs-page-actions-cat": "Azione sus 'a pàgene sottescritte"
+	"echo-category-title-bs-admin-cat": "Combite amministrative",
+	"echo-pref-tooltip-bs-admin-cat": "Avvisame quanne 'nu cunde utende nuève avène ccrejate",
+	"echo-pref-tooltip-bs-page-actions-cat": "Avvisame quanne quacchedune cangia, sposte o scangelle 'na pàgene ca stoche a condrolle",
+	"echo-pref-tooltip-bs-page-create-cat": "Avvisame quanne 'na pàgena nove avène ccrejate",
+	"echo-category-title-bs-page-actions-cat": "Aziune sus a le pàggene condrollate",
+	"echo-category-title-bs-page-create-cat": "Ccrejazzione d'a pàgene"
 }
