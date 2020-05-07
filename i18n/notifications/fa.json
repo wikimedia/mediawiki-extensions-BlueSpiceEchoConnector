@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Huji",
-			"FarsiNevis"
+			"FarsiNevis",
+			"Huji"
 		]
 	},
 	"bs-notifications-email-addaccount-subject": "کاربر «$2» {{GENDER:$1|ایجاد شد}}",

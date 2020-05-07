@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wolf Rex",
-			"Csega"
+			"Csega",
+			"Wolf Rex"
 		]
 	},
 	"bs-notifications-email-addaccount-subject": "$2 szerkesztő {{GENDER:$1|létrehozva}}",

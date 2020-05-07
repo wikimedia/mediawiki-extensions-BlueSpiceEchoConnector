@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Markus Glaser <glaser@hallowelt.com>",
 			"Dejan Savuljesku<savuljesku@hallowelt.com>",
-			"Raymond",
 			"Guycn2",
-			"Pyscowicz"
+			"Markus Glaser <glaser@hallowelt.com>",
+			"Pyscowicz",
+			"Raymond"
 		]
 	},
 	"bs-notifications-addaccount": "Short message that a user was created. Parameters:\n* $1 username of the created user",

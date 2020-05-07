@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Romaine",
-			"Sjoerddebruin",
 			"Mainframe98",
-			"Xbaked potatox",
-			"Rots61"
+			"Romaine",
+			"Rots61",
+			"Sjoerddebruin",
+			"Xbaked potatox"
 		]
 	},
 	"bs-notifications-addaccount": "De gebruiker \"$1\" is aangemaakt.",

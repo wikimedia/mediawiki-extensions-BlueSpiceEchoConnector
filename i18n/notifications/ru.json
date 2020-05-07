@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Okras",
+			"DmitTrix",
 			"Movses",
-			"Vlad5250",
+			"Okras",
 			"Romanko Mikhail",
-			"DmitTrix"
+			"Vlad5250"
 		]
 	},
 	"bs-notifications-addaccount": "Участник \"$1\" был создан.",

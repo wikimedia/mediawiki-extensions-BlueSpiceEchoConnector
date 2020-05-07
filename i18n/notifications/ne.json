@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"बिप्लब आनन्द",
-			"Nirajan pant"
+			"Nirajan pant",
+			"बिप्लब आनन्द"
 		]
 	},
 	"bs-notifications-email-addaccount-subject": "प्रयोगकर्ता $2 {{GENDER:$1|सृजना गरियो}}",

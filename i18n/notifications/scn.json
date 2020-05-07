@@ -1,4 +1,6 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-notifications-create": "La pàggina [[:$1]] fu criata."
 }

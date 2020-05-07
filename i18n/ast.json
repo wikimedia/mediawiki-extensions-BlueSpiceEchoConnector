@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu",
-			"Fitoschido"
+			"Fitoschido",
+			"Xuacu"
 		]
 	},
 	"bs-echoconnector-extension-description": "Conecta BlueSpice con Echo",
 	"echo-category-title-bs-admin-cat": "Xeres alministratives",
 	"echo-category-title-bs-page-actions-cat": "Aiciones en páxines de la llista de siguimientu",
 	"echo-pref-tooltip-bs-admin-cat": "Avisame cuando se cree una cuenta d'usuariu nueva",
-	"echo-pref-tooltip-bs-page-actions-cat": "Avisame cuando dalguién edite, tresllade o desanicie una páxina que sigo, o cuando se cree una páxina nueva"
+	"echo-pref-tooltip-bs-page-actions-cat": "Avisame cuando dalguién edite, tresllade o desanicie una páxina que sigo",
+	"echo-pref-tooltip-bs-page-create-cat": "Avisame cuando se cree una páxina nueva",
+	"echo-category-title-bs-page-create-cat": "Creaciones de páxines"
 }
