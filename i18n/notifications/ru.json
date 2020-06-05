@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diman Russkov",
 			"DmitTrix",
 			"Movses",
 			"Okras",
@@ -31,5 +32,6 @@
 	"bs-notifications-web-create-body": "Страница «$1» была {{GENDER:$2|создана}} $3.",
 	"bs-notifications-web-delete-body": "Страница «$1» была {{GENDER:$2|удалена}} $3.",
 	"bs-notifications-mail-additional-links-label": "Дополнительные ссылки",
-	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Добро пожаловать}}, $1"
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Добро пожаловать}}, $1",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Участник|Участница}} \"$2\" {{GENDER:$1|создал|создала}} аккаунт"
 }
