@@ -4,6 +4,7 @@ require_once dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenanc
 
 use BlueSpice\INotifier;
 use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class TestNotification extends Maintenance {
 
@@ -354,6 +355,8 @@ class TestNotification extends Maintenance {
 		$startUserId = 0;
 		$count = $this->batchSize;
 
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+
 		while ( $count === $this->batchSize ) {
 			$count = 0;
 
@@ -379,9 +382,9 @@ class TestNotification extends Maintenance {
 				}
 				$count++;
 			}
-			wfWaitForSlaves( false, false, $wgEchoCluster );
+			$lbFactory->waitForReplication( [ 'cluster' => $wgEchoCluster ] );
 			// This is required since we are updating user properties in main wikidb
-			wfWaitForSlaves();
+			$lbFactory->waitForReplication();
 
 			// double check to make sure that the id is updated
 			if ( !$updated ) {
