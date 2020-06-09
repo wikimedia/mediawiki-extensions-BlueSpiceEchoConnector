@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agusbou2015",
 			"DannyS712",
 			"Fitoschido",
 			"Larjona",
@@ -10,6 +11,7 @@
 	"bs-notifications-addaccount": "Se creó la cuenta «$1».",
 	"bs-notifications-email-addaccount-subject": "Se creó {{GENDER:$1|el usuario|la usuaria}} «$2»",
 	"bs-notifications-email-addaccount-body": "Se creó {{GENDER:$1|el usuario|la usuaria}} $2.\n\nPuedes visitar {{GENDER:$1|su|su|la}} página de usuario siguiendo el enlace abajo:",
+	"bs-notifications-web-addaccount-body": "Se creó {{GENDER:$1|el usuario|la usuaria}} $2.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Creador|Creadora}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Creador|Creadora}}: $1",
 	"bs-notifications-registeruser": "«$1» se ha creado una cuenta.",
