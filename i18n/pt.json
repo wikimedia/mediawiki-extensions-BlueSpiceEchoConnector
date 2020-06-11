@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Mansil alfalb"
 		]
 	},
 	"bs-echoconnector-extension-description": "Liga o BlueSpice ao Echo",
-	"echo-category-title-bs-admin-cat": "Tarefa de administração executada",
-	"echo-category-title-bs-page-actions-cat": "Operação em página subscrita"
+	"echo-category-title-bs-admin-cat": "Tarefas administrativas",
+	"echo-category-title-bs-page-actions-cat": "Ações nas páginas na lista de vigias",
+	"echo-category-title-bs-page-create-cat": "Criação de página"
 }
