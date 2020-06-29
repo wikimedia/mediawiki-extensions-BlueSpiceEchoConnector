@@ -8,6 +8,7 @@
 	"bs-notifications-addaccount": "利用者「$1」が作成されました。",
 	"bs-notifications-email-addaccount-subject": "利用者「$2」が{{GENDER:$1|作成}}されました。",
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|利用者}} $2 が作成されました。\n\n以下のリンクから{{GENDER:$1|}}利用者ページにアクセスできます",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|利用者}} $2 が作成されました。",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|作成者}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|作成者}}: $1",
 	"bs-notifications-registeruser": "利用者「$1」がアカウントを作成されました。",
