@@ -10,5 +10,6 @@
 	"echo-category-title-bs-admin-cat": "管理任务",
 	"echo-category-title-bs-page-actions-cat": "监视列表中页面上的操作",
 	"echo-pref-tooltip-bs-page-create-cat": "当创建了一个新页面时提醒我",
-	"echo-category-title-bs-page-create-cat": "页面创建"
+	"echo-category-title-bs-page-create-cat": "页面创建",
+	"echo-pref-tooltip-bs-admin-cat": "当创建一个新用户账户时通知我"
 }

@@ -34,5 +34,6 @@
 	"bs-notifications-edit-difflink-label": "差分を表示",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|こんにちは}}、$1 さん",
 	"bs-notifications-htmlmail-sender-info": "$1 通知システム",
-	"bs-notifications-mail-additional-links-label": "その他のリンク"
+	"bs-notifications-mail-additional-links-label": "その他のリンク",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|利用者}} $2 が作成されました。"
 }

@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Agusbou2015",
 			"DannyS712",
 			"Fitoschido",
 			"Larjona",
@@ -36,5 +37,6 @@
 	"bs-notifications-edit-difflink-label": "Ver diferencia",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hola}}, $1",
 	"bs-notifications-htmlmail-sender-info": "Sistema de notificaciones de $1",
-	"bs-notifications-mail-additional-links-label": "Enlaces adicionales"
+	"bs-notifications-mail-additional-links-label": "Enlaces adicionales",
+	"bs-notifications-web-addaccount-body": "Se creó {{GENDER:$1|el usuario|la usuaria}} $2."
 }
