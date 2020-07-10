@@ -3,10 +3,13 @@
 namespace BlueSpice\EchoConnector\Notification;
 
 use BlueSpice\BaseNotification;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Revision\RevisionRecord;
 
 class EditNotification extends BaseNotification {
 	/**
-	 * @var \Revision
+	 * @var RevisionRecord
 	 */
 	protected $revision;
 
@@ -17,15 +20,23 @@ class EditNotification extends BaseNotification {
 
 	/**
 	 *
+	 * @var RevisionLookup
+	 */
+	protected $revisionLookup = null;
+
+	/**
+	 *
 	 * @param \User $agent
 	 * @param \Title $title
-	 * @param \Revision $revision
+	 * @param RevisionRecord $revision
 	 * @param string $summary
+	 * @param RevisionLookup|null $revisionLookup
 	 */
-	public function __construct( $agent, $title, $revision, $summary ) {
+	public function __construct( $agent, $title, $revision, $summary, $revisionLookup = null ) {
 		parent::__construct( 'bs-edit', $agent, $title );
 		$this->revision = $revision;
 		$this->summary = $summary;
+		$this->revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
 	}
 
 	/**
@@ -39,8 +50,9 @@ class EditNotification extends BaseNotification {
 		];
 		if ( is_object( $this->revision ) ) {
 			$diffParams[ 'diff' ] = $this->revision->getId();
-			if ( is_object( $this->revision->getPrevious() ) ) {
-				$diffParams[ 'oldid' ] = $this->revision->getPrevious()->getId();
+			$previousRevision = $this->revisionLookup->getPreviousRevision( $this->revision );
+			if ( is_object( $previousRevision ) ) {
+				$diffParams[ 'oldid' ] = $previousRevision->getId();
 			}
 		}
 
