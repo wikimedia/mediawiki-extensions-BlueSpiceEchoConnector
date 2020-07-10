@@ -1,19 +1,20 @@
 <?php
 
-namespace BlueSpice\EchoConnector\Hook\PageContentSaveComplete;
+namespace BlueSpice\EchoConnector\Hook\PageSaveComplete;
 
 use BlueSpice\EchoConnector\Notification\CreateNotification;
 use BlueSpice\EchoConnector\Notification\EditNotification;
-use BlueSpice\Hook\PageContentSaveComplete;
+use BlueSpice\Hook\PageSaveComplete;
 use MediaWiki\MediaWikiServices;
 
-class NotifyUsers extends PageContentSaveComplete {
+class NotifyUsers extends PageSaveComplete {
+
 	/**
 	 *
 	 * @return bool
 	 */
 	protected function skipProcessing() {
-		if ( $this->wikipage->getTitle()->getNamespace() === NS_USER_TALK ) {
+		if ( $this->wikiPage->getTitle()->getNamespace() === NS_USER_TALK ) {
 			return true;
 		}
 		return $this->getServices()->getPermissionManager()->userHasRight(
@@ -34,7 +35,7 @@ class NotifyUsers extends PageContentSaveComplete {
 			return true;
 		}
 
-		$title = $this->wikipage->getTitle();
+		$title = $this->wikiPage->getTitle();
 
 		if ( $this->flags & EDIT_NEW ) {
 			$notification = new CreateNotification( $this->user, $title, $this->summary );
@@ -43,7 +44,7 @@ class NotifyUsers extends PageContentSaveComplete {
 			return true;
 		}
 
-		$notification = new EditNotification( $this->user, $title, $this->revision, $this->summary );
+		$notification = new EditNotification( $this->user, $title, $this->revisionRecord, $this->summary );
 		$notifier->notify( $notification );
 
 		return true;
