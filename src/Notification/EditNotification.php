@@ -18,7 +18,7 @@ class EditNotification extends BaseNotification {
 	/**
 	 *
 	 * @param \User $agent
-	 * @param \Titöe $title
+	 * @param \Title $title
 	 * @param \Revision $revision
 	 * @param string $summary
 	 */

@@ -2,8 +2,8 @@
 
 namespace BlueSpice\EchoConnector;
 
-use BlueSpice\EchoConnector\Formatter\EchoHtmlDigestEmailFormatter;
-use BlueSpice\EchoConnector\Formatter\EchoPlainTextDigestEmailFormatter;
+use MediaWiki\MediaWikiServices;
+use MWException;
 
 class EchoEmailBatch extends \MWEchoEmailBatch {
 
@@ -54,6 +54,9 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 		return new self( $user );
 	}
 
+	/**
+	 * @throws MWException
+	 */
 	public function sendEmail() {
 		global $wgNotificationSender, $wgNotificationReplyName;
 
@@ -65,7 +68,9 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 			$emailDeliveryMode = 'daily_digest';
 		}
 
-		$textEmailDigestFormatter = new EchoPlainTextDigestEmailFormatter(
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
+		$formatterClass = $config->get( 'EchoEmailFormatterClasses' )['plain-text-digest'];
+		$textEmailDigestFormatter = new $formatterClass(
 			$this->mUser,
 			$this->language,
 			$frequency
@@ -79,7 +84,9 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 
 		$format = \MWEchoNotifUser::newFromUser( $this->mUser )->getEmailFormat();
 		if ( $format == \EchoEmailFormat::HTML ) {
-			$htmlEmailDigestFormatter = new EchoHtmlDigestEmailFormatter(
+			$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
+			$formatterClass = $config->get( 'EchoEmailFormatterClasses' )['html-digest'];
+			$htmlEmailDigestFormatter = new $formatterClass(
 				$this->mUser,
 				$this->language,
 				$frequency

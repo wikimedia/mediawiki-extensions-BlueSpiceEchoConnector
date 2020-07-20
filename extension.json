@@ -71,6 +71,14 @@
 		},
 		"ForceJobQueueForLargeAudienceThreshold": {
 			"value": 499
+		},
+		"EchoEmailFormatterClasses": {
+			"value": {
+				"plain-text": "BlueSpice\\EchoConnector\\Formatter\\EchoPlainTextEmailFormatter",
+				"plain-text-digest": "BlueSpice\\EchoConnector\\Formatter\\EchoPlainTextDigestEmailFormatter",
+				"html": "BlueSpice\\EchoConnector\\Formatter\\EchoHTMLEmailFormatter",
+				"html-digest": "BlueSpice\\EchoConnector\\Formatter\\EchoHtmlDigestEmailFormatter"
+			}
 		}
 	},
 	"JobClasses": {
@@ -79,6 +87,9 @@
 	"AutoloadNamespaces": {
 		"BlueSpice\\EchoConnector\\": "src/"
 	},
+	"ServiceWiringFiles": [
+		"ServiceWiring.php"
+	],
 	"load_composer_autoloader": true,
 	"manifest_version": 2
 }
