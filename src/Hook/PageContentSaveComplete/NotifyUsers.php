@@ -17,6 +17,10 @@ class NotifyUsers extends PageContentSaveComplete {
 			return true;
 		}
 
+		if ( $this->isMinor ) {
+			return true;
+		}
+
 		$notificationsManager = \BlueSpice\Services::getInstance()->getBSNotificationManager();
 
 		$notifier = $notificationsManager->getNotifier();
