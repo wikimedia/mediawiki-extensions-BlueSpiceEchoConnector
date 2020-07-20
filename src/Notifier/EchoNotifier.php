@@ -4,12 +4,23 @@ namespace BlueSpice\EchoConnector\Notifier;
 
 use BlueSpice\EchoConnector\Formatter\EchoPlainTextEmailFormatter as BsPlainTextEmailFormatter;
 use BlueSpice\EchoConnector\Formatter\EchoHTMLEmailFormatter as BsHtmlEmailFormatter;
+use Hooks;
 
 /**
  * Override of default EchoNotifier - copy-paste from there
  * All this because Echo uses hard-coded formatters for mails
  */
 class EchoNotifier extends \EchoNotifier {
+	/**
+	 * @param \User $user
+	 * @param \EchoEvent $event
+	 */
+	public static function notifyWithNotification( $user, $event ) {
+		Hooks::run( 'BlueSpiceEchoConnectorNotifyBeforeSend', [ &$event, $user, 'web' ] );
+
+		parent::notifyWithNotification( $user, $event );
+	}
+
 	/**
 	 *
 	 * @param \User $user
@@ -28,7 +39,7 @@ class EchoNotifier extends \EchoNotifier {
 		}
 
 		// Final check on whether to send email for this user & event
-		if ( !\Hooks::run( 'EchoAbortEmailNotification', [ $user, $event ] ) ) {
+		if ( !Hooks::run( 'EchoAbortEmailNotification', [ $user, $event ] ) ) {
 			return false;
 		}
 
@@ -49,13 +60,15 @@ class EchoNotifier extends \EchoNotifier {
 			// user decides to receive email digest, we should bundle those messages
 			if ( !empty( $wgEchoNotifications[$event->getType()]['bundle']['web'] )
 				|| !empty( $wgEchoNotifications[$event->getType()]['bundle']['email'] ) ) {
-				\Hooks::run( 'EchoGetBundleRules', [ $event, &$bundleString ] );
+				Hooks::run( 'EchoGetBundleRules', [ $event, &$bundleString ] );
 			}
 			if ( $bundleString ) {
 				$bundleHash = md5( $bundleString );
 			}
 
 			\MWEchoEventLogging::logSchemaEcho( $user, $event, 'email' );
+
+			Hooks::run( 'BlueSpiceEchoConnectorNotifyBeforeSend', [ &$event, $user, 'email' ] );
 
 			$extra = $event->getExtra();
 			$sendImmediately = isset( $extra['immediate-email'] )
