@@ -5,6 +5,7 @@ namespace BlueSpice\EchoConnector\Hook\PageContentSaveComplete;
 use BlueSpice\EchoConnector\Notification\CreateNotification;
 use BlueSpice\EchoConnector\Notification\EditNotification;
 use BlueSpice\Hook\PageContentSaveComplete;
+use MediaWiki\MediaWikiServices;
 
 class NotifyUsers extends PageContentSaveComplete {
 
@@ -17,8 +18,7 @@ class NotifyUsers extends PageContentSaveComplete {
 			return true;
 		}
 
-		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
-
+		$notificationsManager = MediaWikiServices::getInstance()->getService( 'BSNotificationManager' );
 		$notifier = $notificationsManager->getNotifier();
 
 		if ( !$notifier ) {
