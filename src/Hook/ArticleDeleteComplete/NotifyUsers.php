@@ -6,11 +6,18 @@ use BlueSpice\EchoConnector\Notification\DeleteNotification;
 use BlueSpice\Hook\ArticleDeleteComplete;
 
 class NotifyUsers extends ArticleDeleteComplete {
-	protected function doProcess() {
-		if ( $this->user->isAllowed( 'bot' ) ) {
-			return true;
-		}
+	/**
+	 *
+	 * @return bool
+	 */
+	protected function skipProcessing() {
+		return $this->getServices()->getPermissionManager()->userHasRight(
+			$this->user,
+			'bot'
+		);
+	}
 
+	protected function doProcess() {
 		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
 
 		$notifier = $notificationsManager->getNotifier();

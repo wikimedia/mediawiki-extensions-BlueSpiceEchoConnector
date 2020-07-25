@@ -8,16 +8,25 @@ use BlueSpice\Hook\PageContentSaveComplete;
 use MediaWiki\MediaWikiServices;
 
 class NotifyUsers extends PageContentSaveComplete {
-
-	protected function doProcess() {
-		if ( $this->user->isAllowed( 'bot' ) ) {
-			return true;
-		}
-
+	/**
+	 *
+	 * @return bool
+	 */
+	protected function skipProcessing() {
 		if ( $this->wikipage->getTitle()->getNamespace() === NS_USER_TALK ) {
 			return true;
 		}
+		return $this->getServices()->getPermissionManager()->userHasRight(
+			$this->user,
+			'bot'
+		);
+	}
 
+	/**
+	 *
+	 * @return bool
+	 */
+	protected function doProcess() {
 		$notificationsManager = MediaWikiServices::getInstance()->getService( 'BSNotificationManager' );
 		$notifier = $notificationsManager->getNotifier();
 
