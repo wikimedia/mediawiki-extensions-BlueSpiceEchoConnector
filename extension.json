@@ -49,7 +49,8 @@
 		"BSUserManagerAfterAddUser": "\\BlueSpice\\EchoConnector\\Hook\\BSUserManagerAfterAddUser\\NotifyUsers::callback",
 		"EchoGetNotificationTypes": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetNotificationTypes\\GetNotificationTypesForEvent::callback",
 		"EchoGetBundleRules": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetBundleRules\\GetBundleRules::callback",
-		"LocalUserCreated": "\\BlueSpice\\EchoConnector\\Hook\\LocalUserCreated\\NotifyUsers::callback"
+		"LocalUserCreated": "\\BlueSpice\\EchoConnector\\Hook\\LocalUserCreated\\NotifyUsers::callback",
+		"GetPreferences": "\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\AddNotificationMatrix::callback"
 	},
 	"config_prefix": "bsg",
 	"config": {
@@ -80,6 +81,20 @@
 				"html-digest": "BlueSpice\\EchoConnector\\Formatter\\EchoHtmlDigestEmailFormatter"
 			}
 		}
+	},
+	"ResourceModules": {
+		"ext.bluespice.echoConnector.preferences": {
+			"scripts": [
+				"bluespice.echoConnector.preferences.js"
+			],
+			"styles": [
+				"bluespice.echoConnector.preferences.css"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "BlueSpiceEchoConnector/resources"
 	},
 	"JobClasses": {
 		"sendNotification": "BlueSpice\\EchoConnector\\Job\\SendNotification"

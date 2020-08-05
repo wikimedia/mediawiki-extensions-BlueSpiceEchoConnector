@@ -3,6 +3,7 @@
 namespace BlueSpice\EchoConnector\Notification;
 
 use BlueSpice\BaseNotification;
+use RequestContext;
 
 class CreateNotification extends BaseNotification {
 	/**
@@ -13,11 +14,12 @@ class CreateNotification extends BaseNotification {
 	/**
 	 *
 	 * @param \User $agent
-	 * @param \Title|null $title
+	 * @param \Title $title
 	 * @param string $summary
+	 * @param string|null $key
 	 */
-	public function __construct( $agent, $title = null, $summary ) {
-		parent::__construct( 'bs-create', $agent, $title );
+	public function __construct( $agent, $title, $summary, $key = 'bs-create' ) {
+		parent::__construct( $key, $agent, $title );
 		$this->summary = $summary;
 	}
 
@@ -28,7 +30,10 @@ class CreateNotification extends BaseNotification {
 	public function getParams() {
 		return [
 			'summary' => $this->summary,
-			'realname' => $this->getUserRealName()
+			'realname' => $this->getUserRealName(),
+			'time' => RequestContext::getMain()->getLanguage()->timeanddate(
+				$this->title->getTouched(), true
+			)
 		];
 	}
 }

@@ -24,7 +24,7 @@ class EditPresentationModel extends EchoEventPresentationModel {
 
 		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-notifications-email-edit-subject';
-			$headerParams = [ 'title', 'agent', 'realname' ];
+			$headerParams = [ 'title', 'agent', 'realname', 'time' ];
 		}
 
 		return [
@@ -47,7 +47,7 @@ class EditPresentationModel extends EchoEventPresentationModel {
 
 		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-edit-body';
-			$bodyParams = [ 'title', 'agent', 'summary', 'realname' ];
+			$bodyParams = [ 'title', 'agent', 'summary', 'realname', 'time' ];
 		}
 
 		return [

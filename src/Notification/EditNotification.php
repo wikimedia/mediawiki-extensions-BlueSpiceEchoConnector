@@ -6,6 +6,7 @@ use BlueSpice\BaseNotification;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionLookup;
 use MediaWiki\Revision\RevisionRecord;
+use RequestContext;
 
 class EditNotification extends BaseNotification {
 	/**
@@ -30,10 +31,10 @@ class EditNotification extends BaseNotification {
 	 * @param \Title $title
 	 * @param RevisionRecord $revision
 	 * @param string $summary
-	 * @param RevisionLookup|null $revisionLookup
+	 * @param string $key
 	 */
-	public function __construct( $agent, $title, $revision, $summary, $revisionLookup = null ) {
-		parent::__construct( 'bs-edit', $agent, $title );
+	public function __construct( $agent, $title, $revision, $summary, $key = 'bs-edit' ) {
+		parent::__construct( $key, $agent, $title );
 		$this->revision = $revision;
 		$this->summary = $summary;
 		$this->revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
@@ -72,10 +73,20 @@ class EditNotification extends BaseNotification {
 	 * @return array
 	 */
 	public function getParams() {
+		$lastRevision = MediaWikiServices::getInstance()->getRevisionLookup()->getRevisionById(
+			$this->title->getLatestRevID()
+		);
+		$ts = '';
+		if ( $lastRevision ) {
+			$ts = RequestContext::getMain()->getLanguage()->timeanddate(
+				$lastRevision->getTimestamp(), true
+			);
+		}
 		return [
 			'summary' => $this->summary,
 			'titlelink' => true,
-			'realname' => $this->getUserRealName()
+			'realname' => $this->getUserRealName(),
+			'time' => $ts
 		];
 	}
 }
