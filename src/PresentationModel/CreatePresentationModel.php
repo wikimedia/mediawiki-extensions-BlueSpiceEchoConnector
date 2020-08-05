@@ -17,7 +17,7 @@ class CreatePresentationModel extends EchoEventPresentationModel {
 
 		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-notifications-email-create-subject';
-			$headerParams = [ 'title', 'agent', 'realname' ];
+			$headerParams = [ 'title', 'agent', 'realname', 'time' ];
 		}
 
 		return [
@@ -36,7 +36,7 @@ class CreatePresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-notifications-web-create-body';
-		$bodyParams = [ 'title', 'agent', 'realname' ];
+		$bodyParams = [ 'title', 'agent', 'realname', 'time' ];
 
 		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-create-body';
