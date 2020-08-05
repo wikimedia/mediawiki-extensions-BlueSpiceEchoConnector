@@ -20,7 +20,7 @@ class MovePresentationModel extends EchoEventPresentationModel {
 
 		if ( $this->distributionType == 'email' ) {
 			$headerKey = 'bs-notifications-email-move-subject';
-			$headerParams = [ 'oldtitle', 'agent', 'title', 'realname' ];
+			$headerParams = [ 'oldtitle', 'agent', 'title', 'realname', 'time' ];
 		}
 
 		return [
@@ -43,7 +43,7 @@ class MovePresentationModel extends EchoEventPresentationModel {
 
 		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-move-body';
-			$bodyParams = [ 'oldtitle', 'agent', 'title', 'realname', 'movereason' ];
+			$bodyParams = [ 'oldtitle', 'agent', 'title', 'realname', 'movereason', 'time' ];
 		}
 
 		return [
