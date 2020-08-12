@@ -10,5 +10,8 @@
 	"echo-pref-tooltip-bs-page-actions-cat": "Notify me when someone edits, moves or deletes a page that I watch",
 	"echo-pref-tooltip-bs-page-create-cat": "Notify me when a new page is created",
 	"echo-category-title-bs-page-actions-cat": "Actions on pages in watchlist",
-	"echo-category-title-bs-page-create-cat": "Page creation"
+	"echo-category-title-bs-page-create-cat": "Page creation",
+	"prefs-namespace-notifications": "Notifications on namespace events",
+	"prefs-category-notifications": "Notifications on categories",
+	"echo-category-title-bs-namespace-category-notify-cat": "Changes in subscribed namespaces and categories"
 }

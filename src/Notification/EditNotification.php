@@ -3,6 +3,8 @@
 namespace BlueSpice\EchoConnector\Notification;
 
 use BlueSpice\BaseNotification;
+use MediaWiki\MediaWikiServices;
+use RequestContext;
 
 class EditNotification extends BaseNotification {
 	/**
@@ -21,9 +23,10 @@ class EditNotification extends BaseNotification {
 	 * @param \Title $title
 	 * @param \Revision $revision
 	 * @param string $summary
+	 * @param string $key
 	 */
-	public function __construct( $agent, $title, $revision, $summary ) {
-		parent::__construct( 'bs-edit', $agent, $title );
+	public function __construct( $agent, $title, $revision, $summary, $key = 'bs-edit' ) {
+		parent::__construct( $key, $agent, $title );
 		$this->revision = $revision;
 		$this->summary = $summary;
 	}
@@ -60,10 +63,20 @@ class EditNotification extends BaseNotification {
 	 * @return array
 	 */
 	public function getParams() {
+		$lastRevision = MediaWikiServices::getInstance()->getRevisionLookup()->getRevisionById(
+			$this->title->getLatestRevID()
+		);
+		$ts = '';
+		if ( $lastRevision ) {
+			$ts = RequestContext::getMain()->getLanguage()->timeanddate(
+				$lastRevision->getTimestamp(), true
+			);
+		}
 		return [
 			'summary' => $this->summary,
 			'titlelink' => true,
-			'realname' => $this->getUserRealName()
+			'realname' => $this->getUserRealName(),
+			'time' => $ts
 		];
 	}
 }
