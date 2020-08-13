@@ -10,5 +10,7 @@
 	"echo-pref-tooltip-bs-page-actions-cat": "Notificar-me quando alguém editar, mover ou excluir uma página que eu assisto",
 	"echo-pref-tooltip-bs-page-create-cat": "Notificar-me quando uma nova página for criada",
 	"echo-category-title-bs-page-actions-cat": "Ações em páginas da lista de páginas vigiadas",
-	"echo-category-title-bs-page-create-cat": "Criação de página"
+	"echo-category-title-bs-page-create-cat": "Criação de página",
+	"prefs-namespace-notifications": "Notificações sobre eventos de domínio",
+	"prefs-category-notifications": "Notificações sobre categorias"
 }
