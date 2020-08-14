@@ -22,7 +22,7 @@ class EditNotification extends BaseNotification {
 	 *
 	 * @param \User $agent
 	 * @param \Title $title
-	 * @param RevisionRecord $revision
+	 * @param \Revision $revision
 	 * @param string $summary
 	 * @param string $key
 	 */

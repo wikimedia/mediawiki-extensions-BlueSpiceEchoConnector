@@ -6,23 +6,12 @@ use BlueSpice\EchoConnector\Notification\CreateInNamespaceOrCategoryNotification
 use BlueSpice\EchoConnector\Notification\CreateNotification;
 use BlueSpice\EchoConnector\Notification\EditInNamespaceOrCategoryNotification;
 use BlueSpice\EchoConnector\Notification\EditNotification;
-use BlueSpice\Hook\PageSaveComplete;
+use BlueSpice\Hook\PageContentSaveComplete;
 use BlueSpice\INotifier;
 use MediaWiki\MediaWikiServices;
 use Title;
 
-class NotifyUsers extends PageSaveComplete {
-	/**
-	 *
-	 * @return bool
-	 */
-	protected function skipProcessing()
-	{
-		return $this->getServices()->getPermissionManager()->userHasRight(
-			$this->user,
-			'bot'
-		);
-	}
+class NotifyUsers extends PageContentSaveComplete {
 
 	protected function doProcess() {
 		$notificationsManager = MediaWikiServices::getInstance()->getService( 'BSNotificationManager' );
@@ -32,10 +21,10 @@ class NotifyUsers extends PageSaveComplete {
 			return true;
 		}
 
-		$title = $this->wikiPage->getTitle();
+		$title = $this->wikipage->getTitle();
 		$this->fireNamespaceCategoryNotifications( $notifier, $title );
 
-		if ( $this->wikiPage->getTitle()->getNamespace() === NS_USER_TALK ) {
+		if ( $this->wikipage->getTitle()->getNamespace() === NS_USER_TALK ) {
 			return true;
 		}
 
@@ -46,7 +35,7 @@ class NotifyUsers extends PageSaveComplete {
 			return true;
 		}
 
-		$notification = new EditNotification( $this->user, $title, $this->revisionRecord, $this->summary );
+		$notification = new EditNotification( $this->user, $title, $this->revision, $this->summary );
 		$notifier->notify( $notification );
 
 		return true;
@@ -65,7 +54,7 @@ class NotifyUsers extends PageSaveComplete {
 			);
 		} else {
 			$notifier->notify( new EditInNamespaceOrCategoryNotification(
-				$this->user, $title,  $this->revisionRecord, $this->summary
+				$this->user, $title,  $this->revision, $this->summary
 			) );
 		}
 	}
