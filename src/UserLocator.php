@@ -181,14 +181,14 @@ class UserLocator {
 		$prefName = "notify-$type-selectionpage-$action-$key";
 		$res = $db->select(
 			[
-				'user_properties',
-				'user'
+				'up' => 'user_properties',
+				'u' => 'user'
 			],
-			[ 'user.*' ],
+			[ 'u.*' ],
 			[ 'up_property' => $prefName ],
 			__METHOD__,
 			[],
-			[ 'user' => [ 'INNER JOIN', 'user_properties.up_user = user.user_id' ] ]
+			[ 'u' => [ 'INNER JOIN', 'up.up_user = u.user_id' ] ]
 		);
 
 		return array_values( $this->usersFromRows( $res ) );
