@@ -82,16 +82,16 @@ class UserLocator {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			[
-				"user_groups",
-				"user",
+				"ug" => "user_groups",
+				"u" => "user",
 			],
 			[
-				"user.*"
+				"u.*"
 			],
 			$conds,
 			__METHOD__,
 			[],
-			[ 'user' => [ 'INNER JOIN', 'user_properties.up_user = user.user_id' ] ]
+			[ 'u' => [ 'INNER JOIN', 'ug.ug_user = u.user_id' ] ]
 		);
 
 		return array_values( $this->usersFromRows( $res ) );
@@ -107,12 +107,12 @@ class UserLocator {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$resUser = $dbr->select(
 			[
-				"user_properties",
-				"user",
+				"up" => "user_properties",
+				"u" => "user",
 			],
 			[
 				"DISTINCT up_user",
-				"user.*",
+				"u.*",
 			],
 			[
 				"up_property" => [
@@ -123,7 +123,7 @@ class UserLocator {
 			],
 			__METHOD__,
 			[],
-			[ 'user' => [ 'INNER JOIN', 'user_properties.up_user = user.user_id' ] ]
+			[ 'u' => [ 'INNER JOIN', 'up.up_user = u.user_id' ] ]
 		);
 
 		return array_values( $this->usersFromRows( $resUser ) );
