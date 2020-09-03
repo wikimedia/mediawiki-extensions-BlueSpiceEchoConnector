@@ -2,7 +2,7 @@
 
 namespace BlueSpice\EchoConnector\Formatter;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 	protected $config;
@@ -22,7 +22,7 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 		global $wgSitename;
 
 		$this->sitename = $wgSitename;
-		$this->config = Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
+		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 		$path = $this->config->get( 'EchoHtmlMailTemplatePath' );
 		$this->templateParser = new \TemplateParser( $path );
 

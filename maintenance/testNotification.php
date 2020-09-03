@@ -3,7 +3,6 @@
 require_once dirname( dirname( dirname( __DIR__ ) ) ) . '/maintenance/Maintenance.php';
 
 use BlueSpice\INotifier;
-use BlueSpice\Services;
 use MediaWiki\MediaWikiServices;
 
 class TestNotification extends Maintenance {
@@ -270,10 +269,10 @@ class TestNotification extends Maintenance {
 	}
 
 	/**
-	 * @return Services
+	 * @return MediaWikiServices
 	 */
 	protected function getServices() {
-		return Services::getInstance();
+		return MediaWikiServices::getInstance();
 	}
 
 	/**
