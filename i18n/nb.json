@@ -10,5 +10,8 @@
 	"echo-pref-tooltip-bs-admin-cat": "Varsle meg når en ny brukerkonto opprettes",
 	"echo-pref-tooltip-bs-page-actions-cat": "Varsle meg når noen redigerer, flytter eller sletter en side jeg overvåker",
 	"echo-pref-tooltip-bs-page-create-cat": "Varsle meg når en ny side opprettes",
-	"echo-category-title-bs-page-create-cat": "Sideopprettelse"
+	"echo-category-title-bs-page-create-cat": "Sideopprettelse",
+	"prefs-namespace-notifications": "Varsler ved navneromshendelser",
+	"prefs-category-notifications": "Varsler for kategorier",
+	"echo-category-title-bs-namespace-category-notify-cat": "Endringer i navnerom og kategorier en abonnerer på"
 }

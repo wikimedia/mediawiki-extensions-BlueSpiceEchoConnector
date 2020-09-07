@@ -18,7 +18,7 @@
 	"bs-notifications-edit": "The page \"$1\" has been changed",
 	"bs-notifications-edit-bundle": "The page \"$2\" has been changed {{PLURAL:$1|$1 time|$1 times}}",
 	"bs-notifications-email-edit-subject": "Page \"$1\" {{GENDER:$2|edited}} at $4 by $3",
-	"bs-notifications-email-edit-body": "The page \"$1\" was {{GENDER:$2|edited}} at $5 by $4.\n\nComment:\n $3 \n",
+	"bs-notifications-email-edit-body": "The page \"$1\" was {{GENDER:$2|edited}} at $5 by $4.\n\nComment:\n $3",
 	"bs-notifications-web-edit-body": "The page \"$1\" was {{GENDER:$2|edited}} by $3.",
 	"bs-notifications-create": "The page \"$1\" was created",
 	"bs-notifications-email-create-subject": "Page \"$1\" {{GENDER:$2|created}} at $4 by $3",
