@@ -4,6 +4,7 @@ namespace BlueSpice\EchoConnector\Hook\TitleMoveComplete;
 
 use BlueSpice\EchoConnector\Notification\TitleMoveNotification;
 use BlueSpice\Hook\TitleMoveComplete;
+use MediaWiki\MediaWikiServices;
 
 class NotifyUsers extends TitleMoveComplete {
 	/**
@@ -18,7 +19,9 @@ class NotifyUsers extends TitleMoveComplete {
 	}
 
 	protected function doProcess() {
-		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
+		$notificationsManager = MediaWikiServices::getInstance()->getService(
+			'BSNotificationManager'
+		);
 
 		$notifier = $notificationsManager->getNotifier();
 		$notification = new TitleMoveNotification(

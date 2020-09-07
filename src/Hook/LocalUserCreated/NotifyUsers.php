@@ -3,6 +3,7 @@
 namespace BlueSpice\EchoConnector\Hook\LocalUserCreated;
 
 use BlueSpice\EchoConnector\Notification\RegisterUserNotification;
+use MediaWiki\MediaWikiServices;
 
 class NotifyUsers extends \BlueSpice\Hook\LocalUserCreated {
 
@@ -15,7 +16,9 @@ class NotifyUsers extends \BlueSpice\Hook\LocalUserCreated {
 	}
 
 	protected function doProcess() {
-		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
+		$notificationsManager = MediaWikiServices::getInstance()->getService(
+			'BSNotificationManager'
+		);
 
 		$notifier = $notificationsManager->getNotifier();
 

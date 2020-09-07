@@ -3,7 +3,7 @@
 namespace BlueSpice\EchoConnector\Formatter;
 
 use BlueSpice\EchoConnector\EchoEventPresentationModel as BSEchoPresentationModel;
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 	const PRIMARY_LINK = 'primary_link';
@@ -43,7 +43,7 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		global $wgSitename;
 
 		$this->sitename = $wgSitename;
-		$this->config = Services::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
+		$this->config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
 
 		$path = $this->config->get( 'EchoHtmlMailTemplatePath' );
 		$this->templateParser = new \TemplateParser( $path );
@@ -63,7 +63,7 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 
 		$subject = $model->getSubjectMessage()->parse();
 
-		$realname = Services::getInstance()->getService( 'BSUtilityFactory' )
+		$realname = MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $model->getUser() )->getDisplayName();
 
 		$greeting = wfMessage( 'bs-notifications-htmlmail-greeting', $realname )->parse();

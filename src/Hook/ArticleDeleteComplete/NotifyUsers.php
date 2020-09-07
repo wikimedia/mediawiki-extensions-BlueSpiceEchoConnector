@@ -4,6 +4,7 @@ namespace BlueSpice\EchoConnector\Hook\ArticleDeleteComplete;
 
 use BlueSpice\EchoConnector\Notification\DeleteNotification;
 use BlueSpice\Hook\ArticleDeleteComplete;
+use MediaWiki\MediaWikiServices;
 
 class NotifyUsers extends ArticleDeleteComplete {
 	/**
@@ -18,7 +19,9 @@ class NotifyUsers extends ArticleDeleteComplete {
 	}
 
 	protected function doProcess() {
-		$notificationsManager = \BlueSpice\Services::getInstance()->getService( 'BSNotificationManager' );
+		$notificationsManager = MediaWikiServices::getInstance()->getService(
+			'BSNotificationManager'
+		);
 
 		$notifier = $notificationsManager->getNotifier();
 		$notification = new DeleteNotification( $this->user, $this->wikipage->getTitle(), $this->reason );
