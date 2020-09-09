@@ -4,7 +4,7 @@ namespace BlueSpice\EchoConnector;
 
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Watchlist\Record;
-use BlueSpice\Data\Watchlist\Store;
+use BlueSpice\EchoConnector\Data\Watchlist\Store;
 use IContextSource;
 use LoadBalancer;
 use MWException;
