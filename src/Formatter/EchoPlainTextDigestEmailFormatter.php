@@ -14,9 +14,17 @@ class EchoPlainTextDigestEmailFormatter extends \EchoPlainTextDigestEmailFormatt
 		$content = [];
 		foreach ( $models as $model ) {
 			$event = EchoEvent::newFromID( $model->getEventId() );
+			$extra = $event->getExtra();
+			$digestUseLink = isset( $extra['digestUseSecondaryLink'] )
+				? $extra['digestUseSecondaryLink'] : null;
+			if ( $digestUseLink && isset( $extra['secondary-links'][$digestUseLink] ) ) {
+				$link = $extra['secondary-links'][$digestUseLink];
+			} else {
+				$link = $event->getTitle()->getFullURL();
+			}
 			$content[$model->getCategory()][] = Sanitizer::stripAllTags(
 				$model->getHeaderMessage()->parse()
-			) . ' ' . $event->getTitle()->getFullURL();
+			) . ' ' . $link;
 		}
 
 		ksort( $content );
