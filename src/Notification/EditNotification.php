@@ -4,8 +4,8 @@ namespace BlueSpice\EchoConnector\Notification;
 
 use BlueSpice\BaseNotification;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Revision\RevisionLookup;
-use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Storage\RevisionLookup;
+use MediaWiki\Storage\RevisionRecord;
 use RequestContext;
 
 class EditNotification extends BaseNotification {
@@ -34,7 +34,9 @@ class EditNotification extends BaseNotification {
 	 * @param string $key
 	 */
 	public function __construct( $agent, $title, $revision, $summary, $key = 'bs-edit' ) {
-		parent::__construct( $key, $agent, $title );
+		parent::__construct( $key, $agent, $title, [
+			'digestUseSecondaryLink' => 'difflink'
+		] );
 		$this->revision = $revision;
 		$this->summary = $summary;
 		$this->revisionLookup = MediaWikiServices::getInstance()->getRevisionLookup();
@@ -82,11 +84,11 @@ class EditNotification extends BaseNotification {
 				$lastRevision->getTimestamp(), true
 			);
 		}
-		return [
+		return array_merge( parent::getParams(), [
 			'summary' => $this->summary,
 			'titlelink' => true,
 			'realname' => $this->getUserRealName(),
 			'time' => $ts
-		];
+		] );
 	}
 }
