@@ -5,18 +5,24 @@ namespace BlueSpice\EchoConnector\Notifier;
 use BlueSpice\EchoConnector\Formatter\EchoHTMLEmailFormatter as BsHtmlEmailFormatter;
 use BlueSpice\EchoConnector\Formatter\EchoPlainTextEmailFormatter as BsPlainTextEmailFormatter;
 use Hooks;
+use MailAddress;
+use MediaWiki\Block\AbstractBlock;
+use MediaWiki\MediaWikiServices;
 
 /**
  * Override of default EchoNotifier - copy-paste from there
  * All this because Echo uses hard-coded formatters for mails
  */
 class EchoNotifier extends \EchoNotifier {
+
 	/**
 	 * @param \User $user
 	 * @param \EchoEvent $event
 	 */
 	public static function notifyWithNotification( $user, $event ) {
-		Hooks::run( 'BlueSpiceEchoConnectorNotifyBeforeSend', [ &$event, $user, 'web' ] );
+		MediaWikiServices::getInstance()->getHookContainer()->run(
+			'BlueSpiceEchoConnectorNotifyBeforeSend', [ &$event, $user, 'web' ]
+		);
 
 		parent::notifyWithNotification( $user, $event );
 	}
@@ -28,18 +34,27 @@ class EchoNotifier extends \EchoNotifier {
 	 * @return bool
 	 */
 	public static function notifyWithEmail( $user, $event ) {
-		global $wgEnableEmail;
+		global $wgEnableEmail, $wgBlockDisablesLogin;
 
-		if ( !$wgEnableEmail ) {
-			return false;
-		}
-		// No valid email address or email notification
-		if ( !$user->isEmailConfirmed() || $user->getOption( 'echo-email-frequency' ) < 0 ) {
+		if (
+			// Email is globally disabled
+			!$wgEnableEmail ||
+			// User does not have a valid and confirmed email address
+			!$user->isEmailConfirmed() ||
+			// User has disabled Echo emails
+			$user->getOption( 'echo-email-frequency' ) < 0 ||
+			// User is blocked and cannot log in (T199993)
+			( $wgBlockDisablesLogin && $user->getBlock( true ) instanceof AbstractBlock )
+		) {
 			return false;
 		}
 
 		// Final check on whether to send email for this user & event
-		if ( !Hooks::run( 'EchoAbortEmailNotification', [ $user, $event ] ) ) {
+		if (
+			!MediaWikiServices::getInstance()->getHookContainer()->run(
+				'EchoAbortEmailNotification', [ $user, $event ]
+			)
+		) {
 			return false;
 		}
 
@@ -49,19 +64,21 @@ class EchoNotifier extends \EchoNotifier {
 		// eligible to receive this email
 		if ( in_array( $event->getType(), $userEmailNotifications ) ) {
 			global $wgEchoEnableEmailBatch, $wgEchoNotifications, $wgNotificationSender,
-					$wgNotificationReplyName;
+					$wgNoReplyAddress;
 
 			$priority = $attributeManager->getNotificationPriority( $event->getType() );
 
 			$bundleString = $bundleHash = '';
 
-			// We should have bundling for email digest as long as either web or email
-			// bundling is on, for example, talk page email bundling is off, but if a
-			// user decides to receive email digest, we should bundle those messages
-			if ( !empty( $wgEchoNotifications[$event->getType()]['bundle']['web'] )
-				|| !empty( $wgEchoNotifications[$event->getType()]['bundle']['email'] ) ) {
+			// We should have bundling for email digest as long as either web or email bundling is on,
+			// for example, talk page email bundling is off, but if a user decides to receive email
+			// digest, we should bundle those messages
+			if ( !empty( $wgEchoNotifications[$event->getType()]['bundle']['web'] ) ||
+				!empty( $wgEchoNotifications[$event->getType()]['bundle']['email'] )
+			) {
 				Hooks::run( 'EchoGetBundleRules', [ $event, &$bundleString ] );
 			}
+			// @phan-suppress-next-line PhanImpossibleCondition May be set by hook
 			if ( $bundleString ) {
 				$bundleHash = md5( $bundleString );
 			}
@@ -75,8 +92,11 @@ class EchoNotifier extends \EchoNotifier {
 				&& $extra['immediate-email'] == true;
 
 			// email digest notification ( weekly or daily )
-			if ( $wgEchoEnableEmailBatch && $user->getOption( 'echo-email-frequency' ) > 0
-				&& !$sendImmediately ) {
+			if (
+				$wgEchoEnableEmailBatch &&
+				$user->getOption( 'echo-email-frequency' ) > 0 &&
+				!$sendImmediately
+			) {
 				// always create a unique event hash for those events don't support bundling
 				// this is mainly for group by
 				if ( !$bundleHash ) {
@@ -88,12 +108,12 @@ class EchoNotifier extends \EchoNotifier {
 			}
 
 			// instant email notification
-			$toAddress = \MailAddress::newFromUser( $user );
-			$fromAddress = new \MailAddress(
+			$toAddress = MailAddress::newFromUser( $user );
+			$fromAddress = new MailAddress(
 				$wgNotificationSender,
-				\EchoHooks::getNotificationSenderName()
+				wfMessage( 'emailsender' )->inContentLanguage()->text()
 			);
-			$replyAddress = new \MailAddress( $wgNotificationSender, $wgNotificationReplyName );
+			$replyAddress = new MailAddress( $wgNoReplyAddress );
 			// Since we are sending a single email, should set the bundle hash to null
 			// if it is set with a value from somewhere else
 			$event->setBundleHash( null );
