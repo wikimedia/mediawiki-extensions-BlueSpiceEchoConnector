@@ -4,10 +4,10 @@
 		"requires": "BlueSpiceEchoConnector",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"createdUser": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			}
 		}
 	},
@@ -16,10 +16,10 @@
 		"requires": "BlueSpiceEchoConnector",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"createdUser": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			}
 		}
 	},
@@ -28,7 +28,7 @@
 		"requires": "BlueSpiceEchoConnector",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
@@ -43,7 +43,7 @@
 		"requires": "BlueSpiceEchoConnector",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
@@ -58,7 +58,7 @@
 		"requires": "BlueSpiceEchoConnector",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
@@ -76,7 +76,7 @@
 		"requires": "BlueSpiceEchoConnector",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
@@ -94,13 +94,13 @@
 		"requires": "BlueSpicePageAssignments",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
 			},
 			"affectedUsers": {
-				"callback": "$val = [ 0 => \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser()->getId() ];"
+				"callback": "$val = [ 0 => \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser()->getId() ];"
 			}
 		}
 	},
@@ -109,13 +109,13 @@
 		"requires": "BlueSpicePageAssignments",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
 			},
 			"affectedUsers": {
-				"callback": "$val = [ 0 => \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser()->getId() ];"
+				"callback": "$val = [ 0 => \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser()->getId() ];"
 			}
 		}
 	},
@@ -124,10 +124,10 @@
 		"requires": "BlueSpicePageAssignments",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"user": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"groupsAdded": {
 				"callback": "$val = \\User::getAllGroups();"
@@ -139,10 +139,10 @@
 		"requires": "BlueSpicePageAssignments",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"user": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"groupsRemoved": {
 				"callback": "$val = \\User::getAllGroups();"
@@ -154,7 +154,7 @@
 		"requires": "BlueSpiceReminder",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
@@ -169,7 +169,7 @@
 		"requires": "BlueSpiceReminder",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
@@ -184,13 +184,13 @@
 		"requires": "BlueSpiceReview",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
 			},
 			"nextUsers": {
-				"callback": "$val = [ 0 => \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser()->getId() ];"
+				"callback": "$val = [ 0 => \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser()->getId() ];"
 			}
 		}
 	},
@@ -199,13 +199,13 @@
 		"requires": "BlueSpiceReview",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
 			},
 			"owner": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"comment": {
 				"value": "testMail comment"
@@ -217,13 +217,13 @@
 		"requires": "BlueSpiceReview",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
 			},
 			"owner": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"comment": {
 				"value": "testMail comment"
@@ -235,13 +235,13 @@
 		"requires": "BlueSpiceReview",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
 			},
 			"owner": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"comment": {
 				"value": "testMail comment"
@@ -253,13 +253,13 @@
 		"requires": "BlueSpiceReview",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
 			},
 			"owner": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"comment": {
 				"value": "testMail comment"
@@ -271,13 +271,13 @@
 		"requires": "BlueSpiceReview",
 		"params": {
 			"agent": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"title": {
 				"callback": "$val = \\Title::newMainPage();"
 			},
 			"owner": {
-				"callback": "$val = \\BlueSpice\\Services::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"comment": {
 				"value": "testMail comment"
