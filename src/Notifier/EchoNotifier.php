@@ -63,7 +63,7 @@ class EchoNotifier extends \EchoNotifier {
 		// See if the user wants to receive emails for this category or the user is
 		// eligible to receive this email
 		if ( in_array( $event->getType(), $userEmailNotifications ) ) {
-			global $wgEchoEnableEmailBatch, $wgEchoNotifications, $wgNotificationSender,
+			global $wgEchoEnableEmailBatch, $wgEchoNotifications, $wgPasswordSender,
 					$wgNoReplyAddress;
 
 			$priority = $attributeManager->getNotificationPriority( $event->getType() );
@@ -110,7 +110,7 @@ class EchoNotifier extends \EchoNotifier {
 			// instant email notification
 			$toAddress = MailAddress::newFromUser( $user );
 			$fromAddress = new MailAddress(
-				$wgNotificationSender,
+				$wgPasswordSender,
 				wfMessage( 'emailsender' )->inContentLanguage()->text()
 			);
 			$replyAddress = new MailAddress( $wgNoReplyAddress );
