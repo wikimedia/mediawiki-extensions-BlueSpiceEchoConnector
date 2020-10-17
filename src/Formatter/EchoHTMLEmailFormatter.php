@@ -67,8 +67,12 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		$realname = Services::getInstance()->getService( 'BSUtilityFactory' )
 			->getUserHelper( $model->getUser() )->getDisplayName();
 
-		$greeting = wfMessage( 'bs-notifications-htmlmail-greeting', $realname )->parse();
-		$senderMessage = wfMessage( 'bs-notifications-htmlmail-sender-info', $this->sitename )->plain();
+		$greeting = $this->msg(
+			'bs-notifications-htmlmail-greeting', $realname
+		)->parse();
+		$senderMessage = $this->msg(
+			'bs-notifications-htmlmail-sender-info', $this->sitename
+		)->plain();
 		$messageHeader = $model->getHeaderMessage()->parse();
 
 		$bodyMsg = $model->getBodyMessage();
@@ -76,7 +80,9 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 
 		$actions = [
 			'primary' => [],
-			'secondary_label' => wfMessage( 'bs-notifications-mail-additional-links-label' )->plain(),
+			'secondary_label' => $this->msg(
+				'bs-notifications-mail-additional-links-label'
+			)->plain(),
 			'secondary' => []
 		];
 

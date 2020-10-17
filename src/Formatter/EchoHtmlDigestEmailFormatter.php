@@ -40,7 +40,9 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 				->parse();
 		$greeting = nl2br( $greeting );
 
-		$senderMessage = wfMessage( 'bs-notifications-htmlmail-sender-info', $this->sitename )->plain();
+		$senderMessage = $this->msg(
+			'bs-notifications-htmlmail-sender-info', $this->sitename
+		)->plain();
 
 		$eventsByCategory = $this->groupByCategory( $models );
 		ksort( $eventsByCategory );
