@@ -12,7 +12,7 @@
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Корисник $2 је креиран|Корисница $2 је креиран}}.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Стваралац}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Стваралац}}: $1",
-	"bs-notifications-registeruser": "Корисник \"$1\" је направио/направила налог.",
+	"bs-notifications-registeruser": "Корисник „$1” је отворио налог.",
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Корисник|Корисница}} \"$2\" је {{GENDER:$1|направио|направила}} налог",
 	"bs-notifications-email-registeruser-body": "{{GENDER:$1|Корисник|Корисница}} $2 је {{GENDER:$1|направио|направила}} налог\n\nМожете посетити {{GENDER:$1|његову|њену}} корисничку страницу пратећи линк испод:",
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|Корисник|Корисница}} $2 је {{GENDER:$1|направио|направила}} налог.",
