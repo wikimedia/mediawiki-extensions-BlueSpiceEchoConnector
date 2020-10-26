@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Beta16",
+			"Gianfranco",
 			"ValeJappo"
 		]
 	},
 	"bs-echoconnector-extension-description": "Connette BlueSpice con Echo",
 	"echo-category-title-bs-admin-cat": "Attività di amministrazione",
+	"echo-pref-tooltip-bs-admin-cat": "Avvisami quando viene creato un nuovo account utente",
 	"echo-category-title-bs-page-actions-cat": "Azione sulle pagine tra gli osservati speciali",
 	"echo-category-title-bs-page-create-cat": "Creazioni di pagine",
 	"prefs-category-notifications": "Notifiche sulle categorie"
