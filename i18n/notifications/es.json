@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Agusbou2015",
+			"Alvaro",
 			"DannyS712",
 			"Fitoschido",
 			"Larjona",
@@ -24,11 +25,11 @@
 	"bs-notifications-email-edit-body": "$4 {{GENDER:$2|modificó}} la página «$1».\n\nComentario:\n $3",
 	"bs-notifications-web-edit-body": "$3 {{GENDER:$2|editó}} la página «$1».",
 	"bs-notifications-create": "Se creó la página «$1»",
-	"bs-notifications-email-create-subject": "$3 {{GENDER:$2|creó}} la página «$1»",
+	"bs-notifications-email-create-subject": "$3 {{GENDER:$2|editó}} la página «$1»",
 	"bs-notifications-email-create-body": "$3 {{GENDER:$2|creó}} la página «$1».\n\nComentario:\n $4\nPuedes visitar la página siguiendo este enlace:",
 	"bs-notifications-web-create-body": "$3 {{GENDER:$2|creó}} la página «$1».",
 	"bs-notifications-delete": "Se borró la página «$1»",
-	"bs-notifications-email-delete-subject": "$3 {{GENDER:$2|borró}} la página «$1»",
+	"bs-notifications-email-delete-subject": "{{GENDER:$2|{{GENDER:$2|$4}}}}$3 {{GENDER:$2|borró}} la página «$1»",
 	"bs-notifications-email-delete-body": "$3 {{GENDER:$2|borró}} la página «$1».\n\nMotivo:\n$4",
 	"bs-notifications-web-delete-body": "$3 {{GENDER:$2|borró}} la página «$1».",
 	"bs-notifications-move": "Se trasladó la página «$1»",
