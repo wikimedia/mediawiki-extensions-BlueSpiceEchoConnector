@@ -2,10 +2,12 @@
 
 namespace BlueSpice\EchoConnector;
 
+use BlueSpice\Data\Filter\StringValue;
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Watchlist\Record;
 use BlueSpice\EchoConnector\Data\Watchlist\Store;
 use IContextSource;
+use Hooks;
 use LoadBalancer;
 use MWException;
 use Title;
@@ -29,44 +31,37 @@ class UserLocator {
 	/**
 	 * Get all uses watching the title
 	 *
-	 * @param string $title
-	 * @return array
+	 * @param string $titleText
+	 * @param Title $title
+	 * @return User[]
 	 */
-	public function getWatchers( $title ) {
-		$watchers = [];
+	public function getWatchers( $titleText, Title $title ) {
 		$wlStore = new Store( $this->context );
-		$readerParams = new ReaderParams( [
-			'limit' => 99999,
-			'filter' => [ [
-				'comparison' => 'eq',
-				'property' => Record::PAGE_PREFIXED_TEXT,
-				'value' => $title,
-				'type' => 'string'
+		$params = new ReaderParams( [
+			ReaderParams::PARAM_LIMIT => ReaderParams::LIMIT_INFINITE,
+			ReaderParams::PARAM_FILTER => [ [
+				StringValue::KEY_COMPARISON => StringValue::COMPARISON_EQUALS,
+				StringValue::KEY_PROPERTY => Record::PAGE_PREFIXED_TEXT,
+				StringValue::KEY_VALUE => $titleText,
+				StringValue::KEY_TYPE => 'string'
 			] ]
 		] );
 
-		$records = $wlStore->getReader()->read( $readerParams );
-
-		foreach ( $records->getRecords() as $record ) {
-			$userId = $record->get( Record::USER_ID, false );
-			if ( $userId ) {
-				$user = User::newFromId( $userId );
-				$user->load();
-				if ( $user->isAnon() ) {
-					continue;
-				}
-				$watchers[$user->getId()] = $user;
-			}
+		$users = [];
+		foreach ( $wlStore->getReader()->read( $params )->getRecords() as $record ) {
+			$users[] = $record->get( Record::USER_ID, 0 );
 		}
-
-		return array_values( $watchers );
+		if ( empty( $users ) ) {
+			return [];
+		}
+		return $this->getValidUsersFromIds( $users, $title );
 	}
 
 	/**
 	 * Get all users from the particular group
 	 *
 	 * @param array $groups
-	 * @return array
+	 * @return User[]
 	 */
 	public function getUsersFromGroups( $groups ) {
 		if ( !is_array( $groups ) ) {
@@ -81,39 +76,34 @@ class UserLocator {
 
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$res = $dbr->select(
-			[
-				"ug" => "user_groups",
-				"u" => "user",
-			],
-			[
-				"u.*"
-			],
+			'user_groups',
+			'ug_user',
 			$conds,
-			__METHOD__,
-			[],
-			[ 'u' => [ 'INNER JOIN', 'ug.ug_user = u.user_id' ] ]
+			__METHOD__
 		);
 
-		return array_values( $this->usersFromRows( $res ) );
+		$users = [];
+		foreach ( $res as $row ) {
+			$users[] = $row->ug_user;
+		}
+		if ( empty( $users ) ) {
+			return [];
+		}
+		return $this->getValidUsersFromIds( $users );
 	}
 
 	/**
 	 * Get all users subscribed to the particular category
 	 *
 	 * @param string $cat Notification category
-	 * @return array
+	 * @param Title $title
+	 * @return User[]
 	 */
-	public function getAllSubscribed( $cat ) {
+	public function getAllSubscribed( $cat, Title $title ) {
 		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 		$resUser = $dbr->select(
-			[
-				"up" => "user_properties",
-				"u" => "user",
-			],
-			[
-				"DISTINCT up_user",
-				"u.*",
-			],
+			"user_properties",
+			"DISTINCT up_user",
 			[
 				"up_property" => [
 					"echo-subscriptions-web-$cat",
@@ -121,28 +111,37 @@ class UserLocator {
 				],
 				"up_value" => 1
 			],
-			__METHOD__,
-			[],
-			[ 'u' => [ 'INNER JOIN', 'up.up_user = u.user_id' ] ]
+			__METHOD__
 		);
-
-		return array_values( $this->usersFromRows( $resUser ) );
+		$users = [];
+		foreach ( $resUser as $row ) {
+			$users[] = $row->up_user;
+		}
+		if ( empty( $users ) ) {
+			return [];
+		}
+		return $this->getValidUsersFromIds( $users, $title );
 	}
 
 	/**
 	 * @param int $nsId
 	 * @param string $action
+	 * @param Title $title
 	 *
-	 * @return User[]|array
+	 * @return User[]
 	 */
-	public function getUsersSubscribedToNamespace( $nsId, $action ) {
-		return $this->getUsersWithSubscriptionPreference( 'namespace', $action, $nsId );
+	public function getUsersSubscribedToNamespace( $nsId, $action, Title $title ) {
+		$users = $this->getUsersWithSubscriptionPreference( 'namespace', $action, $nsId );
+		if ( empty( $users ) ) {
+			return [];
+		}
+		return $this->getValidUsersFromIds( $users, $title );
 	}
 
 	/**
 	 * @param Title $title
 	 * @param string $action
-	 * @return User[]|array
+	 * @return User[]
 	 * @throws MWException
 	 */
 	public function getUsersSubscribedToTitleCategories( Title $title, $action ) {
@@ -159,8 +158,11 @@ class UserLocator {
 		foreach ( $categories as $cat ) {
 			$users += $this->getUsersWithSubscriptionPreference( 'category', $action, $cat );
 		}
+		if ( empty( $users ) ) {
+			return [];
+		}
 
-		return $users;
+		return $this->getValidUsersFromIds( $users, $title );
 	}
 
 	/**
@@ -169,48 +171,59 @@ class UserLocator {
 	 * @param string $type
 	 * @param string $action
 	 * @param string $key
-	 * @return User[]|array
+	 * @return int[]|array
 	 */
 	private function getUsersWithSubscriptionPreference( $type, $action, $key ) {
 		$db = $this->loadBalancer->getConnection( DB_REPLICA );
 		// Sanity, in case something calls this on install, before tables are created
-		if ( !$db->tableExists( 'user_properties' ) || !$db->tableExists( 'user' ) ) {
+		if ( !$db->tableExists( 'user_properties' ) ) {
 			return [];
 		}
 
 		$prefName = "notify-$type-selectionpage-$action-$key";
 		$res = $db->select(
-			[
-				'up' => 'user_properties',
-				'u' => 'user'
-			],
-			[ 'u.*' ],
+			'user_properties',
+			'up_user',
 			[ 'up_property' => $prefName ],
-			__METHOD__,
-			[],
-			[ 'u' => [ 'INNER JOIN', 'up.up_user = u.user_id' ] ]
+			__METHOD__
 		);
+		$return = [];
+		foreach ( $res as $row ) {
+			$return[] = $row->up_user;
+		}
 
-		return array_values( $this->usersFromRows( $res ) );
+		return $return;
 	}
 
 	/**
-	 * @param mixed $rows
-	 * @return array
+	 *
+	 * @param int[] $users
+	 * @param User[]
 	 */
-	private function usersFromRows( $rows ) {
-		if ( !$rows ) {
-			return [];
-		}
-		$users = [];
-		foreach ( $rows as $row ) {
-			$user = User::newFromRow( $row );
-			if ( $user->isAnon() ) {
+	private function getValidUsersFromIds( array $users, Title $title = null ) {
+		$return = [];
+		foreach ( $users as $id ) {
+			if ( empty( $id ) ) {
 				continue;
 			}
-			$users[$user->getId()] = $user;
+			$user = User::newFromId( $id );
+			$user->load();
+			if ( !$user || $user->isAnon() || $user->isBlocked() ) {
+				continue;
+			}
+			if ( isset( $return[ (int)$user->getId() ] ) ) {
+				continue;
+			}
+			if ( $title ) {
+				if ( !$title->userCan( 'read', $user ) ) {
+					continue;
+				}
+			} elseif ( !$user->isAllowed( 'read' ) ) {
+				continue;
+			}
+			$return[ (int)$user->getId() ] = $user;
 		}
-
-		return $users;
+		Hooks::run( 'BlueSpiceEchoConnectorUserLocatorValidUsers', [ &$return, $title ] );
+		return $return;
 	}
 }
