@@ -149,7 +149,10 @@ class Extension {
 			'BSEchoConnectorUserLocator'
 		);
 
-		return $userLocator->getWatchers( $event->getTitle()->getPrefixedText() );
+		return $userLocator->getWatchers(
+			$event->getTitle()->getPrefixedText(),
+			$event->getTitle()
+		);
 	}
 
 	/**
@@ -177,7 +180,7 @@ class Extension {
 		$extra = $event->getExtra();
 		if ( isset( $extra['title'] ) && $extra['title'] instanceof \Title ) {
 			$title = $extra['title'];
-			return $userLocator->getWatchers( $title->getPrefixedText() );
+			return $userLocator->getWatchers( $title->getPrefixedText(), $extra['title'] );
 		}
 
 		return [];
@@ -193,7 +196,7 @@ class Extension {
 			'BSEchoConnectorUserLocator'
 		);
 
-		return $userLocator->getAllSubscribed( 'bs_create' );
+		return $userLocator->getAllSubscribed( 'bs_create', $event->getTitle() );
 	}
 
 	/**
@@ -227,7 +230,7 @@ class Extension {
 			return $userLocator->getUsersSubscribedToTitleCategories(
 				$event->getTitle(), $type
 			) + $userLocator->getUsersSubscribedToNamespace(
-				$event->getTitle()->getNamespace(), $type
+				$event->getTitle()->getNamespace(), $type, $event->getTitle()
 			);
 		} catch ( MWException $ex ) {
 			return [];
