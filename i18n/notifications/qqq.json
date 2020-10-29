@@ -5,7 +5,8 @@
 			"Guycn2",
 			"Markus Glaser <glaser@hallowelt.com>",
 			"Pyscowicz",
-			"Raymond"
+			"Raymond",
+			"Umherirrender"
 		]
 	},
 	"bs-notifications-addaccount": "Short message that a user was created. Parameters:\n* $1 username of the created user",
@@ -39,5 +40,5 @@
 	"bs-notifications-htmlmail-greeting": "Greeting message for HTML mails. Parameters:\n*$1 - realname (if available) or username of user receiving the mail",
 	"bs-notifications-htmlmail-sender-info": "Message showing who is sending the mail. Only visible in HTML mails. Parameters:\n*$1 - Name of the wiki - $wgSitename",
 	"bs-notifications-mail-additional-links-label": "Label for section showing secondary links for notification",
-	"bs-notifications-param-realname-with-username": "Convinience message showing realname and username of a user. Parameters:\n*$1 - realname \n*$2 - username"
+	"bs-notifications-param-realname-with-username": "{{optional}}\nConvinience message showing realname and username of a user. Parameters:\n*$1 - realname \n*$2 - username"
 }
