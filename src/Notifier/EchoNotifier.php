@@ -4,7 +4,6 @@ namespace BlueSpice\EchoConnector\Notifier;
 
 use BlueSpice\EchoConnector\Formatter\EchoHTMLEmailFormatter as BsHtmlEmailFormatter;
 use BlueSpice\EchoConnector\Formatter\EchoPlainTextEmailFormatter as BsPlainTextEmailFormatter;
-use Hooks;
 use MailAddress;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\MediaWikiServices;
@@ -76,7 +75,10 @@ class EchoNotifier extends \EchoNotifier {
 			if ( !empty( $wgEchoNotifications[$event->getType()]['bundle']['web'] ) ||
 				!empty( $wgEchoNotifications[$event->getType()]['bundle']['email'] )
 			) {
-				Hooks::run( 'EchoGetBundleRules', [ $event, &$bundleString ] );
+				MediaWikiServices::getInstance()->getHookContainer()->run( 'EchoGetBundleRules', [
+					$event,
+					&$bundleString
+				] );
 			}
 			// @phan-suppress-next-line PhanImpossibleCondition May be set by hook
 			if ( $bundleString ) {
@@ -85,7 +87,14 @@ class EchoNotifier extends \EchoNotifier {
 
 			\MWEchoEventLogging::logSchemaEcho( $user, $event, 'email' );
 
-			Hooks::run( 'BlueSpiceEchoConnectorNotifyBeforeSend', [ &$event, $user, 'email' ] );
+			MediaWikiServices::getInstance()->getHookContainer()->run(
+				'BlueSpiceEchoConnectorNotifyBeforeSend',
+				[
+					&$event,
+					$user,
+					'email'
+				]
+			);
 
 			$extra = $event->getExtra();
 			$sendImmediately = isset( $extra['immediate-email'] )

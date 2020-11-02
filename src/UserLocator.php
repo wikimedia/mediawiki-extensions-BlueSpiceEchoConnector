@@ -6,9 +6,9 @@ use BlueSpice\Data\Filter\StringValue;
 use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Watchlist\Record;
 use BlueSpice\EchoConnector\Data\Watchlist\Store;
-use Hooks;
 use IContextSource;
 use LoadBalancer;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Permissions\PermissionManager;
 use MWException;
 use Title;
@@ -26,15 +26,23 @@ class UserLocator {
 	protected $permissionManager = null;
 
 	/**
+	 *
+	 * @var HookContainer
+	 */
+	protected $hookContainer = null;
+
+	/**
 	 * @param LoadBalancer $loadBalancer
 	 * @param IContextSource $context
 	 * @param PermissionManager $permissionManager
+	 * @param HookContainer $hookContainer
 	 */
 	public function __construct( LoadBalancer $loadBalancer, IContextSource $context,
-		PermissionManager $permissionManager ) {
+		PermissionManager $permissionManager, HookContainer $hookContainer ) {
 		$this->loadBalancer = $loadBalancer;
 		$this->context = $context;
 		$this->permissionManager = $permissionManager;
+		$this->hookContainer = $hookContainer;
 	}
 
 	/**
@@ -233,7 +241,10 @@ class UserLocator {
 			}
 			$return[ (int)$user->getId() ] = $user;
 		}
-		Hooks::run( 'BlueSpiceEchoConnectorUserLocatorValidUsers', [ &$return, $title ] );
+		$this->hookContainer->run( 'BlueSpiceEchoConnectorUserLocatorValidUsers', [
+			&$return,
+			$title
+		] );
 		return $return;
 	}
 }
