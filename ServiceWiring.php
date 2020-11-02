@@ -1,13 +1,15 @@
 <?php
 
 use BlueSpice\EchoConnector\UserLocator;
+use MediaWiki\MediaWikiServices;
 
 return [
-	'BSEchoConnectorUserLocator' => function ( \MediaWiki\MediaWikiServices $services ) {
+	'BSEchoConnectorUserLocator' => function ( MediaWikiServices $services ) {
 		return new UserLocator(
 			$services->getDBLoadBalancer(),
 			RequestContext::getMain(),
-			$services->getPermissionManager()
+			$services->getPermissionManager(),
+			$services->getHookContainer()
 		);
 	}
 ];
