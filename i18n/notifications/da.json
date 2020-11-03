@@ -13,6 +13,7 @@
 	"bs-notifications-create": "Siden \"$1\" blev oprettet",
 	"bs-notifications-email-create-subject": "Siden \"$1\" {{GENDER:$2|blev oprettet}} den $4 af $3",
 	"bs-notifications-delete": "Siden \"$1\" er blevet slettet",
+	"bs-notifications-email-delete-subject": "Siden \"$1\" {{GENDER:$2|blev slettet}} den $4 af $3",
 	"bs-notifications-web-delete-body": "Siden \"$1\" blev {{GENDER:$2|slettet}} af $3.",
 	"bs-notifications-move": "Siden \"$1\" blev flyttet",
 	"bs-notifications-edit-difflink-label": "Se forskellen",
