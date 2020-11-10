@@ -45,7 +45,32 @@
 				} );
 			}
 			var categorySelect = Ext.create( 'BS.form.CategoryBoxSelect', {
-				value: values
+				value: values,
+				minWidth: "100% !important;",
+				showTree: function() {
+					if( !this.wdTree ) {
+						var categoryTree =  new BS.tree.Categories();
+						categoryTree.on( 'itemclick', this.onTreeItemClick, this );
+
+						this.wdTree = new Ext.Window({
+							modal: true,
+							title: mw.message( 'bs-extjs-categorytree-title' ).plain(),
+							x: this.getX(),
+							y: this.getY() + this.getHeight(),
+							closeAction: 'hide',
+							autoScroll: true,
+							width: this.getWidth(),
+							height: 300,
+							items: [
+								categoryTree
+							]
+						});
+
+						this.wireUpWithContainerWindow();
+					}
+
+					this.wdTree.show();
+				}
 			} );
 			categorySelect.on( 'change', function( element, categories ) {
 				// ignore actions. for now we just set both create and edit.
