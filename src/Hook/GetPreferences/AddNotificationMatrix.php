@@ -20,6 +20,16 @@ class AddNotificationMatrix extends GetPreferences {
 		$arrNamespaces = [];
 
 		foreach ( $contLang->getFormattedNamespaces() as $ns => $title ) {
+			if ( is_numeric( $title ) ) {
+				// whenever the namespace text comes out to be numeric, php will
+				// turn it into an integer when using it as an array key. This is
+				// somewhat of an ugly workaround, that is not spotted in the ui
+				// It is needed due to the HTMLCheckboxMatric throwing an exception
+				// whenever the label is an integer.
+				// This label has no other function than show the namespaces
+				// display text.
+				$title = "$title ";
+			}
 			if ( $ns > 0 ) {
 				$arrNamespaces[ $title ] = $ns;
 			} elseif ( $ns == 0 ) {
