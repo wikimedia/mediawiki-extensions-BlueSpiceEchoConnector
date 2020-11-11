@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"ArenaL5",
 			"Elisardojm"
 		]
 	},
-	"prefs-namespace-notifications": "Notificacións dos eventos de espazos de nomes"
+	"prefs-namespace-notifications": "Notificacións por eventos de espazos de nomes"
 }
