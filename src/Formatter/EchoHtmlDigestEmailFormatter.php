@@ -162,7 +162,8 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 
 		return [
 			'icon-url' => $iconUrl,
-			'text' => $model->getHeaderMessage()->parse()
+			'text' => $model->getHeaderMessage()->parse(),
+			'url' => $model->getPrimaryLink(),
 		];
 	}
 }
