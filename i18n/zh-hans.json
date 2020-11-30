@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Deathkon",
+			"Func",
 			"Liuxinyu970226",
 			"列维劳德",
 			"铁桶"
@@ -14,5 +15,5 @@
 	"echo-category-title-bs-page-actions-cat": "监视列表中页面上的操作",
 	"echo-category-title-bs-page-create-cat": "页面创建",
 	"prefs-namespace-notifications": "名字空间活动上的通知",
-	"prefs-category-notifications": "按分类通知"
+	"prefs-category-notifications": "分类的通知"
 }
