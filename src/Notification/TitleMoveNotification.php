@@ -3,7 +3,6 @@
 namespace BlueSpice\EchoConnector\Notification;
 
 use BlueSpice\BaseNotification;
-use RequestContext;
 
 class TitleMoveNotification extends BaseNotification {
 	/**
@@ -39,9 +38,7 @@ class TitleMoveNotification extends BaseNotification {
 			'oldtitle' => $this->oldTitle,
 			'realname' => $this->getUserRealName(),
 			'movereason' => $this->reason,
-			'time' => RequestContext::getMain()->getLanguage()->timeanddate(
-				$this->title->getTouched(), true
-			)
+			'time' => $this->title->getTouched()
 		];
 	}
 }

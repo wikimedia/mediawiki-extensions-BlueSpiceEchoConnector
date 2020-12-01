@@ -6,7 +6,6 @@ use BlueSpice\BaseNotification;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Storage\RevisionLookup;
 use MediaWiki\Storage\RevisionRecord;
-use RequestContext;
 
 class EditNotification extends BaseNotification {
 	/**
@@ -80,9 +79,7 @@ class EditNotification extends BaseNotification {
 		);
 		$ts = '';
 		if ( $lastRevision ) {
-			$ts = RequestContext::getMain()->getLanguage()->timeanddate(
-				$lastRevision->getTimestamp(), true
-			);
+			$ts = $lastRevision->getTimestamp();
 		}
 		return array_merge( parent::getParams(), [
 			'summary' => $this->summary,

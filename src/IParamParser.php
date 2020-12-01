@@ -2,14 +2,19 @@
 
 namespace BlueSpice\EchoConnector;
 
+use Language;
+use User;
+
 interface IParamParser {
 
 	/**
 	 *
 	 * @param \EchoEvent $event
 	 * @param string $distributionType
+	 * @param User|null $user
+	 * @param Language|null $language
 	 */
-	public function __construct( \EchoEvent $event, $distributionType );
+	public function __construct( \EchoEvent $event, $distributionType, $user, $language );
 
 	/**
 	 * Receives param name and determines value
