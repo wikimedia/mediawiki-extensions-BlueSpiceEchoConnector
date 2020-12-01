@@ -22,7 +22,7 @@ class EchoEventPresentationModel extends \EchoEventPresentationModel {
 
 		$this->distributionType = $distributionType;
 
-		$this->paramParser = new \BlueSpice\EchoConnector\ParamParser( $event );
+		$this->paramParser = new ParamParser( $event, $this->distributionType, $user );
 		// TODO: Get rid of global
 		$this->notificationConfig = $wgEchoNotifications[$this->type];
 	}
