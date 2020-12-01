@@ -3,7 +3,6 @@
 namespace BlueSpice\EchoConnector\Notification;
 
 use BlueSpice\BaseNotification;
-use RequestContext;
 
 class DeleteNotification extends BaseNotification {
 	/**
@@ -40,9 +39,7 @@ class DeleteNotification extends BaseNotification {
 			'deletereason' => $this->reason,
 			'realname' => $this->getUserRealName(),
 			'title' => $this->deletedTitle,
-			'time' => RequestContext::getMain()->getLanguage()->timeanddate(
-				$this->deletedTitle->getTouched(), true
-			)
+			'time' => $this->deletedTitle->getTouched()
 		];
 	}
 }

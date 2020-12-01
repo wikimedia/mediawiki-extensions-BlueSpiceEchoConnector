@@ -2,6 +2,11 @@
 
 namespace BlueSpice\EchoConnector;
 
+use Exception;
+use Language;
+use RequestContext;
+use User;
+
 /**
  * This class deals with how params are displayed in the
  * final notification/email displayed to the user
@@ -17,14 +22,39 @@ class ParamParser implements IParamParser {
 
 	/**
 	 *
+	 * @var User
+	 */
+	protected $user = null;
+
+	/**
+	 *
+	 * @var Language
+	 */
+	protected $language = null;
+
+	/**
+	 *
 	 * @param \EchoEvent $event
 	 * @param string $distributionType
+	 * @param User|null $user
+	 * @param Language|null $language
 	 */
-	public function __construct( \EchoEvent $event, $distributionType = 'web' ) {
+	public function __construct( \EchoEvent $event, $distributionType = 'web', $user = null,
+		$language = null ) {
 		$this->event = $event;
 
 		// Probably unnecessary, but maybe some parsers would use it
 		$this->distributionType = $distributionType;
+
+		$this->user = $user;
+		if ( $this->user === null ) {
+			$this->user = new User();
+		}
+
+		$this->language = $language;
+		if ( $this->language === null ) {
+			$this->language = RequestContext::getMain()->getLanguage();
+		}
 
 		$this->getParamParserRegistry();
 	}
@@ -67,17 +97,29 @@ class ParamParser implements IParamParser {
 			case 'username':
 				$this->parseUserName();
 				break;
+			case 'time':
+			case 'timestamp':
+				$this->parseTimestamp();
+				break;
 			default:
+				$value = $this->getRawValue( $param );
 				// Just display the param value as-is
-				$extra = $this->event->getExtra();
-				if ( isset( $extra[$param] ) ) {
-					$value = $extra[$param];
-				} else {
-					$value = '';
-				}
-
 				$this->message->params( $value );
 		}
+	}
+
+	/**
+	 *
+	 * @param string $param
+	 * @return string
+	 */
+	protected function getRawValue( $param ) {
+		$value = '';
+		$extra = $this->event->getExtra();
+		if ( isset( $extra[$param] ) ) {
+			$value = $extra[$param];
+		}
+		return $value;
 	}
 
 	protected function parseTitle() {
@@ -119,6 +161,21 @@ class ParamParser implements IParamParser {
 				$this->message->params( $user->getName() );
 			}
 		}
+	}
+
+	protected function parseTimestamp() {
+		$value = $this->getRawValue( 'timestamp' );
+		try {
+			// There is no good way to execute `Language::userAdjust` for a
+			// non-global-user-context
+			$dateFormat = $this->user->getDatePreference();
+			$timezone = $this->user->getOption( 'timecorrection', null );
+			$value = $this->language->sprintfDate( $dateFormat, $value, $timezone );
+		} catch ( Exception $ex ) {
+			// Not a proper timestamp format. Just use the raw value
+		}
+
+		$this->message->params( $value );
 	}
 
 	/**

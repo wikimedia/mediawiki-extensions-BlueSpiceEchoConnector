@@ -3,7 +3,6 @@
 namespace BlueSpice\EchoConnector\Notification;
 
 use BlueSpice\BaseNotification;
-use RequestContext;
 
 class CreateNotification extends BaseNotification {
 	/**
@@ -31,9 +30,7 @@ class CreateNotification extends BaseNotification {
 		return [
 			'summary' => $this->summary,
 			'realname' => $this->getUserRealName(),
-			'time' => RequestContext::getMain()->getLanguage()->timeanddate(
-				$this->title->getTouched(), true
-			)
+			'time' => $this->title->getTouched()
 		];
 	}
 }
