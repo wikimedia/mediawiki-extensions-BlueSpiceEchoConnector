@@ -8,6 +8,6 @@
 	"bs-echoconnector-extension-description": "Злучае BlueSpice з Echo",
 	"echo-category-title-bs-admin-cat": "Адміністрацыйныя задачы",
 	"echo-category-title-bs-page-actions-cat": "Дзеяньні на старонках з сьпісу назіраньня",
-	"prefs-namespace-notifications": "Паведамленьні пра падзеі прастораў назваў",
-	"prefs-category-notifications": "Паведамленьні катэгорыяў"
+	"prefs-namespace-notifications": "Паведамленьні пра падзеі з прасторай назваў",
+	"prefs-category-notifications": "Паведамленьні пра катэгорыі"
 }
