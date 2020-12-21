@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"FarsiNevis",
-			"Huji"
+			"Huji",
+			"Jeeputer"
 		]
 	},
 	"bs-notifications-addaccount": "کاربر «$1» ایجاد شد.",
@@ -17,22 +18,23 @@
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|کاربر}} $2 یک حساب کاربری {{GENDER:$1|ایجاد کرد}}.",
 	"bs-notifications-edit": "صفحهٔ «$1» تغییر کرد",
 	"bs-notifications-edit-bundle": "صفحهٔ «$2» $1 بار تغییر کرد",
-	"bs-notifications-email-edit-subject": "صفحهٔ «$1» را $3 {{GENDER:$2|ویرایش کرد}}",
-	"bs-notifications-email-edit-body": "صفحهٔ «$1» را $4 {{GENDER:$2|ویرایش کرد}}.\n\nتوضیح:\n $3",
+	"bs-notifications-email-edit-subject": "$3 در $4 صفحهٔ «$1» را {{GENDER:$2|ویرایش کرد}}",
+	"bs-notifications-email-edit-body": "$4 در $5 صفحهٔ «$1» را {{GENDER:$2|ویرایش کرد}}.\n\nتوضیح:\n$3",
 	"bs-notifications-web-edit-body": "صفحهٔ «$1» را $3 {{GENDER:$2|ویرایش کرد}}.",
 	"bs-notifications-create": "صفحهٔ «$1» ایجاد شد",
-	"bs-notifications-email-create-subject": "صفحهٔ «$1» توسط $3 {{GENDER:$2|ساخته شد}}",
-	"bs-notifications-email-create-body": "صفحهٔ «$1» را $3 {{GENDER:$2|ایجاد کرد}}.\n\nتوضیح:\n $4\nشما می‌توانید صفحه را در پیوند زیر مشاهده کنید",
+	"bs-notifications-email-create-subject": "$3 در $4 صفحهٔ «$1» را {{GENDER:$2|ایجاد کرد}}",
+	"bs-notifications-email-create-body": "$3 در $5 صفحهٔ «$1» را {{GENDER:$2|ایجاد کرد}}.\n\nتوضیح:\n$4\nشما می‌توانید صفحه را در پیوند زیر مشاهده کنید",
 	"bs-notifications-web-create-body": "صفحهٔ «$1» را $3 {{GENDER:$2|ایجاد کرد}}.",
 	"bs-notifications-delete": "صفحهٔ «$1» حذف شد",
-	"bs-notifications-email-delete-subject": "صفحهٔ «$1» را $3 {{GENDER:$2|حذف کرد}}",
-	"bs-notifications-email-delete-body": "صفحهٔ «$1» را $3 {{GENDER:$2|حذف کرد}}.\n\nعلت حذف، این بود:\n$4",
+	"bs-notifications-email-delete-subject": "$3 در $4 صفحهٔ «$1» را {{GENDER:$2|حذف کرد}}",
+	"bs-notifications-email-delete-body": "$3 در $5 صفحهٔ «$1» را {{GENDER:$2|حذف کرد}}.\n\nعلت حذف، این بود:\n$4",
 	"bs-notifications-web-delete-body": "صفحهٔ «$1» را $3 {{GENDER:$2|حذف کرد}}.",
 	"bs-notifications-move": "صفحهٔ «$1» منتقل شد",
-	"bs-notifications-email-move-subject": "صفحهٔ «$1» را $4 به «$3» {{GENDER:$2|منتقل کرد}}",
-	"bs-notifications-email-move-body": "صفحهٔ «$1» را $4 به «$3» {{GENDER:$2|منتقل کرد}}.\n\nعلت انتقال، این بود:\n$5\n\nشما می‌توانید صفحه را در پیوند زیر مشاهده کنید",
+	"bs-notifications-email-move-subject": "$4 در $5 صفحهٔ «$1» را به «$3» {{GENDER:$2|منتقل کرد}}",
+	"bs-notifications-email-move-body": "صفحهٔ «$1» توسط $4 در $6 به «$3» {{GENDER:$2|منتقل شد}}.\n\nعلت انتقال، این بود:\n$5\n\nشما می‌توانید صفحه را در پیوند زیر مشاهده کنید",
 	"bs-notifications-web-move-body": "صفحهٔ «$1» را $4 به «$3» {{GENDER:$2|منتقل کرد}}",
 	"bs-notifications-edit-difflink-label": "مشاهدهٔ تفاوت",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|سلام}} $1",
+	"bs-notifications-htmlmail-sender-info": "سامانه آگاه‌سازی $1",
 	"bs-notifications-mail-additional-links-label": "پیوندهای بیشتر"
 }
