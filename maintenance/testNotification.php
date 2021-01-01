@@ -38,12 +38,6 @@ class TestNotification extends Maintenance {
 	protected $notificationConfigs = [];
 
 	/**
-	 *
-	 * @var int
-	 */
-	protected $batchSize = 300;
-
-	/**
 	 * Usage example: php testNotification.php --affectedusers="WikiSysop"
 	 * TODO: make option to overwrite/extend testNotification.json file
 	 * TODO: make option to create log file of the mails, the user would get
@@ -75,6 +69,7 @@ class TestNotification extends Maintenance {
 		$this->addOption( 'nothrottle', 'Ignore job throttling configuration', false, false );
 		$this->addOption( 'result', 'Set to "json" to print only a JSON response', false, true );
 		$this->addOption( 'wait', 'Wait for new jobs instead of exiting', false, false );
+		$this->setBatchSize( 300 );
 		$this->requireExtension( 'BlueSpiceEchoConnector' );
 	}
 
@@ -352,16 +347,17 @@ class TestNotification extends Maintenance {
 		$this->output( "Started processing... \n" );
 
 		$startUserId = 0;
-		$count = $this->batchSize;
+		$batchSize = $this->getBatchSize();
+		$count = $batchSize;
 
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
-		while ( $count === $this->batchSize ) {
+		while ( $count === $batchSize ) {
 			$count = 0;
 
 			$res = \BlueSpice\EchoConnector\EchoEmailBatch::getUsersToNotify(
 				$startUserId,
-				$this->batchSize
+				$batchSize
 			);
 
 			$updated = false;
