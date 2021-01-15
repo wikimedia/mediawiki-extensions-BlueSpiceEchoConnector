@@ -6,9 +6,9 @@
 			"Tomasdd"
 		]
 	},
-	"bs-notifications-email-addaccount-subject": "Vartotojas $2 {{GENDER:$1|sukurtas}}",
-	"bs-notifications-email-addaccount-body": "{{GENDER:$2|Vartotojas}} $3 buvo sukurtas.\n\nGalite apsilankyti {{GENDER:$2|jo|jos|}} vartotojo puslapyje sekdami šią nuorodą:\n$1",
-	"bs-notifications-edit": "Puslapis [[:$1]] buvo pakeistas",
+	"bs-notifications-email-addaccount-subject": "Vartotojas \"$2\" {{GENDER:$1|sukurtas}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Vartotojas}} $2 buvo sukurtas.\n\nGalite apsilankyti {{GENDER:$1|jo|jos|jo}} vartotojo puslapyje sekdami šią nuorodą",
+	"bs-notifications-edit": "Puslapis \"$1\" buvo pakeistas",
 	"bs-notifications-email-edit-subject": "Puslapį $1 {{GENDER:$2|redagavo}} $3",
 	"bs-notifications-email-edit-body": "Puslapį „$1“ {{GENDER:$2|redagavo}} $6.\n\nKomentaras:\n $3 \nGalite apsilankyti puslapyje sekdami šią nuorodą:\n$4.\n\nJei norite pamatyti tik pakeitimus, sekite šią nuorodą:\n$5",
 	"bs-notifications-create": "Puslapis \"$1\" buvo sukurtas",
