@@ -179,6 +179,36 @@
 			}
 		}
 	},
+	"bs-expiry-weekly": {
+		"class": "\\BlueSpice\\Expiry\\Notification\\Weekly",
+		"requires": "BlueSpiceExpiry",
+		"params": {
+			"agent": {
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+			},
+			"title": {
+				"callback": "$val = \\Title::newMainPage();"
+			},
+			"comment": {
+				"value": "The expiry comment"
+			}
+		}
+	},
+	"bs-expiry-daily": {
+		"class": "\\BlueSpice\\Expiry\\Notification\\Daily",
+		"requires": "BlueSpiceExpiry",
+		"params": {
+			"agent": {
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
+			},
+			"title": {
+				"callback": "$val = \\Title::newMainPage();"
+			},
+			"comment": {
+				"value": "The expiry comment"
+			}
+		}
+	},
 	"bs-review-assign": {
 		"class": "\\BlueSpice\\Review\\Notifications\\ReviewAssign",
 		"requires": "BlueSpiceReview",
