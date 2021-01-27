@@ -44,7 +44,7 @@
 	"callback": "\\BlueSpice\\EchoConnector\\Extension::onRegistration",
 	"Hooks": {
 		"ArticleDeleteComplete": "\\BlueSpice\\EchoConnector\\Hook\\ArticleDeleteComplete\\NotifyUsers::callback",
-		"TitleMoveComplete": "\\BlueSpice\\EchoConnector\\Hook\\TitleMoveComplete\\NotifyUsers::callback",
+		"PageMoveComplete": "\\BlueSpice\\EchoConnector\\Hook\\PageMoveComplete\\NotifyUsers::callback",
 		"PageSaveComplete": "\\BlueSpice\\EchoConnector\\Hook\\PageSaveComplete\\NotifyUsers::callback",
 		"BSUserManagerAfterAddUser": "\\BlueSpice\\EchoConnector\\Hook\\BSUserManagerAfterAddUser\\NotifyUsers::callback",
 		"EchoGetNotificationTypes": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetNotificationTypes\\GetNotificationTypesForEvent::callback",
