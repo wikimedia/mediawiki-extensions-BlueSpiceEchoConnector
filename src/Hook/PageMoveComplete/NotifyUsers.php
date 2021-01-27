@@ -1,19 +1,21 @@
 <?php
 
-namespace BlueSpice\EchoConnector\Hook\TitleMoveComplete;
+namespace BlueSpice\EchoConnector\Hook\PageMoveComplete;
 
 use BlueSpice\EchoConnector\Notification\TitleMoveNotification;
-use BlueSpice\Hook\TitleMoveComplete;
+use BlueSpice\Hook\PageMoveComplete;
 use MediaWiki\MediaWikiServices;
+use Title;
+use User;
 
-class NotifyUsers extends TitleMoveComplete {
+class NotifyUsers extends PageMoveComplete {
 	/**
 	 *
 	 * @return bool
 	 */
 	protected function skipProcessing() {
 		return $this->getServices()->getPermissionManager()->userHasRight(
-			$this->user,
+			$this->userIdentity,
 			'bot'
 		);
 	}
@@ -23,11 +25,13 @@ class NotifyUsers extends TitleMoveComplete {
 			'BSNotificationManager'
 		);
 
+		$new = Title::newFromLinkTarget( $this->new );
+		$old = Title::newFromLinkTarget( $this->old );
 		$notifier = $notificationsManager->getNotifier();
 		$notification = new TitleMoveNotification(
-			$this->user,
-			$this->newTitle,
-			$this->title,
+			User::newFromIdentity( $this->userIdentity ),
+			$new,
+			$old,
 			$this->reason
 		);
 		$notifier->notify( $notification );
