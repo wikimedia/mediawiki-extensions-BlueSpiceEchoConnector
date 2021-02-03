@@ -275,9 +275,6 @@ class TestNotification extends Maintenance {
 		return MediaWikiServices::getInstance();
 	}
 
-	/**
-	 * @return INotifier|null
-	 */
 	protected function makeNotifier() {
 		$this->notifier = $this->getServices()->getService( 'BSNotificationManager' )->getNotifier();
 	}
