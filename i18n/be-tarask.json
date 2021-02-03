@@ -1,10 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Red Winged Duck"
+			"Red Winged Duck",
+			"Renessaince"
 		]
 	},
 	"bs-echoconnector-extension-description": "Злучае BlueSpice з Echo",
-	"echo-category-title-bs-admin-cat": "Выкананая адміністрацыйная задача",
-	"echo-category-title-bs-page-actions-cat": "Дзеяньне на старонцы, на якую вы падпісаныя"
+	"echo-category-title-bs-admin-cat": "Адміністрацыйныя задачы",
+	"echo-category-title-bs-page-actions-cat": "Дзеяньні на старонках з сьпісу назіраньня",
+	"prefs-namespace-notifications": "Паведамленьні пра падзеі з прасторай назваў",
+	"prefs-category-notifications": "Паведамленьні пра катэгорыі"
 }

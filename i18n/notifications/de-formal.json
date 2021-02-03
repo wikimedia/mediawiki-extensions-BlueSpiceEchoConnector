@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Osnard",
-			"Hwboehm"
+			"Hwboehm",
+			"Osnard"
 		]
 	},
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Der Benutzer|Die Benutzerin}} „$2“ wurde erstellt.\n\nSie können {{GENDER:$1|seine|ihre|die}} Benutzerseite über den folgenden Link aufrufen.",
