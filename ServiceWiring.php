@@ -5,9 +5,14 @@ use MediaWiki\MediaWikiServices;
 
 return [
 	'BSEchoConnectorUserLocator' => function ( MediaWikiServices $services ) {
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setUser(
+			$services->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser()
+		);
+
 		return new UserLocator(
 			$services->getDBLoadBalancer(),
-			RequestContext::getMain(),
+			$context,
 			$services->getPermissionManager(),
 			$services->getHookContainer()
 		);
