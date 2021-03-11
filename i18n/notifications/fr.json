@@ -38,5 +38,6 @@
 	"bs-notifications-edit-difflink-label": "Voir la différence",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Bonjour}} $1",
 	"bs-notifications-htmlmail-sender-info": "Système de notification de $1",
-	"bs-notifications-mail-additional-links-label": "Liens supplémentaires"
+	"bs-notifications-mail-additional-links-label": "Liens supplémentaires",
+	"bs-notifications-param-realname-with-username": "$1 ($2)"
 }
