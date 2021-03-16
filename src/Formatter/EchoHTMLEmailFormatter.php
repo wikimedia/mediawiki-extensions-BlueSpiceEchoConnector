@@ -72,7 +72,6 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		$senderMessage = $this->msg(
 			'bs-notifications-htmlmail-sender-info', $this->sitename
 		)->plain();
-		$messageHeader = $model->getHeaderMessage()->parse();
 
 		$bodyMsg = $model->getBodyMessage();
 		$summary = $bodyMsg ? $bodyMsg->parse() : '';
@@ -109,7 +108,7 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 			$actions,
 			$greeting,
 			$senderMessage,
-			$messageHeader,
+			'',
 			$this->getFooter()
 		);
 
