@@ -2,6 +2,7 @@
 
 namespace BlueSpice\EchoConnector;
 
+use EchoDataOutputFormatter;
 use Exception;
 use Language;
 use RequestContext;
@@ -168,9 +169,14 @@ class ParamParser implements IParamParser {
 		try {
 			// There is no good way to execute `Language::userAdjust` for a
 			// non-global-user-context
-			$dateFormat = $this->user->getDatePreference();
-			$timezone = $this->user->getOption( 'timecorrection', null );
-			$value = $this->language->sprintfDate( $dateFormat, $value, $timezone );
+			$dateFormat = $this->language->getDateFormatString(
+				'both',
+				$this->user->getDatePreference() ?: 'default'
+			);
+			$value = $this->language->sprintfDate(
+				$dateFormat,
+				EchoDataOutputFormatter::getUserLocalTime( $this->user, $value )
+			);
 		} catch ( Exception $ex ) {
 			// Not a proper timestamp format. Just use the raw value
 		}
