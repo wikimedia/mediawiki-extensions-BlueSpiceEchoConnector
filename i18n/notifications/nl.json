@@ -23,7 +23,7 @@
 	"bs-notifications-email-create-body": "De pagina \"$1\" is {{GENDER:$2|aangemaakt}} op $5 door $3.\n\nOpmerking:\n $4 \nU kunt de pagina bezoeken via de koppeling hier beneden",
 	"bs-notifications-web-create-body": "De pagina \"$1\" is {{GENDER:$2|aangemaakt}} door $3.",
 	"bs-notifications-delete": "De pagina \"$1\" is verwijderd",
-	"bs-notifications-email-delete-subject": "Pagina \"$1\" is {{GENDER:$2|verwijderd}} op $5 door $3",
+	"bs-notifications-email-delete-subject": "Pagina \"$1\" is {{GENDER:$2|verwijderd}} op $4 door $3",
 	"bs-notifications-email-delete-body": "De pagina \"$1\" is {{GENDER:$2|verwijderd}} op $5 door $3.\n\nDe volgende reden is opgegeven:\n$4",
 	"bs-notifications-web-delete-body": "De pagina \"$1\" is {{GENDER:$2|verwijderd}} door $3.",
 	"bs-notifications-move": "De pagina \"$1\" is hernoemd",
