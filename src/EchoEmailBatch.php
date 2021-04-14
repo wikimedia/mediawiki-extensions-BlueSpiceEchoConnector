@@ -103,7 +103,10 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 		}
 
 		$toAddress = \MailAddress::newFromUser( $this->mUser );
-		$fromAddress = new \MailAddress( $wgNotificationSender, \EchoHooks::getNotificationSenderName() );
+		$fromAddress = new \MailAddress(
+			$wgNotificationSender,
+			wfMessage( 'emailsender' )->inContentLanguage()->text()
+		);
 		$replyTo = new \MailAddress( $wgNotificationSender, $wgNotificationReplyName );
 
 		// @Todo Push the email to job queue or just send it out directly?
