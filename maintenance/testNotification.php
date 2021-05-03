@@ -154,7 +154,7 @@ class TestNotification extends Maintenance {
 		foreach ( (array)$this->notificationConfigs[$key]->params as $name => $param ) {
 			$params[$name] = isset( $param->value )
 				? $param->value
-				: call_user_func( function () use( $param ) {
+				: call_user_func( static function () use( $param ) {
 					eval( $param->callback );
 					return $val;
 				} );
@@ -178,7 +178,7 @@ class TestNotification extends Maintenance {
 		if ( !empty( $agent ) ) {
 			$this->agentUser = User::newFromName( $agent );
 			if ( !$this->agentUser || $this->agentUser->isAnon() ) {
-				throw  new Exception( "Invalid or not existing user: $agent" );
+				throw new Exception( "Invalid or not existing user: $agent" );
 			}
 			return;
 		}
@@ -201,7 +201,7 @@ class TestNotification extends Maintenance {
 		$GLOBALS['wgEchoUseJobQueue'] = true;
 
 		$that = $this;
-		Hooks::register( 'EchoGetDefaultNotifiedUsers', function ( $event, &$users ) use ( $that )  {
+		Hooks::register( 'EchoGetDefaultNotifiedUsers', static function ( $event, &$users ) use ( $that )  {
 			$users = $that->getAffectedUsers();
 			return false;
 		} );
