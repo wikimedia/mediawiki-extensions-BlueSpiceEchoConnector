@@ -5,5 +5,5 @@
 		]
 	},
 	"bs-notifications-create": "[[:$1]] агӀо кхоьллина",
-	"bs-notifications-delete": "[[:$1]] агӀо дӀаяьккхина"
+	"bs-notifications-delete": "«$1» агӀо дӀайаьккхина"
 }
