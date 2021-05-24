@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Giannaras99",
 			"NikosLikomitros",
 			"Nikosgranturismogt",
 			"Protnet"
@@ -22,7 +23,7 @@
 	"bs-notifications-web-create-body": "Η σελίδα \"$1\" {{GENDER:$2|δημιουργήθηκε}} από τον $3.",
 	"bs-notifications-delete": "Η σελίδα ''$1'' έχει διαγραφεί.",
 	"bs-notifications-email-delete-subject": "Η σελίδα «$1» διεγράφη στις $4 από {{GENDER:$2|τον|την}} $3",
-	"bs-notifications-email-delete-body": "Η σελίδα \"$1\" {{GENDER:$2|διεγράφη}} από τον $3.\n\nΗ αιτία είναι η εξής: \n$4",
+	"bs-notifications-email-delete-body": "Η σελίδα \"$1\" ήταν {{GENDER:$2|deleted}} στο $5 από $3.\n\nΑυτός ήταν ο λόγος:\n$4",
 	"bs-notifications-move": "Η σελίδα \"$1\" έχει μετακινηθεί",
 	"bs-notifications-email-move-subject": "Η σελίδα «$1» μετακινήθηκε σε «$3» στις $5 από {{GENDER:$2|τον|την}} $4",
 	"bs-notifications-email-move-body": "Η σελίδα «$1» μετακινήθηκε σε «$3» στις $6 από {{GENDER:$2|τον|την}} $4.\n\nΗ αιτία ήταν:\n$5\n\nΜπορείτε να επισκεφθείτε τη σελίδα ακολουθώντας τον παρακάτω σύνδεσμο",
