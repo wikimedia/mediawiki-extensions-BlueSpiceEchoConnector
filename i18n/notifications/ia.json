@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"bs-notifications-addaccount": "Le usator \"$1\" ha essite create.",
+	"bs-notifications-email-addaccount-subject": "Usator \"$2\" {{GENDER:$1|create}}"
+}
