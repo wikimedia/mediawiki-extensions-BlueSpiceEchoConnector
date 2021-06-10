@@ -5,5 +5,13 @@
 		]
 	},
 	"bs-notifications-addaccount": "Le usator \"$1\" ha essite create.",
-	"bs-notifications-email-addaccount-subject": "Usator \"$2\" {{GENDER:$1|create}}"
+	"bs-notifications-email-addaccount-subject": "Usator \"$2\" {{GENDER:$1|create}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Le usator}} $2 ha essite create.\n\nTu pote visitar su pagina de usator sequente le ligamine in basso:",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Le usator}} $2 ha essite create.",
+	"bs-notifications-addaccout-performer": "{{GENDER:$1|Creator}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Creator}}: $1",
+	"bs-notifications-registeruser": "Le usator \"$1\" ha create un conto.",
+	"bs-notifications-email-registeruser-subject": "Le {{GENDER:$1|usator}} \"$2\" ha create un conto",
+	"bs-notifications-email-registeruser-body": "Le {{GENDER:$1|usator}} $2 ha create un conto.\n\nTu pote visitar su pagina de usator sequente le ligamine in basso:",
+	"bs-notifications-web-registeruser-body": "Le {{GENDER:$1|usator}} $2 ha create un conto."
 }
