@@ -13,5 +13,10 @@
 	"bs-notifications-registeruser": "Le usator \"$1\" ha create un conto.",
 	"bs-notifications-email-registeruser-subject": "Le {{GENDER:$1|usator}} \"$2\" ha create un conto",
 	"bs-notifications-email-registeruser-body": "Le {{GENDER:$1|usator}} $2 ha create un conto.\n\nTu pote visitar su pagina de usator sequente le ligamine in basso:",
-	"bs-notifications-web-registeruser-body": "Le {{GENDER:$1|usator}} $2 ha create un conto."
+	"bs-notifications-web-registeruser-body": "Le {{GENDER:$1|usator}} $2 ha create un conto.",
+	"bs-notifications-edit": "Le pagina \"$1\" ha essite modificate",
+	"bs-notifications-edit-bundle": "Le pagina \"$2\" ha essite modificate {{PLURAL:$1|$1 vice|$1 vices}}",
+	"bs-notifications-email-edit-subject": "Le pagina \"$1\" ha essite {{GENDER:$2|modificate}} a $4 per $3",
+	"bs-notifications-email-edit-body": "Le pagina \"$1\" ha essite {{GENDER:$2|modificate}} a $5 per $4.\n\nCommento:\n $3",
+	"bs-notifications-web-edit-body": "Le pagina \"$1\" ha essite {{GENDER:$2|modificate}} per $3."
 }
