@@ -87,12 +87,12 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	 */
 	public function notify( $notification ) {
 		if ( $notification instanceof INotification == false ) {
-			return;
+			return null;
 		}
 
 		if ( isset( $this->echoNotifications[$notification->getKey()] ) == false ) {
 			// Notification not registered
-			return;
+			return null;
 		}
 
 		$echoNotif = [
