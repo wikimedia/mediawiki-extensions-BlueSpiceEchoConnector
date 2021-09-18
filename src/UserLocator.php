@@ -7,12 +7,12 @@ use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Watchlist\Record;
 use BlueSpice\EchoConnector\Data\Watchlist\Store;
 use IContextSource;
-use LoadBalancer;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Permissions\PermissionManager;
 use MWException;
 use Title;
 use User;
+use Wikimedia\Rdbms\LoadBalancer;
 use WikiPage;
 use WikitextContent;
 
