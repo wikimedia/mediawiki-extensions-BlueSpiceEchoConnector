@@ -10,8 +10,10 @@ use MWException;
 class Extension {
 
 	public static function onRegistration() {
-		$GLOBALS['bsgNotifierClass'] = NotificationsEchoNotifier::class;
-
+		$GLOBALS['mwsgNotificationsNotifierSpec'] = [
+			'class' => NotificationsEchoNotifier::class,
+			'services' => [ 'ConfigFactory' ]
+		];
 		$GLOBALS['wgDefaultUserOptions']['echo-subscriptions-web-bs-namespace-category-notify-cat'] = 1;
 		$GLOBALS['wgDefaultUserOptions']['echo-subscriptions-email-bs-namespace-category-notify-cat'] = 1;
 	}
