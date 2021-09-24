@@ -2,17 +2,17 @@
 
 namespace BlueSpice\EchoConnector\Notifier;
 
-use BlueSpice\BaseNotification;
 use BlueSpice\EchoConnector\EchoEventPresentationModel;
-use BlueSpice\EchoConnector\Notification\EchoNotification;
-use BlueSpice\INotification;
+use MWStake\MediaWiki\Component\Notifications\BaseNotification;
+use MWStake\MediaWiki\Component\Notifications\INotification;
+use MWStake\MediaWiki\Component\Notifications\INotifier;
 
 /**
  * This class has unfortunate naming, since Echo uses similar naming
  * for its notifiers. This is BlueSpiceNotifications notifier,
  * not override of Echo default notifier
  */
-class NotificationsEchoNotifier implements \BlueSpice\INotifier {
+class NotificationsEchoNotifier implements INotifier {
 
 	/**
 	 *
@@ -40,10 +40,11 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 
 	/**
 	 *
-	 * @param \Config $config
+	 * @param \ConfigFactory $factory
 	 */
-	public function __construct( \Config $config ) {
-		$this->config = $config;
+	public function __construct( \ConfigFactory $factory ) {
+		$this->config = $factory->makeConfig( 'bsg' );
+		$this->init();
 	}
 
 	/**
@@ -52,7 +53,7 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	 * @param \User $agent
 	 * @param \Title|null $title
 	 * @param array|null $params
-	 * @return EchoNotification
+	 * @return INotification
 	 */
 	public function getNotificationObject( $key, $agent, $title = null, $params = [] ) {
 		return new BaseNotification( $key, $agent, $title, $params );
@@ -138,6 +139,14 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 	}
 
 	/**
+	 * @param string $key
+	 * @return bool
+	 */
+	public function isNotificationRegistered( $key ) {
+		return isset( $this->echoNotifications[$key] );
+	}
+
+	/**
 	 *
 	 * @param string $key
 	 * @param array $params
@@ -177,8 +186,8 @@ class NotificationsEchoNotifier implements \BlueSpice\INotifier {
 		if ( !isset( $params[ 'presentation-model' ] ) ) {
 			$notificationConfig += [
 				'presentation-model' => EchoEventPresentationModel::class,
-				'title-message' => $params[ 'summary-message' ],
-				'title-params' => $params[ 'summary-params' ],
+				'title-message' => $params['summary-message'] ?? $params[ 'web-body-message' ],
+				'title-params' => $params['summary-params'] ?? $params[ 'web-body-params' ],
 				'web-body-message' => $params[ 'web-body-message' ],
 				'web-body-params' => $params[ 'web-body-params' ],
 				'email-subject-message' => $params[ 'email-subject-message' ],
