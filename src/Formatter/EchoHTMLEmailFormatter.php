@@ -6,8 +6,8 @@ use BlueSpice\EchoConnector\EchoEventPresentationModel as BSEchoPresentationMode
 use MediaWiki\MediaWikiServices;
 
 class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
-	const PRIMARY_LINK = 'primary_link';
-	const SECONDARY_LINK = 'secondary_link';
+	public const PRIMARY_LINK = 'primary_link';
+	public const SECONDARY_LINK = 'secondary_link';
 
 	/**
 	 *
