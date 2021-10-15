@@ -169,7 +169,7 @@ class UserLocator {
 			return [];
 		}
 
-		$categories = $content->getParserOutput( $title )->getCategoryLinks();
+		$categories = $content->getParserOutput( $title )->getCategoryNames();
 
 		$users = [];
 		foreach ( $categories as $cat ) {
