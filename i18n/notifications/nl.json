@@ -3,6 +3,7 @@
 		"authors": [
 			"Mainframe98",
 			"Mar(c)",
+			"McDutchie",
 			"Romaine",
 			"Rots61",
 			"Sjoerddebruin",
@@ -38,5 +39,6 @@
 	"bs-notifications-web-move-body": "De pagina \"$1\" is {{GENDER:$2|hernoemd}} naar \"$3\" door $4",
 	"bs-notifications-edit-difflink-label": "Verschillen weergeven",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hallo}} $1",
-	"bs-notifications-mail-additional-links-label": "Extra koppelingen"
+	"bs-notifications-mail-additional-links-label": "Extra koppelingen",
+	"bs-notifications-htmlmail-sender-info": "Meldingssysteem van $1"
 }

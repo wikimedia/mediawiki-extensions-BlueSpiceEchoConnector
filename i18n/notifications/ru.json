@@ -34,5 +34,6 @@
 	"bs-notifications-email-move-body": "Страница «$1» была перемещена в «$3» $6 {{GENDER:$2|участником|участницей}} $4. \n\nПричиной указано:\n$5\n\nВы можете посетить страницу по ссылке ниже",
 	"bs-notifications-edit-difflink-label": "Показать отличия",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Добро пожаловать}}, $1",
-	"bs-notifications-mail-additional-links-label": "Дополнительные ссылки"
+	"bs-notifications-mail-additional-links-label": "Дополнительные ссылки",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Участник $2 был создан|Участница $2 была создана}}."
 }
