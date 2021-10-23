@@ -7,8 +7,8 @@ use BlueSpice\EchoConnector\Notification\CreateNotification;
 use BlueSpice\EchoConnector\Notification\EditInNamespaceOrCategoryNotification;
 use BlueSpice\EchoConnector\Notification\EditNotification;
 use BlueSpice\Hook\PageSaveComplete;
-use BlueSpice\INotifier;
 use MediaWiki\MediaWikiServices;
+use MWStake\MediaWiki\Component\Notifications\INotifier;
 use Title;
 
 class NotifyUsers extends PageSaveComplete {
