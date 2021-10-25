@@ -226,7 +226,7 @@ class UserLocator {
 			}
 			$user = User::newFromId( $id );
 			$user->load();
-			if ( !$user || $user->isAnon() || $user->isBlocked() ) {
+			if ( !$user || $user->isAnon() || $user->getBlock() ) {
 				continue;
 			}
 			if ( isset( $return[ (int)$user->getId() ] ) ) {
