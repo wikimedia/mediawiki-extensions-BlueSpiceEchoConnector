@@ -33,6 +33,12 @@
 					"path": "BlueSpiceEchoConnector/resources/images/delete.png"
 				}
 			}
+		},
+		"BlueSpiceDiscovery": {
+			"AttentionIndicatorRegistry": {
+				"notifications-notice": "\\BlueSpice\\EchoConnector\\AttentionIndicator\\Notice::factory",
+				"notifications-alert": "\\BlueSpice\\EchoConnector\\AttentionIndicator\\Alert::factory"
+			}
 		}
 	},
 	"MessagesDirs": {
@@ -42,6 +48,11 @@
 		]
 	},
 	"callback": "\\BlueSpice\\EchoConnector\\Extension::onRegistration",
+	"HookHandlers": {
+		"skin": {
+			"class": "\\BlueSpice\\EchoConnector\\HookHandler\\Skin"
+		}
+	},
 	"Hooks": {
 		"ArticleDeleteComplete": "\\BlueSpice\\EchoConnector\\Hook\\ArticleDeleteComplete\\NotifyUsers::callback",
 		"PageMoveComplete": "\\BlueSpice\\EchoConnector\\Hook\\PageMoveComplete\\NotifyUsers::callback",
@@ -50,7 +61,8 @@
 		"EchoGetNotificationTypes": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetNotificationTypes\\GetNotificationTypesForEvent::callback",
 		"EchoGetBundleRules": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetBundleRules\\GetBundleRules::callback",
 		"LocalUserCreated": "\\BlueSpice\\EchoConnector\\Hook\\LocalUserCreated\\NotifyUsers::callback",
-		"GetPreferences": "\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\AddNotificationMatrix::callback"
+		"GetPreferences": "\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\AddNotificationMatrix::callback",
+		"PersonalUrls": "skin"
 	},
 	"config_prefix": "bsg",
 	"config": {
