@@ -182,6 +182,9 @@ class NotificationsEchoNotifier implements INotifier {
 			'section' => $section,
 			'user-locators' => $params['user-locators']
 		];
+		if ( isset( $params['user-filters'] ) && is_array( $params['user-filters'] ) ) {
+			$notificationConfig['user-filters'] = $params['user-filters'];
+		}
 
 		if ( !isset( $params[ 'presentation-model' ] ) ) {
 			$notificationConfig += [
