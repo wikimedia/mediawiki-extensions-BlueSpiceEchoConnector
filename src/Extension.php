@@ -68,7 +68,6 @@ class Extension {
 				],
 				'notifyAgent' => false,
 				'user-locators' => [ static::class . '::getWatchers' ],
-				'user-filters' => [ static::class . '::getEditNamespaceCategorySubscribers' ],
 			]
 		);
 
