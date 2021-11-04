@@ -21,6 +21,7 @@ class Skin implements PersonalUrlsHook {
 			}
 			$personal_urls['notifications-alert']['data']['attentionindicator']
 				= 'notifications-alert';
+			$personal_urls['notifications-alert']['position'] = 100;
 		}
 		if ( isset( $personal_urls['notifications-notice'] ) ) {
 			if ( !isset( $personal_urls['notifications-notice']['data'] ) ) {
@@ -28,6 +29,7 @@ class Skin implements PersonalUrlsHook {
 			}
 			$personal_urls['notifications-notice']['data']['attentionindicator']
 				= 'notifications-notice';
+			$personal_urls['notifications-notice']['position'] = 110;
 		}
 	}
 
