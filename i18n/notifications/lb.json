@@ -15,7 +15,7 @@
 	"bs-notifications-web-edit-body": "D'Säit \"$1\" gouf vum $3 {{GENDER:$2|geännert}}.",
 	"bs-notifications-create": "D'Säit \"$1\" gouf ugeluecht",
 	"bs-notifications-email-create-subject": "Säit \"$1\" {{GENDER:$2|ugeluecht}} vum $3 de(n) $4",
-	"bs-notifications-email-create-body": "D'Säit \"$1\" gouf {{GENDER:$2|vum}} $3 ugeluecht.\n\nBemierkung:\n$4\nDir kënnt d'Säit op dem Link hei drënner fannen",
+	"bs-notifications-email-create-body": "D'Säit \"$1\" gouf {{GENDER:$2|vum}} $3 de(n) $5 ugeluecht.\n\nBemierkung:\n$4\nDir kënnt d'Säit op dem Link hei drënner fannen",
 	"bs-notifications-web-create-body": "D'Säit $1 gouf vum $3 {{GENDER:$2|u}geluecht}.",
 	"bs-notifications-delete": "D'Säit \"$1\" ouf geläscht",
 	"bs-notifications-email-delete-subject": "Säit \"$1\" {{GENDER:$2|geläscht}} vum $3",
