@@ -13,16 +13,7 @@ class SendNotification extends \Job {
 	 * @param array $params
 	 */
 	public function __construct( $title, $params ) {
-		if ( $title instanceof Title ) {
-			// parent::__construct Backwards compatibility for old signature
-			// ($command, $title, $params) seems to have an issue retrieving the
-			// actual correct data and ends up writing -1|FullText into the DB
-			// ERM:24241
-			$this->title = $title;
-			$params['namespace'] = $title->getNamespace();
-			$params['title'] = $title->getDBkey();
-		}
-		parent::__construct( 'sendNotification', $this->compressParams( $params ) );
+		parent::__construct( 'sendNotification', $title, $this->compressParams( $params ) );
 	}
 
 	public function run() {
@@ -35,6 +26,10 @@ class SendNotification extends \Job {
 	 * @return array
 	 */
 	private function compressParams( $params ) {
+		if ( isset( $params['title'] ) && $params['title'] instanceof Title ) {
+			$params['title'] = $params['title']->getArticleID();
+		}
+
 		if ( isset( $params['agent'] ) && $params['agent'] instanceof User ) {
 			$params['agent'] = $params['agent']->getId();
 		}
@@ -42,8 +37,8 @@ class SendNotification extends \Job {
 	}
 
 	private function expandParams() {
-		if ( isset( $this->params['title'] ) && is_string( $this->params['title'] ) ) {
-			$this->params['title'] = Title::newFromText( $this->params['title'], $this->params['namespace'] );
+		if ( isset( $this->params['title'] ) && is_int( $this->params['title'] ) ) {
+			$this->params['title'] = Title::newFromID( $this->params['title'] );
 		}
 
 		if ( isset( $this->params['agent'] ) && is_int( $this->params['agent'] ) ) {
