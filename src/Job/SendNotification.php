@@ -43,7 +43,7 @@ class SendNotification extends \Job {
 
 	private function expandParams() {
 		if ( isset( $this->params['title'] ) && is_string( $this->params['title'] ) ) {
-			$this->params['title'] = Title::newFromText( $this->params['title'] );
+			$this->params['title'] = Title::newFromText( $this->params['title'], $this->params['namespace'] );
 		}
 
 		if ( isset( $this->params['agent'] ) && is_int( $this->params['agent'] ) ) {
