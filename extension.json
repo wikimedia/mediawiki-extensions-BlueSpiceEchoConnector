@@ -37,7 +37,8 @@
 		"BlueSpiceDiscovery": {
 			"AttentionIndicatorRegistry": {
 				"notifications-notice": "\\BlueSpice\\EchoConnector\\AttentionIndicator\\Notice::factory",
-				"notifications-alert": "\\BlueSpice\\EchoConnector\\AttentionIndicator\\Alert::factory"
+				"notifications-alert": "\\BlueSpice\\EchoConnector\\AttentionIndicator\\Alert::factory",
+				"notifications": "\\BlueSpice\\EchoConnector\\AttentionIndicator\\Notifications::factory"
 			}
 		}
 	},
