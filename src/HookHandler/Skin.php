@@ -37,6 +37,9 @@ class Skin implements PersonalUrlsHook {
 		if ( $skin->getSkinName() !== 'bluespicediscovery' ) {
 			return;
 		}
+		if ( $skin->getUser()->isAnon() ) {
+			return;
+		}
 		if ( isset( $personal_urls['notifications-alert'] ) ) {
 			unset( $personal_urls['notifications-alert'] );
 		}
