@@ -10,5 +10,6 @@
 	"echo-pref-tooltip-bs-page-create-cat": "Mech informéiere wann eng nei Säit ugeluecht gëtt",
 	"echo-category-title-bs-page-actions-cat": "Aktiounen op Säiten op der Iwwrwaachungslëscht",
 	"prefs-namespace-notifications": "Notifikatiounen iwwer Ännerunge bei Nummraim",
-	"prefs-category-notifications": "Notifikatiounen iwwer Kategorien"
+	"prefs-category-notifications": "Notifikatiounen iwwer Kategorien",
+	"bs-echoconnector-personalurl-notifications": "Notifikatiounen ($1)"
 }
