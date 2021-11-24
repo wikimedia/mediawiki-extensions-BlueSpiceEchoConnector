@@ -6,7 +6,8 @@
 			"Liuxinyu970226",
 			"Shizhao",
 			"列维劳德",
-			"铁桶"
+			"铁桶",
+			"Xiplus"
 		]
 	},
 	"bs-echoconnector-extension-description": "连接BlueSpice和Echo",
@@ -16,7 +17,7 @@
 	"echo-pref-tooltip-bs-page-create-cat": "当创建了一个新页面时提醒我",
 	"echo-category-title-bs-page-actions-cat": "监视列表中页面上的操作",
 	"echo-category-title-bs-page-create-cat": "页面创建",
-	"prefs-namespace-notifications": "名字空间活动上的通知",
+	"prefs-namespace-notifications": "命名空间活动上的通知",
 	"prefs-category-notifications": "分类的通知",
 	"echo-category-title-bs-namespace-category-notify-cat": "已订阅的命名空间和分类的更改"
 }

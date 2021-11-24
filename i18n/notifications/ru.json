@@ -13,6 +13,7 @@
 	"bs-notifications-addaccount": "Участник \"$1\" был создан.",
 	"bs-notifications-email-addaccount-subject": "{{GENDER:$1|Создан участник|Создана участница}} с именем $2",
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Создан участник|Создана участница}} с именем $2.\n\nВы можете посетить {{GENDER:$1|его|её}} страницу, перейдя по ссылке ниже",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Участник $2 был создан|Участница $2 была создана}}.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Создатель|Создательница}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Создатель|Создательница}}: $1",
 	"bs-notifications-registeruser": "Пользователь \"$1\" создал аккаунт.",

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"Winston Sung"
 		]
 	},
 	"bs-notifications-addaccount": "使用者「$1」已建立。",
@@ -9,7 +10,7 @@
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|使用者}} $2 已建立。\n\n您可以從下列連結來瀏覽{{GENDER:$1|他的|她的|該}}使用者頁面",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|使用者}} $2 已建立。",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|建立者}}：$1",
-	"bs-notifications-addaccount-performer": "{{GENDER:$1|創建者}}：$1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|建立者}}：$1",
 	"bs-notifications-registeruser": "使用者「$1」已建立一個帳號。",
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|User}}「$2」已{{GENDER:$1|建立}}一個帳號",
 	"bs-notifications-email-registeruser-body": "{{GENDER:$1|User}}$2已{{GENDER:$1|建立}}一個帳號。\n\n您可以採用以下連結來查看{{GENDER:$1|他的|她的|該}}使用者頁面",
