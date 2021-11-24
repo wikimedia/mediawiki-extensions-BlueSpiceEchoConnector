@@ -31,7 +31,7 @@ class AddNotificationMatrix extends GetPreferences {
 				$title = "$title ";
 			}
 			if ( $ns > 0 ) {
-				$arrNamespaces[ $title ] = $ns;
+				$arrNamespaces[$this->ensureString( $title )] = $ns;
 			} elseif ( $ns == 0 ) {
 				$arrNamespaces[ Message::newFromKey( 'bs-ns_main' )->text() ] = $ns;
 			}
@@ -52,7 +52,8 @@ class AddNotificationMatrix extends GetPreferences {
 		}
 		$rows = [];
 		foreach ( $cats as $cat ) {
-			$rows[str_replace( '_', ' ', $cat )] = $cat;
+			$key = str_replace( '_', ' ', $cat );
+			$rows[$this->ensureString( $key )] = $cat;
 		}
 
 		$this->preferences[ 'notify-category-selection' ] = [
@@ -101,5 +102,20 @@ class AddNotificationMatrix extends GetPreferences {
 		}
 
 		return $this->categories;
+	}
+
+	/**
+	 * This is a weird function. If a numeric value is set as a key
+	 * for array element, even if a string, it will be converted to an int
+	 * Therefore, we pad it with some spaces to make sure it will remain a string
+	 *
+	 * @param string $key
+	 * @return string
+	 */
+	private function ensureString( $key ) {
+		if ( is_numeric( $key ) ) {
+			return $key . ' ';
+		}
+		return $key;
 	}
 }
