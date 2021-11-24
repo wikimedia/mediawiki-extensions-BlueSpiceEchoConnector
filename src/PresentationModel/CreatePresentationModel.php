@@ -36,11 +36,11 @@ class CreatePresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-notifications-web-create-body';
-		$bodyParams = [ 'title', 'agent', 'realname', 'time' ];
+		$bodyParams = [ 'title', 'agent', 'realname' ];
 
 		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-create-body';
-			$bodyParams = [ 'title', 'agent', 'realname', 'summary' ];
+			$bodyParams = [ 'title', 'agent', 'realname', 'summary', 'time' ];
 		}
 
 		return [
