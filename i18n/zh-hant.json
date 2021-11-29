@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"Winston Sung"
 		]
 	},
 	"bs-echoconnector-extension-description": "以 Echo 來連接 BlueSpice",
@@ -13,5 +14,6 @@
 	"echo-category-title-bs-page-create-cat": "頁面建立",
 	"prefs-namespace-notifications": "在命名空間事件上的通知",
 	"prefs-category-notifications": "在分類上的通知",
-	"echo-category-title-bs-namespace-category-notify-cat": "在訂閱的命名空間與分類的更改"
+	"echo-category-title-bs-namespace-category-notify-cat": "在訂閱的命名空間與分類的更改",
+	"bs-echoconnector-personalurl-notifications": "通知 ($1)"
 }
