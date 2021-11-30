@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Beta16",
 			"Gianfranco",
 			"TheRukk",
@@ -14,5 +15,6 @@
 	"echo-pref-tooltip-bs-page-actions-cat": "Avvisami quando una pagina che osservo viene modificata, spostata o eliminata",
 	"echo-pref-tooltip-bs-page-create-cat": "Avvisami quando viene creata una nuova pagina",
 	"echo-category-title-bs-page-create-cat": "Creazioni di pagine",
-	"prefs-category-notifications": "Notifiche sulle categorie"
+	"prefs-category-notifications": "Notifiche sulle categorie",
+	"bs-echoconnector-personalurl-notifications": "Notifiche ($1)"
 }

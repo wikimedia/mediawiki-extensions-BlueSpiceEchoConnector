@@ -15,5 +15,6 @@
 	"echo-category-title-bs-page-create-cat": "Seitenerstellung",
 	"prefs-namespace-notifications": "Benachrichtigungen bei Namensraumereignissen",
 	"prefs-category-notifications": "Benachrichtigungen zu Kategorien",
-	"echo-category-title-bs-namespace-category-notify-cat": "Änderungen in den abonnierten Namensräumen und Kategorien"
+	"echo-category-title-bs-namespace-category-notify-cat": "Änderungen in den abonnierten Namensräumen und Kategorien",
+	"bs-echoconnector-personalurl-notifications": "Benachrichtigungen ($1)"
 }

@@ -10,5 +10,6 @@
 	"echo-category-title-bs-admin-cat": "Administrativ Aufgaben",
 	"echo-pref-tooltip-bs-page-create-cat": "Mech informéiere wann eng nei Säit ugeluecht gëtt",
 	"prefs-namespace-notifications": "Notifikatiounen iwwer Ännerunge bei Nummraim",
-	"prefs-category-notifications": "Notifikatiounen iwwer Kategorien"
+	"prefs-category-notifications": "Notifikatiounen iwwer Kategorien",
+	"bs-echoconnector-personalurl-notifications": "Notifikatiounen ($1)"
 }
