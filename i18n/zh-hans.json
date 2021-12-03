@@ -3,6 +3,7 @@
 		"authors": [
 			"Deathkon",
 			"Func",
+			"Lakejason0",
 			"Liuxinyu970226",
 			"Shizhao",
 			"Xiplus",
@@ -19,5 +20,6 @@
 	"echo-category-title-bs-page-create-cat": "页面创建",
 	"prefs-namespace-notifications": "命名空间活动上的通知",
 	"prefs-category-notifications": "分类的通知",
-	"echo-category-title-bs-namespace-category-notify-cat": "已订阅的命名空间和分类的更改"
+	"echo-category-title-bs-namespace-category-notify-cat": "已订阅的命名空间和分类的更改",
+	"bs-echoconnector-personalurl-notifications": "通知（$1）"
 }
