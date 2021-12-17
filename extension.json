@@ -52,6 +52,9 @@
 	"HookHandlers": {
 		"skin": {
 			"class": "\\BlueSpice\\EchoConnector\\HookHandler\\Skin"
+		},
+		"update": {
+			"class": "\\BlueSpice\\EchoConnector\\HookHandler\\Update"
 		}
 	},
 	"Hooks": {
@@ -62,8 +65,12 @@
 		"EchoGetNotificationTypes": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetNotificationTypes\\GetNotificationTypesForEvent::callback",
 		"EchoGetBundleRules": "\\BlueSpice\\EchoConnector\\Hook\\EchoGetBundleRules\\GetBundleRules::callback",
 		"LocalUserCreated": "\\BlueSpice\\EchoConnector\\Hook\\LocalUserCreated\\NotifyUsers::callback",
-		"GetPreferences": "\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\AddNotificationMatrix::callback",
-		"PersonalUrls": "skin"
+		"GetPreferences": [
+			"\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\AddNotificationMatrix::callback",
+			"\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\HidePreferences::callback"
+		],
+		"PersonalUrls": "skin",
+		"LoadExtensionSchemaUpdates": "update"
 	},
 	"config_prefix": "bsg",
 	"config": {
@@ -111,6 +118,9 @@
 	},
 	"JobClasses": {
 		"sendNotification": "BlueSpice\\EchoConnector\\Job\\SendNotification"
+	},
+	"AutoloadClasses": {
+		"BSMigrateWatchlistNotificationSettings": "maintenance/BSMigrateWatchlistNotificationSettings.php"
 	},
 	"AutoloadNamespaces": {
 		"BlueSpice\\EchoConnector\\": "src/"

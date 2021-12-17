@@ -16,6 +16,10 @@ class Extension {
 		];
 		$GLOBALS['wgDefaultUserOptions']['echo-subscriptions-web-bs-namespace-category-notify-cat'] = 1;
 		$GLOBALS['wgDefaultUserOptions']['echo-subscriptions-email-bs-namespace-category-notify-cat'] = 1;
+		$GLOBALS['wgDefaultUserOptions']['enotifwatchlistpages'] = 0;
+		$GLOBALS['wgDefaultUserOptions']['enotifminoredits'] = 0;
+		$GLOBALS['wgDefaultUserOptions']['echo-subscriptions-email-watchlist'] = 0;
+		$GLOBALS['wgDefaultUserOptions']['echo-subscriptions-email-minor-watchlist'] = 0;
 	}
 
 	/**
