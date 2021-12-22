@@ -14,5 +14,6 @@
 	"bs-notifications-create": "La pàggina \"$1\" fu criata.",
 	"bs-notifications-delete": "La pàggina \"$1\" fu cancillata",
 	"bs-notifications-edit-difflink-label": "Talìa li diffirenzi",
-	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Ciau}} $1"
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Ciau}} $1",
+	"bs-notifications-htmlmail-sender-info": "Sistema di nutìfica $1"
 }
