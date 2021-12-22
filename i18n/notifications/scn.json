@@ -10,6 +10,7 @@
 	"bs-notifications-registeruser": "L'utenti \"$1\" criau n'account.",
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|L'utenti}} \"$2\" {{GENDER:$1|criau}} n'account",
 	"bs-notifications-edit": "La pàggina \"$1\" fu canciata",
+	"bs-notifications-email-edit-subject": "Pàggina \"$1\" {{GENDER:$2|canciata}} da $3 lu $4",
 	"bs-notifications-create": "La pàggina \"$1\" fu criata.",
 	"bs-notifications-delete": "La pàggina \"$1\" fu cancillata",
 	"bs-notifications-edit-difflink-label": "Talìa li diffirenzi",
