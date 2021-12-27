@@ -14,5 +14,6 @@
 	"echo-category-title-bs-page-create-cat": "Pagina-aanmaak",
 	"prefs-namespace-notifications": "Meldingen over naamruimtegebeurtenissen",
 	"prefs-category-notifications": "Meldingen over categorieën",
-	"echo-category-title-bs-namespace-category-notify-cat": "Wijzigingen in geabonneerde naamruimten en categorieën"
+	"echo-category-title-bs-namespace-category-notify-cat": "Wijzigingen in geabonneerde naamruimten en categorieën",
+	"bs-echoconnector-personalurl-notifications": "Meldingen ($1)"
 }
