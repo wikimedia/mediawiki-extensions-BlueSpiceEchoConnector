@@ -13,5 +13,6 @@
 	"echo-category-title-bs-page-create-cat": "Sideopprettelse",
 	"prefs-namespace-notifications": "Varsler ved navneromshendelser",
 	"prefs-category-notifications": "Varsler for kategorier",
-	"echo-category-title-bs-namespace-category-notify-cat": "Endringer i navnerom og kategorier en abonnerer på"
+	"echo-category-title-bs-namespace-category-notify-cat": "Endringer i navnerom og kategorier en abonnerer på",
+	"bs-echoconnector-personalurl-notifications": "Varsler ($1)"
 }
