@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amoaniwaa"
+		]
+	},
+	"bs-notifications-email-delete-body": "\"$1\" kratafa no {{GENDER:$2|deleted}} wɔ $4 a ɔne $3.\n\nNea enti a ɔyɛɛ saa:\n$4"
+}
