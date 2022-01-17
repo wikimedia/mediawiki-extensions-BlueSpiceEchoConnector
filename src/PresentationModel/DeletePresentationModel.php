@@ -47,11 +47,11 @@ class DeletePresentationModel extends EchoEventPresentationModel {
 	 */
 	public function getBodyMessageContent() {
 		$bodyKey = 'bs-notifications-web-delete-body';
-		$bodyParams = [ 'title', 'agent', 'realname', 'time' ];
+		$bodyParams = [ 'title', 'agent', 'realname', 'deletereason', 'time' ];
 
 		if ( $this->distributionType == 'email' ) {
 			$bodyKey = 'bs-notifications-email-delete-body';
-			$bodyParams = [ 'title', 'agent', 'realname', 'deletereason' ];
+			$bodyParams = [ 'title', 'agent', 'realname', 'deletereason', 'time' ];
 		}
 
 		return [

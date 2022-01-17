@@ -26,7 +26,7 @@
 	"bs-notifications-web-create-body": "The page \"$1\" was {{GENDER:$2|created}} by $3.",
 	"bs-notifications-delete": "The page \"$1\" has been deleted",
 	"bs-notifications-email-delete-subject": "Page \"$1\" {{GENDER:$2|deleted}} at $4 by $3",
-	"bs-notifications-email-delete-body": "The page \"$1\" was {{GENDER:$2|deleted}} at $4 by $3.\n\nThis was the reason:\n$4",
+	"bs-notifications-email-delete-body": "The page \"$1\" was {{GENDER:$2|deleted}} at $5 by $3.\n\nThis was the reason:\n$4",
 	"bs-notifications-web-delete-body": "The page \"$1\" was {{GENDER:$2|deleted}} by $3.",
 	"bs-notifications-move": "The page \"$1\" has been moved",
 	"bs-notifications-email-move-subject": "Page \"$1\" {{GENDER:$2|moved}} at $5 to \"$3\" by $4",
