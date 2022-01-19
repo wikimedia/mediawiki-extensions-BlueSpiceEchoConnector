@@ -25,7 +25,7 @@
 	"bs-notifications-web-create-body": "La pagina \"$1\" è stata {{GENDER:$2|creata}} da $3.",
 	"bs-notifications-delete": "La pagina \"$1\" è stata cancellata",
 	"bs-notifications-email-delete-subject": "Pagina \"$1\" {{GENDER:$2|cancellata}} il $4 da $3",
-	"bs-notifications-email-delete-body": "La pagina \"$1\" è stata {{GENDER:$2|cancellata}} il $5 da $3.\n\nQuesto è il motivo:\n$4",
+	"bs-notifications-email-delete-body": "La pagina \"$1\" è stata {{GENDER:$2|cancellata}} il $4 da $3.\n\nQuesto è il motivo:\n$4",
 	"bs-notifications-web-delete-body": "La pagina \"$1\" è stata {{GENDER:$2|cancellata}} da $3.",
 	"bs-notifications-move": "La pagina \"$1\" è stata spostata",
 	"bs-notifications-email-move-subject": "Pagina \"$1\" {{GENDER:$2|spostata}} il $5 a \"$3\" da $4",
