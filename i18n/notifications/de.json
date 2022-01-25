@@ -27,7 +27,7 @@
 	"bs-notifications-web-create-body": "Die Seite „$1“ wurde von $3 {{GENDER:$2|erstellt}}",
 	"bs-notifications-delete": "Die Seite „$1“ wurde gelöscht",
 	"bs-notifications-email-delete-subject": "Die Seite „$1“ wurde am $4 von $3 {{GENDER:$2|gelöscht}}",
-	"bs-notifications-email-delete-body": "Die Seite „$1“ wurde am $4 von $3 {{GENDER:$2|gelöscht}}.\n\nAls Grund wurde angegeben:\n$4",
+	"bs-notifications-email-delete-body": "Die Seite „$1“ wurde am $5 von $3 {{GENDER:$2|gelöscht}}.\n\nAls Grund wurde angegeben:\n$4",
 	"bs-notifications-web-delete-body": "Die Seite „$1“ wurde von $3 {{GENDER:$2|gelöscht}}",
 	"bs-notifications-move": "Die Seite „$1“ wurde verschoben",
 	"bs-notifications-email-move-subject": "Die Seite „$1“ wurde am $5 von $4 nach „$3“ {{GENDER:$2|verschoben}}",
