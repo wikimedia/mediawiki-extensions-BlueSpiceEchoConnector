@@ -7,7 +7,8 @@
 			"DannyS712",
 			"Fitoschido",
 			"Larjona",
-			"Macofe"
+			"Macofe",
+			"MarcoAurelio"
 		]
 	},
 	"bs-notifications-addaccount": "Se creó la cuenta «$1».",
@@ -31,7 +32,7 @@
 	"bs-notifications-web-create-body": "$3 {{GENDER:$2|creó}} la página «$1».",
 	"bs-notifications-delete": "Se borró la página «$1»",
 	"bs-notifications-email-delete-subject": "{{GENDER:$2|{{GENDER:$2|$4}}}}$3 {{GENDER:$2|borró}} la página «$1»",
-	"bs-notifications-email-delete-body": "$3 {{GENDER:$2|borró}} la página «$1» el $5.\n\nSe adujo esta razón:\n$4",
+	"bs-notifications-email-delete-body": "La página \"$1\" fue {{GENDER:$2|borrada}} a las $5 por $3.\n\n\nEl motivo fue:\n$4",
 	"bs-notifications-web-delete-body": "$3 {{GENDER:$2|borró}} la página «$1».",
 	"bs-notifications-move": "Se trasladó la página «$1»",
 	"bs-notifications-email-move-subject": "$4 {{GENDER:$2|trasladó}} la página «$1» a «$3» el $5",
