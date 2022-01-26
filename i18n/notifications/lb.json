@@ -19,7 +19,7 @@
 	"bs-notifications-web-create-body": "D'Säit $1 gouf vum $3 {{GENDER:$2|u}geluecht}.",
 	"bs-notifications-delete": "D'Säit \"$1\" ouf geläscht",
 	"bs-notifications-email-delete-subject": "Säit \"$1\" {{GENDER:$2|geläscht}} vum $3",
-	"bs-notifications-email-delete-body": "D'Säit \"$1\" gouf den $4 vum $3 {{GENDER:$2|geläscht}} \n\nDe Grond war:\n$4",
+	"bs-notifications-email-delete-body": "D'Säit \"$1\" gouf den $5 vum $3 {{GENDER:$2|geläscht}} \n\nDe Grond war:\n$4",
 	"bs-notifications-web-delete-body": "D'Säit \"$1\" gouf vum $3 {{GENDER:$2|geläscht}}.",
 	"bs-notifications-move": "D'Säit \"$1\" gouf geréckelt",
 	"bs-notifications-email-move-subject": "Säit \"$1\" {{GENDER:$2|geréckelt}} op \"$3\" vum $4",

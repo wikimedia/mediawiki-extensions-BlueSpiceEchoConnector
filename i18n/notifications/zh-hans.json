@@ -5,7 +5,8 @@
 			"WQL",
 			"佛壁灯",
 			"列维劳德",
-			"Tranve"
+			"Tranve",
+			"GuoPC"
 		]
 	},
 	"bs-notifications-addaccount": "用户“$1”已创建。",
@@ -29,7 +30,7 @@
 	"bs-notifications-web-create-body": "页面“$1”已由$3{{GENDER:$2|创建}}。",
 	"bs-notifications-delete": "页面“$1”已删除",
 	"bs-notifications-email-delete-subject": "页面“$1”已在$4由$3{{GENDER:$2|删除}}",
-	"bs-notifications-email-delete-body": "页面“$1”已在$5由$3{{GENDER:$2|删除}}。\n\n这是删除原因：\n$4",
+	"bs-notifications-email-delete-body": "页面“$1”已由 $3 于 $5 {{GENDER:$2|删除}}。\n\n这是删除原因：\n$4",
 	"bs-notifications-web-delete-body": "页面“$1”已由$3{{GENDER:$2|删除}}。",
 	"bs-notifications-move": "页面“$1”已移动",
 	"bs-notifications-email-move-subject": "页面“$1”已在$5由$4{{GENDER:$2|移动}}至“$3”",
