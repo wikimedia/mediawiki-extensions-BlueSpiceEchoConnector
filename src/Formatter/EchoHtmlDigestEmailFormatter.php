@@ -160,10 +160,16 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 
 		$iconUrl = \Sanitizer::encodeAttribute( $iconUrl );
 
+		$url = false;
+		$primaryLink = $model->getPrimaryLink();
+		if ( $primaryLink != false ) {
+			$url = $primaryLink['url'];
+		}
+
 		return [
 			'icon-url' => $iconUrl,
 			'text' => $model->getHeaderMessage()->parse(),
-			'url' => $model->getPrimaryLink(),
+			'url' => $url
 		];
 	}
 }
