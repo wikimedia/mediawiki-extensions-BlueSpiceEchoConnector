@@ -9,7 +9,9 @@
 						<img src="{{icon-url}}" width="25" height="25" style="vertical-align:middle;">
 					</td>
 					<td style="font-size:.9em; color: #54595D;">
-						<a href="{{url}}">{{text}}</a>
+						{{#url}}<a href="{{url}}">{{/url}}
+							<span>{{text}}</span>
+						{{#url}}</a>{{/url}}
 					</td>
 				</tr>
 			{{/events}}
