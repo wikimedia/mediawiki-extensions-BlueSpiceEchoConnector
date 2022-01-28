@@ -18,7 +18,9 @@ class SendNotification extends \Job {
 
 	public function run() {
 		$this->expandParams();
-		\EchoEvent::create( $this->params );
+		if ( $this->params['title'] instanceof Title && $this->params['agent'] instanceof User ) {
+			\EchoEvent::create( $this->params );
+		}
 	}
 
 	/**
