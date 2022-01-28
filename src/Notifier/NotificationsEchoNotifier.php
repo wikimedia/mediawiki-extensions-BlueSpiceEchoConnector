@@ -3,6 +3,7 @@
 namespace BlueSpice\EchoConnector\Notifier;
 
 use BlueSpice\EchoConnector\EchoEventPresentationModel;
+use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\Notifications\BaseNotification;
 use MWStake\MediaWiki\Component\Notifications\INotification;
 use MWStake\MediaWiki\Component\Notifications\INotifier;
@@ -120,7 +121,7 @@ class NotificationsEchoNotifier implements INotifier {
 				$notification->getTitle(),
 				$echoNotif
 			);
-			\JobQueueGroup::singleton()->push( $job );
+			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $job );
 		} else {
 			\EchoEvent::create( $echoNotif );
 		}
