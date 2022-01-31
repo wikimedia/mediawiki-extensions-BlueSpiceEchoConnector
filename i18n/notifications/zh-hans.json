@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"GuoPC",
 			"Liuxinyu970226",
 			"Tranve",
 			"WQL",
 			"佛壁灯",
-			"列维劳德",
-			"GuoPC"
+			"列维劳德"
 		]
 	},
 	"bs-notifications-addaccount": "用户“$1”已创建。",
