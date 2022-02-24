@@ -18,6 +18,15 @@ class NotifyUsers extends PageSaveComplete {
 	 * @return bool
 	 */
 	protected function skipProcessing() {
+		return $this->revisionRecord->isMinor() ||
+			$this->editResult->isNullEdit() ||
+			$this->isBot();
+	}
+
+	/**
+	 * @return bool
+	 */
+	private function isBot() {
 		return $this->getServices()->getPermissionManager()->userHasRight(
 			$this->user,
 			'bot'
