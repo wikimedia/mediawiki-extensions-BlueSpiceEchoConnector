@@ -13,6 +13,19 @@ use Title;
 
 class NotifyUsers extends PageContentSaveComplete {
 
+	/**
+	 *
+	 * @return bool
+	 */
+	protected function skipProcessing() {
+		return $this->isMinor ||
+			$this->user->isBot();
+	}
+
+	/**
+	 *
+	 * @return bool
+	 */
 	protected function doProcess() {
 		$notificationsManager = MediaWikiServices::getInstance()->getService( 'BSNotificationManager' );
 		$notifier = $notificationsManager->getNotifier();
