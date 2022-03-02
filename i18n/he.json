@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"Guycn2"
+			"Guycn2",
+			"שוקו מוקה"
 		]
 	},
 	"bs-echoconnector-extension-description": "חיבור ההרחבה BlueSpice להרחבה Echo",
 	"echo-category-title-bs-admin-cat": "משימות ניהוליות",
 	"echo-category-title-bs-page-actions-cat": "פעולות בדפים ברשימת מעקב",
+	"echo-category-title-bs-page-create-cat": "יצירות דפים",
 	"prefs-namespace-notifications": "התראות על פעולות במרחב שם",
 	"prefs-category-notifications": "התראות על קטגוריות"
 }
