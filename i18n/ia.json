@@ -13,5 +13,6 @@
 	"echo-category-title-bs-page-create-cat": "Creation de paginas",
 	"prefs-namespace-notifications": "Notificationes sur eventos de spatio de nomines",
 	"prefs-category-notifications": "Notificationes sur categorias",
-	"echo-category-title-bs-namespace-category-notify-cat": "Cambiamentos in spatios de nomines e categorias subscribite"
+	"echo-category-title-bs-namespace-category-notify-cat": "Cambiamentos in spatios de nomines e categorias subscribite",
+	"bs-echoconnector-personalurl-notifications": "Notificationes ($1)"
 }
