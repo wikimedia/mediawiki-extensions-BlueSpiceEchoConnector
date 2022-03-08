@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"FinlandMan",
+			"Markus Mikkonen",
 			"Pxos"
 		]
 	},
 	"echo-category-title-bs-admin-cat": "Ylläpidolliset tehtävät",
-	"echo-pref-tooltip-bs-admin-cat": "Ilmoita minulle, kun uusi tili luodaan"
+	"echo-pref-tooltip-bs-admin-cat": "Ilmoita minulle, kun uusi tili luodaan",
+	"bs-echoconnector-personalurl-notifications": "Ilmoitukset ($1)"
 }
