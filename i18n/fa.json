@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"FarsiNevis",
-			"Jeeputer"
+			"Jeeputer",
+			"LordProfo"
 		]
 	},
 	"echo-category-title-bs-page-create-cat": "ایجاد صفحه",
@@ -13,5 +14,6 @@
 	"echo-category-title-bs-page-actions-cat": "عمل در صفحه‌های پیگیری‌شده",
 	"prefs-namespace-notifications": "آگاه‌سازی رویدادهای فضای نام",
 	"prefs-category-notifications": "آگاه‌سازی رده‌ها",
-	"echo-category-title-bs-namespace-category-notify-cat": "تغییرات در فضاهای نام و رده‌های پیگیری‌شده"
+	"echo-category-title-bs-namespace-category-notify-cat": "تغییرات در فضاهای نام و رده‌های پیگیری‌شده",
+	"bs-echoconnector-personalurl-notifications": "آگاه‌سازی‌ها ($1)"
 }
