@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"J. 'mach' wust",
-			"Metalhead64"
+			"Metalhead64",
+			"Mschlindwein"
 		]
 	},
 	"bs-notifications-addaccount": "Der Benutzer „$1“ wurde erstellt",

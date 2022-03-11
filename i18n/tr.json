@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"Sqances"
 		]
 	},
 	"bs-echoconnector-extension-description": "BlueSpice'i Yankı ile bağlar",
@@ -14,5 +15,6 @@
 	"echo-category-title-bs-page-create-cat": "Sayfa oluşturması",
 	"prefs-namespace-notifications": "Ad alanı olaylarıyla ilgili bildirimler",
 	"prefs-category-notifications": "Kategorilerdeki bildirimler",
-	"echo-category-title-bs-namespace-category-notify-cat": "Abone olunan ad alanları ve kategorilerdeki değişiklikler"
+	"echo-category-title-bs-namespace-category-notify-cat": "Abone olunan ad alanları ve kategorilerdeki değişiklikler",
+	"bs-echoconnector-personalurl-notifications": "Bildirimler ($1)"
 }

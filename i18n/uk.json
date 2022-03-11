@@ -1,6 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
+			"Ice bulldog",
 			"Piramidion",
 			"Ата"
 		]
@@ -14,5 +16,6 @@
 	"echo-category-title-bs-page-create-cat": "Створення сторінок",
 	"prefs-namespace-notifications": "Сповіщення про події з простором назв",
 	"prefs-category-notifications": "Сповіщення про категорії",
-	"echo-category-title-bs-namespace-category-notify-cat": "Зміни в просторах назв і категоріях, на які є підписка"
+	"echo-category-title-bs-namespace-category-notify-cat": "Зміни в просторах назв і категоріях, на які є підписка",
+	"bs-echoconnector-personalurl-notifications": "Сповіщення ($1)"
 }

@@ -13,5 +13,7 @@
 	"bs-notifications-edit": "La pàggina \"$1\" fu canciata",
 	"bs-notifications-delete": "La pàggina \"$1\" fu cancillata",
 	"bs-notifications-edit-difflink-label": "Talìa li diffirenzi",
-	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Ciau}} $1"
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Ciau}} $1",
+	"bs-notifications-email-edit-subject": "Pàggina \"$1\" {{GENDER:$2|canciata}} da $3 lu $4",
+	"bs-notifications-htmlmail-sender-info": "Sistema di nutìfica $1"
 }
