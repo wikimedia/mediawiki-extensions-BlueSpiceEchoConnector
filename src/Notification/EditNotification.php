@@ -4,8 +4,8 @@ namespace BlueSpice\EchoConnector\Notification;
 
 use BlueSpice\BaseNotification;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Storage\RevisionLookup;
-use MediaWiki\Storage\RevisionRecord;
+use MediaWiki\Revision\RevisionLookup;
+use MediaWiki\Revision\RevisionRecord;
 
 class EditNotification extends BaseNotification {
 	/**
