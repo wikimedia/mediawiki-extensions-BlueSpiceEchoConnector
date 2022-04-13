@@ -4,7 +4,8 @@
 			"Beginneruser",
 			"FarsiNevis",
 			"Jeeputer",
-			"LordProfo"
+			"LordProfo",
+			"Mohammad ebz"
 		]
 	},
 	"echo-category-title-bs-admin-cat": "وظیفه‌های مدیریتی",
@@ -13,8 +14,8 @@
 	"echo-pref-tooltip-bs-page-create-cat": "به‌هنگام ایجاد یک صفحهٔ جدید مرا آگاه کن",
 	"echo-category-title-bs-page-actions-cat": "عمل در صفحه‌های پیگیری‌شده",
 	"echo-category-title-bs-page-create-cat": "ایجاد صفحه",
-	"prefs-namespace-notifications": "آگاه‌سازی‌ها در رویدادهای فضای نام",
+	"prefs-namespace-notifications": "اعلان‌ها در رویدادهای فضای‌نام",
 	"prefs-category-notifications": "آگاه‌سازی رده‌ها",
 	"echo-category-title-bs-namespace-category-notify-cat": "تغییرات در فضاهای نام و رده‌های پیگیری‌شده",
-	"bs-echoconnector-personalurl-notifications": "آگاه‌سازی‌ها ($1)"
+	"bs-echoconnector-personalurl-notifications": "اعلان‌ها ($1)"
 }
