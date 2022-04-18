@@ -7,7 +7,8 @@
 			"Romaine",
 			"Rots61",
 			"Sjoerddebruin",
-			"Xbaked potatox"
+			"Xbaked potatox",
+			"Wikiklaas"
 		]
 	},
 	"bs-notifications-addaccount": "De gebruiker \"$1\" is aangemaakt.",
@@ -34,11 +35,11 @@
 	"bs-notifications-email-delete-body": "De pagina \"$1\" is {{GENDER:$2|verwijderd}} op $5 door $3.\n\nDe volgende reden is opgegeven:\n$4",
 	"bs-notifications-web-delete-body": "De pagina \"$1\" is {{GENDER:$2|verwijderd}} door $3.",
 	"bs-notifications-move": "De pagina \"$1\" is hernoemd",
-	"bs-notifications-email-move-subject": "Pagina \"$1\" is {{GENDER:$2|hernoemd}} naar \"$3\" op $5 door $4",
+	"bs-notifications-email-move-subject": "De pagina \"$1\" is {{GENDER:$2|hernoemd}} naar \"$3\" op $5 door $4",
 	"bs-notifications-email-move-body": "De pagina \"$1\" is {{GENDER:$2|hernoemd}} naar \"$3\" op $6 door $4. \n\nDe volgende reden is opgegeven:\n$5\n\nU kunt de pagina bezoeken via de koppeling hier beneden",
 	"bs-notifications-web-move-body": "De pagina \"$1\" is {{GENDER:$2|hernoemd}} naar \"$3\" door $4",
 	"bs-notifications-edit-difflink-label": "Verschillen weergeven",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hallo}} $1",
-	"bs-notifications-mail-additional-links-label": "Extra koppelingen",
-	"bs-notifications-htmlmail-sender-info": "Meldingssysteem van $1"
+	"bs-notifications-htmlmail-sender-info": "Meldingssysteem van $1",
+	"bs-notifications-mail-additional-links-label": "Extra koppelingen"
 }
