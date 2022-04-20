@@ -3,6 +3,7 @@
 		"authors": [
 			"Agusbou2015",
 			"Destinid10 2",
+			"DiegoAmbrocio",
 			"Fitoschido",
 			"Macofe"
 		]
@@ -14,5 +15,8 @@
 	"prefs-namespace-notifications": "Notificaciones sobre eventos de espacios de nombres",
 	"echo-pref-tooltip-bs-admin-cat": "Notificarme cuando se cree una nueva cuenta de usuario",
 	"echo-pref-tooltip-bs-page-actions-cat": "Notoficarme cuando alguien edita, mueve o elimina una página que yo observo",
-	"prefs-category-notifications": "Notificaciones por categoría"
+	"prefs-category-notifications": "Notificaciones por categoría",
+	"echo-category-title-bs-page-actions-cat": "Acciones en las páginas de la lista de vigilancia",
+	"echo-category-title-bs-namespace-category-notify-cat": "Cambios en los espacios de nombres y categorías suscritos",
+	"bs-echoconnector-personalurl-notifications": "Notificaciones ($1)"
 }

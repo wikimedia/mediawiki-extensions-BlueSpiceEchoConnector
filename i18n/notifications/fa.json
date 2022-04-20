@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Beginneruser",
 			"FarsiNevis",
 			"Huji",
 			"Jeeputer"
@@ -12,10 +13,10 @@
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|کاربر}} $2 ایجاد شد.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|ایجادکننده}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|ایجادکننده}}: $1",
-	"bs-notifications-registeruser": "کاربر «$1» یک حساب کاربری ایجاد کرد.",
-	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|کاربر}} «$2» یک حساب کاربری {{GENDER:$1|ایجاد کرد}}",
-	"bs-notifications-email-registeruser-body": "{{GENDER:$1|کاربر}} $2 یک حساب کاربری {{GENDER:$1|ایجاد کرد}}.\n\nشما می‌توانید صفحهٔ کاربری‌اش را در پیوند زیر مشاهده کنید",
-	"bs-notifications-web-registeruser-body": "{{GENDER:$1|کاربر}} $2 یک حساب کاربری {{GENDER:$1|ایجاد کرد}}.",
+	"bs-notifications-registeruser": "کاربر «$1» یک حساب ایجاد کرد.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|کاربر}} «$2» یک حساب {{GENDER:$1|ایجاد کرد}}",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|کاربر}} $2 یک حساب {{GENDER:$1|ایجاد کرد}}.\n\nشما می‌توانید صفحهٔ کاربری‌ {{GENDER:$1|وی}} را در پیوند زیر مشاهده کنید",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|کاربر}} $2 یک حساب {{GENDER:$1|ایجاد کرد}}.",
 	"bs-notifications-edit": "صفحهٔ «$1» تغییر کرد",
 	"bs-notifications-edit-bundle": "صفحهٔ «$2» $1 بار تغییر کرد",
 	"bs-notifications-email-edit-subject": "صفحهٔ «$1» را $3 در $4 {{GENDER:$2|ویرایش کرد}}",
