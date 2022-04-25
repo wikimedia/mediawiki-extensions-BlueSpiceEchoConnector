@@ -33,8 +33,7 @@ class Skin implements PersonalUrlsHook {
 				= 'notifications-notice';
 			$personal_urls['notifications-notice']['position'] = 110;
 		}
-
-		if ( $skin->getSkinName() !== 'bluespicediscovery' ) {
+		if ( is_a( $skin, 'BlueSpice\Discovery\Skin', true ) === false ) {
 			return;
 		}
 		if ( $skin->getUser()->isAnon() ) {
