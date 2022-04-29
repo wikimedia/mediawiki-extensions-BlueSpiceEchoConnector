@@ -5,6 +5,7 @@ namespace BlueSpice\EchoConnector;
 use EchoDataOutputFormatter;
 use Exception;
 use Language;
+use Message;
 use RequestContext;
 use User;
 
@@ -74,10 +75,10 @@ class ParamParser implements IParamParser {
 	 * extension), if that fails parses params supported by this class, if no-one is
 	 * responsible for parsing the param, it sets it as-it, without parsing
 	 *
-	 * @param \Message $message
+	 * @param Message $message
 	 * @param string $param
 	 */
-	public function parseParam( \Message $message, $param ) {
+	public function parseParam( Message $message, $param ) {
 		$this->message = $message;
 
 		if ( $this->parseWithForeignParser( $param ) ) {
@@ -104,6 +105,11 @@ class ParamParser implements IParamParser {
 				break;
 			default:
 				$value = $this->getRawValue( $param );
+				// If it's message object - translate it in language context of recipient
+				if ( $value instanceof Message ) {
+					$value = $value->text();
+				}
+
 				// Just display the param value as-is
 				$this->message->params( $value );
 		}
