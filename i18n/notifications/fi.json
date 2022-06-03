@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joquliina",
-			"Pyscowicz",
-			"Markus Mikkonen"
+			"Markus Mikkonen",
+			"Pyscowicz"
 		]
 	},
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Luoja}}: $1",
