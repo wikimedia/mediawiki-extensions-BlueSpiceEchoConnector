@@ -17,5 +17,6 @@
 	"bs-notifications-web-delete-body": "Siden \"$1\" blev {{GENDER:$2|slettet}} af $3.",
 	"bs-notifications-move": "Siden \"$1\" blev flyttet",
 	"bs-notifications-edit-difflink-label": "Se forskellen",
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hej}} $1",
 	"bs-notifications-mail-additional-links-label": "Yderligere links"
 }
