@@ -68,13 +68,14 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 			$emailDeliveryMode = 'daily_digest';
 		}
 
-		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
-		$formatterClass = $config->get( 'EchoEmailFormatterClasses' )['plain-text-digest'];
-		$textEmailDigestFormatter = new $formatterClass(
+		$factory = MediaWikiServices::getInstance()->getService(
+			'BSEchoConnectorFormatterFactory'
+		);
+		$textEmailDigestFormatter = $factory->getForFormat( 'plain-text-digest', true, [
 			$this->mUser,
 			$this->language,
 			$frequency
-		);
+		] );
 		$content = $textEmailDigestFormatter->format( $this->events, 'email' );
 
 		if ( !$content ) {
@@ -84,13 +85,11 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 
 		$format = \MWEchoNotifUser::newFromUser( $this->mUser )->getEmailFormat();
 		if ( $format == \EchoEmailFormat::HTML ) {
-			$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'bsg' );
-			$formatterClass = $config->get( 'EchoEmailFormatterClasses' )['html-digest'];
-			$htmlEmailDigestFormatter = new $formatterClass(
+			$htmlEmailDigestFormatter = $factory->getForFormat( 'html-digest', true, [
 				$this->mUser,
 				$this->language,
 				$frequency
-			);
+			] );
 			$htmlContent = $htmlEmailDigestFormatter->format( $this->events, 'email' );
 
 			$content = [
