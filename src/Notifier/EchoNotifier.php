@@ -2,11 +2,10 @@
 
 namespace BlueSpice\EchoConnector\Notifier;
 
-use BlueSpice\EchoConnector\Formatter\EchoHTMLEmailFormatter as BsHtmlEmailFormatter;
-use BlueSpice\EchoConnector\Formatter\EchoPlainTextEmailFormatter as BsPlainTextEmailFormatter;
 use MailAddress;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\MediaWikiServices;
+use User;
 
 /**
  * Override of default EchoNotifier - copy-paste from there
@@ -150,15 +149,20 @@ class EchoNotifier extends \EchoNotifier {
 	private static function generateEmail( \EchoEvent $event, \User $user ) {
 		$emailFormat = \MWEchoNotifUser::newFromUser( $user )->getEmailFormat();
 		$lang = wfGetLangObj( $user->getOption( 'language' ) );
-		$formatter = new BsPlainTextEmailFormatter( $user, $lang );
-		$content = $formatter->format( $event );
+
+		$factory = MediaWikiServices::getInstance()->getService(
+			'BSEchoConnectorFormatterFactory'
+		);
+		$textFormatter = $factory->getForFormat( \EchoEmailFormat::PLAIN_TEXT, true, [ $user, $lang ] );
+		$htmlFormatter = $factory->getForFormat( \EchoEmailFormat::HTML, true, [ $user, $lang ] );
+
+		$content = $textFormatter->format( $event );
 		if ( !$content ) {
 			return false;
 		}
 
 		if ( $emailFormat === \EchoEmailFormat::HTML ) {
-			$htmlEmailFormatter = new BsHtmlEmailFormatter( $user, $lang );
-			$htmlContent = $htmlEmailFormatter->format( $event );
+			$htmlContent = $htmlFormatter->format( $event );
 			$multipartBody = [
 				'text' => $content['body'],
 				'html' => $htmlContent['body']

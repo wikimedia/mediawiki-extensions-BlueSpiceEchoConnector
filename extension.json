@@ -95,10 +95,18 @@
 		},
 		"EchoEmailFormatterClasses": {
 			"value": {
-				"plain-text": "BlueSpice\\EchoConnector\\Formatter\\EchoPlainTextEmailFormatter",
-				"plain-text-digest": "BlueSpice\\EchoConnector\\Formatter\\EchoPlainTextDigestEmailFormatter",
-				"html": "BlueSpice\\EchoConnector\\Formatter\\EchoHTMLEmailFormatter",
-				"html-digest": "BlueSpice\\EchoConnector\\Formatter\\EchoHtmlDigestEmailFormatter"
+				"plain-text": {
+					"class": "BlueSpice\\EchoConnector\\Formatter\\EchoPlainTextEmailFormatter"
+				},
+				"plain-text-digest": {
+					"class": "BlueSpice\\EchoConnector\\Formatter\\EchoPlainTextDigestEmailFormatter"
+				},
+				"html": {
+					"class": "BlueSpice\\EchoConnector\\Formatter\\EchoHTMLEmailFormatter"
+				},
+				"html-digest": {
+					"class": "BlueSpice\\EchoConnector\\Formatter\\EchoHtmlDigestEmailFormatter"
+				}
 			}
 		}
 	},
