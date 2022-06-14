@@ -5,6 +5,7 @@ namespace BlueSpice\EchoConnector;
 use EchoDataOutputFormatter;
 use Exception;
 use Language;
+use MediaWiki\MediaWikiServices;
 use Message;
 use RequestContext;
 use User;
@@ -105,9 +106,14 @@ class ParamParser implements IParamParser {
 				break;
 			default:
 				$value = $this->getRawValue( $param );
+
 				// If it's message object - translate it in language context of recipient
 				if ( $value instanceof Message ) {
-					$value = $value->text();
+					$lang = MediaWikiServices::getInstance()
+						->getUserOptionsLookup()
+						->getOption($this->user, 'language');
+
+					$value = $value->inLanguage( $lang )->text();
 				}
 
 				// Just display the param value as-is
