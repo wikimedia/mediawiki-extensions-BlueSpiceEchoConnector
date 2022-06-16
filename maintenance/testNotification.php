@@ -386,5 +386,5 @@ class TestNotification extends Maintenance {
 
 }
 
-$maintClass = "TestNotification";
+$maintClass = TestNotification::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
