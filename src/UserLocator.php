@@ -8,12 +8,12 @@ use BlueSpice\Data\Watchlist\Record;
 use BlueSpice\EchoConnector\Data\Watchlist\Store;
 use IContextSource;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MWException;
 use Title;
 use User;
 use Wikimedia\Rdbms\LoadBalancer;
-use WikiPage;
 use WikitextContent;
 
 class UserLocator {
@@ -162,7 +162,7 @@ class UserLocator {
 	 * @throws MWException
 	 */
 	public function getUsersSubscribedToTitleCategories( Title $title, $action ) {
-		$wikipage = WikiPage::factory( $title );
+		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = $wikipage->getContent();
 
 		if ( !$content instanceof WikitextContent ) {
