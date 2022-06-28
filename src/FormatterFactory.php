@@ -2,7 +2,7 @@
 
 namespace BlueSpice\EchoConnector;
 
-use Wikimedia\ObjectFactory;
+use Wikimedia\ObjectFactory\ObjectFactory;
 
 class FormatterFactory {
 	/** @var ObjectFactory */
