@@ -6,5 +6,5 @@
 		]
 	},
 	"bs-notifications-email-addaccount-subject": "Người dùng $2 {{GENDER:$1}}đã được tạo",
-	"bs-notifications-create": "Trang \"$1\" đã được tạo"
+	"bs-notifications-create": "Trang “$1” đã được tạo"
 }
