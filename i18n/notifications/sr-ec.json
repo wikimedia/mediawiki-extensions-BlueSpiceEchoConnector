@@ -3,6 +3,7 @@
 		"authors": [
 			"BadDog",
 			"Kizule",
+			"Milicevic01",
 			"Zoranzoki21"
 		]
 	},
@@ -27,7 +28,7 @@
 	"bs-notifications-web-create-body": "Страница \"$1\" је {{GENDER:$2|направљена}} од стране $3.",
 	"bs-notifications-delete": "Страница \"$1\" је обрисана",
 	"bs-notifications-email-delete-subject": "$3 је {{GENDER:$2|избрисао|избрисала|избрисао/-ла}} страницу $1 у $4",
-	"bs-notifications-email-delete-body": "$3 је {{GENDER:$2|избрисао|избрисала|избрисао/-ла}} страницу $1 у $5.\n\nРазлог:\n$4",
+	"bs-notifications-email-delete-body": "$3 је {{GENDER:$2|избрисао|избрисала}} страницу $1 у $5.\n\nРазлог:\n$4",
 	"bs-notifications-web-delete-body": "Страница \"$1\" је {{GENDER:$2|обрисана}} од стране $3.",
 	"bs-notifications-move": "Страница \"$1\" је премештена",
 	"bs-notifications-email-move-subject": "$4 је {{GENDER:$2|преместио|преместила|преместио/-ла}} страницу $1 на одредиште $3 у $5.",
