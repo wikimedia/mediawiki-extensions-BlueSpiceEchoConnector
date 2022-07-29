@@ -162,14 +162,16 @@ class UserLocator {
 	 * @throws MWException
 	 */
 	public function getUsersSubscribedToTitleCategories( Title $title, $action ) {
-		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
+		$services = MediaWikiServices::getInstance();
+		$wikipage = $services->getWikiPageFactory()->newFromTitle( $title );
 		$content = $wikipage->getContent();
 
 		if ( !$content instanceof WikitextContent ) {
 			return [];
 		}
 
-		$categories = $content->getParserOutput( $title )->getCategoryNames();
+		$contentRenderer = $services->getContentRenderer();
+		$categories = $contentRenderer->getParserOutput( $content, $title )->getCategoryNames();
 
 		$users = [];
 		foreach ( $categories as $cat ) {
