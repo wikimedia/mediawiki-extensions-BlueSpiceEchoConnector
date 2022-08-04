@@ -29,5 +29,6 @@
 	"bs-notifications-email-move-body": "Страницата „$1“ е {{GENDER:$2|преместена}} на „$3“ на $6 од $4. \n\nНаведена е следнава причина:\n$5\n\nМожете да ја посетите страницата на врската подолу",
 	"bs-notifications-web-move-body": "Страницата „$1“ е {{GENDER:$2|преместена}} на „$3“ од $4",
 	"bs-notifications-edit-difflink-label": "Види разлика",
-	"bs-notifications-mail-additional-links-label": "Дополнителни врски"
+	"bs-notifications-mail-additional-links-label": "Дополнителни врски",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Корисникот}} „$2“ има {{GENDER:$1|создадено}} сметка"
 }
