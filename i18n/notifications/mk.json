@@ -12,6 +12,7 @@
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Творец}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Творец}}: $1",
 	"bs-notifications-registeruser": "Корисникот „$1“ има создадено сметка.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Корисникот}} „$2“ има {{GENDER:$1|создадено}} сметка",
 	"bs-notifications-edit": "Страницата „$1“ е изменета",
 	"bs-notifications-email-edit-subject": "Страницата „$1“ е {{GENDER:$2|изменета}} на $4 од $3",
 	"bs-notifications-email-edit-body": "Страницата „$1“ е {{GENDER:$2|изменета}} на $5 од $4.\n\nКоментар:\n $3",
