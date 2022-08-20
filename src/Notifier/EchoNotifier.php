@@ -40,7 +40,8 @@ class EchoNotifier extends \EchoNotifier {
 			// User does not have a valid and confirmed email address
 			!$user->isEmailConfirmed() ||
 			// User has disabled Echo emails
-			$user->getOption( 'echo-email-frequency' ) < 0 ||
+			MediaWikiServices::getInstance()->getUserOptionsLookup()
+			->getOption( $user, 'echo-email-frequency' ) < 0 ||
 			// User is blocked and cannot log in (T199993)
 			( $wgBlockDisablesLogin && $user->getBlock( true ) instanceof AbstractBlock )
 		) {
@@ -102,7 +103,8 @@ class EchoNotifier extends \EchoNotifier {
 			// email digest notification ( weekly or daily )
 			if (
 				$wgEchoEnableEmailBatch &&
-				$user->getOption( 'echo-email-frequency' ) > 0 &&
+				MediaWikiServices::getInstance()->getUserOptionsLookup()
+				->getOption( $user, 'echo-email-frequency' ) > 0 &&
 				!$sendImmediately
 			) {
 				// always create a unique event hash for those events don't support bundling
@@ -148,7 +150,10 @@ class EchoNotifier extends \EchoNotifier {
 	 */
 	private static function generateEmail( \EchoEvent $event, \User $user ) {
 		$emailFormat = \MWEchoNotifUser::newFromUser( $user )->getEmailFormat();
-		$lang = wfGetLangObj( $user->getOption( 'language' ) );
+		$lang = wfGetLangObj(
+			MediaWikiServices::getInstance()->getUserOptionsLookup()
+			->getOption( $user, 'language' )
+		);
 
 		$factory = MediaWikiServices::getInstance()->getService(
 			'BSEchoConnectorFormatterFactory'
