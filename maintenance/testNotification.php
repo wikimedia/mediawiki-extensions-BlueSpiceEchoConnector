@@ -44,6 +44,11 @@ class TestNotification extends Maintenance {
 	protected $batchSize = 300;
 
 	/**
+	 * @var MediaWikiServices
+	 */
+	private $services = null;
+
+	/**
 	 * Usage example: php testNotification.php --affectedusers="WikiSysop"
 	 * TODO: make option to overwrite/extend testNotification.json file
 	 * TODO: make option to create log file of the mails, the user would get
@@ -76,6 +81,7 @@ class TestNotification extends Maintenance {
 		$this->addOption( 'result', 'Set to "json" to print only a JSON response', false, true );
 		$this->addOption( 'wait', 'Wait for new jobs instead of exiting', false, false );
 		$this->requireExtension( 'BlueSpiceEchoConnector' );
+		$this->services = MediaWikiServices::getInstance();
 	}
 
 	public function execute() {
@@ -187,7 +193,7 @@ class TestNotification extends Maintenance {
 			}
 			return;
 		}
-		$this->agentUser = $this->getServices()->getService( 'BSUtilityFactory' )
+		$this->agentUser = $this->services->getService( 'BSUtilityFactory' )
 			->getMaintenanceUser()->getUser();
 	}
 
@@ -206,7 +212,8 @@ class TestNotification extends Maintenance {
 		$GLOBALS['wgEchoUseJobQueue'] = true;
 
 		$that = $this;
-		Hooks::register( 'EchoGetDefaultNotifiedUsers', function ( $event, &$users ) use ( $that )  {
+		$hookContainer = $this->services->getHookContainer();
+		$hookContainer->register( 'EchoGetDefaultNotifiedUsers', function ( $event, &$users ) use ( $that )  {
 			$users = $that->getAffectedUsers();
 			return false;
 		} );
@@ -216,7 +223,8 @@ class TestNotification extends Maintenance {
 		if ( !$this->getOption( 'outputMail', true ) ) {
 			return;
 		}
-		Hooks::register( 'AlternateUserMailer', function ( $headers, $to, $from, $subject, $body ) {
+		$hookContainer = $this->services->getHookContainer();
+		$hookContainer->register( 'AlternateUserMailer', function ( $headers, $to, $from, $subject, $body ) {
 			$this->outputMail( $headers, $to, $from, $subject, $body );
 			return false;
 		} );
@@ -268,15 +276,8 @@ class TestNotification extends Maintenance {
 		return $users;
 	}
 
-	/**
-	 * @return MediaWikiServices
-	 */
-	protected function getServices() {
-		return MediaWikiServices::getInstance();
-	}
-
 	protected function makeNotifier() {
-		$this->notifier = $this->getServices()->getService( 'BSNotificationManager' )->getNotifier();
+		$this->notifier = $this->services->getService( 'BSNotificationManager' )->getNotifier();
 	}
 
 	protected function makeNotficationConfigs() {
@@ -302,7 +303,7 @@ class TestNotification extends Maintenance {
 		$outputJSON = ( $this->getOption( 'result' ) === 'json' );
 		$wait = $this->hasOption( 'wait' );
 
-		$runner = $this->getServices()->getService( 'JobRunner' );
+		$runner = $this->services->getService( 'JobRunner' );
 		if ( !$outputJSON ) {
 			$runner->setDebugHandler( [ $this, 'debugInternal' ] );
 		}
@@ -351,7 +352,7 @@ class TestNotification extends Maintenance {
 		$startUserId = 0;
 		$count = $this->batchSize;
 
-		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+		$lbFactory = $this->services->getDBLoadBalancerFactory();
 
 		while ( $count === $this->batchSize ) {
 			$count = 0;
