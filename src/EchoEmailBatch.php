@@ -17,7 +17,8 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 		$services = MediaWikiServices::getInstance();
 		$user = $services->getUserFactory()->newFromId( intval( $userId ) );
 
-		$userEmailSetting = intval( $user->getOption( 'echo-email-frequency' ) );
+		$userOptionsLookup = $services->getUserOptionsLookup();
+		$userEmailSetting = intval( $userOptionsLookup->getOption( $user, 'echo-email-frequency' ) );
 
 		// clear all existing events if user decides not to receive emails
 		if ( $userEmailSetting == -1 ) {
@@ -38,7 +39,7 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 			return false;
 		}
 
-		$userLastBatch = $user->getOption( 'echo-email-last-batch' );
+		$userLastBatch = $userOptionsLookup->getOption( $user, 'echo-email-last-batch' );
 
 		// send email batch, if
 		// 1. it has been long enough since last email batch based on frequency
@@ -61,7 +62,10 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 	public function sendEmail() {
 		global $wgNotificationSender, $wgNotificationReplyName;
 
-		if ( $this->mUser->getOption( 'echo-email-frequency' ) == \EchoEmailFrequency::WEEKLY_DIGEST ) {
+		$services = MediaWikiServices::getInstance();
+		$userEmailSetting = $services->getUserOptionsLookup()
+			->getOption( $this->mUser, 'echo-email-frequency' );
+		if ( $userEmailSetting == \EchoEmailFrequency::WEEKLY_DIGEST ) {
 			$frequency = 'weekly';
 			$emailDeliveryMode = 'weekly_digest';
 		} else {
@@ -69,9 +73,7 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 			$emailDeliveryMode = 'daily_digest';
 		}
 
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSEchoConnectorFormatterFactory'
-		);
+		$factory = $services->getService( 'BSEchoConnectorFormatterFactory' );
 		$textEmailDigestFormatter = $factory->getForFormat( 'plain-text-digest', true, [
 			$this->mUser,
 			$this->language,

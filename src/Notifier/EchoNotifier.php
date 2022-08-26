@@ -34,13 +34,15 @@ class EchoNotifier extends \EchoNotifier {
 	public static function notifyWithEmail( $user, $event ) {
 		global $wgEnableEmail, $wgBlockDisablesLogin;
 
+		$services = MediaWikiServices::getInstance();
+		$userOptionsLookup = $services->getUserOptionsLookup();
 		if (
 			// Email is globally disabled
 			!$wgEnableEmail ||
 			// User does not have a valid and confirmed email address
 			!$user->isEmailConfirmed() ||
 			// User has disabled Echo emails
-			$user->getOption( 'echo-email-frequency' ) < 0 ||
+			$userOptionsLookup->getOption( $user, 'echo-email-frequency' ) < 0 ||
 			// User is blocked and cannot log in (T199993)
 			( $wgBlockDisablesLogin && $user->getBlock( true ) instanceof AbstractBlock )
 		) {
@@ -49,7 +51,7 @@ class EchoNotifier extends \EchoNotifier {
 
 		// Final check on whether to send email for this user & event
 		if (
-			!MediaWikiServices::getInstance()->getHookContainer()->run(
+			!$services->getHookContainer()->run(
 				'EchoAbortEmailNotification', [ $user, $event ]
 			)
 		) {
@@ -74,10 +76,9 @@ class EchoNotifier extends \EchoNotifier {
 			if ( !empty( $wgEchoNotifications[$event->getType()]['bundle']['web'] ) ||
 				!empty( $wgEchoNotifications[$event->getType()]['bundle']['email'] )
 			) {
-				MediaWikiServices::getInstance()->getHookContainer()->run( 'EchoGetBundleRules', [
-					$event,
-					&$bundleString
-				] );
+				$services->getHookContainer()->run(
+					'EchoGetBundleRules', [ $event, &$bundleString ]
+				);
 			}
 			// @phan-suppress-next-line PhanImpossibleCondition May be set by hook
 			if ( $bundleString ) {
@@ -86,7 +87,7 @@ class EchoNotifier extends \EchoNotifier {
 
 			\MWEchoEventLogging::logSchemaEcho( $user, $event, 'email' );
 
-			MediaWikiServices::getInstance()->getHookContainer()->run(
+			$services->getHookContainer()->run(
 				'BlueSpiceEchoConnectorNotifyBeforeSend',
 				[
 					&$event,
@@ -102,7 +103,7 @@ class EchoNotifier extends \EchoNotifier {
 			// email digest notification ( weekly or daily )
 			if (
 				$wgEchoEnableEmailBatch &&
-				$user->getOption( 'echo-email-frequency' ) > 0 &&
+				$userOptionsLookup->getOption( $user, 'echo-email-frequency' ) > 0 &&
 				!$sendImmediately
 			) {
 				// always create a unique event hash for those events don't support bundling
@@ -148,11 +149,10 @@ class EchoNotifier extends \EchoNotifier {
 	 */
 	private static function generateEmail( \EchoEvent $event, \User $user ) {
 		$emailFormat = \MWEchoNotifUser::newFromUser( $user )->getEmailFormat();
-		$lang = wfGetLangObj( $user->getOption( 'language' ) );
+		$services = MediaWikiServices::getInstance();
+		$lang = wfGetLangObj( $services->getUserOptionsLookup()->getOption( $user, 'language' ) );
 
-		$factory = MediaWikiServices::getInstance()->getService(
-			'BSEchoConnectorFormatterFactory'
-		);
+		$factory = $services->getService( 'BSEchoConnectorFormatterFactory' );
 		$textFormatter = $factory->getForFormat( \EchoEmailFormat::PLAIN_TEXT, true, [ $user, $lang ] );
 		$htmlFormatter = $factory->getForFormat( \EchoEmailFormat::HTML, true, [ $user, $lang ] );
 
