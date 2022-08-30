@@ -26,7 +26,7 @@
 	"bs-notifications-web-create-body": "A página \"$1\" foi {{GENDER:$2|criada}} por $3.",
 	"bs-notifications-delete": "A página \"$1\" foi eliminada",
 	"bs-notifications-email-delete-subject": "Página \"$1\" {{GENDER:$2|eliminada}} a $4 por $3",
-	"bs-notifications-email-delete-body": "A página \"$1\" foi {{GENDER:$2|eliminada}} a $5 por $3.\n\nO motivo foi o seguinte:\n$4",
+	"bs-notifications-email-delete-body": "A página \"$1\" foi eliminada a $5 por $3.{{GENDER:$2|}}\n\nO motivo foi o seguinte:\n$4",
 	"bs-notifications-web-delete-body": "A página \"$1\" foi {{GENDER:$2|eliminada}} por $3.",
 	"bs-notifications-move": "A página \"$1\" foi movida",
 	"bs-notifications-email-move-subject": "Página \"$1\" {{GENDER:$2|movida}} a $5 para \"$3\" por $4",
