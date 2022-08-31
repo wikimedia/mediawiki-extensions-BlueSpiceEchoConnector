@@ -2,6 +2,7 @@
 
 namespace BlueSpice\EchoConnector\Job;
 
+use MediaWiki\MediaWikiServices;
 use Title;
 use User;
 
@@ -49,7 +50,8 @@ class SendNotification extends \Job {
 		}
 
 		if ( isset( $this->params['agent'] ) && is_int( $this->params['agent'] ) ) {
-			$this->params['agent'] = User::newFromId( $this->params['agent'] );
+			$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+			$this->params['agent'] = $userFactory->newFromId( $this->params['agent'] );
 		}
 	}
 }

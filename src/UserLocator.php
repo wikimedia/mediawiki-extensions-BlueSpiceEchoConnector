@@ -9,6 +9,7 @@ use BlueSpice\EchoConnector\Data\Watchlist\Store;
 use IContextSource;
 use LoadBalancer;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MWException;
 use Title;
@@ -220,11 +221,12 @@ class UserLocator {
 	 */
 	private function getValidUsersFromIds( array $users, Title $title = null ) {
 		$return = [];
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $users as $id ) {
 			if ( empty( $id ) ) {
 				continue;
 			}
-			$user = User::newFromId( $id );
+			$user = $userFactory->newFromId( $id );
 			$user->load();
 			if ( !$user || $user->isAnon() || $user->isBlocked() ) {
 				continue;

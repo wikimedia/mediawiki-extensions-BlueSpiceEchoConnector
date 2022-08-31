@@ -3,6 +3,7 @@
 namespace BlueSpice\EchoConnector\Notifier;
 
 use BlueSpice\EchoConnector\EchoEventPresentationModel;
+use MediaWiki\MediaWikiServices;
 use MWStake\MediaWiki\Component\Notifications\BaseNotification;
 use MWStake\MediaWiki\Component\Notifications\INotification;
 use MWStake\MediaWiki\Component\Notifications\INotifier;
@@ -235,12 +236,13 @@ class NotificationsEchoNotifier implements INotifier {
 		$users = $event->getExtraParam( 'affected-users', [] );
 
 		$res = [];
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $users as $user ) {
 			if ( $user instanceof \User ) {
 				$res[$user->getId()] = $user;
 				continue;
 			}
-			$res[$user] = \User::newFromId( $user );
+			$res[$user] = $userFactory->newFromId( $user );
 		}
 
 		return $res;
