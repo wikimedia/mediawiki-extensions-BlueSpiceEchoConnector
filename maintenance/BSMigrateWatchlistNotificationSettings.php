@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 $extDir = dirname( dirname( __DIR__ ) );
 
 require_once "$extDir/BlueSpiceFoundation/maintenance/BSMaintenance.php";
@@ -36,8 +38,9 @@ class BSMigrateWatchlistNotificationSettings extends LoggedUpdateMaintenance {
 			__METHOD__
 		);
 		$users = [];
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $res as $row ) {
-			$user = User::newFromId( $row->up_user );
+			$user = $userFactory->newFromId( $row->up_user );
 			if ( !$user || $user->isAnon() ) {
 				continue;
 			}
