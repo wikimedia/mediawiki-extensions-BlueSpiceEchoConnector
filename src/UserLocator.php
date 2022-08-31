@@ -222,11 +222,12 @@ class UserLocator {
 	 */
 	private function getValidUsersFromIds( array $users, Title $title = null ) {
 		$return = [];
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $users as $id ) {
 			if ( empty( $id ) ) {
 				continue;
 			}
-			$user = User::newFromId( $id );
+			$user = $userFactory->newFromId( $id );
 			$user->load();
 			if ( !$user || $user->isAnon() || $user->getBlock() ) {
 				continue;
