@@ -43,10 +43,8 @@ class TestNotification extends Maintenance {
 	 */
 	protected $batchSize = 300;
 
-	/**
-	 * @var MediaWikiServices
-	 */
-	private $services = null;
+	/** @var MediaWikiServices */
+	protected $services = null;
 
 	/**
 	 * Usage example: php testNotification.php --affectedusers="WikiSysop"
