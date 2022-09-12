@@ -43,9 +43,7 @@ class TestNotification extends Maintenance {
 	 */
 	protected $batchSize = 300;
 
-	/**
-	 * @var MediaWikiServices
-	 */
+	/** @var MediaWikiServices */
 	private $services = null;
 
 	/**
