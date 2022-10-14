@@ -12,5 +12,9 @@
 	"echo-category-title-bs-page-create-cat": "יצירות דפים",
 	"prefs-namespace-notifications": "התראות על פעולות במרחב שם",
 	"prefs-category-notifications": "התראות על קטגוריות",
-	"bs-echoconnector-personalurl-notifications": "הודעות ($1)"
+	"bs-echoconnector-personalurl-notifications": "הודעות ($1)",
+	"echo-pref-tooltip-bs-admin-cat": "להודיע לי כשנוצר חשבון משתמש חדש",
+	"echo-pref-tooltip-bs-page-actions-cat": "להודיע לי כשמישהו עורך, מעביר, או מוחק דף ברשימת המעקב שלי",
+	"echo-pref-tooltip-bs-page-create-cat": "להודיע לי כשנוצר דף חדש",
+	"echo-category-title-bs-namespace-category-notify-cat": "שינויים במרחבי השם ובקטגוריות שיש עליהם מינוי"
 }
