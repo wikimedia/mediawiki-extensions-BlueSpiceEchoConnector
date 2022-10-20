@@ -2,8 +2,8 @@
 
 namespace BlueSpice\EchoConnector\Data\Watchlist;
 
-use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Watchlist\Reader as BaseReader;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 
 class Reader extends BaseReader {
 
