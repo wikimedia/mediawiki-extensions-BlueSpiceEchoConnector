@@ -69,7 +69,7 @@
 			"\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\AddNotificationMatrix::callback",
 			"\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\HidePreferences::callback"
 		],
-		"PersonalUrls": "skin",
+		"SkinTemplateNavigation::Universal": "skin",
 		"LoadExtensionSchemaUpdates": "update"
 	},
 	"config_prefix": "bsg",
