@@ -4,6 +4,7 @@
 			"Ajeje Brazorf",
 			"Beta16",
 			"Gianfranco",
+			"GpieroMW",
 			"TheRukk",
 			"ValeJappo"
 		]
@@ -16,5 +17,7 @@
 	"echo-category-title-bs-page-actions-cat": "Azione sulle pagine tra gli osservati speciali",
 	"echo-category-title-bs-page-create-cat": "Creazioni di pagine",
 	"prefs-category-notifications": "Notifiche sulle categorie",
-	"bs-echoconnector-personalurl-notifications": "Notifiche ($1)"
+	"bs-echoconnector-personalurl-notifications": "Notifiche ($1)",
+	"prefs-namespace-notifications": "Notifiche su eventi di namespace",
+	"echo-category-title-bs-namespace-category-notify-cat": "Modifiche ai namespace e alle categorie sottoscritti"
 }
