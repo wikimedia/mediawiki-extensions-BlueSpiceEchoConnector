@@ -185,7 +185,7 @@ class TestNotification extends Maintenance {
 	protected function makeAgentUser() {
 		$agent = $this->getOption( 'agent', '' );
 		if ( !empty( $agent ) ) {
-			$this->agentUser = User::newFromName( $agent );
+			$this->agentUser = $this->services->getUserFactory()->newFromName( $agent );
 			if ( !$this->agentUser || $this->agentUser->isAnon() ) {
 				throw  new Exception( "Invalid or not existing user: $agent" );
 			}
@@ -268,8 +268,9 @@ class TestNotification extends Maintenance {
 		$sAffectedUsers = $this->getOption( 'affectedusers', '' );
 		$userNames = explode( ',', $sAffectedUsers );
 		$users = [];
+		$userFactory = $this->services->getUserFactory();
 		foreach ( $userNames as $userName ) {
-			$users[] = User::newFromName( $userName );
+			$users[] = $userFactory->newFromName( $userName );
 		}
 		return $users;
 	}
