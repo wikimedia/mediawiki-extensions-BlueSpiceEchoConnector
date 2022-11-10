@@ -14,7 +14,8 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 	 * @return bool|EchoEmailBatch
 	 */
 	public static function newFromUserId( $userId, $enforceFrequency = true ) {
-		$user = \User::newFromId( intval( $userId ) );
+		$services = MediaWikiServices::getInstance();
+		$user = $services->getUserFactory()->newFromId( intval( $userId ) );
 
 		$userEmailSetting = intval(
 			MediaWikiServices::getInstance()->getUserOptionsLookup()
