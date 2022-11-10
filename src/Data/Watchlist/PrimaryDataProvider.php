@@ -2,8 +2,8 @@
 
 namespace BlueSpice\EchoConnector\Data\Watchlist;
 
-use BlueSpice\Data\Filter;
 use BlueSpice\Data\Watchlist\PrimaryDataProvider as BasePrimaryDataProvider;
+use MWStake\MediaWiki\Component\DataStore\Filter;
 
 class PrimaryDataProvider extends BasePrimaryDataProvider {
 
