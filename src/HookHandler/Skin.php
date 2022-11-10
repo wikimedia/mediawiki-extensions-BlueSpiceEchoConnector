@@ -2,57 +2,54 @@
 
 namespace BlueSpice\EchoConnector\HookHandler;
 
-use MediaWiki\Hook\PersonalUrlsHook;
+use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MWEchoNotifUser;
-use SkinTemplate;
 use SpecialPage;
-use Title;
 
-class Skin implements PersonalUrlsHook {
+class Skin implements SkinTemplateNavigation__UniversalHook {
 
 	/**
-	 * @param array &$personal_urls
-	 * @param Title &$title
-	 * @param SkinTemplate $skin
-	 * @return void
+	 * // phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+	 * @inheritDoc
 	 */
-	public function onPersonalUrls( &$personal_urls, &$title, $skin ): void {
-		if ( isset( $personal_urls['notifications-alert'] ) ) {
-			if ( !isset( $personal_urls['notifications-alert']['data'] ) ) {
-				$personal_urls['notifications-alert']['data'] = [];
+	public function onSkinTemplateNavigation__Universal( $sktemplate, &$links ): void {
+		if ( isset( $links['notifications-alert'] ) ) {
+			if ( !isset( $links['notifications-alert']['data'] ) ) {
+				$links['notifications-alert']['data'] = [];
 			}
-			$personal_urls['notifications-alert']['data']['attentionindicator']
+			$links['notifications-alert']['data']['attentionindicator']
 				= 'notifications-alert';
-			$personal_urls['notifications-alert']['position'] = 100;
+			$links['notifications-alert']['position'] = 100;
 		}
-		if ( isset( $personal_urls['notifications-notice'] ) ) {
-			if ( !isset( $personal_urls['notifications-notice']['data'] ) ) {
-				$personal_urls['notifications-notice']['data'] = [];
+		if ( isset( $links['notifications-notice'] ) ) {
+			if ( !isset( $links['notifications-notice']['data'] ) ) {
+				$links['notifications-notice']['data'] = [];
 			}
-			$personal_urls['notifications-notice']['data']['attentionindicator']
+			$links['notifications-notice']['data']['attentionindicator']
 				= 'notifications-notice';
-			$personal_urls['notifications-notice']['position'] = 110;
+			$links['notifications-notice']['position'] = 110;
 		}
-		if ( is_a( $skin, 'BlueSpice\Discovery\Skin', true ) === false ) {
+		if ( is_a( $sktemplate, 'BlueSpice\Discovery\Skin', true ) === false ) {
 			return;
 		}
-		if ( $skin->getUser()->isAnon() ) {
+		if ( $sktemplate->getUser()->isAnon() ) {
 			return;
 		}
-		if ( isset( $personal_urls['notifications-alert'] ) ) {
-			unset( $personal_urls['notifications-alert'] );
+		if ( isset( $links['notifications-alert'] ) ) {
+			unset( $links['notifications-alert'] );
 		}
-		if ( isset( $personal_urls['notifications-notice'] ) ) {
-			unset( $personal_urls['notifications-notice'] );
+		if ( isset( $links['notifications-notice'] ) ) {
+			unset( $links['notifications-notice'] );
 		}
-		$notifUser = MWEchoNotifUser::newFromUser( $skin->getUser() );
+		$notifUser = MWEchoNotifUser::newFromUser( $sktemplate->getUser() );
 		$count = $notifUser->getAlertCount() + $notifUser->getMessageCount();
 		$url = SpecialPage::getTitleFor( 'Notifications' )->getLocalURL();
-		$msg = $skin->msg( 'bs-echoconnector-personalurl-notifications' )->params( $count );
-		$personal_urls['bsec-notifications'] = [
+		$msg = $sktemplate->msg( 'bs-echoconnector-personalurl-notifications' )->params( $count );
+		$links['user-menu']['bsec-notifications'] = [
+			'id' => 'pt-bsec-notifications',
 			'href' => $url,
 			'text' => $msg->text(),
-			'active' => $url == $title->getLocalURL(),
+			'active' => $url == $sktemplate->getTitle()->getLocalURL(),
 			'data' => [
 				'counter-num' => $count,
 				'counter-text' => $msg->text(),
