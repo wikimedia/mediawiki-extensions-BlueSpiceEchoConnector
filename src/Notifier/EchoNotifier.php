@@ -150,7 +150,9 @@ class EchoNotifier extends \EchoNotifier {
 	private static function generateEmail( \EchoEvent $event, \User $user ) {
 		$emailFormat = \MWEchoNotifUser::newFromUser( $user )->getEmailFormat();
 		$services = MediaWikiServices::getInstance();
-		$lang = wfGetLangObj( $services->getUserOptionsLookup()->getOption( $user, 'language' ) );
+		$lang = $services->getLanguageFactory()->getLanguage(
+			$services->getUserOptionsLookup()->getOption( $user, 'language' )
+		);
 
 		$factory = $services->getService( 'BSEchoConnectorFormatterFactory' );
 		$textFormatter = $factory->getForFormat( \EchoEmailFormat::PLAIN_TEXT, true, [ $user, $lang ] );
