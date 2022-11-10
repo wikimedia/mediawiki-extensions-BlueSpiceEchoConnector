@@ -6,7 +6,6 @@ use BlueSpice\EchoConnector\Notification\TitleMoveNotification;
 use BlueSpice\Hook\PageMoveComplete;
 use MediaWiki\MediaWikiServices;
 use Title;
-use User;
 
 class NotifyUsers extends PageMoveComplete {
 	/**
@@ -21,15 +20,15 @@ class NotifyUsers extends PageMoveComplete {
 	}
 
 	protected function doProcess() {
-		$notificationsManager = MediaWikiServices::getInstance()->getService(
-			'BSNotificationManager'
-		);
+		$services = MediaWikiServices::getInstance();
+		$notificationsManager = $services->getService( 'BSNotificationManager' );
 
 		$new = Title::newFromLinkTarget( $this->new );
 		$old = Title::newFromLinkTarget( $this->old );
 		$notifier = $notificationsManager->getNotifier();
+		$user = $services->getUserFactory()->newFromUserIdentity( $this->userIdentity );
 		$notification = new TitleMoveNotification(
-			User::newFromIdentity( $this->userIdentity ),
+			$user,
 			$new,
 			$old,
 			$this->reason
