@@ -130,7 +130,7 @@
 				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"groupsAdded": {
-				"callback": "$val = \\User::getAllGroups();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getUserGroupManager()->listAllGroups();"
 			}
 		}
 	},
@@ -145,7 +145,7 @@
 				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getService( 'BSUtilityFactory' )->getMaintenanceUser()->getUser();"
 			},
 			"groupsRemoved": {
-				"callback": "$val = \\User::getAllGroups();"
+				"callback": "$val = \\MediaWiki\\MediaWikiServices::getInstance()->getUserGroupManager()->listAllGroups();"
 			}
 		}
 	},
