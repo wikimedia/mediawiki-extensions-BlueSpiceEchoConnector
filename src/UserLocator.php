@@ -14,6 +14,7 @@ use MWException;
 use Title;
 use User;
 use WikiPage;
+use Wikimedia\Rdbms\ILoadBalancer;
 use WikitextContent;
 
 class UserLocator {
@@ -32,12 +33,12 @@ class UserLocator {
 	protected $hookContainer = null;
 
 	/**
-	 * @param LoadBalancer $loadBalancer
+	 * @param ILoadBalancer $loadBalancer
 	 * @param IContextSource $context
 	 * @param PermissionManager $permissionManager
 	 * @param HookContainer $hookContainer
 	 */
-	public function __construct( LoadBalancer $loadBalancer, IContextSource $context,
+	public function __construct( ILoadBalancer $loadBalancer, IContextSource $context,
 		PermissionManager $permissionManager, HookContainer $hookContainer ) {
 		$this->loadBalancer = $loadBalancer;
 		$this->context = $context;
