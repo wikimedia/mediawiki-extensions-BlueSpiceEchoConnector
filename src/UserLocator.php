@@ -13,7 +13,7 @@ use MWStake\MediaWiki\Component\DataStore\Filter\StringValue;
 use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use Title;
 use User;
-use Wikimedia\Rdbms\LoadBalancer;
+use Wikimedia\Rdbms\ILoadBalancer;
 use WikitextContent;
 
 class UserLocator {
@@ -32,12 +32,12 @@ class UserLocator {
 	protected $hookContainer = null;
 
 	/**
-	 * @param LoadBalancer $loadBalancer
+	 * @param ILoadBalancer $loadBalancer
 	 * @param IContextSource $context
 	 * @param PermissionManager $permissionManager
 	 * @param HookContainer $hookContainer
 	 */
-	public function __construct( LoadBalancer $loadBalancer, IContextSource $context,
+	public function __construct( ILoadBalancer $loadBalancer, IContextSource $context,
 		PermissionManager $permissionManager, HookContainer $hookContainer ) {
 		$this->loadBalancer = $loadBalancer;
 		$this->context = $context;

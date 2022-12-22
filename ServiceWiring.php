@@ -4,6 +4,11 @@ use BlueSpice\EchoConnector\FormatterFactory;
 use BlueSpice\EchoConnector\UserLocator;
 use MediaWiki\MediaWikiServices;
 
+// PHP unit does not understand code coverage for this file
+// as the @covers annotation cannot cover a specific file
+// This is fully tested in ServiceWiringTest.php
+// @codeCoverageIgnoreStart
+
 return [
 	'BSEchoConnectorUserLocator' => static function ( MediaWikiServices $services ) {
 		$context = new DerivativeContext( RequestContext::getMain() );
@@ -24,3 +29,5 @@ return [
 		return new FormatterFactory( $services->getObjectFactory(), $specs );
 	},
 ];
+
+// @codeCoverageIgnoreEnd
