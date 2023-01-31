@@ -52,14 +52,15 @@ class NotifyUsers extends PageSaveComplete {
 			return true;
 		}
 
+		$agent = MediaWikiServices::getInstance()->getUserFactory()->newFromUserIdentity( $this->user );
 		if ( $this->flags & EDIT_NEW ) {
-			$notification = new CreateNotification( $this->user, $title, $this->summary );
+			$notification = new CreateNotification( $agent, $title, $this->summary );
 			$notifier->notify( $notification );
 
 			return true;
 		}
 
-		$notification = new EditNotification( $this->user, $title, $this->revisionRecord, $this->summary );
+		$notification = new EditNotification( $agent, $title, $this->revisionRecord, $this->summary );
 		$notifier->notify( $notification );
 
 		return true;
@@ -72,13 +73,14 @@ class NotifyUsers extends PageSaveComplete {
 	 * @param Title $title
 	 */
 	private function fireNamespaceCategoryNotifications( INotifier $notifier, Title $title ) {
+		$agent = MediaWikiServices::getInstance()->getUserFactory()->newFromUserIdentity( $this->user );
 		if ( $this->flags & EDIT_NEW ) {
 			$notifier->notify(
-				new CreateInNamespaceOrCategoryNotification( $this->user, $title, $this->summary )
+				new CreateInNamespaceOrCategoryNotification( $agent, $title, $this->summary )
 			);
 		} else {
 			$notifier->notify( new EditInNamespaceOrCategoryNotification(
-				$this->user, $title,  $this->revisionRecord, $this->summary
+				$agent, $title,  $this->revisionRecord, $this->summary
 			) );
 		}
 	}
