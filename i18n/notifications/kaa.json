@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nurlan"
+		]
+	},
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Sálem}} $1"
+}
