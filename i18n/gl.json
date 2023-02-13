@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"ArenaL5",
-			"Elisardojm"
+			"Elisardojm",
+			"Xabier Cid"
 		]
 	},
+	"echo-pref-tooltip-bs-page-create-cat": "Enviádeme aviso cando se cree unha páxina nova",
 	"prefs-namespace-notifications": "Notificacións por eventos de espazos de nomes"
 }
