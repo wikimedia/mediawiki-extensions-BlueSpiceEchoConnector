@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"V Bhavya",
 			"Veeven"
 		]
 	},
+	"bs-notifications-edit-difflink-label": "తేడా చూడండి",
 	"bs-notifications-mail-additional-links-label": "అదనపు లంకెలు"
 }
