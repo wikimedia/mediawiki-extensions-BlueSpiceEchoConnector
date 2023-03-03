@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"V Bhavya"
+		]
+	},
+	"bs-echoconnector-extension-description": "బ్లూస్పైస్‌ని ఎకోతో కనెక్ట్ చేస్తుంది",
+	"echo-category-title-bs-admin-cat": "పరిపాలనా పనులు",
+	"echo-pref-tooltip-bs-admin-cat": "కొత్త వినియోగదారు ఖాతా సృష్టించబడినప్పుడు నాకు తెలియజేయండి",
+	"echo-pref-tooltip-bs-page-actions-cat": "నేను చూసే పేజీని ఎవరైనా సవరించినప్పుడు, తరలించినప్పుడు లేదా తొలగించినప్పుడు నాకు తెలియజేయండి",
+	"echo-pref-tooltip-bs-page-create-cat": "కొత్త పేజీ సృష్టించబడినప్పుడు నాకు తెలియజేయి",
+	"echo-category-title-bs-page-actions-cat": "వీక్షణ జాబితాలోని పేజీలపై చర్యలు",
+	"echo-category-title-bs-page-create-cat": "పేజీ సృష్టి",
+	"prefs-namespace-notifications": "నేమ్‌స్పేస్ ఈవెంట్‌లపై నోటిఫికేషన్‌లు",
+	"prefs-category-notifications": "విభాగాల వారీగా గమనింపులు",
+	"echo-category-title-bs-namespace-category-notify-cat": "సభ్యత్వం పొందిన నేమ్‌స్పేస్‌లు మరియు వర్గాల్లో మార్పులు",
+	"bs-echoconnector-personalurl-notifications": "గమనింపులు ($1)"
+}
