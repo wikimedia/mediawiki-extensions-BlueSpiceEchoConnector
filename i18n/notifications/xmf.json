@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Narazeni"
+		]
+	},
+	"bs-notifications-addaccount": "მახვარებუქ \"$1\" გიჭყჷ.",
+	"bs-notifications-email-addaccount-subject": "მახვარებუქ \"$2\" {{GENDER:$1|გაჭყჷ}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$1|მახვარებუქ}} $2 გაწყჷ.\n\nთქვა შეილებჷნა ესურათ {{GENDER:$1|თიშ} ხასჷლას გიმე მოჩამილ რსხილით",
+	"bs-notifications-registeruser": "მახვარებუქ \"$1\" გაჭყჷ ანგარიში.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|მახვარებუქ}} \"$2\" {{GENDER:$1|გაჭყჷ}} ანგარიში",
+	"bs-notifications-create": "ხასჷლაქ \"$1\" გიჭყჷ",
+	"bs-notifications-delete": "ხასჷლაქ \"$1\" დილასჷ"
+}
