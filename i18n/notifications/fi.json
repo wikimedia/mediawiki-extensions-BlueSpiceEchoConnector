@@ -6,6 +6,7 @@
 			"Pyscowicz"
 		]
 	},
+	"bs-notifications-addaccount": "Käyttäjä \"$1\" luotiin.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Luoja}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Luoja}}: $1",
 	"bs-notifications-registeruser": "Käyttäjä \"$1\" on luonut tilin.",
