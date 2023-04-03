@@ -2,8 +2,6 @@
 
 namespace BlueSpice\EchoConnector;
 
-use BlueSpice\Data\Filter\StringValue;
-use BlueSpice\Data\ReaderParams;
 use BlueSpice\Data\Watchlist\Record;
 use BlueSpice\EchoConnector\Data\Watchlist\Store;
 use IContextSource;
@@ -11,6 +9,8 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
 use MWException;
+use MWStake\MediaWiki\Component\DataStore\Filter\StringValue;
+use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use Title;
 use User;
 use Wikimedia\Rdbms\LoadBalancer;
