@@ -13,21 +13,29 @@ class Skin implements SkinTemplateNavigation__UniversalHook {
 	 * @inheritDoc
 	 */
 	public function onSkinTemplateNavigation__Universal( $sktemplate, &$links ): void {
-		if ( isset( $links['notifications-alert'] ) ) {
-			if ( !isset( $links['notifications-alert']['data'] ) ) {
-				$links['notifications-alert']['data'] = [];
+		if ( isset( $links['notifications']['talk-alert'] ) ) {
+			if ( !isset( $links['notifications']['talk-alert']['data'] ) ) {
+				$links['notifications']['talk-alert']['data'] = [];
 			}
-			$links['notifications-alert']['data']['attentionindicator']
-				= 'notifications-alert';
-			$links['notifications-alert']['position'] = 100;
+			$links['notifications']['talk-alert']['data']['attentionindicator']
+				= 'talk-alert';
+			$links['notifications']['talk-alert']['position'] = 100;
 		}
-		if ( isset( $links['notifications-notice'] ) ) {
-			if ( !isset( $links['notifications-notice']['data'] ) ) {
-				$links['notifications-notice']['data'] = [];
+		if ( isset( $links['notifications']['notifications-alert'] ) ) {
+			if ( !isset( $links['notifications']['notifications-alert']['data'] ) ) {
+				$links['notifications']['notifications-alert']['data'] = [];
 			}
-			$links['notifications-notice']['data']['attentionindicator']
+			$links['notifications']['notifications-alert']['data']['attentionindicator']
+				= 'notifications-alert';
+			$links['notifications']['notifications-alert']['position'] = 100;
+		}
+		if ( isset( $links['notifications']['notifications-notice'] ) ) {
+			if ( !isset( $links['notifications']['notifications-notice']['data'] ) ) {
+				$links['notifications']['notifications-notice']['data'] = [];
+			}
+			$links['notifications']['notifications-notice']['data']['attentionindicator']
 				= 'notifications-notice';
-			$links['notifications-notice']['position'] = 110;
+			$links['notifications']['notifications-notice']['position'] = 110;
 		}
 		if ( is_a( $sktemplate, 'BlueSpice\Discovery\Skin', true ) === false ) {
 			return;
@@ -35,11 +43,15 @@ class Skin implements SkinTemplateNavigation__UniversalHook {
 		if ( $sktemplate->getUser()->isAnon() ) {
 			return;
 		}
-		if ( isset( $links['notifications-alert'] ) ) {
-			unset( $links['notifications-alert'] );
+
+		if ( isset( $links['notifications']['talk-alert'] ) ) {
+			unset( $links['notifications']['talk-alert'] );
 		}
-		if ( isset( $links['notifications-notice'] ) ) {
-			unset( $links['notifications-notice'] );
+		if ( isset( $links['notifications']['notifications-alert'] ) ) {
+			unset( $links['notifications']['notifications-alert'] );
+		}
+		if ( isset( $links['notifications']['notifications-notice'] ) ) {
+			unset( $links['notifications']['notifications-notice'] );
 		}
 		$notifUser = MWEchoNotifUser::newFromUser( $sktemplate->getUser() );
 		$count = $notifUser->getAlertCount() + $notifUser->getMessageCount();
