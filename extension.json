@@ -55,6 +55,9 @@
 		},
 		"update": {
 			"class": "\\BlueSpice\\EchoConnector\\HookHandler\\Update"
+		},
+		"add-special-styles": {
+			"class": "BlueSpice\\EchoConnector\\HookHandler\\AddSpecialStyles"
 		}
 	},
 	"Hooks": {
@@ -70,7 +73,8 @@
 			"\\BlueSpice\\EchoConnector\\Hook\\GetPreferences\\HidePreferences::callback"
 		],
 		"SkinTemplateNavigation::Universal": "skin",
-		"LoadExtensionSchemaUpdates": "update"
+		"LoadExtensionSchemaUpdates": "update",
+		"BeforePageDisplay": "add-special-styles"
 	},
 	"config_prefix": "bsg",
 	"config": {
@@ -117,6 +121,11 @@
 			],
 			"styles": [
 				"bluespice.echoConnector.preferences.css"
+			]
+		},
+		"ext.bluespice.echoConnector.special.styles": {
+			"styles": [
+				"bluespice.echoConnector.special.css"
 			]
 		}
 	},
