@@ -1,0 +1,5 @@
+/* overwrite styling from echo on Special:Notification */
+#mw-content-text h2.mw-echo-ui-datedSubGroupListWidget-title > span {
+	font-size: var(--content-h2-font-size);
+	color: var(--content-h2-fg);
+}
