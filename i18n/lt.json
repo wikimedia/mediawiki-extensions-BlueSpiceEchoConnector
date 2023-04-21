@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"bs-echoconnector-extension-description": "Sujungia BlueSpice su Echo",
+	"echo-category-title-bs-admin-cat": "Administracinės užduotys",
+	"echo-pref-tooltip-bs-admin-cat": "Pranešti man, kai sukuriama nauja naudotojo paskyra",
+	"echo-pref-tooltip-bs-page-actions-cat": "Pranešti man, kai kas nors redaguoja, perkelia arba ištrina puslapį, kurį stebiu",
+	"echo-pref-tooltip-bs-page-create-cat": "Pranešti man, kai sukuriamas naujas puslapis",
+	"echo-category-title-bs-page-actions-cat": "Veiksmai stebėjimo sąrašo puslapiuose",
+	"echo-category-title-bs-page-create-cat": "Puslapio sukūrimas",
+	"prefs-category-notifications": "Pranešimai apie kategorijas",
+	"bs-echoconnector-personalurl-notifications": "Pranešimai ($1)"
+}
