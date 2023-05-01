@@ -57,7 +57,17 @@ class EchoNotifier extends \EchoNotifier {
 			return false;
 		}
 
-		$attributeManager = \EchoAttributeManager::newFromGlobalVars();
+		$userGroupManager = MediaWikiServices::getInstance()->getUserGroupManager();
+		$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
+
+		$attributeManager = new \EchoAttributeManager(
+			$GLOBALS['wgEchoNotifications'],
+			$GLOBALS['wgEchoNotificationCategories'],
+			$GLOBALS['wgDefaultNotifyTypeAvailability'],
+			$GLOBALS['wgNotifyTypeAvailabilityByCategory'],
+			$userGroupManager,
+			$userOptionsLookup
+		);
 		$userEmailNotifications = $attributeManager->getUserEnabledEvents( $user, 'email' );
 		// See if the user wants to receive emails for this category or the user is
 		// eligible to receive this email

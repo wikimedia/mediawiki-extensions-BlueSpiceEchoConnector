@@ -80,10 +80,11 @@ class TestNotification extends Maintenance {
 		$this->addOption( 'wait', 'Wait for new jobs instead of exiting', false, false );
 		$this->setBatchSize( 300 );
 		$this->requireExtension( 'BlueSpiceEchoConnector' );
-		$this->services = MediaWikiServices::getInstance();
 	}
 
 	public function execute() {
+		$this->services = MediaWikiServices::getInstance();
+
 		$this->setupOverwrites();
 		$this->setupAlternateUserMailer();
 		$this->makeAgentUser();
