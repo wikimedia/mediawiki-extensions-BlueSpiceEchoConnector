@@ -5,5 +5,6 @@
 		]
 	},
 	"bs-notifications-create": "صفحو \"$1\" سرجيو ويو",
-	"bs-notifications-move": "صفحو \"$1\" چوريو ويو آھي"
+	"bs-notifications-move": "صفحو \"$1\" چوريو ويو آھي",
+	"bs-notifications-mail-additional-links-label": "واڌو ڳنڍڻا"
 }
