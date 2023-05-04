@@ -95,7 +95,7 @@ class EchoNotifier extends \EchoNotifier {
 				$bundleHash = md5( $bundleString );
 			}
 
-			\MWEchoEventLogging::logSchemaEcho( $user, $event, 'email' );
+			\MWEchoEventLogging::logSchemaEchoMail( $user, 'single' );
 
 			MediaWikiServices::getInstance()->getHookContainer()->run(
 				'BlueSpiceEchoConnectorNotifyBeforeSend',
