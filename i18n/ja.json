@@ -2,15 +2,16 @@
 	"@metadata": {
 		"authors": [
 			"Aefgh39622",
+			"Shirayuki",
 			"背番号4のエース"
 		]
 	},
 	"bs-echoconnector-extension-description": "BlueSpice と Echo を接続する",
 	"echo-category-title-bs-admin-cat": "管理タスク",
-	"echo-pref-tooltip-bs-admin-cat": "新しいユーザーアカウントが作成されたら通知する",
-	"echo-pref-tooltip-bs-page-actions-cat": "私が見ているページが誰かによって編集、移動、または削除されたときに通知する",
-	"echo-pref-tooltip-bs-page-create-cat": "新しいページが作成されたらメールを受け取る",
-	"echo-category-title-bs-page-actions-cat": "ウォッチリストのページでのアクション",
+	"echo-pref-tooltip-bs-admin-cat": "利用者アカウントが新規作成されたときに通知する",
+	"echo-pref-tooltip-bs-page-actions-cat": "ウォッチリスト内のページを誰かが編集/移動/削除したときに通知する",
+	"echo-pref-tooltip-bs-page-create-cat": "誰かがページを新規作成したときに通知する",
+	"echo-category-title-bs-page-actions-cat": "ウォッチリストでのページの操作",
 	"echo-category-title-bs-page-create-cat": "ページの作成",
 	"prefs-namespace-notifications": "名前空間イベントに関する通知",
 	"prefs-category-notifications": "カテゴリに関する通知",
