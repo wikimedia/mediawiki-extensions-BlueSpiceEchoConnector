@@ -23,5 +23,6 @@
 	"bs-notifications-email-move-subject": "Strona „$1” {{GENDER:$2|przeniesiona}} $5 do „$3” przez $4",
 	"bs-notifications-edit-difflink-label": "Zobacz różnicę",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Witaj}} $1",
-	"bs-notifications-mail-additional-links-label": "Dodatkowe linki"
+	"bs-notifications-mail-additional-links-label": "Dodatkowe linki",
+	"bs-notifications-addaccount": "Użytkownik „$1” został utworzony."
 }
