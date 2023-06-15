@@ -6,6 +6,7 @@
 			"Msz2001"
 		]
 	},
+	"bs-notifications-addaccount": "Użytkownik „$1” został utworzony.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Twórca}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Twórca}}: $1",
 	"bs-notifications-edit": "Strona „$1” została zmieniona",

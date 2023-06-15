@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Rail",
-			"Railfail536"
+			"Railfail536",
+			"Chrumps"
 		]
 	},
-	"bs-echoconnector-extension-description": "Łączy BlueSpice z rozszerzeniem Echo"
+	"bs-echoconnector-extension-description": "Łączy BlueSpice z rozszerzeniem Echo",
+	"bs-echoconnector-personalurl-notifications": "Powiadomienia ($1)"
 }
