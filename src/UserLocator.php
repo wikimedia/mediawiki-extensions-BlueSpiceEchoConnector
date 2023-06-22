@@ -2,15 +2,12 @@
 
 namespace BlueSpice\EchoConnector;
 
-use BlueSpice\Data\Watchlist\Record;
-use BlueSpice\EchoConnector\Data\Watchlist\Store;
 use IContextSource;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\User\UserFactory;
 use MWException;
-use MWStake\MediaWiki\Component\DataStore\Filter\StringValue;
-use MWStake\MediaWiki\Component\DataStore\ReaderParams;
 use Title;
 use User;
 use Wikimedia\Rdbms\ILoadBalancer;
@@ -32,46 +29,50 @@ class UserLocator {
 	protected $hookContainer = null;
 
 	/**
+	 *
+	 * @var UserFactory
+	 */
+	protected $userFactory = null;
+
+	/**
 	 * @param ILoadBalancer $loadBalancer
 	 * @param IContextSource $context
 	 * @param PermissionManager $permissionManager
 	 * @param HookContainer $hookContainer
+	 * @param UserFactory $userFactory
 	 */
 	public function __construct( ILoadBalancer $loadBalancer, IContextSource $context,
-		PermissionManager $permissionManager, HookContainer $hookContainer ) {
+		PermissionManager $permissionManager, HookContainer $hookContainer, UserFactory $userFactory ) {
 		$this->loadBalancer = $loadBalancer;
 		$this->context = $context;
 		$this->permissionManager = $permissionManager;
 		$this->hookContainer = $hookContainer;
+		$this->userFactory = $userFactory;
 	}
 
 	/**
 	 * Get all uses watching the title
 	 *
-	 * @param string $titleText
+	 * @param string $prefixedText unused, for B/C
 	 * @param Title $title
-	 * @return User[]
+	 *
+	 * @return array
 	 */
-	public function getWatchers( $titleText, Title $title ) {
-		$wlStore = new Store( $this->context );
-		$params = new ReaderParams( [
-			ReaderParams::PARAM_LIMIT => ReaderParams::LIMIT_INFINITE,
-			ReaderParams::PARAM_FILTER => [ [
-				StringValue::KEY_COMPARISON => StringValue::COMPARISON_EQUALS,
-				StringValue::KEY_PROPERTY => Record::PAGE_PREFIXED_TEXT,
-				StringValue::KEY_VALUE => $titleText,
-				StringValue::KEY_TYPE => 'string'
-			] ]
-		] );
+	public function getWatchers( $prefixedText, Title $title ) {
+		$db = $this->loadBalancer->getConnection( DB_REPLICA );
+		$res = $db->select(
+			'watchlist',
+			[ 'wl_user' ],
+			[ 'wl_namespace' => $title->getNamespace(), 'wl_title' => $title->getDBkey() ],
+			__METHOD__
+		);
 
-		$users = [];
-		foreach ( $wlStore->getReader()->read( $params )->getRecords() as $record ) {
-			$users[] = $record->get( Record::USER_ID, 0 );
+		$ids = [];
+		foreach ( $res as $row ) {
+			$ids[] = (int)$row->wl_user;
 		}
-		if ( empty( $users ) ) {
-			return [];
-		}
-		return $this->getValidUsersFromIds( $users, $title );
+
+		return $this->getValidUsersFromIds( array_unique( $ids ), $title );
 	}
 
 	/**
@@ -227,22 +228,21 @@ class UserLocator {
 			if ( empty( $id ) ) {
 				continue;
 			}
-			$user = $userFactory->newFromId( $id );
-			$user->load();
-			if ( !$user || $user->isAnon() || $user->getBlock() ) {
+			$user = $this->userFactory->newFromId( $id );
+			if ( !$user->isRegistered() || $user->getBlockId() ) {
 				continue;
 			}
-			if ( isset( $return[ (int)$user->getId() ] ) ) {
+			if ( isset( $return[$user->getId()] ) ) {
 				continue;
 			}
 			if ( $title ) {
-				if ( !$this->permissionManager->userCan( 'read', $user, $title ) ) {
+				if ( !$this->permissionManager->quickUserCan( 'read', $user, $title ) ) {
 					continue;
 				}
 			} elseif ( !$this->permissionManager->userHasRight( $user, 'read' ) ) {
 				continue;
 			}
-			$return[ (int)$user->getId() ] = $user;
+			$return[$user->getId()] = $user;
 		}
 		$this->hookContainer->run( 'BlueSpiceEchoConnectorUserLocatorValidUsers', [
 			&$return,
