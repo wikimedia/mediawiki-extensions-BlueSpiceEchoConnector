@@ -20,7 +20,8 @@ return [
 			$services->getDBLoadBalancer(),
 			$context,
 			$services->getPermissionManager(),
-			$services->getHookContainer()
+			$services->getHookContainer(),
+			$services->getUserFactory()
 		);
 	},
 	'BSEchoConnectorFormatterFactory' => static function ( MediaWikiServices $services ) {
