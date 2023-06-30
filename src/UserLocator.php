@@ -3,6 +3,7 @@
 namespace BlueSpice\EchoConnector;
 
 use IContextSource;
+use MediaWiki\Block\BlockManager;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionManager;
@@ -35,19 +36,28 @@ class UserLocator {
 	protected $userFactory = null;
 
 	/**
+	 * @var BlockManager
+	 */
+	protected $blockManager = null;
+
+	/**
 	 * @param ILoadBalancer $loadBalancer
 	 * @param IContextSource $context
 	 * @param PermissionManager $permissionManager
 	 * @param HookContainer $hookContainer
 	 * @param UserFactory $userFactory
+	 * @param BlockManager $blockManager
 	 */
 	public function __construct( ILoadBalancer $loadBalancer, IContextSource $context,
-		PermissionManager $permissionManager, HookContainer $hookContainer, UserFactory $userFactory ) {
+		PermissionManager $permissionManager, HookContainer $hookContainer, UserFactory $userFactory,
+		BlockManager $blockManager
+	) {
 		$this->loadBalancer = $loadBalancer;
 		$this->context = $context;
 		$this->permissionManager = $permissionManager;
 		$this->hookContainer = $hookContainer;
 		$this->userFactory = $userFactory;
+		$this->blockManager = $blockManager;
 	}
 
 	/**
@@ -223,13 +233,14 @@ class UserLocator {
 	 */
 	private function getValidUsersFromIds( array $users, Title $title = null ) {
 		$return = [];
-		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
 		foreach ( $users as $id ) {
 			if ( empty( $id ) ) {
 				continue;
 			}
 			$user = $this->userFactory->newFromId( $id );
-			if ( !$user->isRegistered() || $user->getBlockId() ) {
+			if ( !$user->isRegistered() ||
+				$this->blockManager->getUserBlock( $user, null, true )
+			) {
 				continue;
 			}
 			if ( isset( $return[$user->getId()] ) ) {
