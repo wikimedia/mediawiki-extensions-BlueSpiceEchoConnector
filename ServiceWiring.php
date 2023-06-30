@@ -21,7 +21,8 @@ return [
 			$context,
 			$services->getPermissionManager(),
 			$services->getHookContainer(),
-			$services->getUserFactory()
+			$services->getUserFactory(),
+			$services->getBlockManager()
 		);
 	},
 	'BSEchoConnectorFormatterFactory' => static function ( MediaWikiServices $services ) {
