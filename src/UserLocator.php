@@ -214,7 +214,7 @@ class UserLocator {
 		$res = $db->select(
 			'user_properties',
 			'up_user',
-			[ 'up_property' => $prefName ],
+			[ 'up_property' => $prefName, 'up_value' => 1 ],
 			__METHOD__
 		);
 		$return = [];
