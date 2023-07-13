@@ -27,6 +27,9 @@ class CreateNotification extends BaseNotification {
 	 * @return array
 	 */
 	public function getParams() {
+		if ( $this->summary === '' ) {
+			$this->summary = '-';
+		}
 		return [
 			'summary' => $this->summary,
 			'realname' => $this->getUserRealName(),

@@ -3,6 +3,7 @@
 namespace BlueSpice\EchoConnector\Formatter;
 
 use BlueSpice\EchoConnector\EchoEventPresentationModel as BSEchoPresentationModel;
+use Html;
 use MediaWiki\MediaWikiServices;
 
 class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
@@ -77,29 +78,31 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		$summary = $bodyMsg ? $bodyMsg->parse() : '';
 
 		$actions = [
-			'primary' => [],
+			'primary' => false,
 			'secondary_label' => $this->msg(
 				'bs-notifications-mail-additional-links-label'
 			)->plain(),
-			'secondary' => []
+			'secondary' => false
 		];
 
 		$primaryLink = $model->getPrimaryLinkWithMarkAsRead();
 		if ( $primaryLink ) {
-			$actions['primary'][] = $this->renderLink( $primaryLink, self::PRIMARY_LINK );
+			$renderedLink = $this->renderLink( $primaryLink, self::PRIMARY_LINK );
+			$actions['primary'] = $this->makeLinkList( [ $renderedLink ] );
 		}
 
+		$secondaryLinks = [];
 		foreach ( array_filter( $model->getSecondaryLinks() ) as $secondaryLink ) {
-			$actions['secondary'][] = $this->renderLink( $secondaryLink, self::SECONDARY_LINK );
+			$secondaryLinks[] = $this->renderLink( $secondaryLink, self::SECONDARY_LINK );
+		}
+		if ( !empty( $secondaryLinks ) ) {
+			$actions['secondary'] = $this->makeLinkList( $secondaryLinks );
 		}
 
 		$iconUrl = wfExpandUrl(
 			\EchoIcon::getUrl( $model->getIconType(), $this->language->getCode() ),
 			PROTO_CANONICAL
 		);
-
-		$actions['primary'] = implode( '</br>', $actions['primary'] );
-		$actions['secondary'] = implode( '</br>', $actions['secondary'] );
 
 		$body = $this->renderBody(
 			$this->language,
@@ -120,6 +123,20 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 
 	/**
 	 *
+	 * @param array $links
+	 * @return string
+	 */
+	protected function makeLinkList( $links ) {
+		if ( empty( $links ) ) {
+			// Must not be rendered by mustache
+			return '';
+		}
+		$list = implode( '</li><li>', $links );
+		return Html::rawElement( 'ul', [], "<li>$list</li>" );
+	}
+
+	/**
+	 *
 	 * @param \Language $lang
 	 * @param string $emailIcon
 	 * @param string $summary
@@ -132,17 +149,20 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 	 */
 	protected function renderBody( \Language $lang, $emailIcon, $summary, $actions, $greeting,
 		$senderMessage, $messageHeader, $footer ) {
+		$data = [
+			'icon_url' => $emailIcon,
+			'body' => $summary,
+			'actions' => $actions,
+			'footer' => $footer,
+			'greeting' => $greeting,
+			'sender-info' => $senderMessage
+		];
+		if ( $messageHeader !== '' ) {
+			$data['header'] = $messageHeader;
+		}
 		$html = $this->templateParser->processTemplate(
 			$this->templateNames['single'],
-			[
-				'icon_url' => $emailIcon,
-				'header' => $messageHeader,
-				'body' => $summary,
-				'actions' => $actions,
-				'footer' => $footer,
-				'greeting' => $greeting,
-				'sender-info' => $senderMessage
-			]
+			$data
 		);
 
 		return $html;
