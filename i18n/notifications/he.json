@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Guycn2",
-			"Steeve815"
+			"Steeve815",
+			"Neriah"
 		]
 	},
 	"bs-notifications-addaccount": "{{GENDER:$1|המשתמש|המשתמשת}} \"$1\" {{GENDER:$1|נוצר|נוצרה}}.",
@@ -16,8 +17,8 @@
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|משתמש|משתמשת}} \"$2\" {{GENDER:$1|יצר|יצרה}} חשבון",
 	"bs-notifications-email-registeruser-body": "{{GENDER:$1|המשתמש|המשתמשת}} \"$2\" {{GENDER:$1|יצר|יצרה}} חשבון.\n\nניתן לבקר בדף {{GENDER:$1|המשתמש שלו|המשתמשת שלה}} באמצעות הקישור להלן",
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|המשתמש|המשתמשת}} $2 {{GENDER:$1|יצר|יצרה}} חשבון.",
-	"bs-notifications-edit": "הדף \"$1\" שוּנה",
-	"bs-notifications-edit-bundle": "הדף \"$2\" שוּנה {{PLURAL:$1|פעם אחת|פעמיים|$1 פעמים}}",
+	"bs-notifications-edit": "הדף \"$1\" שונה",
+	"bs-notifications-edit-bundle": "הדף \"$2\" שונה {{PLURAL:$1|פעם אחת|פעמיים|$1 פעמים}}",
 	"bs-notifications-email-edit-subject": "הדף \"$1\" {{GENDER:$2|נערך}} ב־$4 על־ידי $3",
 	"bs-notifications-email-edit-body": "הדף \"$1\" {{GENDER:$2|נערך}} ב־$5 על־ידי $4.\n\nתקציר העריכה:\n $3",
 	"bs-notifications-web-edit-body": "הדף \"$1\" {{GENDER:$2|נערך}} על־ידי $3.",
