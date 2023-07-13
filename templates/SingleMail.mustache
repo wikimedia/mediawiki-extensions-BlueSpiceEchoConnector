@@ -5,6 +5,21 @@
 		<style>
 			body {
 				background-color: #fcfcfc;
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			}
+
+			p {
+				margin-top: 0;
+			}
+
+			ul {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+
+			h1,h2,h3,h4,h5,h6 {
+				margin-top: 0;
+				margin-bottom: 5px;
 			}
 
 			.mail-container {
@@ -31,7 +46,7 @@
 				position: absolute;
 				right: 10px;
 				top: 4px;
-				font-size: .6em;
+				font-size: .8em;
 			}
 			.intro-header span{
 				color: white;
@@ -42,12 +57,21 @@
 			.actions div {
 				margin-bottom: 15px;
 			}
-			.icon {
-				float: left;
-				padding-right: 20px;
-			}
 			.footer {
+				padding-top: 15px;
 				text-align: center;
+				font-size: .8em;
+			}
+			.content td {
+				vertical-align: top;
+			}
+			.content td.content-text {
+				padding-left: 10px;
+			}
+			.primary-actions ul {
+				list-style-type: none;
+				margin-top: 20px;
+				padding: 0;
 			}
 		</style>
 	</head>
@@ -58,24 +82,30 @@
 		 </div>
 		<div class='mail-container'>
 
-			<div class='icon'>
-				<img src='{{icon_url}}' />
-			</div>
-			<span>{{{header}}}</span>
-			<p>{{{body}}}</p>
+			<table class='content'>
+				<tr>
+					<td><img alt="Icon" width="32" src='{{icon_url}}' /></td>
+					<td class='content-text'>
+						{{#header}}<h3 class="header">{{{.}}}</h3>{{/header}}
+						{{{body}}}
+						<div class='actions'>
+							{{#actions}}
+							<div class="primary-actions">
+								{{{primary}}}
+							</div>
+							{{/actions}}
+						</div>
+					</td>
+				</tr>
+			</table>
+			{{#actions}}
+				{{#secondary}}
 			<div class='actions'>
-				{{#actions}}
-				<div>
-					{{{primary}}}
-				</div>
-				<div>
-					<span>
-						{{secondary_label}}
-					</span><br/>
-					{{{secondary}}}
-				</div>
-				{{/actions}}
+				<h4>{{actions.secondary_label}}</h4>
+				{{{.}}}
 			</div>
+				{{/secondary}}
+			{{/actions}}
 		</div>
 		<div class='footer'>{{{footer}}}</div>
 	</body>

@@ -81,6 +81,9 @@ class EditNotification extends BaseNotification {
 		if ( $lastRevision ) {
 			$ts = $lastRevision->getTimestamp();
 		}
+		if ( $this->summary === '' ) {
+			$this->summary = '-';
+		}
 		return array_merge( parent::getParams(), [
 			'summary' => $this->summary,
 			'titlelink' => true,

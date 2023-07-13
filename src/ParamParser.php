@@ -182,7 +182,7 @@ class ParamParser implements IParamParser {
 			// There is no good way to execute `Language::userAdjust` for a
 			// non-global-user-context
 			$dateFormat = $this->language->getDateFormatString(
-				'both',
+				'pretty',
 				$this->user->getDatePreference() ?: 'default'
 			);
 			$value = $this->language->sprintfDate(
