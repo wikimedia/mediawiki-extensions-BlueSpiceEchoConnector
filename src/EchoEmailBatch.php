@@ -63,7 +63,7 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 	 * @throws MWException
 	 */
 	public function sendEmail() {
-		global $wgNotificationSender, $wgNotificationReplyName;
+		global $wgPasswordSender, $wgNoReplyAddress;
 
 		if ( MediaWikiServices::getInstance()->getUserOptionsLookup()
 			->getOption( $this->mUser, 'echo-email-frequency' ) == \EchoEmailFrequency::WEEKLY_DIGEST
@@ -110,10 +110,10 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 
 		$toAddress = \MailAddress::newFromUser( $this->mUser );
 		$fromAddress = new \MailAddress(
-			$wgNotificationSender,
+			$wgPasswordSender,
 			wfMessage( 'emailsender' )->inContentLanguage()->text()
 		);
-		$replyTo = new \MailAddress( $wgNotificationSender, $wgNotificationReplyName );
+		$replyTo = new \MailAddress( $wgPasswordSender, $wgNoReplyAddress );
 
 		// @Todo Push the email to job queue or just send it out directly?
 		\UserMailer::send(
