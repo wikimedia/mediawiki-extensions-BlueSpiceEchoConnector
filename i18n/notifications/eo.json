@@ -19,7 +19,7 @@
 	"bs-notifications-edit": "La paĝo \"$1\" estis ŝanĝita",
 	"bs-notifications-edit-bundle": "La paĝo \"$2\" estis ŝanĝita {{PLURAL:$1|$1 foje}}",
 	"bs-notifications-email-edit-subject": "Paĝo \"$1\" {{GENDER:$2|redaktita}} je $4 de $3",
-	"bs-notifications-email-edit-body": "La paĝo \"$1\" estis {{GENDER:$2|redaktita}} je $5 de $4.\n\nKomento:\n $3",
+	"bs-notifications-email-edit-body": "La paĝo \"$1\" estis {{GENDER:$2|redaktita}} je $5 de $4.\n\nKomento:\n$3",
 	"bs-notifications-web-edit-body": "La paĝo \"$1\" estis {{GENDER:$2|redaktita}} de $3.",
 	"bs-notifications-create": "La paĝo \"$1\" estis kreita",
 	"bs-notifications-email-create-subject": "Paĝo \"$1\" {{GENDER:$2|kreita}} je $4 de $3",
