@@ -19,7 +19,7 @@
 	"bs-notifications-edit": "\"$1\" sayfası değiştirildi",
 	"bs-notifications-edit-bundle": "\"$2\" sayfası $1 kez değiştirildi",
 	"bs-notifications-email-edit-subject": "\"$1\" sayfası $3 tarafından $4 tarihinde {{GENDER:$2|düzenlendi}}",
-	"bs-notifications-email-edit-body": "\"$1\" sayfası $4 tarafından $5 tarihinde {{GENDER:$2|değiştirildi}}.\n\nYorum:\n $3",
+	"bs-notifications-email-edit-body": "\"$1\" sayfası $4 tarafından $5 tarihinde {{GENDER:$2|değiştirildi}}.\n\nYorum:\n$3",
 	"bs-notifications-web-edit-body": "\"$1\" sayfası $3 tarafından {{GENDER:$2|düzenlendi}}.",
 	"bs-notifications-create": "\"$1\" sayfası oluşturuldu",
 	"bs-notifications-email-create-subject": "\"$1\" sayfası $3 tarafından $4 {{GENDER:$2|oluşturuldu}}",
