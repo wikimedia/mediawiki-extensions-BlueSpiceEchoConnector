@@ -14,7 +14,7 @@
 	"bs-notifications-email-edit-body": "Stran »$1« je dne $5 {{GENDER:$2|uredil|uredila|uredil_a}} $4.\n\nKomentar:\n $3",
 	"bs-notifications-create": "Stran »$1« je bila ustvarjena",
 	"bs-notifications-email-create-subject": "Stran »$1« je dne $4 {{GENDER:$2|ustvaril|ustvarila|ustvaril_a}} $3",
-	"bs-notifications-email-create-body": "Stran »$1« je dne $5 {{GENDER:$2|ustvaril|ustvarila|ustvaril_a}} $3.\n\nKomentar:\n $4\nStran lahko obiščete tako, da sledite naslednji povezavi",
+	"bs-notifications-email-create-body": "Stran »$1« je dne $5 {{GENDER:$2|ustvaril|ustvarila|ustvaril_a}} $3.\n\nKomentar:\n$4\nStran lahko obiščete tako, da sledite naslednji povezavi",
 	"bs-notifications-delete": "Stran »$1« je bila izbrisana",
 	"bs-notifications-email-delete-subject": "Stran »$1« je dne $4 {{GENDER:$2:|izbrisal|izbrisala|izbrisal_a}} $3",
 	"bs-notifications-email-delete-body": "Stran »$1« je dne $5 {{GENDER:$2|izbrisal|izbrisala|izbrisal_a}} $3.\n\nRazlog za izbris:\n$4",
