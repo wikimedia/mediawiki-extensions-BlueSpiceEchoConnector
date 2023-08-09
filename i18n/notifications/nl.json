@@ -28,7 +28,7 @@
 	"bs-notifications-web-edit-body": "De pagina $1 is {{GENDER:$2|bewerkt}} door $3.",
 	"bs-notifications-create": "De pagina \"$1\" is aangemaakt",
 	"bs-notifications-email-create-subject": "Pagina \"$1\" {{GENDER:$2|is aangemaakt}} op $4 door $3",
-	"bs-notifications-email-create-body": "De pagina \"$1\" is {{GENDER:$2|aangemaakt}} op $5 door $3.\n\nOpmerking:\n$4 \nU kunt de pagina bezoeken via de koppeling hier beneden",
+	"bs-notifications-email-create-body": "De pagina \"$1\" is {{GENDER:$2|aangemaakt}} op $5 door $3.\n\nOpmerking:\n$4 \nU kunt de pagina bezoeken via onderstaande koppeling",
 	"bs-notifications-web-create-body": "De pagina \"$1\" is {{GENDER:$2|aangemaakt}} door $3.",
 	"bs-notifications-delete": "De pagina \"$1\" is verwijderd",
 	"bs-notifications-email-delete-subject": "Pagina \"$1\" is {{GENDER:$2|verwijderd}} op $4 door $3",
