@@ -24,7 +24,7 @@
 	"bs-notifications-web-edit-body": "Страница \"$1\" је била {{GENDER:$2|измењена}} од стране $3.",
 	"bs-notifications-create": "Страница „$1” је направљена",
 	"bs-notifications-email-create-subject": "$3 је {{GENDER:$2|направио|направила|направио/-ла}} страницу $1 у $4",
-	"bs-notifications-email-create-body": "$3 је {{GENDER:$2|направио|направила|направио/-ла}} страницу $1 у $5.\n\nКоментар:\n$4 \nМожете да посетите страницу кликом на линк испод:",
+	"bs-notifications-email-create-body": "$3 је {{GENDER:$2|направио|направила}} страницу $1 у $5.\n\nКоментар:\n$4 \nМожете да посетите страницу кликом на линк испод:",
 	"bs-notifications-web-create-body": "Страница \"$1\" је {{GENDER:$2|направљена}} од стране $3.",
 	"bs-notifications-delete": "Страница \"$1\" је обрисана",
 	"bs-notifications-email-delete-subject": "$3 је {{GENDER:$2|избрисао|избрисала|избрисао/-ла}} страницу $1 у $4",
