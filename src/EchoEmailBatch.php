@@ -119,6 +119,5 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 			$content['body'],
 			[ 'replyTo' => $replyTo ]
 		);
-		\MWEchoEventLogging::logSchemaEchoMail( $this->mUser, $emailDeliveryMode );
 	}
 }
