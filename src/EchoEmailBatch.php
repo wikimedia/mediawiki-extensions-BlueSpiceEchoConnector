@@ -79,10 +79,21 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 			$this->language,
 			$frequency
 		] );
-		$content = $textEmailDigestFormatter->format( $this->events, 'email' );
+
+		try {
+			// Prevent failure and stop of the entire process if format fails
+			$content = $textEmailDigestFormatter->format( $this->events, 'email' );
+		} catch ( \Throwable $e ) {
+			return;
+		}
 
 		if ( !$content ) {
 			// no event could be formatted
+			return;
+		}
+
+		if ( !$this->mUser->isRegistered() ) {
+			// Prevent failure and stop of the entire process if user is not registered
 			return;
 		}
 
