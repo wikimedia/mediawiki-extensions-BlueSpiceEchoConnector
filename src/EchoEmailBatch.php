@@ -22,7 +22,7 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 
 		// clear all existing events if user decides not to receive emails
 		if ( $userEmailSetting == -1 ) {
-			$emailBatch = new self( $user );
+			$emailBatch = new self( $user, $services->getUserOptionsManager() );
 			$emailBatch->clearProcessedEvent();
 
 			return false;
@@ -53,7 +53,7 @@ class EchoEmailBatch extends \MWEchoEmailBatch {
 			}
 		}
 
-		return new self( $user );
+		return new self( $user, $services->getUserOptionsManager() );
 	}
 
 	/**
