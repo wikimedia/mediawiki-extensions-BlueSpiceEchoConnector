@@ -24,7 +24,7 @@
 	"bs-notifications-web-edit-body": "ページ「$1」は $3 によって{{GENDER:$2|編集}}されました。",
 	"bs-notifications-create": "ページ「$1」が作成されました",
 	"bs-notifications-email-create-subject": "ページ「$1」は $3 によって$4に{{GENDER:$2|作成}}されました",
-	"bs-notifications-email-create-body": "ページ「$1」は $4 によって$6に「$3」に{{GENDER:$2|移動}}されました。\n\n理由は次のとおりです:\n$5\n\n以下のリンクからページにアクセスできます",
+	"bs-notifications-email-create-body": "ページ「$1」は $3 によって$5に{{GENDER:$2|生成}}されました。\n\n理由は次のとおりです:\n$4\n\n以下のリンクからページにアクセスできます",
 	"bs-notifications-web-create-body": "ページ「$1」は $3 によって{{GENDER:$2|作成}}されました",
 	"bs-notifications-delete": "ページ「$1」が削除されました",
 	"bs-notifications-email-delete-subject": "ページ「$1」は $3 によって$4に{{GENDER:$2|削除}}されました",
