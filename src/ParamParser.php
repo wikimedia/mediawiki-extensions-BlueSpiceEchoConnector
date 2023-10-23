@@ -185,10 +185,17 @@ class ParamParser implements IParamParser {
 				'pretty',
 				$this->user->getDatePreference() ?: 'default'
 			);
-			$value = $this->language->sprintfDate(
+			$prettyDate = $this->language->sprintfDate(
 				$dateFormat,
 				EchoDataOutputFormatter::getUserLocalTime( $this->user, $value )
 			);
+
+			$prettyTime = $this->language->sprintfDate(
+				'H:i',
+				EchoDataOutputFormatter::getUserLocalTime( $this->user, $value )
+			);
+
+			$value = Message::newFromKey( 'bs-notifications-echo-param-timestamp', $prettyDate, $prettyTime )->plain();
 		} catch ( Exception $ex ) {
 			// Not a proper timestamp format. Just use the raw value
 		}
