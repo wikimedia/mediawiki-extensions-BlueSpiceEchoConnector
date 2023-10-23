@@ -78,7 +78,7 @@ class EditPresentationModel extends EchoEventPresentationModel {
 		}
 
 		$diffLinkValue = $extra['secondary-links']['difflink'];
-		$label = wfMessage( 'bs-notifications-edit-difflink-label' )->plain();
+		$label = $this->msg( 'bs-notifications-edit-difflink-label' )->plain();
 
 		$secondaryLinks[] = [
 			'url' => $diffLinkValue,
