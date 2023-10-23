@@ -100,7 +100,7 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		}
 
 		$iconUrl = wfExpandUrl(
-			\EchoIcon::getUrl( $model->getIconType(), $this->language->getCode() ),
+			\EchoIcon::getUrl( $model->getIconType(), $this->language->getDir() ),
 			PROTO_CANONICAL
 		);
 
