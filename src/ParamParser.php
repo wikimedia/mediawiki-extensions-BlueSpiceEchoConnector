@@ -181,14 +181,15 @@ class ParamParser implements IParamParser {
 		try {
 			// There is no good way to execute `Language::userAdjust` for a
 			// non-global-user-context
-			$dateFormat = $this->language->getDateFormatString(
-				'pretty',
-				$this->user->getDatePreference() ?: 'default'
-			);
-			$value = $this->language->sprintfDate(
-				$dateFormat,
-				EchoDataOutputFormatter::getUserLocalTime( $this->user, $value )
-			);
+			$userLocalTimestamp = EchoDataOutputFormatter::getUserLocalTime( $this->user, $value, TS_UNIX );
+
+			$lang = MediaWikiServices::getInstance()
+				->getUserOptionsLookup()
+				->getOption( $this->user, 'language' );
+
+			$value = Message::newFromKey( 'bs-notifications-echo-param-timestamp', $userLocalTimestamp )
+				->inLanguage( $lang )
+				->parse();
 		} catch ( Exception $ex ) {
 			// Not a proper timestamp format. Just use the raw value
 		}

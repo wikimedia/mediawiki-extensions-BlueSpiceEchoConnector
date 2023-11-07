@@ -37,5 +37,6 @@
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hallo}}, $1",
 	"bs-notifications-htmlmail-sender-info": "$1 Benachrichtigungssystem",
 	"bs-notifications-mail-additional-links-label": "Zusätzliche Links",
-	"bs-notifications-param-realname-with-username": "$1 ($2)"
+	"bs-notifications-param-realname-with-username": "$1 ($2)",
+	"bs-notifications-echo-param-timestamp": "{{#time: j. F|@$1}} um {{#time: H:i|@$1}} Uhr"
 }
