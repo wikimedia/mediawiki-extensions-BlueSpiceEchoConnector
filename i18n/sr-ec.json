@@ -12,5 +12,9 @@
 	"echo-category-title-bs-page-actions-cat": "Радња на надгледаној страници",
 	"prefs-namespace-notifications": "Обавештења о догађајима са именским просторима",
 	"prefs-category-notifications": "Обавештења на категоријама",
-	"echo-category-title-bs-namespace-category-notify-cat": "Измене у претплаћеним именским просторима и категоријама"
+	"echo-category-title-bs-namespace-category-notify-cat": "Измене у претплаћеним именским просторима и категоријама",
+	"echo-pref-tooltip-bs-page-actions-cat": "Обавести ме када неко измени, премести или обрише страницу коју надгледам",
+	"echo-pref-tooltip-bs-page-create-cat": "Обавести ме када се направи нова страница",
+	"echo-category-title-bs-page-create-cat": "Прављење странице",
+	"bs-echoconnector-personalurl-notifications": "Обавештења ($1)"
 }
