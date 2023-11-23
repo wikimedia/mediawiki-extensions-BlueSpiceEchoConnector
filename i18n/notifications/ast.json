@@ -13,7 +13,7 @@
 	"bs-notifications-edit": "Cambióse la páxina «$1»",
 	"bs-notifications-edit-bundle": "Cambióse la páxina «$2» {{PLURAL:$1|una vegada|$1 vegaes}}",
 	"bs-notifications-email-edit-subject": "$3 {{GENDER:$2|editó}} la páxina «$1» el $4",
-	"bs-notifications-email-edit-body": "$4 {{GENDER:$2|editó}} la páxina «$1» el $5.\n\nComentariu:\n $3",
+	"bs-notifications-email-edit-body": "$4 {{GENDER:$2|editó}} la páxina «$1» el $5.\n\nComentariu:\n$3",
 	"bs-notifications-web-edit-body": "La páxina «$1» foi {{GENDER:$2|editada}} por $3.",
 	"bs-notifications-create": "Creóse la páxina «$1»",
 	"bs-notifications-email-create-subject": "$3 {{GENDER:$2|creó}} la páxina «$1» el $4",

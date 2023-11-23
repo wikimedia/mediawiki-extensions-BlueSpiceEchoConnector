@@ -11,7 +11,7 @@
 	"bs-notifications-edit": "Strona „$1” została zmieniona",
 	"bs-notifications-edit-bundle": "Strona „$2” została zmieniona {{PLURAL:$1|$1 raz|$1 razy}}",
 	"bs-notifications-email-edit-subject": "Strona „$1” {{GENDER:$2|edytowana}} $4 przez $3",
-	"bs-notifications-email-edit-body": "Strona „$1” była {{GENDER:$2|edytowana}} $5 przez $4.\n\nKomentarz:\n $3",
+	"bs-notifications-email-edit-body": "Strona „$1” była {{GENDER:$2|edytowana}} $5 przez $4.\n\nKomentarz:\n$3",
 	"bs-notifications-web-edit-body": "Strona „$1” była {{GENDER:$2|edytowana}} przez $3.",
 	"bs-notifications-create": "Strona „$1” została utworzona",
 	"bs-notifications-email-create-subject": "Strona „$1” {{GENDER:$2|utworzona}} $4 przez $3",
@@ -23,5 +23,6 @@
 	"bs-notifications-email-move-subject": "Strona „$1” {{GENDER:$2|przeniesiona}} $5 do „$3” przez $4",
 	"bs-notifications-edit-difflink-label": "Zobacz różnicę",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Witaj}} $1",
-	"bs-notifications-mail-additional-links-label": "Dodatkowe linki"
+	"bs-notifications-mail-additional-links-label": "Dodatkowe linki",
+	"bs-notifications-addaccount": "Użytkownik „$1” został utworzony."
 }
