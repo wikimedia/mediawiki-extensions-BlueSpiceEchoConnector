@@ -25,7 +25,7 @@
 	"bs-notifications-web-edit-body": "Сторінку «$1» {{GENDER:$2|редагував|редагувала}} $3.",
 	"bs-notifications-create": "Сторінку «$1» створено",
 	"bs-notifications-email-create-subject": "Сторінку «$1» {{GENDER:$2|створив|створила}} $3 о $4",
-	"bs-notifications-email-create-body": "Сторінку «$1» {{GENDER:$2|створив|створила}} $3 о $5.\n\nКоментар:\n$4 \nВи можете відвідати сторінку за посиланням нижче",
+	"bs-notifications-email-create-body": "Сторінку «$1» {{GENDER:$2|створив|створила}} $3 о $5.\n\nКоментар:\n$4\nВи можете відвідати сторінку за посиланням нижче",
 	"bs-notifications-web-create-body": "Сторінку «$1» {{GENDER:$2|створив|створила}} $3.",
 	"bs-notifications-delete": "Сторінку «$1» вилучено",
 	"bs-notifications-email-delete-subject": "Сторінку «$1» {{GENDER:$2|вилучив|вилучила}} $3 о $4",
