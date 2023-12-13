@@ -7,5 +7,6 @@
 		]
 	},
 	"bs-echoconnector-extension-description": "Łączy BlueSpice z rozszerzeniem Echo",
+	"echo-category-title-bs-admin-cat": "Zadania administracyjne",
 	"bs-echoconnector-personalurl-notifications": "Powiadomienia ($1)"
 }
