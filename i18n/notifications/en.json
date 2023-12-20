@@ -37,5 +37,5 @@
 	"bs-notifications-htmlmail-sender-info": "$1 notification system",
 	"bs-notifications-mail-additional-links-label": "Additional links",
 	"bs-notifications-param-realname-with-username": "$1 ($2)",
-	"bs-notifications-echo-param-timestamp": "on $1 at $2 o'clock"
+	"bs-notifications-echo-param-timestamp": "on {{#time: j F|@$1}} at {{#time: H:i|@$1}} o'clock"
 }

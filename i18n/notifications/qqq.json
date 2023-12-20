@@ -43,5 +43,5 @@
 	"bs-notifications-htmlmail-sender-info": "Message showing who is sending the mail. Only visible in HTML mails. Parameters:\n*$1 - Name of the wiki - $wgSitename",
 	"bs-notifications-mail-additional-links-label": "Label for section showing secondary links for notification",
 	"bs-notifications-param-realname-with-username": "{{optional}}\nConvinience message showing realname and username of a user. Parameters:\n*$1 - realname \n*$2 - username",
-	"bs-notifications-echo-param-timestamp": "Localized timestamp span, which is used in notifications. Parameters:\n*$1 - date\n*$2 - time"
+	"bs-notifications-echo-param-timestamp": "Localized timestamp span, which is used in notifications. Parameters:\n*$1 - user localized UNIX timestamp, used with 'time' MediaWiki parser function."
 }
