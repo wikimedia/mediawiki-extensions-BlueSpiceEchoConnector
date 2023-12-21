@@ -37,5 +37,6 @@
 	"bs-notifications-edit-difflink-label": "צפייה בהבדלים",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|שלום}} $1",
 	"bs-notifications-htmlmail-sender-info": "מערכת ההודעות של $1",
-	"bs-notifications-mail-additional-links-label": "קישורים נוספים"
+	"bs-notifications-mail-additional-links-label": "קישורים נוספים",
+	"bs-notifications-echo-param-timestamp": "בתאריך {{#time: j F|@$1}} בשעה {{#time: H:i|@$1}}"
 }
