@@ -23,7 +23,7 @@
 	"bs-notifications-email-move-subject": "Stran »$1« je $4 dne $5 {{GENDER:$2|prestavil|prestavila|prestavil_a}} na »$3«",
 	"bs-notifications-email-move-body": "Stran »$1« je na »$3« dne $6 {{GENDER:$2|prestavil|prestavila|prestavil_a}} $4.\n\nRazlog:\n$5\n\nStran lahko obiščete tako, da sledite povezavi spodaj",
 	"bs-notifications-addaccount": "Uporabnik »$1« je bil ustvarjen.",
-	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Uporabnik|Uporabnica|Uporabnik/ca}} $2 je {{GENDER:$1|bil ustvarjena|bila ustvarjena|bil/a ustvarjen/a}}.",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Uporabnik|Uporabnica|Uporabnik_ca}} $2 je {{GENDER:$1|bil ustvarjena|bila ustvarjena|bil_a ustvarjen_a}}.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Ustvaritelj|Ustvariteljica|Ustvaritelj_ica}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Ustvaritelj|Ustvariteljica|Ustvaritelj_ica}}: $1",
 	"bs-notifications-registeruser": "Uporabnik »$1« si je ustvaril račun.",
