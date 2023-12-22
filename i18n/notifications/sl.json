@@ -11,7 +11,7 @@
 	"bs-notifications-addaccount": "Uporabnik »$1« je bil ustvarjen.",
 	"bs-notifications-email-addaccount-subject": "{{GENDER:$1|Uporabnik »$2« ustvarjen|Uporabnica »$2« ustvarjena|Uporabnik_ca »$2« ustvarjen_a}}",
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Uporabnik|Uporabnica|Uporabnik_ca}} $2 {{GENDER:$1|ustvarjen|ustvarjena|ustvarjen_a}}.\n\nUporabniško stran {{GENDER:$1|uporabnika|uporabnice|uporabnika_ce}} lahko obiščete tako, da sledite naslednji povezavi",
-	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Uporabnik|Uporabnica|Uporabnik/ca}} $2 je {{GENDER:$1|bil ustvarjena|bila ustvarjena|bil/a ustvarjen/a}}.",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Uporabnik|Uporabnica|Uporabnik_ca}} $2 je {{GENDER:$1|bil ustvarjena|bila ustvarjena|bil_a ustvarjen_a}}.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Ustvaritelj|Ustvariteljica|Ustvaritelj_ica}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Ustvaritelj|Ustvariteljica|Ustvaritelj_ica}}: $1",
 	"bs-notifications-registeruser": "Uporabnik »$1« si je ustvaril račun.",
