@@ -34,5 +34,6 @@
 	"bs-notifications-edit-difflink-label": "Vider differentia",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Salute}} $1",
 	"bs-notifications-htmlmail-sender-info": "Systema de notification de $1",
-	"bs-notifications-mail-additional-links-label": "Ligamines additional"
+	"bs-notifications-mail-additional-links-label": "Ligamines additional",
+	"bs-notifications-echo-param-timestamp": "le {{#time: j F|@$1}} a {{#time: H:i|@$1}} horas"
 }
