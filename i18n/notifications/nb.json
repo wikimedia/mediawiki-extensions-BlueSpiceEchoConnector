@@ -34,5 +34,6 @@
 	"bs-notifications-edit-difflink-label": "Se forskjellen",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hei}}, $1",
 	"bs-notifications-htmlmail-sender-info": "{{GRAMMAR:genitive|$1}} varslingssystem",
-	"bs-notifications-mail-additional-links-label": "Ekstra lenker"
+	"bs-notifications-mail-additional-links-label": "Ekstra lenker",
+	"bs-notifications-echo-param-timestamp": "{{#time:j. F|@$1}} kl. {{#time:H:i|@$1}}"
 }
