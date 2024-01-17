@@ -22,7 +22,7 @@
 	"bs-notifications-web-edit-body": "A página \"$1\" foi {{GENDER:$2|editada}} por $3.",
 	"bs-notifications-create": "A página \"$1\" foi criada",
 	"bs-notifications-email-create-subject": "Página \"$1\" {{GENDER:$2|criada}} a $4 por $3",
-	"bs-notifications-email-create-body": "A página \"$1\" foi {{GENDER:$2|criada}} a $5 por $3.\n\nComentário:\n$4 \nPode visitar a página seguindo a hiperligação abaixo",
+	"bs-notifications-email-create-body": "A página \"$1\" foi criada a $5 por $3.\n\nComentário:\n$4 \nPode visitar a página seguindo a hiperligação abaixo{{GENDER:$2|}}",
 	"bs-notifications-web-create-body": "A página \"$1\" foi {{GENDER:$2|criada}} por $3.",
 	"bs-notifications-delete": "A página \"$1\" foi eliminada",
 	"bs-notifications-email-delete-subject": "Página \"$1\" {{GENDER:$2|eliminada}} a $4 por $3",
