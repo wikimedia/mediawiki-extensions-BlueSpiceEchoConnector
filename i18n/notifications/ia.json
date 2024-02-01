@@ -29,7 +29,7 @@
 	"bs-notifications-web-delete-body": "Le pagina \"$1\" ha essite {{GENDER:$2|delite}} per $3.",
 	"bs-notifications-move": "Le pagina \"$1\" ha essite renominate",
 	"bs-notifications-email-move-subject": "Pagina “$1” {{GENDER:$2|renominate}} a “$3” per $4 le $5",
-	"bs-notifications-email-move-body": "Le pagina \"$1\" ha essite {{GENDER:$2|renominate}} a \"$3\" a $6 per $4.\n\nMotivo:\n$5\n\nTu pote visitar le pagina sequente le ligamine hic infra",
+	"bs-notifications-email-move-body": "Le pagina “$1” ha essite {{GENDER:$2|renominate}} a “$3” per $4 le $6.\n\nMotivo:\n$5\n\nTu pote visitar le pagina sequente le ligamine hic infra.",
 	"bs-notifications-web-move-body": "Le pagina \"$1\" ha essite {{GENDER:$2|renominate}} a \"$3\" per $4",
 	"bs-notifications-edit-difflink-label": "Vider differentia",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Salute}} $1",
