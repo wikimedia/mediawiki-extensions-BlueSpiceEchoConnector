@@ -34,5 +34,6 @@
 	"bs-notifications-edit-difflink-label": "'Ndruche le differenze",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Cià}} $1",
 	"bs-notifications-htmlmail-sender-info": "$1 sisteme de notifeche",
-	"bs-notifications-mail-additional-links-label": "Collegaminde aggiundive"
+	"bs-notifications-mail-additional-links-label": "Collegaminde aggiundive",
+	"bs-notifications-echo-param-timestamp": "'u {{#time: j F|@$1}} a le {{#time: h:i a|@$1}}"
 }
