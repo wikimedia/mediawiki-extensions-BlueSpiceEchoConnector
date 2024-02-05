@@ -34,5 +34,6 @@
 	"bs-notifications-edit-difflink-label": "Vedi le differenze",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Ciao}} $1",
 	"bs-notifications-htmlmail-sender-info": "Sistema di notifica $1",
-	"bs-notifications-mail-additional-links-label": "Collegamenti aggiuntivi"
+	"bs-notifications-mail-additional-links-label": "Collegamenti aggiuntivi",
+	"bs-notifications-echo-param-timestamp": "il {{#time: j F|@$1}} alle {{#time: H:i|@$1}}"
 }
