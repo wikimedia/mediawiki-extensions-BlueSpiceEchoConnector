@@ -11,5 +11,6 @@
 	"bs-notifications-email-delete-body": "$1 পাতাটি $3 কর্তৃক $5-এ {{GENDER:$2|অপসারিত}} হয়েছে।\n\nকারণটি ছিল:\n$4",
 	"bs-notifications-edit-difflink-label": "পার্থক্য দেখুন",
 	"bs-notifications-htmlmail-sender-info": "$1 বিজ্ঞপ্তি ব্যবস্থা",
-	"bs-notifications-mail-additional-links-label": "অতিরিক্ত সংযোগ"
+	"bs-notifications-mail-additional-links-label": "অতিরিক্ত সংযোগ",
+	"bs-notifications-echo-param-timestamp": "{{#time: j F|@$1}} {{#time: h:i a|@$1}}-এ"
 }
