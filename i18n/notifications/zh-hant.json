@@ -18,7 +18,7 @@
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|User}}$2已{{GENDER:$1|建立}}一個帳號。",
 	"bs-notifications-edit": "已修改頁面「$1」",
 	"bs-notifications-edit-bundle": "頁面「$2」已被更改 {{PLURAL:$1|$1 次|$1 次}}",
-	"bs-notifications-email-edit-subject": "頁面「$1」已由 $3 於 $4 {{GENDER:$2|編輯}}",
+	"bs-notifications-email-edit-subject": "頁面「$1」已由$3於$4{{GENDER:$2|編輯}}",
 	"bs-notifications-email-edit-body": "頁面「$1」已由 $4 於 $5 {{GENDER:$2|編輯}}。\n\n註解：\n$3",
 	"bs-notifications-web-edit-body": "頁面「$1」已由 $3 {{GENDER:$2|編輯}}。",
 	"bs-notifications-create": "頁面「$1」已建立",
@@ -36,5 +36,6 @@
 	"bs-notifications-edit-difflink-label": "查看差異",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|嗨}} $1",
 	"bs-notifications-htmlmail-sender-info": "$1 通知系統",
-	"bs-notifications-mail-additional-links-label": "額外連結"
+	"bs-notifications-mail-additional-links-label": "額外連結",
+	"bs-notifications-echo-param-timestamp": "於{{#time: Y年n月j日 (D) H:i|@$1}}"
 }
