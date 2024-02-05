@@ -11,5 +11,6 @@
 	"bs-notifications-email-delete-body": "Yaɣili ŋɔ \"$1\" daa {{GENDER:$2|deleted}} $5 ŋun daa yihili nyɛ $3.\n\nDi daliri n-daa nyɛ:\n$4",
 	"bs-notifications-email-move-subject": "Yaɣili $1  {{GENDER:$2|moved}} $5 kpɛ \"$3\", $4",
 	"bs-notifications-email-move-body": "Yaɣili ŋɔ \"$1\" daa {{GENDER\n:$2|moved}} kpɛ \"$3\" $6, din daa zaŋ li kpɛ nyɛ $4.\nDaliri n-daa nyɛ:\n$5\nA ni tooi doli soli ŋɔ kpɛ yaɣili din doli na ŋɔ",
-	"bs-notifications-email-delete-subject": "Yaɣili \"$1  {{GENDER:$2|deleted}} $4 ŋun daa yihili maa nyɛ  $3"
+	"bs-notifications-email-delete-subject": "Yaɣili \"$1  {{GENDER:$2|deleted}} $4 ŋun daa yihili maa nyɛ  $3",
+	"bs-notifications-echo-param-timestamp": "Zuɣu {{#time: j F|@$1}} ni {{#time: h:i a|@$1}}"
 }

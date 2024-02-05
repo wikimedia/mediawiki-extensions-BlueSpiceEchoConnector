@@ -6,6 +6,7 @@
 			"Liuxinyu970226",
 			"Tranve",
 			"WQL",
+			"Winston Sung",
 			"佛壁灯",
 			"列维劳德"
 		]
@@ -40,5 +41,6 @@
 	"bs-notifications-edit-difflink-label": "查看差异",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|您好}}$1",
 	"bs-notifications-htmlmail-sender-info": "$1通知系统",
-	"bs-notifications-mail-additional-links-label": "额外链接"
+	"bs-notifications-mail-additional-links-label": "额外链接",
+	"bs-notifications-echo-param-timestamp": "于{{#time: Y年n月j日 (D) H:i|@$1}}"
 }
