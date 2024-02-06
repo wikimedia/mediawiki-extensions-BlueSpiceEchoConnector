@@ -201,7 +201,7 @@ class Extension {
 			'BSEchoConnectorUserLocator'
 		);
 
-		return $userLocator->getAllSubscribed( 'bs_create', $event->getTitle() );
+		return $userLocator->getAllSubscribed( 'bs-page-create-cat', $event->getTitle() );
 	}
 
 	/**
