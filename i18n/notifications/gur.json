@@ -1,8 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Baba Ayɛ'ɛra"
-		]
-	},
-	"bs-notifications-echo-param-timestamp": "N boi {{#time: j F|@$1}} at {{#time: H:i|@$1}} o'clock"
-}

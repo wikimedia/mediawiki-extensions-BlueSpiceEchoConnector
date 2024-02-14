@@ -1,8 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Vishwanatha Badikana"
-		]
-	},
-	"bs-notifications-echo-param-timestamp": "ಆನಿದ {{#time: j F|@$1}}  {{#time: H:i|@$1}} ಗಂಟೆಗ್"
-}
