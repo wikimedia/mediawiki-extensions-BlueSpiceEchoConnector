@@ -7,7 +7,7 @@ use BlueSpice\Hook\GetPreferences;
 class HidePreferences extends GetPreferences {
 
 	protected function doProcess() {
-		foreach ( [ 'enotifwatchlistpages','enotifminoredits' ] as $watchPrefs ) {
+		foreach ( [ 'enotifwatchlistpages', 'enotifminoredits' ] as $watchPrefs ) {
 			if ( !isset( $this->preferences[$watchPrefs] ) ) {
 				continue;
 			}

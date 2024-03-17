@@ -80,7 +80,7 @@ class NotifyUsers extends PageSaveComplete {
 			);
 		} else {
 			$notifier->notify( new EditInNamespaceOrCategoryNotification(
-				$agent, $title,  $this->revisionRecord, $this->summary
+				$agent, $title, $this->revisionRecord, $this->summary
 			) );
 		}
 	}

@@ -12,7 +12,7 @@ class GetNotificationTypesForEvent extends EchoGetNotificationTypes {
 		if ( $type == "bs-adduser" ) {
 			$userOptionsLookup = MediaWikiServices::getInstance()->getUserOptionsLookup();
 			$arrUserOptions = $userOptionsLookup->getOptions( $this->user );
-			$this->userNotifyTypes = array_diff( $this->userNotifyTypes,  [ 'web', 'email' ] );
+			$this->userNotifyTypes = array_diff( $this->userNotifyTypes, [ 'web', 'email' ] );
 
 			if ( isset( $arrUserOptions[ 'echo-subscriptions-web-bs-admin-cat' ] ) &&
 				$arrUserOptions[ 'echo-subscriptions-web-bs-admin-cat' ] == 1 ) {
