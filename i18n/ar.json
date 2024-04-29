@@ -3,20 +3,20 @@
 		"authors": [
 			"FiberAhmed",
 			"Meno25",
-			"أَحمد",
-			"ديفيد",
-			"محمد أحمد عبد الفتاح"
+			"\u0623\u064e\u062d\u0645\u062f",
+			"\u062f\u064a\u0641\u064a\u062f",
+			"\u0645\u062d\u0645\u062f \u0623\u062d\u0645\u062f \u0639\u0628\u062f \u0627\u0644\u0641\u062a\u0627\u062d"
 		]
 	},
-	"bs-echoconnector-extension-description": "يربط BlueSpice بإشعار",
-	"echo-category-title-bs-admin-cat": "مهام إدارية",
-	"echo-pref-tooltip-bs-admin-cat": "أخبرني عند إنشاء حساب مستخدم جديد",
-	"echo-pref-tooltip-bs-page-create-cat": "أرسل إشعارًا لي عند إنشاء صفحة جديدة",
-	"echo-category-title-bs-page-actions-cat": "الإجراءات على الصفحات في قائمة المراقبة",
-	"echo-category-title-bs-page-create-cat": "إنشاء الصفحة",
-	"prefs-namespace-notifications": "الإخطارات بشأن أحداث مساحة الاسم",
-	"prefs-category-notifications": "الإخطارات على الفئات",
-	"bs-echoconnector-personalurl-notifications": "الإشعارات ($1)",
-	"echo-pref-tooltip-bs-page-actions-cat": "إعلامي عندما يقوم شخص ما بتعديل أو نقل أو حذف صفحة أشاهدها",
-	"echo-category-title-bs-namespace-category-notify-cat": "التغييرات في مساحات وفئات المشتركين"
+	"bs-echoconnector-extension-description": "\u064a\u0631\u0628\u0637 BlueSpice \u0628\u0625\u0634\u0639\u0627\u0631",
+	"echo-category-title-bs-admin-cat": "\u0645\u0647\u0627\u0645 \u0625\u062f\u0627\u0631\u064a\u0629",
+	"echo-pref-tooltip-bs-admin-cat": "\u0623\u062e\u0628\u0631\u0646\u064a \u0639\u0646\u062f \u0625\u0646\u0634\u0627\u0621 \u062d\u0633\u0627\u0628 \u0645\u0633\u062a\u062e\u062f\u0645 \u062c\u062f\u064a\u062f",
+	"echo-pref-tooltip-bs-page-create-cat": "\u0623\u0631\u0633\u0644 \u0625\u0634\u0639\u0627\u0631\u064b\u0627 \u0644\u064a \u0639\u0646\u062f \u0625\u0646\u0634\u0627\u0621 \u0635\u0641\u062d\u0629 \u062c\u062f\u064a\u062f\u0629",
+	"echo-category-title-bs-page-actions-cat": "\u0627\u0644\u0625\u062c\u0631\u0627\u0621\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0635\u0641\u062d\u0627\u062a \u0641\u064a \u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0645\u0631\u0627\u0642\u0628\u0629",
+	"echo-category-title-bs-page-create-cat": "\u0625\u0646\u0634\u0627\u0621 \u0627\u0644\u0635\u0641\u062d\u0629",
+	"prefs-namespace-notifications": "\u0627\u0644\u0625\u062e\u0637\u0627\u0631\u0627\u062a \u0628\u0634\u0623\u0646 \u0623\u062d\u062f\u0627\u062b \u0645\u0633\u0627\u062d\u0629 \u0627\u0644\u0627\u0633\u0645",
+	"prefs-category-notifications": "\u0627\u0644\u0625\u062e\u0637\u0627\u0631\u0627\u062a \u0639\u0644\u0649 \u0627\u0644\u0641\u0626\u0627\u062a",
+	"bs-echoconnector-personalurl-notifications": "\u0627\u0644\u0625\u0634\u0639\u0627\u0631\u0627\u062a ($1)",
+	"echo-pref-tooltip-bs-page-actions-cat": "\u0625\u0639\u0644\u0627\u0645\u064a \u0639\u0646\u062f\u0645\u0627 \u064a\u0642\u0648\u0645 \u0634\u062e\u0635 \u0645\u0627 \u0628\u062a\u0639\u062f\u064a\u0644 \u0623\u0648 \u0646\u0642\u0644 \u0623\u0648 \u062d\u0630\u0641 \u0635\u0641\u062d\u0629 \u0623\u0634\u0627\u0647\u062f\u0647\u0627",
+	"echo-category-title-bs-namespace-category-notify-cat": "\u0627\u0644\u062a\u063a\u064a\u064a\u0631\u0627\u062a \u0641\u064a \u0645\u0633\u0627\u062d\u0627\u062a \u0648\u0641\u0626\u0627\u062a \u0627\u0644\u0645\u0634\u062a\u0631\u0643\u064a\u0646"
 }

@@ -4,13 +4,13 @@
 			"Kalakpagh"
 		]
 	},
-	"bs-notifications-email-edit-subject": "Yaɣili \"$1\" {{GENDER:$2|edited}} $4, ŋun daa niŋ maliniŋ ŋɔ nyɛ $3",
-	"bs-notifications-email-edit-body": "Yaɣili ŋɔ \"$1\" daa {{GENDER\n:$2|edited}} $5 ŋun daa maliniŋ ŋɔ nyɛ $4.\n\nSabima:\n$3",
-	"bs-notifications-email-create-subject": "Yaɣili \"$1\" {{GENDER:$2|created}} $4 din daa yoo li nyɛ $3",
-	"bs-notifications-email-create-body": "Yaɣili ŋɔ \"$1\" daa {{GENDER:$2|yoomi}} $5 din daa yoo li nyɛ $3.\nYɛlima:\n$4\nA ni tooi kpɛ yaɣili ŋɔ a yi doli so shɛli din doli na ŋɔ",
-	"bs-notifications-email-delete-body": "Yaɣili ŋɔ \"$1\" daa {{GENDER:$2|deleted}} $5 ŋun daa yihili nyɛ $3.\n\nDi daliri n-daa nyɛ:\n$4",
-	"bs-notifications-email-move-subject": "Yaɣili $1  {{GENDER:$2|moved}} $5 kpɛ \"$3\", $4",
-	"bs-notifications-email-move-body": "Yaɣili ŋɔ \"$1\" daa {{GENDER\n:$2|moved}} kpɛ \"$3\" $6, din daa zaŋ li kpɛ nyɛ $4.\nDaliri n-daa nyɛ:\n$5\nA ni tooi doli soli ŋɔ kpɛ yaɣili din doli na ŋɔ",
-	"bs-notifications-email-delete-subject": "Yaɣili \"$1  {{GENDER:$2|deleted}} $4 ŋun daa yihili maa nyɛ  $3",
-	"bs-notifications-echo-param-timestamp": "Zuɣu {{#time: j F|@$1}} ni {{#time: h:i a|@$1}}"
+	"bs-notifications-email-edit-subject": "Ya\u0263ili \"$1\" {{GENDER:$2|edited}} $4, \u014bun daa ni\u014b malini\u014b \u014b\u0254 ny\u025b $3",
+	"bs-notifications-email-edit-body": "Ya\u0263ili \u014b\u0254 \"$1\" daa {{GENDER\n:$2|edited}} $5 \u014bun daa malini\u014b \u014b\u0254 ny\u025b $4.\n\nSabima:\n$3",
+	"bs-notifications-email-create-subject": "Ya\u0263ili \"$1\" {{GENDER:$2|created}} $4 din daa yoo li ny\u025b $3",
+	"bs-notifications-email-create-body": "Ya\u0263ili \u014b\u0254 \"$1\" daa {{GENDER:$2|yoomi}} $5 din daa yoo li ny\u025b $3.\nY\u025blima:\n$4\nA ni tooi kp\u025b ya\u0263ili \u014b\u0254 a yi doli so sh\u025bli din doli na \u014b\u0254",
+	"bs-notifications-email-delete-body": "Ya\u0263ili \u014b\u0254 \"$1\" daa {{GENDER:$2|deleted}} $5 \u014bun daa yihili ny\u025b $3.\n\nDi daliri n-daa ny\u025b:\n$4",
+	"bs-notifications-email-move-subject": "Ya\u0263ili $1  {{GENDER:$2|moved}} $5 kp\u025b \"$3\", $4",
+	"bs-notifications-email-move-body": "Ya\u0263ili \u014b\u0254 \"$1\" daa {{GENDER\n:$2|moved}} kp\u025b \"$3\" $6, din daa za\u014b li kp\u025b ny\u025b $4.\nDaliri n-daa ny\u025b:\n$5\nA ni tooi doli soli \u014b\u0254 kp\u025b ya\u0263ili din doli na \u014b\u0254",
+	"bs-notifications-email-delete-subject": "Ya\u0263ili \"$1  {{GENDER:$2|deleted}} $4 \u014bun daa yihili maa ny\u025b  $3",
+	"bs-notifications-echo-param-timestamp": "Zu\u0263u {{#time: j F|@$1}} ni {{#time: h:i a|@$1}}"
 }
