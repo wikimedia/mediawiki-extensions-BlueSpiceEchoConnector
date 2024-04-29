@@ -8,9 +8,9 @@
 	},
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Luoja}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Luoja}}: $1",
-	"bs-notifications-registeruser": "Käyttäjä \"$1\" on luonut tilin.",
+	"bs-notifications-registeruser": "K\u00e4ytt\u00e4j\u00e4 \"$1\" on luonut tilin.",
 	"bs-notifications-create": "Sivu \"$1\" luotiin",
 	"bs-notifications-email-delete-subject": "$3 {{GENDER:$2|poisti}} sivun \"$1\" $4",
-	"bs-notifications-edit-difflink-label": "Näytä ero",
-	"bs-notifications-addaccount": "Käyttäjä \"$1\" luotiin."
+	"bs-notifications-edit-difflink-label": "N\u00e4yt\u00e4 ero",
+	"bs-notifications-addaccount": "K\u00e4ytt\u00e4j\u00e4 \"$1\" luotiin."
 }
