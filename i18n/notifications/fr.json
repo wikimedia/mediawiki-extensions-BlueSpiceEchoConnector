@@ -7,7 +7,8 @@
 			"Thibaut120094",
 			"Urhixidur",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Alien333"
 		]
 	},
 	"bs-notifications-addaccount": "L’utilisateur « $1 » a été créé.",
@@ -31,7 +32,7 @@
 	"bs-notifications-web-create-body": "La page « $1 » a été créée par {{GENDER:$2|}}$3.",
 	"bs-notifications-delete": "La page « $1 » a été supprimée",
 	"bs-notifications-email-delete-subject": "Page « $1 » supprimée par {{GENDER:$2|}}$3 le $4",
-	"bs-notifications-email-delete-body": "La page « $1 » a été supprimée par {{GENDER:$2|}}$3 le $5.\n\nLe motif en était :\n$4",
+	"bs-notifications-email-delete-body": "La page \"$1\" a été {{GENDER:$2|supprimée}} par $3 le $5.\n\nLe motif en était :\n$4",
 	"bs-notifications-web-delete-body": "La page « $1 » a été supprimé{{GENDER:$2|e|e}} par $3.",
 	"bs-notifications-move": "La page « $1 » a été déplacée",
 	"bs-notifications-email-move-subject": "Page « $1 » {{GENDER:$2|déplacée}} vers « $3 » le $5 par $4",
@@ -41,5 +42,6 @@
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|}}Bonjour $1",
 	"bs-notifications-htmlmail-sender-info": "Système de notification de $1",
 	"bs-notifications-mail-additional-links-label": "Liens supplémentaires",
-	"bs-notifications-param-realname-with-username": "$1 ($2)"
+	"bs-notifications-param-realname-with-username": "$1 ($2)",
+	"bs-notifications-echo-param-timestamp": "le {{#time: j F|@$1}} à {{#time: h:i a|@$1}}"
 }
