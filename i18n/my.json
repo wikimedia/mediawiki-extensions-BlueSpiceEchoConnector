@@ -4,8 +4,8 @@
 			"Dr Lotus Black"
 		]
 	},
-	"echo-category-title-bs-admin-cat": "\u1005\u102e\u1019\u1036\u1001\u1014\u1037\u103a\u1001\u103d\u1032\u101b\u1031\u1038\u1006\u102d\u102f\u1004\u103a\u101b\u102c \u1006\u1031\u102c\u1004\u103a\u101b\u103d\u1000\u103a\u1001\u103b\u1000\u103a\u1019\u103b\u102c\u1038",
-	"echo-pref-tooltip-bs-admin-cat": "\u1021\u101e\u102f\u1036\u1038\u1015\u103c\u102f\u101e\u1030\u1021\u1000\u1031\u102c\u1004\u1037\u103a\u101e\u1005\u103a\u1016\u1014\u103a\u1010\u102e\u1038\u1015\u102b\u1000 \u1021\u101e\u102d\u1015\u1031\u1038\u1015\u102b",
-	"bs-echoconnector-personalurl-notifications": "\u1021\u101e\u102d\u1015\u1031\u1038\u1001\u103b\u1000\u103a\u1019\u103b\u102c\u1038 ($1)",
-	"echo-category-title-bs-page-create-cat": "\u1005\u102c\u1019\u103b\u1000\u103a\u1014\u103e\u102c \u1016\u1014\u103a\u1010\u102e\u1038\u1019\u103e\u102f"
+	"echo-category-title-bs-admin-cat": "စီမံခန့်ခွဲရေးဆိုင်ရာ ဆောင်ရွက်ချက်များ",
+	"echo-pref-tooltip-bs-admin-cat": "အသုံးပြုသူအကောင့်သစ်ဖန်တီးပါက အသိပေးပါ",
+	"bs-echoconnector-personalurl-notifications": "အသိပေးချက်များ ($1)",
+	"echo-category-title-bs-page-create-cat": "စာမျက်နှာ ဖန်တီးမှု"
 }
