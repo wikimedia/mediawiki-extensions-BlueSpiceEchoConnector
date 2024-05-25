@@ -211,10 +211,9 @@ class TestNotification extends Maintenance {
 		$GLOBALS['wgEchoEnableEmailBatch'] = true;
 		$GLOBALS['wgEchoUseJobQueue'] = true;
 
-		$that = $this;
 		$hookContainer = $this->services->getHookContainer();
-		$hookContainer->register( 'EchoGetDefaultNotifiedUsers', static function ( $event, &$users ) use ( $that )  {
-			$users = $that->getAffectedUsers();
+		$hookContainer->register( 'EchoGetDefaultNotifiedUsers', function ( $event, &$users ) {
+			$users = $this->getAffectedUsers();
 			return false;
 		} );
 	}
