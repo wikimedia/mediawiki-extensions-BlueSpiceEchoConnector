@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Ljonka",
 			"Metalhead64",
-			"Mglaser",
-			"Justman10000"
+			"Mglaser"
 		]
 	},
 	"bs-echoconnector-extension-description": "Verbindet BlueSpice mit Echo",
