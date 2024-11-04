@@ -39,6 +39,5 @@
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Pozdravljeni}}, $1",
 	"bs-notifications-htmlmail-sender-info": "Obvestilni sistem $1",
 	"bs-notifications-mail-additional-links-label": "Dodatne povezave",
-	"bs-notifications-param-realname-with-username": "$1 ($2)",
 	"bs-notifications-echo-param-timestamp": "dne {{#time: j F|@$1}} ob {{#time: h:i a|@$1}}"
 }
