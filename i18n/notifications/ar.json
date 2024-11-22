@@ -37,5 +37,6 @@
 	"bs-notifications-edit-difflink-label": "انظر الفرق",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|مرحبا بك}} $1",
 	"bs-notifications-htmlmail-sender-info": "نظام الإخطار $1",
-	"bs-notifications-mail-additional-links-label": "وصلات إضافية"
+	"bs-notifications-mail-additional-links-label": "وصلات إضافية",
+	"bs-notifications-echo-param-timestamp": "في {{#time: j F|@$1}} في {{#time: h:i a|@$1}}"
 }
