@@ -4,7 +4,8 @@
 			"Codenstory",
 			"Nuevo Paso",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"Suleiman the Magnificent Television"
 		]
 	},
 	"bs-notifications-addaccount": "$1 사용자가 만들어졌습니다.",
@@ -19,11 +20,11 @@
 	"bs-notifications-web-registeruser-body": "$2 {{GENDER:$1|사용자}}가 계정을 {{GENDER:$1|만들었습니다}}.",
 	"bs-notifications-edit": "\"$1\" 문서가 바뀌었습니다",
 	"bs-notifications-edit-bundle": "\"$2\" 문서가 {{PLURAL:$1|$1번}} 변경되었습니다",
-	"bs-notifications-email-edit-subject": "$3님이 \"$1\" 문서를 $4에 {{GENDER:$2|편집함}}",
-	"bs-notifications-email-edit-body": "$4님이 $5에 \"$1\" 문서를 {{GENDER:$2|편집했습니다}}.\n\n설명:\n$3",
+	"bs-notifications-email-edit-subject": "$3, $1문서를 $4에 {{GENDER:$2|편집}}",
+	"bs-notifications-email-edit-body": "$4, $1문서를 $5에 $2편집\n\n댓글:\n$3",
 	"bs-notifications-web-edit-body": "$3님이 \"$1\" 문서를 {{GENDER:$2|편집했습니다}}.",
 	"bs-notifications-create": "\"$1\" 문서가 만들어졌습니다",
-	"bs-notifications-email-create-subject": "$3님이 \"$1\" 문서를 $4에 {{GENDER:$2|만듦}}",
+	"bs-notifications-email-create-subject": "$3, $1문서를 $4에 {{GENDER:$2|생성}}",
 	"bs-notifications-email-create-body": "$3님이 \"$1\" 문서를 $5에 {{GENDER:$2|만들었습니다}}.\n\n설명:\n$4\n아래의 링크를 통해 문서를 방문할 수 있습니다",
 	"bs-notifications-web-create-body": "$3님이 \"$1\" 문서를 {{GENDER:$2|만들었습니다}}.",
 	"bs-notifications-delete": "\"$1\" 문서가 삭제되었습니다",
