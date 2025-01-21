@@ -8,7 +8,8 @@
 			"Movses",
 			"Okras",
 			"Romanko Mikhail",
-			"Vlad5250"
+			"Vlad5250",
+			"Kaganer"
 		]
 	},
 	"bs-notifications-addaccount": "Участник \"$1\" был создан.",
@@ -17,8 +18,8 @@
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Участник $2 был создан|Участница $2 была создана}}.",
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|Создатель|Создательница}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Создатель|Создательница}}: $1",
-	"bs-notifications-registeruser": "Пользователь \"$1\" создал аккаунт.",
-	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Участник|Участница}} \"$2\" {{GENDER:$1|создал|создала}} аккаунт",
+	"bs-notifications-registeruser": "Участник \"$1\" создал учётную запись.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Участник|Участница}} \"$2\" {{GENDER:$1|создал|создала}} учётную запись",
 	"bs-notifications-edit": "Страница «$1» была изменена",
 	"bs-notifications-email-edit-subject": "Страница «$1» отредактирована $4 {{GENDER:$2|участником|участницей}} $3",
 	"bs-notifications-email-edit-body": "Страница «$1» была отредактирована $5 {{GENDER:$2|участником|участницей}} $4.\n\nКомментарий:\n$3",
