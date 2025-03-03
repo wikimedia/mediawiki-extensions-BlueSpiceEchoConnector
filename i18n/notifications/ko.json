@@ -28,7 +28,7 @@
 	"bs-notifications-email-create-body": "$3님이 \"$1\" 문서를 $5에 {{GENDER:$2|만들었습니다}}.\n\n설명:\n$4\n아래의 링크를 통해 문서를 방문할 수 있습니다",
 	"bs-notifications-web-create-body": "$3님이 \"$1\" 문서를 {{GENDER:$2|만들었습니다}}.",
 	"bs-notifications-delete": "\"$1\" 문서가 삭제되었습니다",
-	"bs-notifications-email-delete-subject": "$3 님이 \"$1\" 문서를 $4에 {{GENDER:$2|삭제했습니다}}",
+	"bs-notifications-email-delete-subject": "$3, $1문서를 $4에 {{GENDER:$2|삭제}}",
 	"bs-notifications-email-delete-body": "$3님이 \"$1\" 문서를 $5에 {{GENDER:$2|삭제했습니다}}.\n\n이유는 다음과 같습니다:\n$4",
 	"bs-notifications-web-delete-body": "$3님이 \"$1\" 문서를 {{GENDER:$2|삭제했습니다}}.",
 	"bs-notifications-move": "\"$1\" 문서가 이동되었습니다",
