@@ -9,7 +9,7 @@
 	"echo-pref-tooltip-bs-admin-cat": "Obvesti me, ko je ustvarjen nov uporabniški račun",
 	"echo-pref-tooltip-bs-page-actions-cat": "Obvesti me, ko nekdo uredi, prestavi ali izbriše stran, ki jo opazujem",
 	"echo-pref-tooltip-bs-page-create-cat": "Obvesti me, ko je ustvarjena nova stran",
-	"echo-category-title-bs-page-actions-cat": "Dejanja na straneh na spisku nadzorov",
+	"echo-category-title-bs-page-actions-cat": "Dejanja na straneh na nadzornem seznamu",
 	"echo-category-title-bs-page-create-cat": "Ustvaritev strani",
 	"prefs-namespace-notifications": "Obvestila o dogodkih imenskega prostora",
 	"prefs-category-notifications": "Obvestila o kategorijah",
