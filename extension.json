@@ -143,7 +143,7 @@
 		"BlueSpice\\EchoConnector\\": "src/"
 	},
 	"TestAutoloadNamespaces": {
-		"BlueSpice\\EchoConnector\\Tests\\": "tests/phpunit"
+		"BlueSpice\\EchoConnector\\Tests\\": "tests/phpunit/"
 	},
 	"ServiceWiringFiles": [
 		"ServiceWiring.php"
