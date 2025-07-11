@@ -4,6 +4,7 @@
 			"Умар"
 		]
 	},
+	"bs-notifications-addaccount": "Декъашхо \"$1\" кхоьллина.",
 	"bs-notifications-email-addaccount-subject": "{{GENDER:$1|Декъашхо кхоьллина}} $2 цӀарца",
 	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Кхоьллина декъашхо}} $2 цӀарца.\n\nХьан йиш йу {{GENDER:$1|цуьнан}} агӀонга хьажа, лахарчу хьажорган чохь",
 	"bs-notifications-web-addaccount-body": "{{GENDER:$1|$2 декъашхо кхоьллина}}.",
@@ -11,8 +12,16 @@
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|Кхоллархо}}: $1",
 	"bs-notifications-registeruser": "\"$1\" декъашхочо кхоьллина аккаунт.",
 	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Декъашхочо}} \"$2\" {{GENDER:$1|кхоьллина}} аккаунт",
-	"bs-notifications-create": "[[:$1]] агӀо кхоьллина",
+	"bs-notifications-create": "\"$1\" агӀо кхоьллина",
+	"bs-notifications-email-create-subject": "«$1» агӀо кхоьллина $4 {{GENDER:$2|декъашхочо}} $3.",
+	"bs-notifications-email-create-body": "«$1» агӀо кхоьллина $5 {{GENDER:$2|декъашхочо}} $3.\n\nКомментари:\n$4 \nАгӀоне хьажа лахарчу хьажорган чугӀо.",
+	"bs-notifications-web-create-body": "«$1» агӀо {{GENDER:$2|кхоьллина}} $3.",
 	"bs-notifications-delete": "«$1» агӀо дӀайаьккхина",
+	"bs-notifications-email-delete-subject": "«$1» агӀо дӀайаьккхина $4 {{GENDER:$2|декъашхочо}} $3.",
+	"bs-notifications-email-delete-body": "«$1» агӀо дӀайаьккхина $5 {{GENDER:$2|декъашхочо}} $3.\n\nБахьана:\n$4",
+	"bs-notifications-web-delete-body": "«$1» агӀо {{GENDER:$2|дӀайаьккхина}} $3.",
+	"bs-notifications-move": "«$1» агӀо дехьайаьккхина",
 	"bs-notifications-edit-difflink-label": "Схьагайта башхаллаш",
-	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Марша догӀийла}}, $1"
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Марша догӀийла}}, $1",
+	"bs-notifications-mail-additional-links-label": "Кхин а хьажоргаш"
 }
