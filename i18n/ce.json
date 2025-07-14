@@ -4,5 +4,8 @@
 			"Умар"
 		]
 	},
-	"echo-category-title-bs-page-create-cat": "АгӀо кхоллар"
+	"echo-category-title-bs-admin-cat": "Административан декхарш кхочушдар",
+	"echo-category-title-bs-page-create-cat": "АгӀо кхоллар",
+	"prefs-category-notifications": "Категорийн хаамаш",
+	"bs-echoconnector-personalurl-notifications": "Хаам ($1)"
 }
