@@ -3,9 +3,19 @@
 		"authors": [
 			"ArenaL5",
 			"Elisardojm",
+			"Toliño",
 			"Xabier Cid"
 		]
 	},
-	"echo-pref-tooltip-bs-page-create-cat": "Enviádeme aviso cando se cree unha páxina nova",
-	"prefs-namespace-notifications": "Notificacións por eventos de espazos de nomes"
+	"bs-echoconnector-extension-description": "Conecta BlueSpice con Echo",
+	"echo-category-title-bs-admin-cat": "Tarefas administrativas",
+	"echo-pref-tooltip-bs-admin-cat": "Notificádeme cando se cree unha nova conta de usuario",
+	"echo-pref-tooltip-bs-page-actions-cat": "Notificádeme cando alguén edite, traslade ou elimine unha páxina que vixío",
+	"echo-pref-tooltip-bs-page-create-cat": "Notificádeme cando se cree unha páxina nova",
+	"echo-category-title-bs-page-actions-cat": "Accións nas páxinas da lista de vixilancia",
+	"echo-category-title-bs-page-create-cat": "Creación de páxinas",
+	"prefs-namespace-notifications": "Notificacións sobre eventos de espazos de nomes",
+	"prefs-category-notifications": "Notificacións sobre categorías",
+	"echo-category-title-bs-namespace-category-notify-cat": "Cambios nos espazos de nomes e categorías aos que tes unha subscrición",
+	"bs-echoconnector-personalurl-notifications": "Notificacións ($1)"
 }
