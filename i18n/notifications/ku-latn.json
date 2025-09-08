@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Bikarhêner",
-			"George Animal"
+			"George Animal",
+			"Guherto"
 		]
 	},
-	"bs-notifications-email-delete-subject": "Rûpel \"$1\" ji aliyê $3 ve di $4 de {{GENDER:$2|hate jêbirin}}"
+	"bs-notifications-email-delete-subject": "Rûpel \"$1\" ji aliyê $3 ve di $4 de {{GENDER:$2|hat jêbirin}}"
 }
