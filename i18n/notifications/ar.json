@@ -4,7 +4,8 @@
 			"LaMagiaaa",
 			"Meno25",
 			"أيوب",
-			"ديفيد"
+			"ديفيد",
+			"Mohammed Qays"
 		]
 	},
 	"bs-notifications-addaccount": "تم إنشاء المستخدم \"$1\".",
@@ -14,7 +15,7 @@
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|منشئ|منشئة}}: $1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|منشئ|منشئة}}: $1",
 	"bs-notifications-registeruser": "أنشأ المستخدم \"$1\" حسابا.",
-	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|المستخدم|المستخدمة}} \"$2\" قد {{GENDER:$1|أنشأ|أنشأ}} حسابا",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|المستخدم|المستخدمة}} \"$2\" قد {{GENDER:$1|أنشأ|أنشأت}} حسابًا",
 	"bs-notifications-email-registeruser-body": "{{GENDER:$1|المستخدم|المستخدمة}} \"$2\" قد {{GENDER:$1|أنشأ|أنشأ}} حسابا\n\nيمكنك زيارة صفحة المستخدم الخاصة {{GENDER:$1|به|بها}} من خلال اتباع الرابط أدناه",
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|المستخدم|المستخدمة}} \"$2\" قد {{GENDER:$1|أنشأ|أنشأ}} حسابا",
 	"bs-notifications-edit": "تم تعديل الصفحة \"$1\"",
