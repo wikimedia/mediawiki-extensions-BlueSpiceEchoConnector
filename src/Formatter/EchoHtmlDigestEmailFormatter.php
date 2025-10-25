@@ -153,7 +153,7 @@ class EchoHtmlDigestEmailFormatter extends \EchoHtmlDigestEmailFormatter {
 	 * @return array
 	 */
 	protected function getEventParams( $model ) {
-		$iconUrl = wfExpandUrl(
+		$iconUrl = MediaWikiServices::getInstance()->getUrlUtils()->expand(
 			\EchoIcon::getUrl( $model->getIconType(), $this->language->getCode() ),
 			PROTO_CANONICAL
 		);

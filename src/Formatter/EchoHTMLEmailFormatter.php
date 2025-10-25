@@ -99,7 +99,7 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 			$actions['secondary'] = $this->makeLinkList( $secondaryLinks );
 		}
 
-		$iconUrl = wfExpandUrl(
+		$iconUrl = MediaWikiServices::getInstance()->getUrlUtils()->expand(
 			\EchoIcon::getUrl( $model->getIconType(), $this->language->getDir() ),
 			PROTO_CANONICAL
 		);
@@ -178,7 +178,8 @@ class EchoHTMLEmailFormatter extends \EchoHtmlEmailFormatter {
 		$html = $this->templateParser->processTemplate(
 			$this->templateNames[$type],
 			[
-				'url' => wfExpandUrl( $link['url'], PROTO_CANONICAL ),
+				'url' => MediaWikiServices::getInstance()->getUrlUtils()
+					->expand( $link['url'], PROTO_CANONICAL ),
 				'label' => $link['label']
 			]
 		);
