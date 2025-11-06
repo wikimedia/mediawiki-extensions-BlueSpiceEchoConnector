@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Mansil alfalb"
 		]
 	},
 	"bs-notifications-addaccount": "O utilizador \"$1\" foi criado.",
@@ -17,11 +18,11 @@
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|O utilizador|A utilizadora}} $2 criou uma conta.",
 	"bs-notifications-edit": "A página \"$1\" foi alterada",
 	"bs-notifications-edit-bundle": "A página \"$2\" foi alterada $1 {{PLURAL:$1|vez|vezes}}",
-	"bs-notifications-email-edit-subject": "Página \"$1\" {{GENDER:$2|editada}} a $4 por $3",
-	"bs-notifications-email-edit-body": "A página \"$1\" foi {{GENDER:$2|editada}} a $5 por $4.\n\nComentário:\n$3",
+	"bs-notifications-email-edit-subject": "Página \"$1\" {{GENDER:$2|editada}} $4 por $3",
+	"bs-notifications-email-edit-body": "A página \"$1\" foi {{GENDER:$2|editada}} $5 por $4.\n\nComentário:\n$3",
 	"bs-notifications-web-edit-body": "A página \"$1\" foi {{GENDER:$2|editada}} por $3.",
 	"bs-notifications-create": "A página \"$1\" foi criada",
-	"bs-notifications-email-create-subject": "Página \"$1\" {{GENDER:$2|criada}} a $4 por $3",
+	"bs-notifications-email-create-subject": "Página \"$1\" {{GENDER:$2|criada}} $4 por $3",
 	"bs-notifications-email-create-body": "A página \"$1\" foi criada a $5 por $3.\n\nComentário:\n$4 \nPode visitar a página seguindo a hiperligação abaixo{{GENDER:$2|}}",
 	"bs-notifications-web-create-body": "A página \"$1\" foi {{GENDER:$2|criada}} por $3.",
 	"bs-notifications-delete": "A página \"$1\" foi eliminada",
