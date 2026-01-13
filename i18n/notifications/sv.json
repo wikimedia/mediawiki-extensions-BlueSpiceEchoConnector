@@ -3,7 +3,8 @@
 		"authors": [
 			"Mjälten",
 			"Sabelöga",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"bs-notifications-addaccount": "Användaren \"$1\" har skapats.",
@@ -22,7 +23,7 @@
 	"bs-notifications-email-edit-body": "Sidan \"$1\" har {{GENDER:$2|redigerades}} på $5 av $4.\n\nKommentar:\n$3",
 	"bs-notifications-web-edit-body": "Sidan \"$1\" har {{GENDER:$2|redigerats}} av $3.",
 	"bs-notifications-create": "Sidan \"$1\" har skapats",
-	"bs-notifications-email-create-subject": "Sidan \"$1\" {{GENDER:$2|skapades}} på $4 av $3",
+	"bs-notifications-email-create-subject": "Sidan \"$1\" {{GENDER:$2|skapades}} vid $4 av $3",
 	"bs-notifications-email-create-body": "Sidan \"$1\" har {{GENDER:$2|skapats}} på $5 av $3.\n\nKommentar:\n$4 \nDu kan besöka sidan med följande länk",
 	"bs-notifications-web-create-body": "Sidan \"$1\" {{GENDER:$2|skapades}} av $3.",
 	"bs-notifications-delete": "Sidan \"$1\" har raderats",
@@ -36,5 +37,6 @@
 	"bs-notifications-edit-difflink-label": "Se skillnaden",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Hej}} $1",
 	"bs-notifications-htmlmail-sender-info": "$1 aviseringssystem",
-	"bs-notifications-mail-additional-links-label": "Ytterligare länkar"
+	"bs-notifications-mail-additional-links-label": "Ytterligare länkar",
+	"bs-notifications-echo-param-timestamp": "den {{#tid: j F|@ $1 }} klockan {{#tid: h:ia|@ $1 }}"
 }
