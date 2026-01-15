@@ -4,14 +4,19 @@
 			"Mjälten",
 			"Sabelöga",
 			"Technic2",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"bs-echoconnector-extension-description": "Ansluter BlueSpice med Echo",
 	"echo-category-title-bs-admin-cat": "Administrativa uppgifter",
 	"echo-pref-tooltip-bs-admin-cat": "Avisera mig när ett nytt användarkonto skapas",
 	"echo-pref-tooltip-bs-page-actions-cat": "Avisera mig när någon redigerar, flyttar eller raderar en sida som jag bevakar",
+	"echo-pref-tooltip-bs-page-create-cat": "Meddela mig när en ny sida skapas",
 	"echo-category-title-bs-page-actions-cat": "Handlingar på sidor i bevakningslistan",
+	"echo-category-title-bs-page-create-cat": "Skapande av sidor",
 	"prefs-namespace-notifications": "Aviseringar för namnrymdshändelser",
-	"prefs-category-notifications": "Aviseringar för kategorier"
+	"prefs-category-notifications": "Aviseringar för kategorier",
+	"echo-category-title-bs-namespace-category-notify-cat": "Ändringar i prenumererade namnrymder och kategorier",
+	"bs-echoconnector-personalurl-notifications": "Aviseringar ($1)"
 }
