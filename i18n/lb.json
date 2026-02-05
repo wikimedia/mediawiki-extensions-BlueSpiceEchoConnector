@@ -3,7 +3,8 @@
 		"authors": [
 			"Robby",
 			"Soued031",
-			"Volvox"
+			"Volvox",
+			"Les Meloures"
 		]
 	},
 	"bs-echoconnector-extension-description": "Verbënnt BlueSpice mat Echo",
@@ -11,7 +12,7 @@
 	"echo-pref-tooltip-bs-admin-cat": "Mech informéieren, wann en neie Benotzerkont ugeluecht gëtt",
 	"echo-pref-tooltip-bs-page-actions-cat": "Mech informéieren, wann een eng Säit ännert, réckelt oder läscht, déi ech iwwerwaachen",
 	"echo-pref-tooltip-bs-page-create-cat": "Mech informéieren, wann eng nei Säit ugeluecht gëtt",
-	"echo-category-title-bs-page-actions-cat": "Aktiounen op Säiten op der Iwwrwaachungslëscht",
+	"echo-category-title-bs-page-actions-cat": "Aktiounen op Säiten op der Iwwerwaachungslëscht",
 	"prefs-namespace-notifications": "Notifikatiounen iwwer Nummraumevenementer",
 	"prefs-category-notifications": "Notifikatiounen iwwer Kategorien",
 	"bs-echoconnector-personalurl-notifications": "Notifikatiounen ($1)"
