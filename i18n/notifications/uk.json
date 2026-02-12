@@ -5,7 +5,8 @@
 			"Ice bulldog",
 			"Piramidion",
 			"Vlad5250",
-			"Ата"
+			"Ата",
+			"Movses"
 		]
 	},
 	"bs-notifications-addaccount": "Користувача «$1» створено.",
@@ -38,5 +39,6 @@
 	"bs-notifications-edit-difflink-label": "Показати різницю версій",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Привіт}}, $1",
 	"bs-notifications-htmlmail-sender-info": "Система сповіщень сайту $1",
-	"bs-notifications-mail-additional-links-label": "Додаткові посилання"
+	"bs-notifications-mail-additional-links-label": "Додаткові посилання",
+	"bs-notifications-echo-param-timestamp": "{{#time: j F|@$1}} о {{#time: h:i a|@$1}}"
 }
