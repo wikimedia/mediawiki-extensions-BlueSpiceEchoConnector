@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"HackerPunki"
+		]
+	},
+	"bs-notifications-addaccount": "El essuariu \"$1\" hue criau.",
+	"bs-notifications-email-addaccount-subject": "Se crió {{GENDER:$1|l'esuariu|la esuaria}} «$2»",
+	"bs-notifications-email-addaccount-body": "{{GENDER$1|L'esuariu|La esuaria}} $2 hue criá.\n\nPuei vesital {{GENDER:$1|el|la|lu}} su página d'essuariu siguiendu l'atiju d'embaxu:",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|l'esuariu|la esuaria}} $2 hue criá.",
+	"bs-notifications-addaccout-performer": "{{GENDER:$1|Criaol|Criaora}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Criaol|Criaora}}: $1",
+	"bs-notifications-registeruser": "L'esuariu \"$1\" á criau una cuenta.",
+	"bs-notifications-create": "La página \"$1\" hue criá",
+	"bs-notifications-web-create-body": "La página \"$1\" hue {{GENDER:$2|criá}} por $3.",
+	"bs-notifications-delete": "La página \"$1\" hue aborrá",
+	"bs-notifications-web-delete-body": "La página \"$1\" hue {{GENDER:$2|aborrá}} por $3",
+	"bs-notifications-move": "La página \"$1\" á síu muau",
+	"bs-notifications-edit-difflink-label": "Vél deferencia",
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Yeu}}, $1"
+}
