@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Stefán Örvar Sigmundsson"
+		]
+	},
+	"bs-notifications-addaccount": "Notandinn „$1“ var búinn til.",
+	"bs-notifications-email-addaccount-subject": "Notandinn „$2“ {{GENDER:$1|búinn til}}"
+}

@@ -3,6 +3,7 @@
 		"authors": [
 			"Mjälten",
 			"Sabelöga",
+			"Stefan2255",
 			"Technic2",
 			"WikiPhoenix"
 		]
@@ -13,5 +14,9 @@
 	"echo-pref-tooltip-bs-page-actions-cat": "Avisera mig när någon redigerar, flyttar eller raderar en sida som jag bevakar",
 	"echo-category-title-bs-page-actions-cat": "Handlingar på sidor i bevakningslistan",
 	"prefs-namespace-notifications": "Aviseringar för namnrymdshändelser",
-	"prefs-category-notifications": "Aviseringar för kategorier"
+	"prefs-category-notifications": "Aviseringar för kategorier",
+	"echo-pref-tooltip-bs-page-create-cat": "Meddela mig när en ny sida skapas",
+	"echo-category-title-bs-page-create-cat": "Skapande av sidor",
+	"echo-category-title-bs-namespace-category-notify-cat": "Ändringar i prenumererade namnrymder och kategorier",
+	"bs-echoconnector-personalurl-notifications": "Aviseringar ($1)"
 }

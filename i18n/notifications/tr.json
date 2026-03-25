@@ -3,7 +3,8 @@
 		"authors": [
 			"BaRaN6161 TURK",
 			"MuratTheTurkish",
-			"Sadrettin"
+			"Sadrettin",
+			"SaldırganSincap"
 		]
 	},
 	"bs-notifications-addaccount": "\"$1\" adlı kullanıcı oluşturuldu.",
@@ -31,7 +32,7 @@
 	"bs-notifications-web-delete-body": "\"$1\" sayfası $3 tarafından {{GENDER:$2|silindi}}.",
 	"bs-notifications-move": "\"$1\" sayfasına taşındı",
 	"bs-notifications-email-move-subject": "\"$1\" sayfası $4 tarafından $5 tarihinde \"$3\" olarak {{GENDER:$2|taşındı}}",
-	"bs-notifications-email-move-body": "\"$1\" sayfası $4 tarafından $3 sayfasına $6 tarihinde {{GENDER:$2|taşındı}}. \n\nSebebi:\n$5\n\n\nAşağıdaki bağlantıyı takip ederek sayfayı ziyaret edebilirsiniz",
+	"bs-notifications-email-move-body": "\"$1\" sayfası $4 tarafından $3 sayfasına $6 tarihinde {{GENDER:$2|taşındı}}. \n\nSebep:\n$5\n\n\nAşağıdaki bağlantıyı takip ederek sayfayı ziyaret edebilirsiniz",
 	"bs-notifications-web-move-body": "\"$1\" sayfası \"$3\" tarafından $4 olarak {{GENDER:$2|taşındı}}",
 	"bs-notifications-edit-difflink-label": "Farkı bakınız",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Merhaba}} $1",

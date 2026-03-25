@@ -3,6 +3,7 @@
 		"authors": [
 			"Diskdance",
 			"GuoPC",
+			"LittlePaw365",
 			"Liuxinyu970226",
 			"Tranve",
 			"WQL",
@@ -18,7 +19,7 @@
 	"bs-notifications-addaccout-performer": "{{GENDER:$1|创建者}}：$1",
 	"bs-notifications-addaccount-performer": "{{GENDER:$1|创建者}}：$1",
 	"bs-notifications-registeruser": "用户“$1”已创建账号。",
-	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|用户}}“$2”已{{GENDER:$1|创建}}一个账号",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|用户}}“$2”已{{GENDER:$1|创建}}账号",
 	"bs-notifications-email-registeruser-body": "{{GENDER:$1|用户}}$2已{{GENDER:$1|创建}}一个账号。\n\n您可以点击下面的链接来访问{{GENDER:$1|他|她|该用户}}的用户页",
 	"bs-notifications-web-registeruser-body": "{{GENDER:$1|用户}} $2 已经{{GENDER:$1|创建了}}一个账号。",
 	"bs-notifications-edit": "页面“$1”已更改",
