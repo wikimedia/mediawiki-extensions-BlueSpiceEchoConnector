@@ -5,7 +5,8 @@
 			"Nuevo Paso",
 			"Ykhwong",
 			"아라",
-			"Suleiman the Magnificent Television"
+			"Suleiman the Magnificent Television",
+			"Tensama0415"
 		]
 	},
 	"bs-notifications-addaccount": "$1 사용자가 만들어졌습니다.",
@@ -33,10 +34,11 @@
 	"bs-notifications-web-delete-body": "$3님이 \"$1\" 문서를 {{GENDER:$2|삭제했습니다}}.",
 	"bs-notifications-move": "\"$1\" 문서가 이동되었습니다",
 	"bs-notifications-email-move-subject": "$4님이 \"$1\" 문서를 \"$3\" 문서로 $5에 {{GENDER:$2|이동했습니다}}",
-	"bs-notifications-email-move-body": "$4님이 \"$1\" 문서를 \"$3\" 문서로 $6에 {{GENDER:$2|이동했습니다}}.\n\n설명:\n $5\n아래의 링크를 통해 문서를 방문할 수 있습니다",
+	"bs-notifications-email-move-body": "$4님이 \"$1\" 문서를 \"$3\" 문서로 $6에 {{GENDER:$2|이동했습니다}}.\n\n설명:\n$5\n아래의 링크를 통해 문서를 방문할 수 있습니다",
 	"bs-notifications-web-move-body": "$4님이 \"$1\" 문서를 \"$3\" 문서로 {{GENDER:$2|이동했습니다}}",
 	"bs-notifications-edit-difflink-label": "차이 보기",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|안녕하세요}}, $1님",
 	"bs-notifications-htmlmail-sender-info": "$1 알림 시스템",
-	"bs-notifications-mail-additional-links-label": "추가 링크"
+	"bs-notifications-mail-additional-links-label": "추가 링크",
+	"bs-notifications-echo-param-timestamp": "{{#time: j F|@$1}} {{#time: h:i a|@$1}}"
 }
