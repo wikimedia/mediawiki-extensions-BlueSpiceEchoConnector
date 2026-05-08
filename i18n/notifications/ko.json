@@ -39,5 +39,6 @@
 	"bs-notifications-edit-difflink-label": "차이 보기",
 	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|안녕하세요}}, $1님",
 	"bs-notifications-htmlmail-sender-info": "$1 알림 시스템",
-	"bs-notifications-mail-additional-links-label": "추가 링크"
+	"bs-notifications-mail-additional-links-label": "추가 링크",
+	"bs-notifications-echo-param-timestamp": "{{#time: j F|@$1}} {{#time: h:i a|@$1}}"
 }
