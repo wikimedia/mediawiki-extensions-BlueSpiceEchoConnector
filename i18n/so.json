@@ -4,5 +4,15 @@
 			"AhmedG612"
 		]
 	},
-	"prefs-namespace-notifications": "Ogeysiisyada dhacdooyinka magaca qaybta"
+	"bs-echoconnector-extension-description": "Ku xira BlueSpice iyo Echo",
+	"echo-category-title-bs-admin-cat": "Hawlaha maamul",
+	"echo-pref-tooltip-bs-admin-cat": "I ogeysii marka akoon isticmaale cusub la abuuro",
+	"echo-pref-tooltip-bs-page-actions-cat": "I ogeysii marka qof wax ka beddelo, raro ama tirtiro bog aan daawado",
+	"echo-pref-tooltip-bs-page-create-cat": "I ogeysii marka bog cusub la abuuro",
+	"echo-category-title-bs-page-actions-cat": "Ficillada lagu sameeyo bogagga liiska daawashada",
+	"echo-category-title-bs-page-create-cat": "Abuurista bogga",
+	"prefs-namespace-notifications": "Ogeysiisyada dhacdooyinka magaca qaybta",
+	"prefs-category-notifications": "Ogeysiisyada ku saabsan qaybaha",
+	"echo-category-title-bs-namespace-category-notify-cat": "Isbeddellada ku yimaadda meel magacyada iyo qaybaha aad iska diiwaangelisay",
+	"bs-echoconnector-personalurl-notifications": "Ogeysiisyada ($1)"
 }
