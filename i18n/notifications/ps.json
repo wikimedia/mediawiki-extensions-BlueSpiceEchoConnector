@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"bs-notifications-addaccount": "کارن \"$1\" جوړ شو.",
+	"bs-notifications-email-addaccount-subject": "کارن \"$2\" {{GENDER:$1|جوړ شو}}",
+	"bs-notifications-email-addaccount-body": "$2 {{GENDER:$1|کارن}} جوړ شو.\n\nتاسو کولی شئ د لاندې تړوني څارلو سره د {{GENDER:$1|هغه|هغې|هغوی}} کارن مخ وگورئ",
+	"bs-notifications-web-addaccount-body": "$2 {{GENDER:$1|کارن}} جوړ شو.",
+	"bs-notifications-addaccout-performer": "{{GENDER:$1|جوړوونکی}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|جوړوونکی}}: $1",
+	"bs-notifications-registeruser": "کارن \"$1\" يو گڼون جوړ کړ.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|کارن}} \"$2\" يو گڼون {{GENDER:$1|جوړ کړ}}",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|کارن}} $2 يو گڼون {{GENDER:$1|جوړ کړ}}.\n\nتاسو کولی شئ د لاندې تړوني څارلو سره د {{GENDER:$1|هغه|هغې|هغوی}} کارن مخ وگورئ",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|کارن}} $2 يو گڼون {{GENDER:$1|جوړ کړ}}.",
+	"bs-notifications-edit": "\"$1\" مخ بدل شوی دی",
+	"bs-notifications-edit-bundle": "\"$2\" مخ {{PLURAL:$1|$1 يوځل|$2 ځله}} بدل شوی دی",
+	"bs-notifications-email-edit-subject": "\"$1\" مخ د $3 له‌خوا په $4 {{GENDER:$2|سم‌شو}}",
+	"bs-notifications-email-edit-body": "\"$1\" مخ د $4 له‌خوا په $5 {{GENDER:$2|سم‌شو}}.\n\nڅرگندونه:\n$3",
+	"bs-notifications-web-edit-body": "\"$1\" مخ د $3 له‌خوا {{GENDER:$2|سم شوی}} و.",
+	"bs-notifications-create": "\"$1\" مخ جوړ شو."
+}
