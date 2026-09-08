@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"bs-notifications-addaccount": "Isticmaalaha \"$1\" waa la sameeyay.",
+	"bs-notifications-email-addaccount-subject": "Isticmaalaha \"$2\" {{GENDER:$1|abuuray}}",
+	"bs-notifications-email-addaccount-body": "{{GENDER:$1|Isticmaalaha}} $2 waa la abuuray.\n\nWaxaad booqan kartaa bogga isticmaalaha {{GENDER:$1|isaga|iyada|iyaga}} adigoo raacaya isku xirka hoose",
+	"bs-notifications-web-addaccount-body": "{{GENDER:$1|Isticmaalaha}} $2 waa la abuuray.",
+	"bs-notifications-addaccout-performer": "{{GENDER:$1|Abuuraha}}: $1",
+	"bs-notifications-addaccount-performer": "{{GENDER:$1|Abuuraha}}: $1",
+	"bs-notifications-registeruser": "Isticmaalaha \"$1\" ayaa abuuray akoon.",
+	"bs-notifications-email-registeruser-subject": "{{GENDER:$1|Isticmaalaha}} \"$2\" ayaa {{GENDER:$1|abuuray}} akoon",
+	"bs-notifications-email-registeruser-body": "{{GENDER:$1|Isticmaalaha}} $2 ayaa {{GENDER:$1|abuuray}} akoon.\n\nWaxaad booqan kartaa bogga isticmaalaha {{GENDER:$1|isaga|iyada|iyaga}} adigoo raacaya isku xirka hoose",
+	"bs-notifications-web-registeruser-body": "{{GENDER:$1|Isticmaalaha}} $2 ayaa {{GENDER:$1|abuuray}} akoon.",
+	"bs-notifications-edit": "Bogga \"$1\" waa la beddelay",
+	"bs-notifications-edit-bundle": "Bogga \"$2\" waa la beddelay {{PLURAL:$1|$1 waqti|$1 waqtiyo}}",
+	"bs-notifications-email-edit-subject": "Bogga \"$1\" {{GENDER:$2|wax ka beddelay}} $4 waxaa beddelay $3",
+	"bs-notifications-email-edit-body": "Bogga \"$1\" waxaa {{GENDER:$2|wax ka beddelay}} $5 $4.\n\nFaallo:\n$3",
+	"bs-notifications-web-edit-body": "Bogga \"$1\" waxaa {{GENDER:$2|wax ka beddelay}} $3.",
+	"bs-notifications-create": "Bogga \"$1\" waa la abuuray",
+	"bs-notifications-email-create-subject": "Bogga \"$1\" {{GENDER:$2|abuuray}} $4 $3",
+	"bs-notifications-email-create-body": "Bogga \"$1\" waxaa {{GENDER:$2|abuuray}} $5 $3.\n\nFaallo:\n$4\nWaxaad booqan kartaa bogga adigoo raacaya isku xirka hoose",
+	"bs-notifications-web-create-body": "Bogga \"$1\" waxaa {{GENDER:$2|abuuray}} $3.",
+	"bs-notifications-delete": "Bogga \"$1\" waa la tirtiray",
+	"bs-notifications-email-delete-subject": "Bogga \"$1\" {{GENDER:$2|tirtiray}} $4 $3",
+	"bs-notifications-email-delete-body": "Bogga \"$1\" waxaa {{GENDER:$2|tirtiray}} $5 $3.\n\nTani waxay ahayd sababta:\n$4",
+	"bs-notifications-web-delete-body": "Bogga \"$1\" waxaa {{GENDER:$2|tirtiray}} $3.",
+	"bs-notifications-move": "Bogga \"$1\" waa la wareejiyay",
+	"bs-notifications-email-move-subject": "Bogga \"$1\" {{GENDER:$2|wareejiyay}} $5 ilaa \"$3\" oo ah $4",
+	"bs-notifications-email-move-body": "Bogga \"$1\" waxaa loo {{GENDER:$2|wareejiyay}} \"$3\" $6 $4.\n\nSababtu waxay ahayd:\n$5\n\nWaxaad booqan kartaa bogga adigoo raacaya isku xirka hoose",
+	"bs-notifications-web-move-body": "Bogga \"$1\" waxaa loo {{GENDER:$2|wareejiyay}} \"$3\" $4",
+	"bs-notifications-edit-difflink-label": "Eeg farqiga",
+	"bs-notifications-htmlmail-greeting": "{{GENDER:$1|Salaan}} $1",
+	"bs-notifications-htmlmail-sender-info": "Nidaamka ogeysiisyada $1",
+	"bs-notifications-mail-additional-links-label": "Xiriirro dheeraad ah",
+	"bs-notifications-echo-param-timestamp": "{{#time: j F|@$1}} saacadda {{#time: h:i a|@$1}}"
+}

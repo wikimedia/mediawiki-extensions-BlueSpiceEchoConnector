@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"bs-echoconnector-extension-description": "د بلوسپيس خبرتياوې سره نښلوي",
+	"echo-category-title-bs-admin-cat": "پازواله کاردندې",
+	"echo-pref-tooltip-bs-admin-cat": "کله چې يو نوی کارن گڼون جوړ شي؛ نو ماته خبر راکړئ",
+	"echo-pref-tooltip-bs-page-actions-cat": "کله چې يو څوک يو داسې يو مخ چې زه يې څارم، سموي، لېږدوي يا ړنگوي؛ نو ماته خبر راکړئ",
+	"echo-pref-tooltip-bs-page-create-cat": "کله چې يو نوی مخ جوړ شي؛ نو ماته خبر راکړئ",
+	"echo-category-title-bs-page-actions-cat": "د کتنلړ مخونو کې چارې",
+	"echo-category-title-bs-page-create-cat": "مخ جوړونې",
+	"prefs-namespace-notifications": "د نوم‌تشيال پېښو په اړه خبرتياوې",
+	"prefs-category-notifications": "د وېشنيزو خبرتیاوې",
+	"echo-category-title-bs-namespace-category-notify-cat": "په گډون کړيو نوم‌تشيالونو او وېشنيزو کې بدلونونه",
+	"bs-echoconnector-personalurl-notifications": "خبرتیاوې ( $1 )"
+}
