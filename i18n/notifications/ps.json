@@ -19,5 +19,21 @@
 	"bs-notifications-email-edit-subject": "\"$1\" مخ د $3 له‌خوا په $4 {{GENDER:$2|سم‌شو}}",
 	"bs-notifications-email-edit-body": "\"$1\" مخ د $4 له‌خوا په $5 {{GENDER:$2|سم‌شو}}.\n\nڅرگندونه:\n$3",
 	"bs-notifications-web-edit-body": "\"$1\" مخ د $3 له‌خوا {{GENDER:$2|سم شوی}} و.",
-	"bs-notifications-create": "\"$1\" مخ جوړ شو."
+	"bs-notifications-create": "\"$1\" مخ جوړ شو.",
+	"bs-notifications-email-create-subject": "\"$1\" مخ د $3 له‌خوا په $4 {{GENDER:$2|جوړ شو}}",
+	"bs-notifications-email-create-body": "\"$1\" مخ د $3 له‌خوا په $5 {{GENDER:$2|جوړ شو}}.\n\nڅرگندونه:\n$4\nتاسو کولی شئ د لاندې تړوني څارولو سره مخ وگورئ",
+	"bs-notifications-web-create-body": "\"$1\" مخ د $3 له‌خوا {{GENDER:$2|جوړ شوی}} و.",
+	"bs-notifications-delete": "\"$1\" مخ ړنگ شوی دی",
+	"bs-notifications-email-delete-subject": "\"$1\" مخ د $3 له‌خوا په $4 {{GENDER:$2|ړنگ شو}}",
+	"bs-notifications-email-delete-body": "\"$1\" مخ د $3 له‌خوا په $5 {{GENDER:$2|ړنگ شو}}\n\nلامل يې دا وو:\n$4",
+	"bs-notifications-web-delete-body": "\"$1\" مخ د $3 له‌خوا {{GENDER:$2|ړنگ شو}}.",
+	"bs-notifications-move": "\"$1\" مخ ولېږدول شو",
+	"bs-notifications-email-move-subject": "\"$1\" مخ د $4 له‌خوا  \"$3\" ته په $5 {{GENDER:$2|ولېږدول شو}}",
+	"bs-notifications-email-move-body": "\"$1\" مخ د $4 له‌خوا په $6 \"$3\" ته {{GENDER:$2|ولېږدول شو}}.\n\nلامل يې دا وو:\n$5\n\nتاسو کولی شئ د لاندې تړوني څارولو سره مخ وگورئ",
+	"bs-notifications-web-move-body": "\"$1\" مخ د $4 له‌خوا \"$3\" ته {{GENDER:$2|ولېږدول شو}}",
+	"bs-notifications-edit-difflink-label": "توپير يې وگورئ",
+	"bs-notifications-htmlmail-greeting": "$1 {{GENDER:$1|ښه راغلې}}",
+	"bs-notifications-htmlmail-sender-info": "د $1 خبرتيا غونډال",
+	"bs-notifications-mail-additional-links-label": "زياتي تړوني",
+	"bs-notifications-echo-param-timestamp": "د {{#time: F j|@$1}} نېټې په {{#time: h:i a|@$1}}"
 }
