@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wizzard"
+		]
+	},
+	"bs-echoconnector-extension-description": "Prepája BlueSpice s Echo",
+	"echo-category-title-bs-admin-cat": "Administratívne úlohy",
+	"echo-pref-tooltip-bs-admin-cat": "Upozorniť ma, keď sa vytvorí nový používateľský účet",
+	"echo-pref-tooltip-bs-page-actions-cat": "Upozorniť ma, keď niekto upraví, presunie alebo zmaže stránku, ktorú sledujem",
+	"echo-pref-tooltip-bs-page-create-cat": "Upozorniť ma, keď sa vytvorí nová stránka",
+	"echo-category-title-bs-page-actions-cat": "Akcie na stránkach v zozname sledovaných",
+	"echo-category-title-bs-page-create-cat": "Vytvorenie stránky",
+	"prefs-namespace-notifications": "Upozornenia na udalosti v menných priestoroch",
+	"prefs-category-notifications": "Upozornenia na kategórie",
+	"echo-category-title-bs-namespace-category-notify-cat": "Zmeny v odoberaných menných priestoroch a kategóriách",
+	"bs-echoconnector-personalurl-notifications": "Upozornenia ($1)"
+}
